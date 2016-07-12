@@ -1,0 +1,21 @@
+{
+	"class" : {
+		"chooseServiceFrom:" : "",
+		"cleanUp" : "MarcusDenker 7/26/2013 17:00",
+		"defaultHandler" : "",
+		"defaultHandler:" : "",
+		"initialize" : "PavelKrivanek 11/20/2012 21:25",
+		"lookupExternalDropHandler:" : "CamilloBruni 5/4/2012 21:26",
+		"lookupServiceBasedHandler:" : "CamilloBruni 5/23/2012 16:55",
+		"registerHandler:" : "",
+		"registeredHandlers" : "",
+		"resetRegisteredHandlers" : "",
+		"type:extension:action:" : "",
+		"unwantedSelectors" : "GuillermoPolito 6/5/2015 16:03" },
+	"instance" : {
+		"extension" : "",
+		"handle:in:dropEvent:" : "",
+		"matchesExtension:" : "CamilloBruni 5/7/2012 01:19",
+		"matchesTypes:" : "",
+		"type" : "",
+		"type:extension:action:" : "" } }

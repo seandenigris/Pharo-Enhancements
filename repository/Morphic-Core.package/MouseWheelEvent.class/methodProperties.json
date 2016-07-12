@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"fromCharacter:position:buttons:hand:stamp:" : "SeanDeNigris 2/10/2015 14:01" },
+	"instance" : {
+		"direction" : "gvc 1/25/2008 17:40",
+		"direction:" : "gvc 1/25/2008 17:40",
+		"isDown" : "SeanDeNigris 2/10/2015 14:02",
+		"isLeft" : "SeanDeNigris 2/10/2015 14:02",
+		"isMouseWheel" : "gvc 1/28/2008 13:14",
+		"isRight" : "SeanDeNigris 2/10/2015 14:02",
+		"isUp" : "SeanDeNigris 2/10/2015 14:02",
+		"printOn:" : "SeanDeNigris 2/10/2015 14:05",
+		"sentTo:" : "gvc 1/25/2008 17:42",
+		"setType:position:direction:buttons:hand:stamp:" : "gvc 1/28/2008 15:31" } }

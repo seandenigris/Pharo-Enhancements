@@ -1,0 +1,25 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"=" : "ar 10/24/2000 17:44",
+		"hasSpecialCTRLKeyValue" : "DenisKudryashov 7/20/2013 17:29",
+		"hash" : "ar 9/13/2000 15:50",
+		"isKeyDown" : "ar 9/13/2000 15:49",
+		"isKeyUp" : "ar 9/13/2000 15:49",
+		"isKeyboard" : "ar 9/13/2000 15:49",
+		"isKeystroke" : "ar 9/13/2000 15:49",
+		"isMouseMove" : "ar 10/9/2000 00:43",
+		"isUserInterrupt" : "SeanDeNigris 1/29/2013 11:22",
+		"key" : "cami 7/22/2013 18:27",
+		"keyCharacter" : "michael.rueger 3/11/2009 11:21",
+		"keyString" : "nk 10/13/2004 10:43",
+		"keyValue" : "ar 9/13/2000 15:51",
+		"printKeyStringOn:" : "DenisKudryashov 7/20/2013 17:32",
+		"printOn:" : "nk 10/13/2004 10:42",
+		"scanCode" : "michael.rueger 2/25/2009 22:19",
+		"scanCode:" : "michael.rueger 2/24/2009 14:08",
+		"sentTo:" : "ar 9/15/2000 21:13",
+		"setType:buttons:position:keyValue:charCode:hand:stamp:" : "michael.rueger 2/23/2009 11:49",
+		"setType:buttons:position:keyValue:hand:stamp:" : "ar 10/5/2000 23:54",
+		"storeOn:" : "SeanDeNigris 1/15/2014 15:24" } }
