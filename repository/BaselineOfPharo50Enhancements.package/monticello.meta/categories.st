@@ -1,1 +1,0 @@
-SystemOrganization addCategory: #BaselineOfPharo50Enhancements!
