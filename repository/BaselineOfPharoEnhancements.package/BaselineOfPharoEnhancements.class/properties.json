@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfPharoEnhancements",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfPharoEnhancements",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
