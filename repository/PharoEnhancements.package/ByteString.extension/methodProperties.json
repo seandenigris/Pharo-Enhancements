@@ -1,5 +1,6 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"surroundedByDoubleQuotes" : "SeanDeNigris 8/20/2016 15:07" } }
+		"surroundedByDoubleQuotes" : "SeanDeNigris 8/20/2016 15:07"
+	},
+	"class" : { }
+}

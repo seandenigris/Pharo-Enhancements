@@ -1,8 +1,12 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"isMD5Equal:" : "SeanDeNigris 8/25/2016 13:47",
 		"macLock:" : "SeanDeNigris 9/9/2017 11:18",
+		"open" : "SeanDeNigris 8/25/2016 16:57",
 		"verifiedCopyTo:" : "SeanDeNigris 8/25/2016 13:47",
-		"verifiedMoveTo:" : "SeanDeNigris 8/24/2016 18:48" } }
+		"showInFinder" : "SeanDeNigris 8/25/2016 16:27",
+		"isMD5Equal:" : "SeanDeNigris 8/25/2016 13:47",
+		"preview" : "SeanDeNigris 8/25/2016 15:28",
+		"verifiedMoveTo:" : "SeanDeNigris 8/24/2016 18:48"
+	},
+	"class" : { }
+}
