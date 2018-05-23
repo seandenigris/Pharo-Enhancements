@@ -1,5 +1,9 @@
 *PharoEnhancements
 createBaselineOf
+	"Example:
+		(RPackage named: 'MyCoolPackage') createBaselineOf
+	"
+
 	(MetacelloToolBox baselineNamed: self name)
 		createBaselineOfMethod: 'baseline:' inCategory: 'baseline';
 		addBaselineOfSection: #common
