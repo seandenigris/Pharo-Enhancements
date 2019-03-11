@@ -1,3 +1,0 @@
-*PharoEnhancements
-surroundedByDoubleQuotes
-	^ self surroundedBy: '"'
