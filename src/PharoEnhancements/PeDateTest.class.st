@@ -1,7 +1,7 @@
 Class {
 	#name : #PeDateTest,
 	#superclass : #TestCase,
-	#category : 'PharoEnhancements-Specification'
+	#category : #'PharoEnhancements-Specification'
 }
 
 { #category : #tests }
