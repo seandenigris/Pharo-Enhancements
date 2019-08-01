@@ -31,6 +31,7 @@ PeDynamicFSResolver class >> startUp: resuming [
 
 { #category : #resolving }
 PeDynamicFSResolver >> supportedOrigins [
+	"See class comment"
 
 	| originPragmas selectors |
 	originPragmas := Pragma allNamed: #supportedOrigin from: self class to: Object.	
