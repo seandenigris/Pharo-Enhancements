@@ -29,6 +29,13 @@ PeDynamicFSResolver class >> startUp: resuming [
 	FileLocator addResolver: self new
 ]
 
+{ #category : #origins }
+PeDynamicFSResolver >> dynabookData [
+	<supportedOrigin>
+	
+	^ (FileLocator home / 'Dynabook' / 'User Data') resolve
+]
+
 { #category : #resolving }
 PeDynamicFSResolver >> supportedOrigins [
 	"See class comment"
@@ -37,11 +44,4 @@ PeDynamicFSResolver >> supportedOrigins [
 	originPragmas := Pragma allNamed: #supportedOrigin from: self class to: Object.	
 	selectors := originPragmas collect: [ :each | each method selector ].
 	^ Set withAll: selectors
-]
-
-{ #category : #origins }
-PeDynamicFSResolver >> userData [
-	<supportedOrigin>
-	
-	^ (FileLocator home / 'Dynabook' / 'User Data') resolve
 ]

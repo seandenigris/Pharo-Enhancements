@@ -1,6 +1,6 @@
 Extension { #name : #FileLocator }
 
 { #category : #'*PharoEnhancements' }
-FileLocator class >> userData [
-	^ self origin: #userData
+FileLocator class >> dynabookData [
+	^ self origin: #dynabookData
 ]
