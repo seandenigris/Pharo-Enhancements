@@ -1,4 +1,4 @@
-## Useful enhancements to Pharo's core
+Useful enhancements to Pharo's core
 
 ## Features (just starting, most undocumented)
 
