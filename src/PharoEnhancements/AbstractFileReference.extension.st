@@ -1,14 +1,6 @@
 Extension { #name : #AbstractFileReference }
 
 { #category : #'*PharoEnhancements' }
-AbstractFileReference >> isMD5Equal: aReference [
-	| sourceHash targetHash |
-	sourceHash := self binaryReadStreamDo: [ :str | MD5 hashStream: str ].
-	targetHash := aReference binaryReadStreamDo: [ :str | MD5 hashStream: str ].
-	^ sourceHash = targetHash
-]
-
-{ #category : #'*PharoEnhancements' }
 AbstractFileReference >> macLock: aBoolean [
 	"Adapted from https://macosx.com/threads/lock-unlock-files-with-the-terminal.317350/"
 	| keyword commandTemplate command |
