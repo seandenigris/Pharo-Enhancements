@@ -5,7 +5,10 @@ MailMessage >> timestamp [
 	| dateField dateString isWeekdayPresent safeDateString |
 	dateField := self 
 		fieldNamed: 'date'
-		ifAbsent: [ ^ nil ].
+		ifAbsent: [ 
+			self 
+				fieldNamed: 'delivery-date'
+				ifAbsent: [ ^ nil ] ].
 	"These header values seem to start with a weekday e.g. 'Thu, ' which breaks Pharo's DateAndTime parsing"
 	dateString := dateField mainValue.
 	isWeekdayPresent := dateString includes: $,.
