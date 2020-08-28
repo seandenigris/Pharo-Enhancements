@@ -17,7 +17,10 @@ Class {
 BaselineOfPharoEnhancements >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
-		spec baseline: 'ActivePapers' with: [ spec repository: 'github://seandenigris/activepapers-pharo:denigris' ].
+		spec baseline: 'ActivePapers' with: [ 
+			spec 
+				repository: 'github://seandenigris/activepapers-pharo:denigris';
+				loads: #('ActivePapers-Wiki') ].
 		spec
 			package: 'PharoEnhancements';
 			package: 'PharoEnhancements-GToolkit';
