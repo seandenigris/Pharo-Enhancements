@@ -10,6 +10,17 @@ Class {
 }
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageBindings_to_Other_Languages [
+	"This method was automatically generated."
+	<wikiPage: #Bindings_to_Other_Languages>
+	^APWikiPage
+		wiki: self
+		name: #Bindings_to_Other_Languages
+		text: 
+'!New page'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageDeprecating [
 	"This method was automatically generated."
 	<wikiPage: #Deprecating>
@@ -165,8 +176,10 @@ Things that are difficult to find out for yourself by exploring the live system.
 !!Discoverability
 - Slideshows: I am enjoying a slideshow and want to see how it works. I bring up halos and navigate through parents until I find GtSlideElement. Via the inspector, I go to the slide and then slideshow, but there''s no way to get back to GtPharo101 unless it is explicitly mentioned in the slideshow (which it is in this case, but may not be generally) (from GT Discord feedback channel 9/9/2020)
 - Views: let''s say I''ve never implemented a view. Sure, I can: 1) "Alt-click" on a view tab (which already requires esoteric knowledge of that secret incantation or 2) search for existing views via pragma filtering, but that''s kind of like groping around blindfolded because I already know exactly what I want to show, and I''d have to hunt around for a view that does that. I could browse senders of a view message (which I only know to do after over a decade of Smalltalk experience), but some of those messages seem pretty generic (e.g. list). How do I as a user most efficiently get from "I want to implement a view" or maybe more specifically "I''m looking at an existing view (or the source for it)" to "this is how you implement your view"? And how do I know how to get there? (from GT Discord how-to channel 9/8/2020)
+!!Installation
+On Mac, you may run into problems with GToolkit being quarantined. A quick google search will reveal how to unquarantine GT. If you''d like to do this in Smalltalk, check out the *ComputerWorld>https://github.com/seandenigris/Computer-World* project (search for the ==unquarantine== message).
 !! Customization
-!!Saved Playground Scripts
+!!!Saved Playground Scripts
 You can specify where to save playgound snippets and other artifacts for both new and old GT. This can be useful for personal projects where images are frequently recreated, so you don''t accidentally lose all your snippets in the image folder of a deleted image. A convenient place to do this would be in a Metacello baseline postload. Here''s an example:
 ==BaselineOfXyz>>#postLoad==
 [[[language=smalltalk
@@ -235,6 +248,14 @@ PharoWiki class >> wikiPageOOP [
 		text: 
 '!Object-Oriented Programming
 - "encapsulated modules all the way down with pure messaging" ${footnote:note=Blog comment by Alan Kay 2010-09-15 at 10:12am}$
+!!Problem with Class-Based Code
+Trygve Reenskaug *on Squeak-Dev>http://forum.world.st/SmaCC-First-steps-tp4802170p4805293.html*:
+The problem with reading class oriented code (C++, Java, C#, Ruby, ..., Smalltalk) is that the code does not reveal how the system will work at runtime (polymorphism). The essence of object orientation is that objects collaborate to achieve a goal.  The DCI programming paradigm adds code for how the system works at runtime:
+A class says everything about the inner construction of an object
+but nothing about how it is used in its interaction with other objects.
+The new DCI context says everything about how objects are used when interacting with other objects
+but nothing about their insides.
+Class and context separates the code into two materially independent concerns: What the system IS (classes) and what the system DOES (Contexts). BabyIDE is a programming environment that supports the DCI paradigm.  It is available in Squeak 4.5 and may be available in Pharo later.
 !References
 !!*Blog comment>https://computinged.wordpress.com/2010/09/11/moti-asks-objects-never-well-hardly-ever/* by Alan Kay 2010-09-15 at 10:12am:
 I think this article raises important issues.
@@ -494,10 +515,155 @@ PharoWiki class >> wikiPageParsing [
 		name: #Parsing
 		text: 
 '!Parsing
+What interests me is how to handle parsing in a generic way. How can we handle format input/output in a way that minimizes duplication and maximizes compatibility between libraries. If I define RTF grammar once, I don''t want to do it three more times to try out the four major parsing libraries. If I define the parsing in one direction, how much of that can be reused to reverse?
+!!Available Options
 - PetitParser
 - PetitParser2
 - Xtreams
-- SmaCC'
+  - PEGActor example available *per Chris Cunningham>http://forum.world.st/Xtreams-PEGParser-now-has-a-working-PEGActor-subclass-td4925586.html*
+- SmaCC
+  - *Documentation>http://www.refactoryworkers.com/SmaCC/ASTs.html*
+!!!Translating Smalltalk Code
+See *here>http://readthesourceluke.blogspot.com/2014/09/block-translators-parsing-magic.html* for a technique that avoids using a parser at all. For example, if you have a select block that deals with your domain objects, you can implement a SQL equivalent.
+!Material Conditional
+Per Udo Schneider on *this Pharo-Users thread>http://forum.world.st/BLOG-Block-Translators-parsing-magic-tp4779569p4779629.html*:
+I''d say that''s an implementation of the "Material implication"[1] 
+operator from Propositional calculus. 
+
+You can write it as 
+
+P -> Q 
+
+and read it as "P implies Q" or (not 100% correct) "if P (is true) then 
+Q (is true)". 
+
+Let''s take a look at the truth table: 
+
+  P | Q | P -> Q 
+---+---+------- 
+  t | t | t 
+---+---+------- 
+
+inserting it into the statement above yields: 
+
+"if true then true" which is true indeed. 
+
+The funny thing starts when we look at the case(s), where P is false. 
+The general (verbal) rule says that if the premise (P) is false the 
+truth value of the conclusion doesn''t matter. Hence the complete term is 
+true: 
+
+  P | Q | P -> Q 
+---+---+------- 
+  f | t | t 
+---+---+------- 
+  f | f | t 
+---+---+------- 
+
+There is one case left: What happens if the premise is true but the 
+conclusion is false? That''s in direct violation of the defintion which 
+states that "if P (is true) then Q (is true)". As P is true and Q is 
+false the truth value of the complete term is false! 
+
+  P | Q | P -> Q 
+---+---+------- 
+  t | f | f 
+---+---+------- 
+
+Or to put it in different words: An implication can only be false if the 
+premise is true but the conclusion is false. 
+
+So we end up with this truth table: 
+
+  P | Q | P -> Q 
+---+---+------- 
+  t | t | t 
+---+---+------- 
+  f | t | t 
+---+---+------- 
+  f | f | t 
+---+---+------- 
+  t | f | f 
+---+---+------- 
+
+We did not take a look yet, at how to implement this with basic boolean 
+operators. So we need to take a look at the table and find the 
+expression: Let''s start with the exception (fourth case). We can express 
+this as: 
+
+!(P & !Q) -> "The term is false if P is true and Q is false" 
+
+I added the inner term "P & !Q" to the table to make it easier to follow: 
+
+
+  P | Q | P -> Q | P & !Q | !(P & !Q) 
+---+---+--------+--------+----------- 
+  t | t | t      | f      | t 
+---+---+--------+--------+----------- 
+  f | t | t      | t      | f 
+---+---+--------+--------+----------- 
+  f | f | t      | f      | t 
+---+---+--------+--------+----------- 
+  t | f | f      | f      | t 
+---+---+--------+--------+----------- 
+
+The "last" step is to simplify the term "!(P & !Q)" using one of de 
+Morgan''s laws: 
+\!(A & B) == !A | !B 
+
+Using this for our term gives 
+
+!(P & !Q) == !P | !!Q == !P | Q 
+
+  P | Q | P -> Q | P & !Q | !(P & !Q) | !P | Q 
+---+---+--------+--------+-----------+-------- 
+  t | t | t      | f      | t         | t 
+---+---+--------+--------+-----------+-------- 
+  f | t | t      | t      | f         | f 
+---+---+--------+--------+-----------+-------- 
+  f | f | t      | f      | t         | t 
+---+---+--------+--------+-----------+-------- 
+  t | f | f      | f      | t         | t 
+---+---+--------+--------+-----------+-------- 
+
+So our final term is "correct" (proof in the truth table) and is 
+equivalent to the smalltalk term: 
+
+\!P | Q  := self not or: [aBlock value] 
+
+
+I have to admit though that implications in Propositional calculus 
+really gave me a headache. You might simply want to accept that they are 
+defined this way. And maybe it doesn''t help ... but there are even more 
+strange things lurking around the corner [4] :-) 
+
+Although not immidiatly obvious all the terms in Propositional calculus 
+do not neccessarly have a semantic meaning in context to each other. 
+They are totaly independent. The only thing that counts is the truth 
+value of its terms. E.g. something like this is 
+mathematically/syntacically valid but doesn''t make any sense from a 
+semantic point of view: 
+
+P := I am 12y old 
+Q := It rains 
+
+The term "P -> Q" is perfectly fine mathematically/syntacically but 
+doesn''t mean anything in terms of semantics. 
+
+
+Hope this helps. 
+
+CU, 
+
+Udo 
+
+[1] http://en.wikipedia.org/wiki/Material_implication_(rule_of_inference) 
+[2] http://en.wikipedia.org/wiki/Propositional_calculus
+[3] http://en.wikipedia.org/wiki/De_Morgan''s_laws
+[4] http://en.wikipedia.org/wiki/Paradoxes_of_material_implication
+!!Miscellaneous
+- *Fascinating thread>http://forum.world.st/SmaCC-First-steps-td4802170.html* as Kilon begins his journey parsing Python
+'
 ]
 
 { #category : #wikiPages }
