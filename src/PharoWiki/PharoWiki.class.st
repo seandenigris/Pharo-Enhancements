@@ -151,6 +151,24 @@ Tudor, on behalf of the feenk team '
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageGtoolkit [
+	"This method was automatically generated."
+	<wikiPage: #Gtoolkit>
+	^APWikiPage
+		wiki: self
+		name: #Gtoolkit
+		text: 
+'!GToolkit
+!!Magic
+Things that are difficult to find out for yourself by exploring the live system.
+- Alt-click on view tag to go to code
+
+!!Relevant pages
+- ${wikiPage:#GT_OO_IDE}$
+'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageMemoryHogs [
 	"This method was automatically generated."
 	<wikiPage: #MemoryHogs>
