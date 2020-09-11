@@ -21,6 +21,45 @@ PharoWiki class >> wikiPageBindings_to_Other_Languages [
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageDecimal_Numbers [
+	"This method was automatically generated."
+	<wikiPage: #Decimal_Numbers>
+	^APWikiPage
+		wiki: self
+		name: #Decimal_Numbers
+		text: 
+'!Decimal Numbers
+This is one of those convroversial topics inspiring endless conversation^^1^^. In summary, Floats are what computers expect, but not what naive (i.e. relying on life and primary school experience) humans expect.
+!!Floats
+Floats are a computing artifact that are not like the everyday decimals we are used to. They seem more appropriate in computer graphics applications than one for recipes. One important feature is: ''''forget about exact comparison''''^^1^^.
+!!Scaled Decimals
+${class:ScaledDecimal}$ is a little more (and less) complicated. 
+
+It keeps full precision, unlike a Float, but rounds its ''''display'''' to the precision specified by its ==scale==, as seen in this example *proposed by Chris Cunningham>http://forum.world.st/SIXX-problem-for-ScaledDecimal-tp3535135p3537088.html*:
+[[[language=smalltalk
+sd1 := (1/3) asScaledDecimal: 2.
+sd2 := (33/100) asScaledDecimal: 2.
+self assert: sd2 printString equals: ''0.33s2''.
+self assert: sd2 printString equals: sd2 printString.
+self assert: sd1 ~= sd2. "Possibly surprising"
+self assert: (sd1 + sd1) printString equals: ''0.67s2'' "Possibly surprising" 
+]]]
+He goes on to say: "''''From my perspecive, ScaledDecimal is great when you want to keep as much precision as possible, but need to SHOW less precision.  It reminds me of science, where you have this measurement that is way more precise than you can really measure, so you ''scale'' it back to a precision that is reliable.''''"
+
+This thread from 2001^^2^^ has the familiar gnashing of teeth over this class, with an argument made that it shouldn''t keep more precision than its scale.
+!!Fixed Decimal
+From *the project description>http://www.squeaksource.com/FixedDecimal.html*: 
+A FixedDecimal is similar to a ScaledDecimal, but different in certain select ways. It''s primary purpose was to be able to represent precise decimals for such things as representing money - where ScaledDecimals leave something to be desired. For instance, with ScaledDecimals, you get: (33.333s withScale:2) \+ (33.333s withScale:2) print it yields 66.67s but with FixedDecimals, you would get: (33.333 asFixedDecimal: 2) + (33.333 asFixedDecimal: 2) print it yields 66.66. So, FixedDecimals round the numbers to the exact scale you specify - converting a float (or fraction) to a FixedDecimal and back will not necessarily return the starting number, unlike ScaledDecimals.
+
+In the announcement thread, *Nicolas Cellier pointed out some problems>http://forum.world.st/ANN-FixedDecimals-tp66327p66328.html*, which may have been fixed by now.
+!!Binary Coded Decimal
+This thread from 2001^^2^^ suggests that a BCD is really what you want for money, and it what ScaledDecimal should be.
+!!References
+# *http://forum.world.st/Issue-940-13-10-1-3-returns-false-tt1305147.html*
+# *http://forum.world.st/ScaledDecimal-conversion-and-equality-question-tt3359724.html*'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageDeprecating [
 	"This method was automatically generated."
 	<wikiPage: #Deprecating>
@@ -69,12 +108,20 @@ PharoWiki class >> wikiPageExternalProcesses [
 		wiki: self
 		name: #ExternalProcesses
 		text: 
-'!External Processes
-Pharo has ${class:LibC|label=basic capabilities}$ to run unixy commands from within the image. There are also several libraries for this:
+'Pharo has basic capabilities with ${class:LibC}$ to run unixy commands from within the image. There are also several libraries for this:
 - ${wikiPage:OSSubprocess}$
 - ${wikiPage:OSProcess}$
 - ${wikiPage:PharoShell}$
-'
+!Waiting for a command to complete
+!!LibC
+${example:LibC class>>#exampleRunAndWait}$
+!!OSSubprocess
+${example:OSSUnixSubprocess class>>#exampleRunAndWait}$
+!!OSProcess
+[[[
+p := PipeableOSProcess waitForCommand: ''sleep 2''.
+self assert: p succeeded
+]]]'
 ]
 
 { #category : #wikiPages }
@@ -162,6 +209,19 @@ Tudor, on behalf of the feenk team '
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageGit [
+	"This method was automatically generated."
+	<wikiPage: 'Git'>
+	^APWikiPage
+		wiki: self
+		name: 'Git'
+		text: 
+'- Non-Smalltalk files. If you stage (e.g. via ==git add -A==), they will be included in your next Iceberg commit
+!CLI
+- Difference between two commits e.g. for last commit ==git diff HEAD~ HEAD== or ==git show== (*via SO>https://stackoverflow.com/a/17563740*)'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageGtoolkit [
 	"This method was automatically generated."
 	<wikiPage: #Gtoolkit>
@@ -236,6 +296,26 @@ For a fairly long report on the image and memory hogs, evaluate `SmalltalkImage 
     ((Object allSubclasses collect: [ :aClass |
         aClass -> aClass allInstances size])
         sort: [ :a :b | a value > b value ]) inspect'
+]
+
+{ #category : #wikiPages }
+PharoWiki class >> wikiPageMoney [
+	"This method was automatically generated."
+	<wikiPage: #Money>
+	^APWikiPage
+		wiki: self
+		name: #Money
+		text: 
+'!Money
+!!Projects
+- *Avi''s Money project from Dabble>http://smalltalkhub.com/#!/~pdebruic/Money*. *Per Paul Debrucker>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4693053.html*: "originally comes from last chapter of Smalltalk Best Practices Patterns by Kent Beck and was uploaded by Avi Bryant." and he worked on thereafter. Originally hosted *on SqS>http://www.squeaksource.com/Money.html*.
+- Units package can be used to model money, *according to Denis Kudriashov>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4692706.html*
+!!Discussion
+- *Thread>http://forum.world.st/Smalltalk-float-to-currency-how-to-tt86320.html* with a consensus to use ${wikiPage:Decimal_Numbers|label=}$ which may have (had) a bug *described by Vanessa (then Bert)>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86339.html* where it was not properly rounded causing comparison issues
+- Advice to use FixedDecimal
+- *Thread that''s all over the place>http://forum.world.st/SIXX-problem-for-ScaledDecimal-tt3535135.html*
+!!Decimal Representation
+The only thing everyone seems to agree on is ''''not'''' to use Floats. Many advocate ${class:ScaledDecimal}$, but Chris Cunningham points out in several places that the scale is only for display, and precision beyond that scale is kept and used, resulting in potentially surprising results which are inappropriate for money. *He explains>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4692890.html*: "''''In general, [this is] NOT what you want when dealing with Money - if you have an amount, it is a definite amount, and not an approximate amount.  (With the possible exceptions of interim results - but for those, you probably need strict control over exactly how precise the interim results are - which isn''t readily available in ScaleDecimal).  This is the main reason I built the FixedDecimal package on SqueakSource.''''" There is also advice to use a "Binary Coded Decimal" for money. See ${wikiPage:Decimal_Numbers}$ for (much) more (gory) detail.'
 ]
 
 { #category : #wikiPages }
@@ -667,6 +747,20 @@ Udo
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPagePillar [
+	"This method was automatically generated."
+	<wikiPage: #Pillar>
+	^APWikiPage
+		wiki: self
+		name: #Pillar
+		text: 
+'!Pillar
+!!Annotations
+- Parameters - available defined in class-side ==possibleParameters== (e.g. ${method:PRCitationAnnotation class>>#possibleParameters}$
+${example:GtCoderExamples>>#scripter|label=''hi there''}$'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageRewriteRules [
 	"This method was automatically generated."
 	<wikiPage: #RewriteRules>
@@ -743,6 +837,19 @@ Composition>>repair
 	self perform: self formattingStrategy
 ]]]
 Then client code like ==aComposition formattingStrategy: #formatWithSimpleAlgorithm== would show up in senders, message renames, etc.'
+]
+
+{ #category : #wikiPages }
+PharoWiki class >> wikiPageTime_Control [
+	"This method was automatically generated."
+
+	<wikiPage: #Time_Control>
+	^ APWikiPage
+		wiki: self
+		name: #Time_Control
+		text:
+			'!Time Control
+- *http://www.manfred-lange.com/publications/TimeTravel.pdf*. There are *apparently>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86334.html* other versions available.'
 ]
 
 { #category : #wikiPages }
