@@ -259,6 +259,21 @@ which would be triggered in the baseline like this:
 	spec for: #''common'' do: [
 		spec postLoadDoIt: #''postLoad''. ]
 ]]]
+!!Huh!
+I''m struggling to understand GT''s Pillar annotations. What are the "[with|without] markup" strategies about? Then there is this mind-bending code:
+GtClassAnnotation>>#styleTextWithoutMarkup: aBlRope
+    self styleTextWithMarkup: aBlRope.
+    super styleTextWithoutMarkup: aBlRope.
+Layman''s translation: "Style without markup... I mean with markup... I mean without markup... ugh, whatever" :stuck_out_tongue_winking_eye:
+ 
+tudor girba09/10/2020
+If you press on the pencil button, you will see the markup all the time
+!Further Research
+baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020
+It’s an extension in MethodCoder
+ 
+Konrad Hinsen09/11/2020
+@SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the "clean" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.
 !!Relevant pages
 - ${wikiPage:#GT_OO_IDE}$
 - ${wikiPage:#GT_VM}$'
@@ -867,11 +882,33 @@ PharoWiki class >> wikiPageTodo [
 - Famix for Smalltalk? Not needed?
 - Publishing. How Feenk blog created? The GT and Pharo post seems to have diverged from what''s in latest GT image
 - How would one integrate Examples into CI pipeline?
+- Parameterized examples - ==dependsOn:== are arguments? Will they be runnable from e.g. Coder?
+- How to change main window title?
 !!Tasks
 - GT Launcher
   - gt-extras etc go with images, not VM - otherwise doc links broken
 - Classes should show custom views in Coder e.g. Wiki pages
 - Investigate SmaCC
+- Debugger: add do, dive, debug buttons
+- Coder show superclass(es) methods is filter WIP per Tudor
+- Git Tool - browse change
+[[[
+BrGlamorousWithContextMenuLook
+						content: [ BrGlamorousSimpleContextMenuContent new
+								items:
+									{(''Revert changes''
+										->
+											[ :e | self workingCopy diffToReferenceCommit revertChanges: anIceNode ]).
+									(''Browse''
+										->
+											[ :e | anIceNode value definition browse ])};
+								yourself ])
+]]]
+!Dreams
+- Since views are explicitly annotated, could there be documentation connected specifically with <gtView> so that it shows (or shows that it is available) whenever such a method is being worked on? E.g. the slideshow
+- Link to headings inside documenter doc, like GH does with HTML anchors. I know Pillar already has section tags but never used them...
+- Universal undo
+- Documentation organization e.g. tags, hierarchy
 !!Complete
 - Exemplifier and explainer are engines'
 ]
