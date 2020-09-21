@@ -609,18 +609,29 @@ PharoWiki class >> wikiPageParsing [
 		wiki: self
 		name: #Parsing
 		text: 
-'!Parsing
-What interests me is how to handle parsing in a generic way. How can we handle format input/output in a way that minimizes duplication and maximizes compatibility between libraries. If I define RTF grammar once, I don''t want to do it three more times to try out the four major parsing libraries. If I define the parsing in one direction, how much of that can be reused to reverse?
-!!Available Options
+'What interests me is how to handle parsing in a generic way. How can we handle format input/output in a way that minimizes duplication and maximizes compatibility between libraries. If I define RTF grammar once, I don''t want to do it three more times to try out the four major parsing libraries. If I define the parsing in one direction, how much of that can be reused to reverse?
+!Available Options
 - PetitParser
 - PetitParser2
 - Xtreams
   - PEGActor example available *per Chris Cunningham>http://forum.world.st/Xtreams-PEGParser-now-has-a-working-PEGActor-subclass-td4925586.html*
-- SmaCC
-  - *Documentation>http://www.refactoryworkers.com/SmaCC/ASTs.html*
-!!!Translating Smalltalk Code
+!!SmaCC
+!!!Docs
+  - *Website>http://www.refactoryworkers.com/SmaCC/ASTs.html*
+  - *Swiki entry>http://wiki.squeak.org/squeak/3117*
+  - *Antlr C\++ grammar>https://github.com/antlr/grammars-v4/blob/master/cpp/CPP14Lexer.g4* - how was this converted to SmaCC?
+ !!!Repos
+  - *Pharo port>https://github.com/SmaCCRefactoring/SmaCC*
+  
+  
+!!Translating Smalltalk Code
 See *here>http://readthesourceluke.blogspot.com/2014/09/block-translators-parsing-magic.html* for a technique that avoids using a parser at all. For example, if you have a select block that deals with your domain objects, you can implement a SQL equivalent.
-!Material Conditional
+!Background/Theory
+- ==terminal== - a thing that finally apperars verbatim e.g. in ==x = 0==, the terminals are ==x==, ==\===, and ==0==, vs. non-terminal parser artifacts like ==id==, ==operator==, and ==number==^^1^^
+- Context-free - the non-terminal on the left side of all rules can always be replaced with the right side, regardless of surrounding tokens.^^1^^
+- ==LR parser== (Left-to-right, Rightmost derivation in reverse) are "widely used for the processing of computer languages" (*per Wikipedia>https://en.wikipedia.org/wiki/LR_parse*)
+- ==GLR Parser== - (GLR standing for "Generalized LR", where L stands for "left-to-right" and R stands for "rightmost (derivation)") is an extension of an LR parser algorithm to handle ""non-deterministic and ambiguous grammars"". (*Wikipedia>https://en.wikipedia.org/wiki/GLR_parser*)
+!!Material Conditional
 Per Udo Schneider on *this Pharo-Users thread>http://forum.world.st/BLOG-Block-Translators-parsing-magic-tp4779569p4779629.html*:
 I''d say that''s an implementation of the "Material implication"[1] 
 operator from Propositional calculus. 
@@ -758,6 +769,8 @@ Udo
 [4] http://en.wikipedia.org/wiki/Paradoxes_of_material_implication
 !!Miscellaneous
 - *Fascinating thread>http://forum.world.st/SmaCC-First-steps-td4802170.html* as Kilon begins his journey parsing Python
+!Reference
+#*https://en.wikipedia.org/wiki/Context-free_grammar*
 '
 ]
 
@@ -792,6 +805,18 @@ Here are a few mailing list discussions which stand out:
 - *http://forum.world.st/RB-API-td3781019.html*
 - *http://forum.world.st/Classes-referenced-in-code-string-td4244214.html*
 - *http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html*'
+]
+
+{ #category : #wikiPages }
+PharoWiki class >> wikiPageSmaCC [
+	"This method was automatically generated."
+	<wikiPage: 'SmaCC'>
+	^APWikiPage
+		wiki: self
+		name: 'SmaCC'
+		text: 
+'SmaCC seems designed to be managed ''''only'''' with the SmaCC GUI tools. These have been ported to Morphic, but are still WIP in Gtoolkit. The needed boilerplate to get started is: 1) a scanner class and 2) a parser class that returns the scanner class from class-side ==scannerClass==. The PharoEnhancements provides a message for this:
+${example:SmaCCParser class>>#exampleNewEmptyParser}$'
 ]
 
 { #category : #wikiPages }
