@@ -815,8 +815,11 @@ PharoWiki class >> wikiPageSmaCC [
 		wiki: self
 		name: 'SmaCC'
 		text: 
-'SmaCC seems designed to be managed ''''only'''' with the SmaCC GUI tools. These have been ported to Morphic, but are still WIP in Gtoolkit. The needed boilerplate to get started is: 1) a scanner class and 2) a parser class that returns the scanner class from class-side ==scannerClass==. The PharoEnhancements provides a message for this:
-${example:SmaCCParser class>>#exampleNewEmptyParser}$'
+'!Getting Started
+SmaCC seems designed to be managed ''''only'''' with the SmaCC GUI tools. These have been ported to Morphic, but are still WIP in Gtoolkit. The needed boilerplate to get started is: 1) a scanner class and 2) a parser class that returns the scanner class from class-side ==scannerClass==. The PharoEnhancements provides a message for this:
+${example:SmaCCParser class>>#exampleNewEmptyParser}$
+!Documentation
+The most comprehensive documentation is ${class:SmaCCDefinitionParser}$ itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either ==:== or the more standard ==::===? How do we know, we checked out the ==<production>== rule and in GToolkit even live-tested ==::=== as a sanity check to make sure it matched.'
 ]
 
 { #category : #wikiPages }
