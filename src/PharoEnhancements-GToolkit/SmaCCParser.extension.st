@@ -41,3 +41,11 @@ SmaCCParser class >> newSubclassNamed: parserName andScannerClassNamed: scannerN
 		classified: 'generated'.
 	^ parserClass
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+SmaCCParser class >> simulateRule: nameString parse: inputString [
+	| simulator |
+	simulator := SmaCCParserSimulator on: self definitionString.
+	simulator setupFor: nameString.
+	^ simulator simulateParse: inputString.
+]
