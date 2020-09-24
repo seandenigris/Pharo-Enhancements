@@ -820,6 +820,16 @@ SmaCC seems designed to be managed ''''only'''' with the SmaCC GUI tools. These 
 ${example:SmaCCParser class>>#exampleNewEmptyParser}$
 !Documentation
 The most comprehensive documentation is ${class:SmaCCDefinitionParser}$ itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either ==:== or the more standard ==::===? How do we know, we checked out the ==<production>== rule and in GToolkit even live-tested ==::=== as a sanity check to make sure it matched.
+!Converstion from Antlr
+Here''s an example from John Brant via Discord GT general channel 9/22:
+[[[
+| antlrAST rwRule rewriter |
+antlrAST := Antlr4Parser parse: (ZnEasy get: ''https://raw.githubusercontent.com/antlr/grammars-v4/master/arithmetic/arithmetic.g4'') contents.
+rwRule := (ZnEasy get: ''https://raw.githubusercontent.com/j-brant/SmaCC/master/rewrites/antlr/antlr.rw'') contents.
+rewriter := SmaCCRewriteEngine new.
+rewriter rewriteRule: (SmaCCRewriteRuleFileParser parse: rwRule).
+rewriter rewriteTree: antlrAST
+]]]
 !Questions
 - How to convert Antlr to Smacc - asked on Discord GT general 9/21
 - Why create a rule with just one token e.g. ==Number : <number> {{Number}} ;==
