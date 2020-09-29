@@ -1010,3 +1010,51 @@ PharoWiki class >> wikiPageVM [
   - ""WF"" emailed Cellier 2020-09-02
   - Stes also says Pharo doesn''t respond, has '
 ]
+
+{ #category : #wikiPages }
+PharoWiki class >> wikiPageXML [
+	"This method was automatically generated."
+	<wikiPage: 'XML'>
+	^APWikiPage
+		wiki: self
+		name: 'XML'
+		text: 
+'One initial decision you have to make is how much to rely on XML. It may be convenient to keep XML objects hanging around indefinitely inside wrapper classes. At the other extreme, you might do the minimum processing necessary to create domain objects and then throw away the XML.
+!!Custom Node Classes
+- pass ${class:XMLPluggableElementFactory}$ to ${method:XMLDOMParser>>#nodeFactory:}$. 
+- For SAX, the work was apparently lost^^1^^, but the ==OPAX== project which may be a starting point^^1^^
+!!Selective (Island) Parsing
+!!!Built-In
+Hernan suggested using SAX like so:^^1^^
+[[[
+| parser doc |
+parser := XMLPullParser parse: doc.
+[ parser isEndDocument ] whileFalse: [
+    parser 
+        if: ''FILM'' 
+        peek: [ : found | 
+            Transcript show: found name , '' -> '' , found attributes asString; cr.
+            parser next.
+            Transcript show: parser tagName ].
+    parser next ]
+]]]
+
+See #test01ParsingNodes and BioSmalltalk''s BioNCBIBlastSAXParser for more examples. Steph mentioned a "PullParser chapter"^^1^^
+!!Sorting Nodes
+The consensus seems to be that the cleanest approach is to sort the nodes after they are parsed. However, I just couldn''t shake the itch to make it part of the model, or at least seemless. This hack seemed like the STTCPW to compromise:
+[[[
+	XMLCustomElement>>handleEndTag 
+        ^ self nodes sort: [ :a :b | a < b ]. 
+]]]
+An experiment to allow swapping out ==XMLOrderedList== with an ==XMLSortedList== "causes the image to hang and CPU to sweat".^^2^^
+!!Validation
+This awsome feature, enabled by default, can sometimes cause trouble, especially if you don''t need it. For example, the system may seem to hang while it churns, downloading DTDs that it''s never going to use. To disable, send ${method:SAXHandler>>#resolvesExternalEntities:}$ with ==false==. There also seemed to be a potential problem where #entityURIFromRelative:andBase: interprets relative URLs like ''xhtml-lat1.ent'' as file paths, leading to results like "XMLFileIOException: File @ ~/Squeak/http:/www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent (line 28) (line 3)".^^3^^
+!!Visitor Experiment
+Steph Ducasse did an experiment registering for specific tags e.g. ==MyFilmVisitor new visitTags: #(FILM ROLE)==. It was pointed out by Vincent Blondeau that, with his approach, he would have to specify all nested tags, so ==film== doesn''t get you ==title== - you have to visit that separately. A point of confusion seemed to by ==characters:== ("What a bad name!"), which you use "to get the content on the tag"; Brice Govin added that "information inside a marker is consider as an XMLString that is created after a call to XMLDOMParser>>characters:". Alex Bergel warned that " a visitor is not the ideal solution to query XML tree. It works well in some case, and it is disastrous in some other", recommending XPath instead. ==Pastell== was mentioned, which Tudor Girba said was superceded by ==XPath==^^1^^
+!!Whitespace, Ignoring Extraneous (i.e. empty nodes)
+XMLParser: Send ${method:XMLNodeWithElements>>#removeAllFormattingNodes}$. See *this ML thread>http://forum.world.st/How-to-get-rid-of-empty-XML-nodes-tt5059684.html* for rationale on why these nodes exist in the first place.
+!References
+# *http://forum.world.st/How-to-access-XML-tag-name-tt4884065.html*
+# http://forum.world.st/Parsing-XML-into-sorted-elements-tt3615867.html
+# http://forum.world.st/XMLDomParser-Changes-in-Pharo-3-0-tt4778401.html#a4778522'
+]
