@@ -41,5 +41,5 @@ BaselineOfPharoEnhancements >> customProjectAttributes [
 
 { #category : #testing }
 BaselineOfPharoEnhancements >> isGTImage [
-	^ RPackageOrganizer default includesPackageNamed: 'GToolkit-Documenter'
+	^ RPackageOrganizer default packageNames anySatisfy: [ :pn | pn beginsWith: 'GToolkit-' ]
 ]

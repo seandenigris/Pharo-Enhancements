@@ -339,6 +339,35 @@ For a fairly long report on the image and memory hogs, evaluate `SmalltalkImage 
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageMetacello [
+	"This method was automatically generated."
+	<wikiPage: 'Metacello'>
+	^APWikiPage
+		wiki: self
+		name: 'Metacello'
+		text: 
+'!Custom Platform Attributes
+Here''s an example of special handling for GToolit images. The only method that needs to be implemented is ==customAttributes==, but we delegate the testing to ==isGTImage== so that, if changes to GT necessitate a different test, and there are a ton of these floating around in different baselines, it will be easy to find and refactor them.
+${method:BaselineOfPharoEnhancements>>#customProjectAttributes|expanded=true}$
+${method:BaselineOfPharoEnhancements>>#isGTImage|expanded=true}$
+Now you can use ==#Gtoolkit== in your baseline, just like e.g. ==pharo.8.x==:
+${method:BaselineOfPharoEnhancements>>#baseline:|expanded=true}$
+!Recording i.e. "What Would Metacello Do?"
+The basic script is fairly simple - just change your load script from ==load== to ==record==. For example:
+[[[
+Metacello new
+	"ignoreImage;" "uncomment to have Metacello pretend it''s a fresh image"
+	baseline: ''PharoEnhancements'';
+	repository: ''github://seandenigris/Pharo-Enhancements'';
+	record.
+]]]
+Two items to note:
+# If you already have some of the packages loaded, uncommenting the line above will tell you what would be loaded if none of them were.
+# If you "Print It" the above script you will get a string describing the load, but if you want to navigate the actual ==loadDirective== object, you have to send ==roots first== to the returned object, as clarified *on the Metacello ML>https://groups.google.com/g/metacello/c/FyiB0sVb7j8/m/SNXR8yTsAwAJ*.
+'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageMoney [
 	"This method was automatically generated."
 	<wikiPage: #Money>
