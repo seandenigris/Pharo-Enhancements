@@ -21,6 +21,19 @@ PharoWiki class >> wikiPageBindings_to_Other_Languages [
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageBloc [
+	"This method was automatically generated."
+	<wikiPage: 'Bloc'>
+	^APWikiPage
+		wiki: self
+		name: 'Bloc'
+		text: 
+'!Documentation
+- ${class:GtWhatMakesBlocSpecialExplanation|show=gtCoderCommentsFor:|label=What Makes Bloc Special}$
+- ${class:GtMondrianVsBlocExplanation|label=''Mondrian graph builder''|show=gtCoderCommentsFor:}$'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageCookbook_2 [
 	"This method was automatically generated."
 	<wikiPage: 'Cookbook 2'>
