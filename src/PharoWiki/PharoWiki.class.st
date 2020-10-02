@@ -29,8 +29,22 @@ PharoWiki class >> wikiPageBloc [
 		name: 'Bloc'
 		text: 
 '!Documentation
-- ${class:GtWhatMakesBlocSpecialExplanation|show=gtCoderCommentsFor:|label=What Makes Bloc Special}$
-- ${class:GtMondrianVsBlocExplanation|label=''Mondrian graph builder''|show=gtCoderCommentsFor:}$'
+- High level overview: ${class:GtWhatMakesBlocSpecialExplanation|show=gtCoderCommentsFor:|label=What Makes Bloc Special}$
+- Main entry point: ${class:BaselineOfBloc|show=gtCoderCommentsFor:}$
+- Another good entry point: ${class:ManifestBloc|show=gtCoderCommentsFor:}$
+- There is the Bloc-Examples package, but packages are currently awkward to browse
+!!Aspects
+- Event Handling
+	- ${class:BlMouseOverOutAndEnterLeaveEventExplanation|show=gtCoderCommentsFor:}$
+- Graphs
+	- ${class:GtMondrianVsBlocExplanation|label=''Mondrian graph builder''|show=gtCoderCommentsFor:}$ - graph builder on top of Bloc
+- Layouts
+	- ${class:BlGridLayoutUsageExplanation|show=gtCoderCommentsFor:}$ - a grid example
+- Shapes
+	- ${class:BlRectangleShapeWithArrowExplanation|show=gtCoderCommentsFor:|label=Rectangle Shape With Arrow}$ - example of complex shape (i.e. popup-like rectangle with arrow)
+!Higher Levels Built on Bloc Foundation
+- Browser engine - ${class:BaselineOfBrick|show=gtCoderCommentsFor:|label=Brick}$
+- Widgets - ${class:BaselineOfGToolkitPhlow|show=gtCoderCommentsFor:|label=Phlow}$'
 ]
 
 { #category : #wikiPages }
@@ -897,8 +911,10 @@ rewriter := SmaCCRewriteEngine new.
 rewriter rewriteRule: (SmaCCRewriteRuleFileParser parse: rwRule).
 rewriter rewriteTree: antlrAST
 ]]]
+!Competion in GT
+Per John Brant in Discord GT -> how-to:
+To build completion with a SmaCC AST, you need to create a new subclass of GtCompletionStrategy (e.g., GtPharoCompletionStrategy) and override the completionActionsFor:at:max:requested: method. That method will need to parse the text using the parseWithErrors:{startingAt:} method. This method will return an AST and where there are parse errors it will insert SmaCCErrorNodes. Now, you''ll either want to create a custom visitor for  completion or you can add extension methods to your AST nodes. The GtPharoCompletionStrategy uses extension methods where several nodes defined a completionActionsFor: method. For example, the GtPharoVariableNode>>completionActionsFor: method checks that the cursor position is at the end of the variable name, and then gets a list of completions that start with the variable from both the local variables defined in the AST and externally defined variables like instance and global variables. The method then returns a collection of GtCompletionActions that are shown in the drop down. For completion, probably the most important completion action is the GtInsertTextCompletionAction, but there are actions like deleting text and composites.
 !Questions
-- How to convert Antlr to Smacc - asked on Discord GT general 9/21
 - Why create a rule with just one token e.g. ==Number : <number> {{Number}} ;==
 - When would you not want to ==%annotate_tokens;==?'
 ]
