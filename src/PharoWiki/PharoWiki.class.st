@@ -42,6 +42,8 @@ PharoWiki class >> wikiPageBloc [
 	- ${class:BlGridLayoutUsageExplanation|show=gtCoderCommentsFor:}$ - a grid example
 - Shapes
 	- ${class:BlRectangleShapeWithArrowExplanation|show=gtCoderCommentsFor:|label=Rectangle Shape With Arrow}$ - example of complex shape (i.e. popup-like rectangle with arrow)
+!Cookbook
+- Draggable element: ==aBlElement addEventHandler: BlPullHandler new==. Here''s an example ${example:BrAnchoredExamples>>#tooltip|previewExpanded=false}$:
 !Higher Levels Built on Bloc Foundation
 - Browser engine - ${class:BaselineOfBrick|show=gtCoderCommentsFor:|label=Brick}$
 - Widgets - ${class:BaselineOfGToolkitPhlow|show=gtCoderCommentsFor:|label=Phlow}$'
