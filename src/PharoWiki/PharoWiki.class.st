@@ -858,6 +858,49 @@ Udo
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPagePersistence [
+	"This method was automatically generated."
+	<wikiPage: 'Persistence'>
+	^APWikiPage
+		wiki: self
+		name: 'Persistence'
+		text: 
+'Per Pierce Ng, in *this enlightening thread>http://forum.world.st/Easiest-light-weight-cloud-web-persistence-for-Pharo-td5123027.html*:
+If you are familiar with Docker then starting a database server is easy 
+that way. Assuming you pick a ''boring'' product then what matters for 
+your app is the quality of the database interface code on Pharo for that 
+product. For PostgreSQL and MySQL no problem. I''ve not used Mongo itself 
+nor Voyage so no comment. 
+
+If you neither want to run a separate database server nor roll your own 
+writing out to Fuel etc, then you''re looking at ''embedded'' databases. 
+For pure Smalltalk, Omnibase or SimplePersistence. If you are ok with 
+something that uses FFI, then SQLite, Unqlite and probably others. 
+
+Personally I''d choose SQLite because it is boring - ubiquitous, high 
+quality, and importantly unlike the pure Smalltalk and many embedded 
+key-value databases there is a plethora of external tools that operate 
+on SQLite databases which will help your debugging. 
+
+For SQL databases you can also use an ORM like Glorp or ReStore. 
+
+Finally there are also NoSQL-as-a-service like Google Firebase. 
+
+Many options. Great time sinks. :-) Have fun. 
+
+- *PostgreSQL>https://github.com/svenvc/p3*
+- *MySQL>https://github.com/pharo-rdbms/Pharo-MySQL*
+- *Omnibase>https://github.com/sebastianconcept/OmniBase*  
+- *SimplePersistence>https://github.com/seandenigris/Simple-Persistence*
+- *SQLite>https://github.com/pharo-rdbms/Pharo-SQLite3*
+- *Unqlite>https://github.com/mumez/PunQLite*
+- *Glorp>https://github.com/pharo-rdbms/glorp*
+- *ReStore>https://github.com/rko281/ReStoreForPharo*
+- *Firebase>https://github.com/psvensson/firebase-st*
+- *Choose Boring Technology>http://boringtechnology.club/*'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPagePillar [
 	"This method was automatically generated."
 	<wikiPage: #Pillar>
