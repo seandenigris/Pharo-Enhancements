@@ -323,11 +323,12 @@ Layman''s translation: "Style without markup... I mean with markup... I mean wit
 tudor girba09/10/2020
 If you press on the pencil button, you will see the markup all the time
 !Further Research
-baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020
+- baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020
 It’s an extension in MethodCoder
  
 Konrad Hinsen09/11/2020
-@SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the "clean" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.
+- @SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the "clean" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.
+- ==gt-extra== - to copy after template instantiation. See ${method:GtImageSetup class>>#copyDataAndDocsFolders}$
 !Relevant pages
 - ${wikiPage:#GT_OO_IDE}$
 - ${wikiPage:#GT_VM}$'
