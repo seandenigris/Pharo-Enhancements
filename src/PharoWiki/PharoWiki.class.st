@@ -335,6 +335,33 @@ Konrad Hinsen09/11/2020
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageLauncher [
+	"This method was automatically generated."
+	<wikiPage: 'Launcher'>
+	^APWikiPage
+		wiki: self
+		name: 'Launcher'
+		text: 
+'!Bug: Unzipping recent GToolkit ==gt-extra== folders
+I''m just holding on to this one because it is a minor annoyance that only applies to custom code. I''m just leaving this record of my research in case we want to follow up later. I created a template from the following (https://www.dropbox.com/s/tzy73oi3sh32x2y/GT%200.8.225.zip?dl=0, zipped for sharing, unzip to reproduce). When I tried to create an image from the template, I got an error during unzipping (something about Hoffman tables). I don''t think it''s a Launcher error, because Launcher just uses
+[[[
+| sourceFolder archive anImage aString |
+sourceFolder := FileLocator home / ''Downloads'' / ''GT 0.8.225''.
+archive := ZipArchive new.
+	archive
+		addFile: anImage imageFile as: aString , ''.image'';
+		addFile: anImage changesFile as: aString , ''.changes''.
+	[ archive addFile: anImage sourcesFile as: anImage sourcesFile basename ]
+		on: NotFound 
+		do: [ :e | "ignore the file" ].
+	anImage versionFile exists
+		ifTrue: [ archive addFile: anImage versionFile as: anImage versionFile basename ].
+	anImage addSupportFilesToTemplateArchive: archive.
+	archive writeToFile: (self localTemplatesDirectory / aString , ''zip''). 
+]]]'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageMemoryHogs [
 	"This method was automatically generated."
 	<wikiPage: #MemoryHogs>
