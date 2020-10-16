@@ -134,6 +134,18 @@ PharoWiki class >> wikiPageDesignPatternsSmalltalkCompanion [
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageDocumentation [
+	"This method was automatically generated."
+	<wikiPage: 'Documentation'>
+	^APWikiPage
+		wiki: self
+		name: 'Documentation'
+		text: 
+'!Theory
+*Here>https://documentation.divio.com* is a really interesting system to split up documentation based on the target audience and their current objective.'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageDynabook [
 	"This method was automatically generated."
 	<wikiPage: #Dynabook>
