@@ -1,51 +1,13 @@
 Extension { #name : #SmaCCParser }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-SmaCCParser class >> exampleNewEmptyParser [
-	<gtExample>
-	SmaCCParser
-		newSubclassNamed: 'MyCoolParser'
-		andScannerClassNamed: 'MyCoolScanner'
-		inPackageNamed: 'MyCoolParser'.
-
-	self assert: (Smalltalk globals hasClassNamed: #MyCoolParser).
-	self assert: (Smalltalk globals hasClassNamed: #MyCoolScanner).
-	self assert: (RPackageOrganizer default includesPackageNamed: #MyCoolParser).
-	
-	Smalltalk globals removeClassNamed: #MyCoolParser.
-	Smalltalk globals removeClassNamed: #MyCoolScanner.
-	RPackageOrganizer default unregisterPackageNamed: #MyCoolParser.
-]
-
-{ #category : #'*PharoEnhancements-GToolkit' }
-SmaCCParser class >> newSubclassNamed: parserName andScannerClassNamed: scannerName inPackageNamed: packageName [
-	| parserClass |
-	parserClass := self
-		subclass: parserName asSymbol
-		instanceVariableNames: ''
-		classVariableNames: ''
-		package: packageName.
-	SmaCCScanner
-		subclass: scannerName asSymbol
-		instanceVariableNames: ''
-		classVariableNames: ''
-		package: packageName.
-	parserClass class
-		compile: 'scannerClass
-	^ ' , scannerName
-		classified: 'generated-accessing'.
-	parserClass class
-		compile:
-			'definitionComment
-""'
-		classified: 'generated'.
-	^ parserClass
-]
-
-{ #category : #'*PharoEnhancements-GToolkit' }
 SmaCCParser class >> simulateRule: nameString parse: inputString [
 	| simulator |
 	simulator := SmaCCParserSimulator on: self definitionString.
 	simulator setupFor: nameString.
-	^ simulator simulateParse: inputString.
+	^ [ simulator simulateParse: inputString ]
+		on: SmaCCParserSimulationError 
+		do: [ :err | 
+			"(ab?)use of assert:equals: gives access to the parse tree on failure"
+			self assert: err equals: true ].
 ]
