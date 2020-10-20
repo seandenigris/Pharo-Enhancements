@@ -374,6 +374,34 @@ archive := ZipArchive new.
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageMagritte [
+	"This method was automatically generated."
+	<wikiPage: #Magritte>
+	^APWikiPage
+		wiki: self
+		name: #Magritte
+		text: 
+'!GUIs
+!!Hooks from Model
+The current entry points from ==Object== are:
+- ==asComponent== (Seaside)
+- ==asMagritteMorph==
+- (WIP) ==asMagritteSpec2Presenter== (name will be finalized when Spec2 is)
+- (WIP) ==asMagritteBlElement==
+
+These all delegate to the description with something like ==self magritteDescription asXyzOn: self==, which in turn passes a ${class:MAMemento}$, which inserts itself as a layer between the UI and the model object, and which knows both the object and its description.
+
+The UI controller classes all seem to implement certain methods over and over (e.g. ==string==, ==value==, ==isReadOnly==) creating the suspicion that they might be better implemented elsewhere. Here are some requirements:
+- subclassing seems not to be a good general optioni because some libraries have their own subclassing requirements e.g. Seaside''''s ==WAComponent==
+- slight variations may be needed e.g. for different change notification mechanisms.
+
+Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
+
+Another issue with the controllers is that, since they hold a reference to th memento for the parent object, it''''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
+'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageMemoryHogs [
 	"This method was automatically generated."
 	<wikiPage: #MemoryHogs>
