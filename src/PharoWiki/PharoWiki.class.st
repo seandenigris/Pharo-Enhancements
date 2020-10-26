@@ -50,6 +50,20 @@ PharoWiki class >> wikiPageBloc [
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageCode_Changes [
+	"This method was automatically generated."
+	<wikiPage: 'Code Changes'>
+	^APWikiPage
+		wiki: self
+		name: 'Code Changes'
+		text: 
+'!Epicea
+This is Pharo''s code change tracking system. There are two common use cases for which ==PharoEnhancements== adds extensions:
+- ${method:EpCodeChange class>>#allSourceCodeMatching:|label=Source code substring matching}$
+- ${method:EpCodeChange class>>#allAffectingPackagesNamed:|label=Package(s) matching}$'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageCookbook_2 [
 	"This method was automatically generated."
 	<wikiPage: 'Cookbook 2'>
