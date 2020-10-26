@@ -13,7 +13,7 @@ Object class >> given: givenBlock when: whenBlock then: thenBlock [
 	| whenResult givenResult |
 	givenResult := givenBlock value.
 	whenResult := whenBlock cull: givenResult.
-	thenBlock value: whenResult.
+	thenBlock cull: whenResult.
 	^ whenResult.
 	
 	"MyDomainClass class>>#example
