@@ -172,6 +172,21 @@ Although I have to admit that at heart I am not a programmer, but a Dynabook fan
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageExamples [
+	"This method was automatically generated."
+	<wikiPage: #Examples>
+	^APWikiPage
+		wiki: self
+		name: 'Examples (GT)'
+		text: 
+'!Finding what you need
+Feenk uses three way to navigate (per Tudor on GT Discord live-sessions channel on 10/24/2020):
+- capturing examples in ""documents"". The narrative is both the challenging and the interesting bit. To make it less challenging, we actually guide the whole design through storytelling. We often imagine how the demo would look like. It''s something we call demo-driven (http://demodriven.com/).
+- using the ""map"" and inspecting objects from left to right. This provides a quick way to navigate and find the level of abstraction/granularity you are interested in.
+- using ""queries"". When you know that you are looking for how to work with a domain class, you can search it in examples.'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageExternalProcesses [
 	"This method was automatically generated."
 	<wikiPage: #ExternalProcesses>
