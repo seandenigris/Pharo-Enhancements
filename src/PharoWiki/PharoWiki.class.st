@@ -302,7 +302,9 @@ PharoWiki class >> wikiPageGit [
 		wiki: self
 		name: 'Git'
 		text: 
-'- Non-Smalltalk files. If you stage (e.g. via ==git add -A==), they will be included in your next Iceberg commit
+'!Cookbook
+- ""Non-Smalltalk files"": If you stage (e.g. via ==git add -A==), they will be included in your next Iceberg commit. Or you can commit outside the image and then adopt it in Iceberg.
+- Load Packages without a Baseline: ==((IceRepositoryCreator new url: ''git@bitbu…’; createRepository) packageNamed: #PackageName) load== (via Julián Grigera on Pharo Discord Iceberg channel on 10/24/2020)
 !CLI
 - Difference between two commits e.g. for last commit ==git diff HEAD~ HEAD== or ==git show== (*via SO>https://stackoverflow.com/a/17563740*)'
 ]
@@ -438,27 +440,28 @@ PharoWiki class >> wikiPageMemoryHogs [
 		wiki: self
 		name: #MemoryHogs
 		text: 
-'!Memory Hogs
-!!Reclaiming Memory
+'!Reclaiming Memory
 Once you eliminate common possible causes (see "Common Causes" below), try:
 [[[language=smalltalk
 10 timesRepeat: [ Smalltalk garbageCollect ].
 ]]]
 And [World menu]>System>[Do image clean up]
-!!Common Causes
-!!!Your code
+!Common Causes
+!!Your code
 Do any of your (class/pool variable) singleton instances store data? Add a #clearAll or #reset (mySingletonVar := nil) to the class side -- or whatever fits your app -- and do that before that #garbageCollect block. [In fact, put that in some XXXAdmin class]
-!!!Windows in Morphic
+!!Windows in Morphic
 Close all windows
-!!!Monticello
+!!Monticello
 Try to open monticello and select any repo, right click and clear the package cache.
-!!!Tiling Window Manager
+!!Tiling Window Manager
 It is a great tool, but yes it gobbles memory. Every once in a while, disable it, GC [as described above](#Reclaiming-memory), and re-enable.
-!!!Miscellaneous
+!Diagnosis
 NB: These may take some time to run, especially in a larger image
-!!!!Built-in Report
+!!Built-in Report
 For a fairly long report on the image and memory hogs, evaluate `SmalltalkImage current reportCPUandRAM`. It writes files in the image folder containing all the information. Takes a while to run.
-!!!!Roll your own
+!!Call Graph Analysis
+There is Spy (not sure of current repo location) which offers Roassal visualization.
+!!Roll your own
     ((Object allSubclasses collect: [ :aClass |
         aClass -> aClass allInstances size])
         sort: [ :a :b | a value > b value ]) inspect'
