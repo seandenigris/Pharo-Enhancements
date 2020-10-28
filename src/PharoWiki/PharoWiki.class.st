@@ -64,6 +64,17 @@ This is Pharo''s code change tracking system. There are two common use cases for
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageContinuous_Integration [
+	"This method was automatically generated."
+	<wikiPage: 'Continuous Integration'>
+	^APWikiPage
+		wiki: self
+		name: 'Continuous Integration'
+		text: 
+'- Speeding things up: *git partial checkout>https://medium.com/pinterest-engineering/how-a-one-line-change-decreased-our-build-times-by-99-b98453265370*'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageCookbook_2 [
 	"This method was automatically generated."
 	<wikiPage: 'Cookbook 2'>
@@ -303,10 +314,26 @@ PharoWiki class >> wikiPageGit [
 		name: 'Git'
 		text: 
 '!Cookbook
-- ""Non-Smalltalk files"": If you stage (e.g. via ==git add -A==), they will be included in your next Iceberg commit. Or you can commit outside the image and then adopt it in Iceberg.
-- Load Packages without a Baseline: ==((IceRepositoryCreator new url: ''git@bitbu…’; createRepository) packageNamed: #PackageName) load== (via Julián Grigera on Pharo Discord Iceberg channel on 10/24/2020)
-!CLI
-- Difference between two commits e.g. for last commit ==git diff HEAD~ HEAD== or ==git show== (*via SO>https://stackoverflow.com/a/17563740*)'
+""Difference between two commits"" (e.g. for last commit): This is built into the Iceberg UI, but on the command line you can do: ==git diff HEAD~ HEAD== or ==git show== (*via SO>https://stackoverflow.com/a/17563740*)
+
+""Non-Smalltalk files"": If you stage (e.g. via ==git add -A==), they will be included in your next Iceberg commit. Or you can commit outside the image and then adopt it in Iceberg.
+""Load Packages without a Baseline"": ==((IceRepositoryCreator new url: ''git@bitbu…’; createRepository) packageNamed: #PackageName) load== (via Julián Grigera on Pharo Discord Iceberg channel on 10/24/2020)
+!!Fix desynchronized repos (WIP)
+You make a commit to a branch that exists on the remote, but when you try to push it, you realize there were commits on the remote that you hadn''t pulled and now your branch has diverged. What to do? It depends...
+!!!No Conflicts
+This would mean none of the same classes modified for Tonel, or none of the same methods modified for FileTree. This CLI script seems to be the simplest fix (replace ==master== with the branch in question):
+```language=shell
+git fetch origin master
+git rebase origin/master
+git push origin master
+```
+But, if you''re more comfortable in Iceberg, you can [TODO: INSERT SOLUTION FROM GH WIKI]
+!!!Conflicts
+Here you''ll follow the Iceberg instructions for "No Conflicts", but with the following modifications:
+# Choose, "Checkout packages already loaded"
+# At the end, go into Epicea and revert the in image code changes that wipes out your changes
+
+Alternatively, you could follow the git script above and then manually resolve the conflict on the command line.'
 ]
 
 { #category : #wikiPages }
