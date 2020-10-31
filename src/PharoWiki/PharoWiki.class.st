@@ -439,8 +439,8 @@ PharoWiki class >> wikiPageMagritte [
 		wiki: self
 		name: #Magritte
 		text: 
-'!GUIs
-!!Hooks from Model
+'NB We will move this to Magritte-GToolkit once Lepiter is integrated in GToolkit because we don''t want to add the Wiki dependency to Magritte.
+!!Hooks from Model to UI
 The current entry points from ==Object== are:
 - ==asComponent== (Seaside)
 - ==asMagritteMorph==
@@ -456,6 +456,8 @@ The UI controller classes all seem to implement certain methods over and over (e
 Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
 
 Another issue with the controllers is that, since they hold a reference to th memento for the parent object, it''''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
+!References
+I''ve been baffled by this for a while now. I''m pretty sure there is information on the GH wiki, but now GT offers a great entry point for exploration: ==#reference gtReferences & ''Magritte-'' gtPackageMatches==
 '
 ]
 
