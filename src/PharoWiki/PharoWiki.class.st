@@ -440,6 +440,20 @@ PharoWiki class >> wikiPageMagritte [
 		name: #Magritte
 		text: 
 'NB We will move this to Magritte-GToolkit once Lepiter is integrated in GToolkit because we don''t want to add the Wiki dependency to Magritte.
+!Use cases
+!!Match options to string representations?
+Let''s say, for example while OCRing receipts, we have the following options for payment method: =={ Cash. Credit. Check }==. Since there is a lot of variation in receipt formats, we need to accept multiple string representations for each object. Let''s take the simplest case, ==Cash==. At minimum, we want case insensitive matching, so that ==cash==, ==Cash==, and ==CASH== all map to the same option. How are option strings matched to options? We look to ${class:MAStringReader}$ , the default visitor magritte uses to convert from strings to objects; specifically: ${method:MAStringReader>>#visitSingleOptionDescription:|expanded=true}$
+
+We see that the first attempt is to match the string to the labels property. However, this seems to be of limited use, as a query shows that there is only one entry point that sets this property:
+[[[language=smalltalk
+ #labels gtReferences & #propertyAt:put: gtReferences & ''Magritte-'' gtPackageMatches
+]]]
+
+Other entry points, like ${method:MAOptionDescription>>#options:}$ and ${method:MAOptionDescription>>#optionsTextual:}$ do not set this property, causing this first matching attempt to always fail.
+
+The next tactic is quite subtle and relies on several aspects of Magritte which may not be obvious. The reader reenters itself, passing the description''s ==reference==.
+
+There is a tempation to refactor so that the label comparision is more generally useful, but since we already have this ==reference== hook, let''s step around that rabbit hole for the moment and see if there''s an acceptable way to set the reference up to do what we want. The default seems to be the same ${method:MADescription class>>#defaultStringReader|expanded=true|label=''MAStringReader''}$ class we saw above:
 !!Hooks from Model to UI
 The current entry points from ==Object== are:
 - ==asComponent== (Seaside)
@@ -457,7 +471,10 @@ Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
 
 Another issue with the controllers is that, since they hold a reference to th memento for the parent object, it''''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
 !References
-I''ve been baffled by this for a while now. I''m pretty sure there is information on the GH wiki, but now GT offers a great entry point for exploration: ==#reference gtReferences & ''Magritte-'' gtPackageMatches==
+I''ve been baffled by this for a while now. I''m pretty sure there is information on the GH wiki, but now GT offers a great entry point for exploration: 
+[[[language=smalltalk
+#reference gtReferences & ''Magritte-'' gtPackageMatches
+]]]
 '
 ]
 
