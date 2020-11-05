@@ -441,20 +441,22 @@ PharoWiki class >> wikiPageMagritte [
 		text: 
 'NB We will move this to Magritte-GToolkit once Lepiter is integrated in GToolkit because we don''t want to add the Wiki dependency to Magritte.
 !Use cases
-!!Match options to string representations?
-Let''s say, for example while OCRing receipts, we have the following options for payment method: =={ Cash. Credit. Check }==. Since there is a lot of variation in receipt formats, we need to accept multiple string representations for each object. Let''s take the simplest case, ==Cash==. At minimum, we want case insensitive matching, so that ==cash==, ==Cash==, and ==CASH== all map to the same option. How are option strings matched to options? We look to ${class:MAStringReader}$ , the default visitor magritte uses to convert from strings to objects; specifically: ${method:MAStringReader>>#visitSingleOptionDescription:|expanded=true}$
+!!Matching options to string representations
+""UPDATE:"" After a thorough exploration and much learned, it seems that Magritte is not designed to convert arbitrary/multiply-formatted strings into option objects. The reason for this may be simple: unlike for other description types (e.g. numbers) where the user may e.g. type a string represenation into a text editor, for existing options (i.e. not user supplied), you probably already have the option object behind a dropdown or list control. 
 
-We see that the first attempt is to match the string to the labels property. However, this seems to be of limited use, as a query shows that there is only one entry point that sets this property:
+Let''s say, for example while OCRing receipts, we have the following options for payment method: =={ Cash. Credit. Check }==. Since there is a lot of variation in receipt formats, we need to accept multiple string representations for each object. Let''s take the simplest case, ==Cash==. At minimum, we want case insensitive matching, so that ==cash==, ==Cash==, and ==CASH== all map to the same option. So how are option strings matched to options? We look to ${class:MAStringReader}$ , the default visitor magritte uses to convert from strings to objects; specifically: ${method:MAStringReader>>#visitSingleOptionDescription:|expanded=true}$
+One option would be to create our own description type, ==MAPaymentTypeDescription==. If it was a subclass of single option description, we could write a corresponding ==MAPaymentTypeReader== that overrides ==visitSingleOptionDescription:== to do what we want. It''s unclear whether it would be worth the effort vs. say just handling the string to object conversion outside of Magritte.
+Alternately, let''s see if there''s a way to configure the existing Magritte classes to get the same result. Revisiting ==visitSingleOptionDescription:==, we see that its first attempt is to match the string to the labels property. However, this seems to be of limited use, as a query shows that there is only one entry point that sets this property:
 [[[language=smalltalk
  #labels gtReferences & #propertyAt:put: gtReferences & ''Magritte-'' gtPackageMatches
 ]]]
 
 Other entry points, like ${method:MAOptionDescription>>#options:}$ and ${method:MAOptionDescription>>#optionsTextual:}$ do not set this property, causing this first matching attempt to always fail.
 
-The next tactic is quite subtle and relies on several aspects of Magritte which may not be obvious. The reader reenters itself, passing the description''s ==reference==.
+The next tactic is quite subtle and relies on several aspects of Magritte which may not be obvious. The reader reenters itself, passing the description''s ==reference==. References can be tricky to understand, but there is an extensive explanation in the comment of ${class:MAReferenceDescription}$.
 
-There is a tempation to refactor so that the label comparision is more generally useful, but since we already have this ==reference== hook, let''s step around that rabbit hole for the moment and see if there''s an acceptable way to set the reference up to do what we want. The default seems to be the same ${method:MADescription class>>#defaultStringReader|expanded=true|label=''MAStringReader''}$ class we saw above:
-!!Hooks from Model to UI
+There is a tempation to refactor so that the label comparison is more generally useful, but since we already have this ==reference== hook, let''s step around that rabbit hole for the moment and see if there''s an acceptable way to set the reference up to do what we want. The default seems to be the same ${method:MADescription class>>#defaultStringReader|expanded=true|label=''MAStringReader''}$ class we saw above:
+!Hooks from Model to UI
 The current entry points from ==Object== are:
 - ==asComponent== (Seaside)
 - ==asMagritteMorph==
@@ -469,12 +471,7 @@ The UI controller classes all seem to implement certain methods over and over (e
 
 Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
 
-Another issue with the controllers is that, since they hold a reference to th memento for the parent object, it''''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
-!References
-I''ve been baffled by this for a while now. I''m pretty sure there is information on the GH wiki, but now GT offers a great entry point for exploration: 
-[[[language=smalltalk
-#reference gtReferences & ''Magritte-'' gtPackageMatches
-]]]
+Another issue with the controllers is that, since they hold a reference to the memento for the parent object, it''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
 '
 ]
 
