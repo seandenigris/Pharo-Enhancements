@@ -472,6 +472,16 @@ The UI controller classes all seem to implement certain methods over and over (e
 Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
 
 Another issue with the controllers is that, since they hold a reference to the memento for the parent object, it''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
+! Further Research
+I''d like to have code which automatically flips description names to new-style. I asked on Discord how to wrap the following in a cool GT GUI:
+[[[
+descSels := self localSelectors select: [ :e | e matchesRegex: ''description.+'' ].
+newSels := descSels collect: [ :e | 
+	fieldName := e allButFirst: ''description'' size.
+	fieldName uncapitalized, ''Description'' ].
+	r := RBRenameMethodRefactoring renameMethod: #descriptionReference in: VsTransaction to: #referenceDescription permutation: #().
+r execute
+]]]
 '
 ]
 
