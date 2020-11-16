@@ -10,6 +10,23 @@ Class {
 }
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageAST [
+	"This method was automatically generated."
+	<wikiPage: 'AST'>
+	^APWikiPage
+		wiki: self
+		name: 'AST'
+		text: 
+'!Usage Examples
+- Format source - ==(RBParser parseMethod: source) formattedCode==
+- Generate source relying on ==storeOn:== -  ${method:MAElementDescription>>#addTo:as:}$ in Magritte-Developer
+- Modify AST
+  - ${class:PeAST_Transformer}$ offers some higher-level support
+  - ${method:ConfigurationOf class>>#createBaselineFrom:}$ in DeNigrisPreferences
+'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageBindings_to_Other_Languages [
 	"This method was automatically generated."
 	<wikiPage: #Bindings_to_Other_Languages>
