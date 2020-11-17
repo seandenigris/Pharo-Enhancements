@@ -589,6 +589,50 @@ The only thing everyone seems to agree on is ''''not'''' to use Floats. Many adv
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageNetworking [
+	"This method was automatically generated."
+	<wikiPage: 'Networking'>
+	^APWikiPage
+		wiki: self
+		name: 'Networking'
+		text: 
+'Deep into Pharo has a great Sockets chapter covering TCP.
+!UDP
+UDP seems to be pretty simple. Once you create a new socket, there are ''''sending'''' messages which take the data, ipAddress, and port. It seems you can also set the ipAddress and port once and then just push data to that destination.
+!!Receiving
+Here is an example of receiving data by Norbert Hartl *via Pharo Dev>http://forum.world.st/UDP-Listener-example-tp4362851p4363140.html*:
+[[[
+| localPort sourceAddress sourcePort buffer receivedBytes socket delay | 
+localPort := 5000. 
+sourceAddress := NetNameResolver addressFromString: ''255.255.255.255''. 
+sourcePort := 4848. 
+
+buffer := ByteArray new: 1000. 
+delay := Delay forMilliseconds: 50. 
+
+socket := Socket newUDP setPort: localPort. 
+[[ receivedBytes := socket receiveDataInto: buffer fromHost: sourceAddress port: sourcePort. 
+ receivedBytes isZero ] whileTrue: [ delay wait ]] 
+        ensure: [ socket closeAndDestroy]. 
+]]]
+Two notes:
+# The orignal used NetNameResolver, which is unnecessary if you''re using ipAddress strings instead of hostnames.
+2. Norbert also commented: ''''Or you are better off testing it by using #receiveDataInto: instead of #receiveDataInto:fromHost:port: ''''
+!!Sending
+Here is a (possibly working) example of sending data by Steph Ducasse *via Pharo Dev>http://forum.world.st/SysLogSender-UDP-tp4745862.html*:
+[[[
+"Send formatted UDP message to host and port." 
+
+        | sock | 
+        sock := Socket newUDP. 
+        sock setPeer: NetNameResolver localHostAddress port: 514. 
+        sock sendData: ''hi''. 
+        sock waitForSendDoneFor: Socket standardTimeout. 
+        sock close 
+]]]'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageOOP [
 	"This method was automatically generated."
 	<wikiPage: #OOP>
