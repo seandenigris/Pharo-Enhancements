@@ -17,7 +17,9 @@ PharoWiki class >> wikiPageAST [
 		wiki: self
 		name: 'AST'
 		text: 
-'!Usage Examples
+'!AST vs. "Parse Tree"
+==parseTree== returns a generated tree suitable for modification, while ==ast== returns a cached tree. For lots and lots more details, see *http://forum.world.st/ast-vs-parseTree-td4893074i40.html*
+!Usage Examples
 - Format source - ==(RBParser parseMethod: source) formattedCode==
 - Generate source relying on ==storeOn:== -  ${method:MAElementDescription>>#addTo:as:}$ in Magritte-Developer
 - Modify AST
