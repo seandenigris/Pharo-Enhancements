@@ -17,15 +17,43 @@ PharoWiki class >> wikiPageAST [
 		wiki: self
 		name: 'AST'
 		text: 
-'!AST vs. "Parse Tree"
+'!Terminology - AST vs. "Parse Tree"
 ==parseTree== returns a generated tree suitable for modification, while ==ast== returns a cached tree. For lots and lots more details, see *http://forum.world.st/ast-vs-parseTree-td4893074i40.html*
 !Usage Examples
-- Format source - ==(RBParser parseMethod: source) formattedCode==
-- Generate source relying on ==storeOn:== -  ${method:MAElementDescription>>#addTo:as:}$ in Magritte-Developer
-- Modify AST
-  - ${class:PeAST_Transformer}$ offers some higher-level support
-  - ${method:ConfigurationOf class>>#createBaselineFrom:}$ in DeNigrisPreferences
-'
+- ""Format source"": ==(RBParser parseMethod: source) formattedCode==
+!Code Generation
+!!DIY Approaches
+"" It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (maybe for CI).""
+!!!String Manipulation
+This has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is *okay* for simple cases, but can get unwieldy, and doesn''t benefit from e.g. (early) compiler warnings.
+
+You can create and fill a template, like this:
+[[[
+| template |
+template := ''answerToEverything
+
+^ {returnValue}''.
+
+template format: { #returnValue -> 42 } asDictionary
+]]]
+
+You can also build the source with a stream. See  ${method:MAElementDescription>>#addTo:as:}$ in Magritte-Developer, which also uses the noteworthy technique of  relying on ==store:== to regenerate an object instance.
+!!!AST Manipulation
+If you start with an existing method and modify its AST, you have the advantage of working with real objects in the domain of source code, which is less error-prone than dumb strings. However, the API does not seem to be optimized for this scenario and there is a bit of a learning curve. Here is an excerpt of a script porting a Metacello baseline method from a ConfigurationOf to a BaselineOf.
+[[[
+| methodTree |
+methodTree := (BaselineOfMyProject>>#baseline301:) parseTree.
+methodTree selector: #baseline:.
+methodTree pragmas at: 1 put: (RBPragmaNode selector: #baseline arguments: #()).
+BaselineOfMyProject compile: methodTree newSource classified: ''baseline''
+]]]
+The full script can be viiewed in ${method:ConfigurationOf class>>#createBaselineFrom:}$ in the *DeNigrisPreferences project>https://github.com/seandenigris/Pharo-Preferences*
+
+One use case that is difficult to handle with the approaches above is when one wants to offer the same behavior both as a message to an object and as a script with no dependencies  (e.g. self sends), maybe for CI. Two libraries offer better support for this: ==PharoCodeGenerator== and ==PharoEnhancements== ${class:PeAST_Transformer}$ class (see below).
+!!Libraries
+- *PharoCodeGenerator>https://github.com/juliendelplanque/PharoCodeGenerator* - DSL to create methods from stratch, templates, or existing methods
+- *PlainPharoCode>https://github.com/hogoww/PlainPharoCode* - Use blocks to define the method body
+- ${class:PeAST_Transformer}$ offers some higher-level support for transforming the AST of an existing method'
 ]
 
 { #category : #wikiPages }
@@ -106,7 +134,21 @@ There is ${method:Behavior>>#adoptInstance:}$, but following through the class c
 A specific case is when you have an object, but you want an instance of a subclass. In this case, you can use ${method:Object class>>#newFrom:}$ and/or ${method:Object>>#copySameFrom:}$. For example:
 [[[
 	PDFFileReference newFrom: ''/path/to/file.pdf'' asFileReference
-]]]'
+]]]
+!Replacing Strings with Real Objects
+A good way to start may be to search for implementors of the accessor. In this example, we search for implementors of ==macAddress==. For each relevant method:
+[[[
+objs := self methodClass allSubInstances select: [ :e | e macAddress isNotNil ].
+objs collect: [ :e | 
+	| newMac |
+	newMac := CwMAC_Address fromString: e macAddress.
+	{ e macAddress. newMac } ]. "Compare current values with replacements"
+objs do: [ :e | 
+	| newMac |
+	newMac := CwMAC_Address fromString: e macAddress.
+	e macAddress: newMac ]
+]]]
+Notice'
 ]
 
 { #category : #wikiPages }
