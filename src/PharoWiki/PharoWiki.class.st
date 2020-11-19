@@ -152,6 +152,18 @@ Notice'
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageDatabases [
+	"This method was automatically generated."
+	<wikiPage: 'Databases'>
+	^APWikiPage
+		wiki: self
+		name: 'Databases'
+		text: 
+'!Glorp
+- Schema migration - *per Esteban Marg>http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html*, there is support in VW that could potentially be ported to Pharo'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageDecimal_Numbers [
 	"This method was automatically generated."
 	<wikiPage: #Decimal_Numbers>
@@ -502,6 +514,9 @@ PharoWiki class >> wikiPageMagritte [
 		text: 
 'NB We will move this to Magritte-GToolkit once Lepiter is integrated in GToolkit because we don''t want to add the Wiki dependency to Magritte.
 !Use cases
+!!Databases
+- Custom memento subclasses can be the glue, per Diego Lont in *this post>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4970881.html* which also touches on QCMagritte and performance issues.
+- ''''"To map to database/Glorp I would just add properties to the description wherever needed, and add a visitor creating the mappings."'''' *per Stephan Eggermont>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4969932.html*
 !!Matching options to string representations
 ""UPDATE:"" After a thorough exploration and much learned, it seems that Magritte is not designed to convert arbitrary/multiply-formatted strings into option objects. The reason for this may be simple: unlike for other description types (e.g. numbers) where the user may e.g. type a string represenation into a text editor, for existing options (i.e. not user supplied), you probably already have the option object behind a dropdown or list control. 
 
@@ -527,12 +542,23 @@ The current entry points from ==Object== are:
 These all delegate to the description with something like ==self magritteDescription asXyzOn: self==, which in turn passes a ${class:MAMemento}$, which inserts itself as a layer between the UI and the model object, and which knows both the object and its description.
 
 The UI controller classes all seem to implement certain methods over and over (e.g. ==string==, ==value==, ==isReadOnly==) creating the suspicion that they might be better implemented elsewhere. Here are some requirements:
-- subclassing seems not to be a good general optioni because some libraries have their own subclassing requirements e.g. Seaside''''s ==WAComponent==
+- subclassing seems not to be a good general optioni because some libraries have their own subclassing requirements e.g. Seaside''s ==WAComponent==
 - slight variations may be needed e.g. for different change notification mechanisms.
 
 Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
 
 Another issue with the controllers is that, since they hold a reference to the memento for the parent object, it''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
+
+!QCMagritte
+A library by Diego Lont that is build on top of Magritte... contains a lot of good add ons; a stack based on Seaside, Magritte, and Bootstrap.
+- some dynamic stuff (i.e. dynamic columns, groups that can collapse, automatic values)
+- Repos - Laurent Laffont announced *a port to GH>https://github.com/Afibre/QCMagritte*, from which there are several other forks with newer commits. Not sure if work also continued on *original SqS repo>http://smalltalkhub.com/#!/~DiegoLont/QCMagritte/*.
+- per Diego, maybe should end up in MagritteAddOns, but still WIP; same per Stephan Eggermont
+- some tips on using it for ajax are *here>http://forum.world.st/QCMagritte-and-MAJQDateInputComponent-tp4777365p4777407.html*
+- ''''"QCQuery is to search in a dataset, arbitrarily how it is organised. It does so by recursively visiting the magritte description of the objects, and has protection against loops."'''' - excerpt from longer post *here>http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html*
+- *Getting started slideshow>https://www.slideshare.net/esug/getting-started-with-qcmagritte*
+- Tutorial included: ''''"Once you have [the framework] loaded, you can start the webpage to localhost:8080 and there you have your tutorial."''''
+- Builders were apparently ported back to Magritte *per diego>http://forum.world.st/Port-of-builders-to-Magritte-Model-tp4945490.html*
 ! Further Research
 I''d like to have code which automatically flips description names to new-style. I asked on Discord how to wrap the following in a cool GT GUI:
 [[[
@@ -543,6 +569,11 @@ newSels := descSels collect: [ :e |
 	r := RBRenameMethodRefactoring renameMethod: #descriptionReference in: VsTransaction to: #referenceDescription permutation: #().
 r execute
 ]]]
+
+- Mariano mentioned some extensions he had done but not released* *here>http://forum.world.st/Adding-to-Magritte-tp4728958p4729020.html*
+- Field dependency discussion regarding QC and Seaside *here>http://forum.world.st/Adding-to-Magritte-tp4728958p4729953.html*
+- Dynamic descriptions - *here>http://forum.world.st/Understanding-dynamic-descriptions-tp4840991p4841017.html* is a question about ==visible== being set at description creation time, but potentially having a different value later on when the model is changed. A few thoughts came to mind: blocks (with the disadvantages that coem with them in Magritte), value holders, or accept aSymbol that is sent to the object in addition to aBoolean. To my surprise 5 years later, I posted a *response>http://forum.world.st/Understanding-dynamic-descriptions-tp4840991p4843449.html*, connecting the problem to mementos being static and added that just passing a block wouldn''t help
+- ''''"I really like describing domain objects with Magritte and using chains of visitors to add cross-cutting concerns like translations, styling and access control. The resulting domain code is very clean and DRY. To map to database/Glorp I would just add properties to the description wherever needed, and add a visitor creating the mappings."'''' *per Stephan Eggermont>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4969932.html*
 '
 ]
 
