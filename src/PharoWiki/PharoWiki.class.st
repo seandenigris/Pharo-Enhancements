@@ -97,6 +97,46 @@ PharoWiki class >> wikiPageBloc [
 ]
 
 { #category : #wikiPages }
+PharoWiki class >> wikiPageCSV [
+	"This method was automatically generated."
+	<wikiPage: 'CSV'>
+	^APWikiPage
+		wiki: self
+		name: 'CSV'
+		text: 
+'!Cookbook
+NB. The following all use NeoCSV unless otherwise indicated.
+
+Let''s use GnuCash CSV transaction export files as an example to illustrate two scenarios reequiring a little creativity...
+!!Rows Depending on Other Rows
+Each transaction is represented by a transaction row is followed by one or more "split" rows, which are actually part of the initial transaction. This makes ==#upToEnd== and even ==#collect:== insufficient. ==#inject:into:== can help here.
+!!Rows Representing Multiple Objects
+The situation is even slightly more complicated, because each row starts with columns representing the overall transaction, and ends with rows representing a relevant split. Thus the first row is actually a transaction ''''and'''' its first split.
+
+The following script shows an example handling both of these issues:
+
+[[[
+	^ rows
+		inject: OrderedCollection new
+		into: [ :col :rowDict | 
+			| newTransaction split recordedTransaction |
+			newTransaction := VsTransaction fromGnuCashCSV: rowDict.
+			split := VsSplit fromGnuCashCSV: rowDict.
+			recordedTransaction := newTransaction isValid
+				ifTrue: [ col add: newTransaction ]
+				ifFalse: [ col last ].
+			recordedTransaction splits add: split.
+			col ]
+]]]
+!NeoCSV
+For the basics, start with the *paper>https://github.com/svenvc/docs/blob/master/neo/neo-csv-paper.md*.
+
+Over the course of much practical use, a few common situations have arisen...
+!!Intermediary Objects - More expressive than arrays, and cheaper than creating a class
+Ideally, you parse directly to domain objects, but there are situations when this will not work. For example, when a record represents multiple objects, or certain columns (e.g. ''''account name'''' and ''''account ID'''') must be combined into one object field (e.g. ''''account''''). In cases like these, when you don''t want to bother creating a class ''just'' to represent a record, you can send ${method:NeoCSVReader>>#namedColumnsConfiguration}$ to your reader. Instead of plain arrays, this will return dictionary records where each value is keyed by the column header.'
+]
+
+{ #category : #wikiPages }
 PharoWiki class >> wikiPageCode_Changes [
 	"This method was automatically generated."
 	<wikiPage: 'Code Changes'>
@@ -149,6 +189,35 @@ objs do: [ :e |
 	e macAddress: newMac ]
 ]]]
 Notice'
+]
+
+{ #category : #wikiPages }
+PharoWiki class >> wikiPageData_Import_and_Export [
+	"This method was automatically generated."
+	<wikiPage: 'Data Import and Export'>
+	^APWikiPage
+		wiki: self
+		name: 'Data Import and Export'
+		text: 
+'! Sanitizing Input
+When importing a large amount of data, inconsistencies (e.g. due to manual error) are common. For instance, "all" names are stored as "last name, first name" except that some omit the comma, some are "first name last name", etc. Rather than trying to extend parsers and other input processing machinery to handle every case, it may be easier to map and fix the anomalies first. For example:
+[[[language=smalltalk
+cleanNameInput: aString
+	| map |
+	map := { 
+		''Smiiiiith, John'' -> ''Smith, John''. "Last name misspelled"
+		''Doe Jr., Jane'' -> ''Doe, Jane Jr.''. "generational in a weird place"
+	} asDictionary.
+	^ map at: aString ifPresent: [ :v | v ] ifAbsent: [ aString ]
+]]]
+
+For PetitParser, ==#parse:withContext:== seems to be a good sanitation hook:
+[[[language=smalltalk
+MyParser >> #parse: aString withContext: context
+	| cleanInput |
+	cleanInput := self cleanInput: aString.
+	^ super parse: cleanInput withContext: context.
+]]]'
 ]
 
 { #category : #wikiPages }
