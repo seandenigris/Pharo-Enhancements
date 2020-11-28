@@ -601,6 +601,11 @@ Other entry points, like ${method:MAOptionDescription>>#options:}$ and ${method:
 The next tactic is quite subtle and relies on several aspects of Magritte which may not be obvious. The reader reenters itself, passing the description''s ==reference==. References can be tricky to understand, but there is an extensive explanation in the comment of ${class:MAReferenceDescription|show=#gtCoderCommentsFor:}$.
 
 There is a tempation to refactor so that the label comparison is more generally useful, but since we already have this ==reference== hook, let''s step around that rabbit hole for the moment and see if there''s an acceptable way to set the reference up to do what we want. The default seems to be the same ${method:MADescription class>>#defaultStringReader|expanded=true|label=''MAStringReader''}$ class we saw above:
+!GToolkit Integration
+!! Documenter
+Similar to ${class:GtDocumenter}$''s built-in ability to store documents in class comments via ${method:GtDocument class>>#forClass:}$, you can view and edit fields described by ${class:MAStringDescription}$. For example: ==GtDocument maFor: recipe using: self noteDescription.==
+
+
 !Hooks from Model to UI
 The current entry points from ==Object== are:
 - ==asComponent== (Seaside)
