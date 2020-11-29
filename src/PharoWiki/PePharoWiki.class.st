@@ -2,7 +2,7 @@
 Welcome to the Pharo wiki!
 "
 Class {
-	#name : #PharoWiki,
+	#name : #PePharoWiki,
 	#superclass : #Object,
 	#traits : 'TAPWiki',
 	#classTraits : 'TAPWiki classTrait',
@@ -10,7 +10,7 @@ Class {
 }
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageAST [
+PePharoWiki class >> wikiPageAST [
 	"This method was automatically generated."
 	<wikiPage: 'AST'>
 	^APWikiPage
@@ -57,7 +57,7 @@ One use case that is difficult to handle with the approaches above is when one w
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageBindings_to_Other_Languages [
+PePharoWiki class >> wikiPageBindings_to_Other_Languages [
 	"This method was automatically generated."
 	<wikiPage: #Bindings_to_Other_Languages>
 	^APWikiPage
@@ -68,7 +68,7 @@ PharoWiki class >> wikiPageBindings_to_Other_Languages [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageBloc [
+PePharoWiki class >> wikiPageBloc [
 	"This method was automatically generated."
 	<wikiPage: 'Bloc'>
 	^APWikiPage
@@ -97,7 +97,7 @@ PharoWiki class >> wikiPageBloc [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageCSV [
+PePharoWiki class >> wikiPageCSV [
 	"This method was automatically generated."
 	<wikiPage: 'CSV'>
 	^APWikiPage
@@ -137,7 +137,7 @@ Ideally, you parse directly to domain objects, but there are situations when thi
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageCode_Changes [
+PePharoWiki class >> wikiPageCode_Changes [
 	"This method was automatically generated."
 	<wikiPage: 'Code Changes'>
 	^APWikiPage
@@ -151,7 +151,7 @@ This is Pharo''s code change tracking system. There are two common use cases for
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageContinuous_Integration [
+PePharoWiki class >> wikiPageContinuous_Integration [
 	"This method was automatically generated."
 	<wikiPage: 'Continuous Integration'>
 	^APWikiPage
@@ -162,7 +162,7 @@ PharoWiki class >> wikiPageContinuous_Integration [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageCookbook_2 [
+PePharoWiki class >> wikiPageCookbook_2 [
 	"This method was automatically generated."
 	<wikiPage: 'Cookbook 2'>
 	^APWikiPage
@@ -192,7 +192,7 @@ Notice'
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageData_Import_and_Export [
+PePharoWiki class >> wikiPageData_Import_and_Export [
 	"This method was automatically generated."
 	<wikiPage: 'Data Import and Export'>
 	^APWikiPage
@@ -221,7 +221,7 @@ MyParser >> #parse: aString withContext: context
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDatabases [
+PePharoWiki class >> wikiPageDatabases [
 	"This method was automatically generated."
 	<wikiPage: 'Databases'>
 	^APWikiPage
@@ -233,7 +233,7 @@ PharoWiki class >> wikiPageDatabases [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDecimal_Numbers [
+PePharoWiki class >> wikiPageDecimal_Numbers [
 	"This method was automatically generated."
 	<wikiPage: #Decimal_Numbers>
 	^APWikiPage
@@ -272,7 +272,7 @@ This thread from 2001^^2^^ suggests that a BCD is really what you want for money
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDeprecating [
+PePharoWiki class >> wikiPageDeprecating [
 	"This method was automatically generated."
 	<wikiPage: #Deprecating>
 	^APWikiPage
@@ -290,7 +290,7 @@ The first time your deprecated method is run, it will be automatically rewritten
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDesignPatternsSmalltalkCompanion [
+PePharoWiki class >> wikiPageDesignPatternsSmalltalkCompanion [
 	"This method was automatically generated."
 	<wikiPage: #DesignPatternsSmalltalkCompanion>
 	^APWikiPage
@@ -301,7 +301,7 @@ PharoWiki class >> wikiPageDesignPatternsSmalltalkCompanion [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDocumentation [
+PePharoWiki class >> wikiPageDocumentation [
 	"This method was automatically generated."
 	<wikiPage: 'Documentation'>
 	^APWikiPage
@@ -313,7 +313,7 @@ PharoWiki class >> wikiPageDocumentation [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageDynabook [
+PePharoWiki class >> wikiPageDynabook [
 	"This method was automatically generated."
 	<wikiPage: #Dynabook>
 	^APWikiPage
@@ -325,7 +325,7 @@ Although I have to admit that at heart I am not a programmer, but a Dynabook fan
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageExamples [
+PePharoWiki class >> wikiPageExamples [
 	"This method was automatically generated."
 	<wikiPage: #Examples>
 	^APWikiPage
@@ -340,7 +340,7 @@ Feenk uses three way to navigate (per Tudor on GT Discord live-sessions channel 
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageExternalProcesses [
+PePharoWiki class >> wikiPageExternalProcesses [
 	"This method was automatically generated."
 	<wikiPage: #ExternalProcesses>
 	^APWikiPage
@@ -364,7 +364,7 @@ self assert: p succeeded
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageFullBlockClosure [
+PePharoWiki class >> wikiPageFullBlockClosure [
 	"This method was automatically generated."
 	<wikiPage: #FullBlockClosure>
 	^APWikiPage
@@ -377,7 +377,7 @@ PharoWiki class >> wikiPageFullBlockClosure [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageGT_OO_IDE [
+PePharoWiki class >> wikiPageGT_OO_IDE [
 	"This method was automatically generated."
 	<wikiPage: #GT_OO_IDE>
 	^APWikiPage
@@ -393,7 +393,7 @@ Taken together, they are a big clue to the problem GT solves. Take Pharo''s poor
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageGT_VM [
+PePharoWiki class >> wikiPageGT_VM [
 	"This method was automatically generated."
 	<wikiPage: #GT_VM>
 	^APWikiPage
@@ -448,7 +448,7 @@ Tudor, on behalf of the feenk team '
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageGit [
+PePharoWiki class >> wikiPageGit [
 	"This method was automatically generated."
 	<wikiPage: 'Git'>
 	^APWikiPage
@@ -479,7 +479,7 @@ Alternatively, you could follow the git script above and then manually resolve t
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageGtoolkit [
+PePharoWiki class >> wikiPageGtoolkit [
 	"This method was automatically generated."
 	<wikiPage: #Gtoolkit>
 	^APWikiPage
@@ -547,7 +547,7 @@ Konrad Hinsen09/11/2020
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageLauncher [
+PePharoWiki class >> wikiPageLauncher [
 	"This method was automatically generated."
 	<wikiPage: 'Launcher'>
 	^APWikiPage
@@ -574,85 +574,7 @@ archive := ZipArchive new.
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageMagritte [
-	"This method was automatically generated."
-	<wikiPage: #Magritte>
-	^APWikiPage
-		wiki: self
-		name: #Magritte
-		text: 
-'NB We will move this to Magritte-GToolkit once Lepiter is integrated in GToolkit because we don''t want to add the Wiki dependency to Magritte.
-!Use cases
-!!Databases
-- Custom memento subclasses can be the glue, per Diego Lont in *this post>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4970881.html* which also touches on QCMagritte and performance issues.
-- ''''"To map to database/Glorp I would just add properties to the description wherever needed, and add a visitor creating the mappings."'''' *per Stephan Eggermont>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4969932.html*
-!!Matching options to string representations
-""UPDATE:"" After a thorough exploration and much learned, it seems that Magritte is not designed to convert arbitrary/multiply-formatted strings into option objects. The reason for this may be simple: unlike for other description types (e.g. numbers) where the user may e.g. type a string represenation into a text editor, for existing options (i.e. not user supplied), you probably already have the option object behind a dropdown or list control. 
-
-Let''s say, for example while OCRing receipts, we have the following options for payment method: =={ Cash. Credit. Check }==. Since there is a lot of variation in receipt formats, we need to accept multiple string representations for each object. Let''s take the simplest case, ==Cash==. At minimum, we want case insensitive matching, so that ==cash==, ==Cash==, and ==CASH== all map to the same option. So how are option strings matched to options? We look to ${class:MAStringReader}$ , the default visitor magritte uses to convert from strings to objects; specifically: ${method:MAStringReader>>#visitSingleOptionDescription:|expanded=true}$
-One option would be to create our own description type, ==MAPaymentTypeDescription==. If it was a subclass of single option description, we could write a corresponding ==MAPaymentTypeReader== that overrides ==visitSingleOptionDescription:== to do what we want. It''s unclear whether it would be worth the effort vs. say just handling the string to object conversion outside of Magritte.
-Alternately, let''s see if there''s a way to configure the existing Magritte classes to get the same result. Revisiting ==visitSingleOptionDescription:==, we see that its first attempt is to match the string to the labels property. However, this seems to be of limited use, as a query shows that there is only one entry point that sets this property:
-[[[language=smalltalk
- #labels gtReferences & #propertyAt:put: gtReferences & ''Magritte-'' gtPackageMatches
-]]]
-
-Other entry points, like ${method:MAOptionDescription>>#options:}$ and ${method:MAOptionDescription>>#optionsTextual:}$ do not set this property, causing this first matching attempt to always fail.
-
-The next tactic is quite subtle and relies on several aspects of Magritte which may not be obvious. The reader reenters itself, passing the description''s ==reference==. References can be tricky to understand, but there is an extensive explanation in the comment of ${class:MAReferenceDescription|show=#gtCoderCommentsFor:}$.
-
-There is a tempation to refactor so that the label comparison is more generally useful, but since we already have this ==reference== hook, let''s step around that rabbit hole for the moment and see if there''s an acceptable way to set the reference up to do what we want. The default seems to be the same ${method:MADescription class>>#defaultStringReader|expanded=true|label=''MAStringReader''}$ class we saw above:
-!GToolkit Integration
-!! Documenter
-Similar to ${class:GtDocumenter}$''s built-in ability to store documents in class comments via ${method:GtDocument class>>#forClass:}$, you can view and edit fields described by ${class:MAStringDescription}$. For example: ==GtDocument maFor: recipe using: self noteDescription.==
-
-
-!Hooks from Model to UI
-The current entry points from ==Object== are:
-- ==asComponent== (Seaside)
-- ==asMagritteMorph==
-- (WIP) ==asMagritteSpec2Presenter== (name will be finalized when Spec2 is)
-- (WIP) ==asMagritteBlElement==
-
-These all delegate to the description with something like ==self magritteDescription asXyzOn: self==, which in turn passes a ${class:MAMemento}$, which inserts itself as a layer between the UI and the model object, and which knows both the object and its description.
-
-The UI controller classes all seem to implement certain methods over and over (e.g. ==string==, ==value==, ==isReadOnly==) creating the suspicion that they might be better implemented elsewhere. Here are some requirements:
-- subclassing seems not to be a good general optioni because some libraries have their own subclassing requirements e.g. Seaside''s ==WAComponent==
-- slight variations may be needed e.g. for different change notification mechanisms.
-
-Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
-
-Another issue with the controllers is that, since they hold a reference to the memento for the parent object, it''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.
-
-!QCMagritte
-A library by Diego Lont that is build on top of Magritte... contains a lot of good add ons; a stack based on Seaside, Magritte, and Bootstrap.
-- some dynamic stuff (i.e. dynamic columns, groups that can collapse, automatic values)
-- Repos - Laurent Laffont announced *a port to GH>https://github.com/Afibre/QCMagritte*, from which there are several other forks with newer commits. Not sure if work also continued on *original SqS repo>http://smalltalkhub.com/#!/~DiegoLont/QCMagritte/*.
-- per Diego, maybe should end up in MagritteAddOns, but still WIP; same per Stephan Eggermont
-- some tips on using it for ajax are *here>http://forum.world.st/QCMagritte-and-MAJQDateInputComponent-tp4777365p4777407.html*
-- ''''"QCQuery is to search in a dataset, arbitrarily how it is organised. It does so by recursively visiting the magritte description of the objects, and has protection against loops."'''' - excerpt from longer post *here>http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html*
-- *Getting started slideshow>https://www.slideshare.net/esug/getting-started-with-qcmagritte*
-- Tutorial included: ''''"Once you have [the framework] loaded, you can start the webpage to localhost:8080 and there you have your tutorial."''''
-- Builders were apparently ported back to Magritte *per diego>http://forum.world.st/Port-of-builders-to-Magritte-Model-tp4945490.html*
-! Further Research
-I''d like to have code which automatically flips description names to new-style. I asked on Discord how to wrap the following in a cool GT GUI:
-[[[
-descSels := self localSelectors select: [ :e | e matchesRegex: ''description.+'' ].
-newSels := descSels collect: [ :e | 
-	fieldName := e allButFirst: ''description'' size.
-	fieldName uncapitalized, ''Description'' ].
-	r := RBRenameMethodRefactoring renameMethod: #descriptionReference in: VsTransaction to: #referenceDescription permutation: #().
-r execute
-]]]
-
-- Mariano mentioned some extensions he had done but not released* *here>http://forum.world.st/Adding-to-Magritte-tp4728958p4729020.html*
-- Field dependency discussion regarding QC and Seaside *here>http://forum.world.st/Adding-to-Magritte-tp4728958p4729953.html*
-- Dynamic descriptions - *here>http://forum.world.st/Understanding-dynamic-descriptions-tp4840991p4841017.html* is a question about ==visible== being set at description creation time, but potentially having a different value later on when the model is changed. A few thoughts came to mind: blocks (with the disadvantages that coem with them in Magritte), value holders, or accept aSymbol that is sent to the object in addition to aBoolean. To my surprise 5 years later, I posted a *response>http://forum.world.st/Understanding-dynamic-descriptions-tp4840991p4843449.html*, connecting the problem to mementos being static and added that just passing a block wouldn''t help
-- ''''"I really like describing domain objects with Magritte and using chains of visitors to add cross-cutting concerns like translations, styling and access control. The resulting domain code is very clean and DRY. To map to database/Glorp I would just add properties to the description wherever needed, and add a visitor creating the mappings."'''' *per Stephan Eggermont>http://forum.world.st/Web-stack-practices-Glorp-QCMagritte-tp4969583p4969932.html*
-'
-]
-
-{ #category : #wikiPages }
-PharoWiki class >> wikiPageMemoryHogs [
+PePharoWiki class >> wikiPageMemoryHogs [
 	"This method was automatically generated."
 	<wikiPage: #MemoryHogs>
 	^APWikiPage
@@ -687,7 +609,7 @@ There is Spy (not sure of current repo location) which offers Roassal visualizat
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageMetacello [
+PePharoWiki class >> wikiPageMetacello [
 	"This method was automatically generated."
 	<wikiPage: 'Metacello'>
 	^APWikiPage
@@ -716,7 +638,7 @@ Two items to note:
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageMoney [
+PePharoWiki class >> wikiPageMoney [
 	"This method was automatically generated."
 	<wikiPage: #Money>
 	^APWikiPage
@@ -736,7 +658,7 @@ The only thing everyone seems to agree on is ''''not'''' to use Floats. Many adv
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageNetworking [
+PePharoWiki class >> wikiPageNetworking [
 	"This method was automatically generated."
 	<wikiPage: 'Networking'>
 	^APWikiPage
@@ -780,7 +702,7 @@ Here is a (possibly working) example of sending data by Steph Ducasse *via Pharo
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageOOP [
+PePharoWiki class >> wikiPageOOP [
 	"This method was automatically generated."
 	<wikiPage: #OOP>
 	^APWikiPage
@@ -1036,7 +958,7 @@ transit gloria mundi.'
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageOSSubprocess [
+PePharoWiki class >> wikiPageOSSubprocess [
 	"This method was automatically generated."
 	<wikiPage: #OSSubprocess>
 	^APWikiPage
@@ -1048,7 +970,7 @@ There is extremely thorough *documentation>https://github.com/pharo-contribution
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageParsing [
+PePharoWiki class >> wikiPageParsing [
 	"This method was automatically generated."
 	<wikiPage: #Parsing>
 	^APWikiPage
@@ -1221,7 +1143,7 @@ Udo
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPagePersistence [
+PePharoWiki class >> wikiPagePersistence [
 	"This method was automatically generated."
 	<wikiPage: 'Persistence'>
 	^APWikiPage
@@ -1264,7 +1186,7 @@ Many options. Great time sinks. :-) Have fun.
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPagePillar [
+PePharoWiki class >> wikiPagePillar [
 	"This method was automatically generated."
 	<wikiPage: #Pillar>
 	^APWikiPage
@@ -1278,7 +1200,7 @@ ${example:GtCoderExamples>>#scripter|label=''hi there''}$'
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageRewriteRules [
+PePharoWiki class >> wikiPageRewriteRules [
 	"This method was automatically generated."
 	<wikiPage: #RewriteRules>
 	^APWikiPage
@@ -1297,7 +1219,7 @@ Here are a few mailing list discussions which stand out:
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageSmaCC [
+PePharoWiki class >> wikiPageSmaCC [
 	"This method was automatically generated."
 	<wikiPage: 'SmaCC'>
 	^APWikiPage
@@ -1328,7 +1250,7 @@ To build completion with a SmaCC AST, you need to create a new subclass of GtCom
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageSound [
+PePharoWiki class >> wikiPageSound [
 	"This method was automatically generated."
 	<wikiPage: #Sound>
 	^APWikiPage
@@ -1358,7 +1280,7 @@ LibC system: ''printf "\a"''.
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageStrategyPattern [
+PePharoWiki class >> wikiPageStrategyPattern [
 	"This method was automatically generated."
 	<wikiPage: #StrategyPattern>
 	^APWikiPage
@@ -1388,7 +1310,7 @@ Then client code like ==aComposition formattingStrategy: #formatWithSimpleAlgori
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageTime_Control [
+PePharoWiki class >> wikiPageTime_Control [
 	"This method was automatically generated."
 
 	<wikiPage: #Time_Control>
@@ -1401,7 +1323,7 @@ PharoWiki class >> wikiPageTime_Control [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageTodo [
+PePharoWiki class >> wikiPageTodo [
 	"This method was automatically generated."
 	<wikiPage: #Todo>
 	^APWikiPage
@@ -1447,7 +1369,7 @@ BrGlamorousWithContextMenuLook
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageVM [
+PePharoWiki class >> wikiPageVM [
 	"This method was automatically generated."
 	<wikiPage: #VM>
 	^APWikiPage
@@ -1478,7 +1400,7 @@ PharoWiki class >> wikiPageVM [
 ]
 
 { #category : #wikiPages }
-PharoWiki class >> wikiPageXML [
+PePharoWiki class >> wikiPageXML [
 	"This method was automatically generated."
 	<wikiPage: 'XML'>
 	^APWikiPage
