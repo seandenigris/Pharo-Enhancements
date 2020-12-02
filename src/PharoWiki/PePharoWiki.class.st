@@ -1312,14 +1312,14 @@ Then client code like ==aComposition formattingStrategy: #formatWithSimpleAlgori
 { #category : #wikiPages }
 PePharoWiki class >> wikiPageTime_Control [
 	"This method was automatically generated."
-
 	<wikiPage: #Time_Control>
-	^ APWikiPage
+	^APWikiPage
 		wiki: self
 		name: #Time_Control
-		text:
-			'!Time Control
-- *http://www.manfred-lange.com/publications/TimeTravel.pdf*. There are *apparently>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86334.html* other versions available.'
+		text: 
+'!Time Control
+- *http://www.manfred-lange.com/publications/TimeTravel.pdf*. There are *apparently>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86334.html* other versions available.
+- It came up in *a tangentially related discussion>http://forum.world.st/Smalltalk-float-to-currency-how-to-td86320i20.html#a86336* on the Seaside list'
 ]
 
 { #category : #wikiPages }
