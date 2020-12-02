@@ -1369,6 +1369,17 @@ BrGlamorousWithContextMenuLook
 ]
 
 { #category : #wikiPages }
+PePharoWiki class >> wikiPageTraits [
+	"This method was automatically generated."
+	<wikiPage: 'Traits'>
+	^APWikiPage
+		wiki: self
+		name: 'Traits'
+		text: 
+'There is *great documentation in the Pharo Wiki>https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Traits.md#create-and-use-a-new-trait*'
+]
+
+{ #category : #wikiPages }
 PePharoWiki class >> wikiPageVM [
 	"This method was automatically generated."
 	<wikiPage: #VM>
