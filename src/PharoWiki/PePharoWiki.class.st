@@ -475,7 +475,10 @@ Here you''ll follow the Iceberg instructions for "No Conflicts", but with the fo
 # Choose, "Checkout packages already loaded"
 # At the end, go into Epicea and revert the in image code changes that wipes out your changes
 
-Alternatively, you could follow the git script above and then manually resolve the conflict on the command line.'
+Alternatively, you could follow the git script above and then manually resolve the conflict on the command line.
+!Declare Smalltalk
+Does GitHub think you''re project is 80% HTML? Want to proudly proclaim that it is in fact Smalltalk?
+Create a ==.gitattributes== file in the root folder with the following contents: ==*.st linguist-language=Smalltalk=='
 ]
 
 { #category : #wikiPages }
