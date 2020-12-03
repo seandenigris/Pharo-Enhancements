@@ -486,25 +486,7 @@ PePharoWiki class >> wikiPageGtoolkit [
 		wiki: self
 		name: #Gtoolkit
 		text: 
-'!Magic
-Things that are difficult to find out for yourself by exploring the live system.
-- Alt-click on view tab to go to code
-!Discoverability
-- Slideshows: I am enjoying a slideshow and want to see how it works. I bring up halos and navigate through parents until I find GtSlideElement. Via the inspector, I go to the slide and then slideshow, but there''s no way to get back to GtPharo101 unless it is explicitly mentioned in the slideshow (which it is in this case, but may not be generally) (from GT Discord feedback channel 9/9/2020)
-- Views: let''s say I''ve never implemented a view. Sure, I can: 1) "Alt-click" on a view tab (which already requires esoteric knowledge of that secret incantation or 2) search for existing views via pragma filtering, but that''s kind of like groping around blindfolded because I already know exactly what I want to show, and I''d have to hunt around for a view that does that. I could browse senders of a view message (which I only know to do after over a decade of Smalltalk experience), but some of those messages seem pretty generic (e.g. list). How do I as a user most efficiently get from "I want to implement a view" or maybe more specifically "I''m looking at an existing view (or the source for it)" to "this is how you implement your view"? And how do I know how to get there? (from GT Discord how-to channel 9/8/2020)
-!Views
-!!Picture in Picture
-Imagine this - you have a ==Tempfile== class. While a ==Tempfile== logically is a special type of  ${class:AbstractFileReference}$, for technical reasons it is not implemented as a subclass. Wouldn''t it be nice to still have all the built-in views for files?! Another use case, an ==EPUB== class. This one is a little different, because while it is a ''''file'''' from one perspective, this is not the ''''primary'''' perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:
-[[[
-MyEPUB>>#gtFileFor: aView inContext: aContext
-	<gtView>
-	^ aView composite
-		title: ''File'';
-		views: (self file gtViewsInContext: aContext)
-]]]
-!Installation
-On Mac, you may run into problems with GToolkit being quarantined. A quick google search will reveal how to unquarantine GT. If you''d like to do this in Smalltalk, check out the *ComputerWorld>https://github.com/seandenigris/Computer-World* project (search for the ==unquarantine== message).
-!Customization
+'!Configuration
 !!Saved Playground Scripts
 You can specify where to save playgound snippets and other artifacts for both new and old GT. This can be useful for personal projects where images are frequently recreated, so you don''t accidentally lose all your snippets in the image folder of a deleted image. A convenient place to do this would be in a Metacello baseline postload. Here''s an example:
 ==BaselineOfXyz>>#postLoad==
@@ -525,6 +507,23 @@ which would be triggered in the baseline like this:
 	spec for: #''common'' do: [
 		spec postLoadDoIt: #''postLoad''. ]
 ]]]
+!Discoverability
+- Slideshows: I am enjoying a slideshow and want to see how it works. I bring up halos and navigate through parents until I find GtSlideElement. Via the inspector, I go to the slide and then slideshow, but there''s no way to get back to GtPharo101 unless it is explicitly mentioned in the slideshow (which it is in this case, but may not be generally) (from GT Discord feedback channel 9/9/2020)
+- Views: let''s say I''ve never implemented a view. Sure, I can: 1) "Alt-click" on a view tab (which already requires esoteric knowledge of that secret incantation or 2) search for existing views via pragma filtering, but that''s kind of like groping around blindfolded because I already know exactly what I want to show, and I''d have to hunt around for a view that does that. I could browse senders of a view message (which I only know to do after over a decade of Smalltalk experience), but some of those messages seem pretty generic (e.g. list). How do I as a user most efficiently get from "I want to implement a view" or maybe more specifically "I''m looking at an existing view (or the source for it)" to "this is how you implement your view"? And how do I know how to get there? (from GT Discord how-to channel 9/8/2020)
+!Features
+Core components - what you need to know.
+!!Search
+There is a live session on this and you can see examples in image via ==<gtSearch>==
+!!Views
+!!!Picture in Picture
+Imagine this - you have a ==Tempfile== class. While a ==Tempfile== logically is a special type of  ${class:AbstractFileReference}$, for technical reasons it is not implemented as a subclass. Wouldn''t it be nice to still have all the built-in views for files?! Another use case, an ==EPUB== class. This one is a little different, because while it is a ''''file'''' from one perspective, this is not the ''''primary'''' perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:
+[[[
+MyEPUB>>#gtFileFor: aView inContext: aContext
+	<gtView>
+	^ aView composite
+		title: ''File'';
+		views: (self file gtViewsInContext: aContext)
+]]]
 !Huh!
 I''m struggling to understand GT''s Pillar annotations. What are the "[with|without] markup" strategies about? Then there is this mind-bending code:
 GtClassAnnotation>>#styleTextWithoutMarkup: aBlRope
@@ -534,6 +533,11 @@ Layman''s translation: "Style without markup... I mean with markup... I mean wit
  
 tudor girba09/10/2020
 If you press on the pencil button, you will see the markup all the time
+!Installation
+On Mac, you may run into problems with GToolkit being quarantined. A quick google search will reveal how to unquarantine GT. If you''d like to do this in Smalltalk, check out the *ComputerWorld>https://github.com/seandenigris/Computer-World* project (search for the ==unquarantine== message).
+!Magic
+Things that are difficult to find out for yourself by exploring the live system.
+- Alt-click on view tab to go to code
 !Further Research
 - baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020
 It’s an extension in MethodCoder
@@ -541,7 +545,7 @@ It’s an extension in MethodCoder
 Konrad Hinsen09/11/2020
 - @SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the "clean" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.
 - ==gt-extra== - to copy after template instantiation. See ${method:GtImageSetup class>>#copyDataAndDocsFolders}$
-!Relevant pages
+!Other GT Pages
 - ${wikiPage:#GT_OO_IDE}$
 - ${wikiPage:#GT_VM}$'
 ]
