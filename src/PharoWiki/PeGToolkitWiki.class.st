@@ -136,3 +136,39 @@ To build completion with a SmaCC AST, you need to create a new subclass of GtCom
 - Why create a rule with just one token e.g. ==Number : <number> {{Number}} ;==
 - When would you not want to ==%annotate_tokens;==?'
 ]
+
+{ #category : #wikiPages }
+PeGToolkitWiki class >> wikiPageTODO [
+	"This method was automatically generated."
+	<wikiPage: 'TODO'>
+	^APWikiPage
+		wiki: self
+		name: 'TODO'
+		text: 
+'!Phlow Columns
+- GtPhlowColumnedListView provides 14 methods to configure a column. These seem to simply forward requests to the underlying GtPhlowColumn (which is itself a proxy for BrColumn) using the same API. Why not just have #column:do:, which is the most powerful and allows access to the underlying column? It will greatly reduce the amount of code and users will only have to understand and work with the column API...
+- BrColumn class comment refers to classes that don''t exists; unclear whether example produces a meaningful result - how do we view it?
+- Can one prototype a view in a playground?
+
+Via column:do: and stencil:, you could put any Bloc element:
+column: ''Input'' do: [ :clm | 
+	clm stencil: [ :e | 
+		BlElement new
+				background: Color blue;
+				yourself ] ];
+Including an editor:
+column: ''Input'' do: [ :clm | 
+			clm stencil: [ :e | 
+			"Halt once."
+			"BlTextElement new
+		text: e counterparty asRopedText;
+		yourself.
+			BrEditor new
+		look: BrGlamorousEditorLook;
+		text: e counterparty;
+		matchParent;
+		yourself.
+		"BlElement new
+				background: Color blue;
+				yourself ] ];'
+]
