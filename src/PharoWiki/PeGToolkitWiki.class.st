@@ -1,4 +1,5 @@
 "
+@TODO collect tweets re GT into a summary paragraph
 !Configuration
 !!Saved Playground Scripts
 You can specify where to save playgound snippets and other artifacts for both new and old GT. This can be useful for personal projects where images are frequently recreated, so you don't accidentally lose all your snippets in the image folder of a deleted image. A convenient place to do this would be in a Metacello baseline postload. Here's an example:
@@ -27,16 +28,7 @@ which would be triggered in the baseline like this:
 Core components - what you need to know.
 !!Search
 There is a live session on this and you can see examples in image via ==<gtSearch>==
-!!Views
-!!!Picture in Picture
-Imagine this - you have a ==Tempfile== class. While a ==Tempfile== logically is a special type of  ${class:AbstractFileReference}$, for technical reasons it is not implemented as a subclass. Wouldn't it be nice to still have all the built-in views for files?! Another use case, an ==EPUB== class. This one is a little different, because while it is a ''file'' from one perspective, this is not the ''primary'' perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:
-[[[
-MyEPUB>>#gtFileFor: aView inContext: aContext
-	<gtView>
-	^ aView composite
-		title: 'File';
-		views: (self file gtViewsInContext: aContext)
-]]]
+!!${wikiPage:Views}$
 !Huh!
 I'm struggling to understand GT's Pillar annotations. What are the ""[with|without] markup"" strategies about? Then there is this mind-bending code:
 GtClassAnnotation>>#styleTextWithoutMarkup: aBlRope
@@ -235,4 +227,31 @@ column: ''Input'' do: [ :clm |
 		"BlElement new
 				background: Color blue;
 				yourself ] ];'
+]
+
+{ #category : #wikiPages }
+PeGToolkitWiki class >> wikiPageViews [
+	"This method was automatically generated."
+	<wikiPage: 'Views'>
+	^APWikiPage
+		wiki: self
+		name: 'Views'
+		text: 
+'!Prototyping
+All you need is an empty view to start. For example:
+[[[
+GtPhlowEmptyView new 
+    list 
+        title: ''List'';
+        items: [{1 . 2 . 3}]
+]]]
+!Picture in Picture
+Imagine this - you have a ==Tempfile== class. While a ==Tempfile== logically is a special type of  ${class:AbstractFileReference}$, for technical reasons it is not implemented as a subclass. Wouldn''t it be nice to still have all the built-in views for files?! Another use case, an ==EPUB== class. This one is a little different, because while it is a ''''file'''' from one perspective, this is not the ''''primary'''' perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:
+[[[
+MyEPUB>>#gtFileFor: aView inContext: aContext
+	<gtView>
+	^ aView composite
+		title: ''File'';
+		views: (self file gtViewsInContext: aContext)
+]]]'
 ]
