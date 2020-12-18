@@ -1035,6 +1035,37 @@ ${example:GtCoderExamples>>#scripter|label=''hi there''}$'
 ]
 
 { #category : #wikiPages }
+PePharoWiki class >> wikiPageRefactoring [
+	"This method was automatically generated."
+	<wikiPage: 'Refactoring'>
+	^APWikiPage
+		wiki: self
+		name: 'Refactoring'
+		text: 
+'Here''s an example script to rename all the classes in a hierarchy.
+
+[[[
+col := MADescriptionMorph allSubclasses.
+col do: [ :e |
+	oldClassName := e name.
+	stem := (oldClassName allButFirst: 2) allButLast: ''Morph'' size.
+	newClassName := ''MAMorphic'', stem.
+	r := RBRenameClassRefactoring rename: e to: newClassName.
+	r execute.
+	newClassName asClass subclass: oldClassName
+		instanceVariableNames: ''''
+		classVariableNames: ''''
+		package: ''Magritte-Deprecated3dot7'' ]
+]]]
+
+To tell Pharo the Deprecated package is... deprecated, define the following:
+[[[
+ManifestMagritteDeprecateddot class>>#isDeprecated
+	^ true
+]]]'
+]
+
+{ #category : #wikiPages }
 PePharoWiki class >> wikiPageRewriteRules [
 	"This method was automatically generated."
 	<wikiPage: #RewriteRules>
