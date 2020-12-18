@@ -17,3 +17,9 @@ RPackage >> createBaselineOf [
 			versionSpecsDo: [ :versionSpec |  ];
 		commitBaselineOfMethod
 ]
+
+{ #category : #'*PharoEnhancements' }
+RPackage >> deprecate [
+	self packageManifest class compile: 'isDeprecated
+	^ true' classified: 'testing'
+]
