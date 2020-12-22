@@ -75,17 +75,31 @@ PeMagritteWiki class >> wikiPageGUI [
 '!Hooks from Model
 The current entry points from ==Object== are:
 - ==asComponent== (Seaside)
-- ==asMagritteMorph==
+- ${method:Object>>#asMagritteMorph}$
 - (WIP) ==asMagritteSpec2Presenter== (name will be finalized when Spec2 is)
 - (WIP) ==asMagritteBlElement==
-
-These all delegate to the description with something like ==self magritteDescription asXyzOn: self==, which in turn passes a ${class:MAMemento}$, which inserts itself as a layer between the UI and the model object, and which knows both the object and its description.
-
+!Down the Rabbit Hole
+These all delegate to the description with something like ==self magritteDescription asXyzOn: self==. Let''s take Morphic as an example. Looking at ${method:MAContainer>>#asMorphOn:|expanded=true}$
+We see that the presenter class receives a ${class:MAMemento}$, which inserts itself as a layer between the UI and the model object, and which knows both the object and its description.
+!Presenters~~/Controllers~~
+Settle on presenter term based on *this SO answer>https://stackoverflow.com/a/101561*.
+!! Instance Variables
+Each has access to the following, but are they needed for every element?
+- ==description== - Most of the uses seem static i.e. during Morph building. A few that aren''t are: file choosing, new relation creation, and the actual string reading and writing for each (which maybe could be hardcoded at build time?).
+- ==memento== 
+  - used again for reading and writing
+  - for ==commit== and ==validate==, but do these actions have meaning at the element level?
+  - for model access, but this seems to only be used by containers, where it clearly makes sense
+- ==morph==, which could be generalized to ==view==, and would make sense for each presenter to keep around, but is only used by containers and during building
+- ==parent== is only used by ${method:MAMorphicDescription>>#root}$, which is itself unused.
+!!Behavior
 The UI controller classes all seem to implement certain methods over and over (e.g. ==string==, ==value==, ==isReadOnly==) creating the suspicion that they might be better implemented elsewhere. Here are some requirements:
-- subclassing seems not to be a good general optioni because some libraries have their own subclassing requirements e.g. Seaside''s ==WAComponent==
+- subclassing seems not to be a good general option because some libraries have their own subclassing requirements e.g. Seaside''s ==WAComponent==
 - slight variations may be needed e.g. for different change notification mechanisms.
 
 Can the visitor pattern rescue us here?! ""TODO: Read up on visitor""
+!!Reimagining
+The Morphic and Seaside (i.e. Component) objects are in effect slightly divergent and extended versions of each other. Let''s extract out the commonality. The hurdle that still remains though is that there can''t be one common hierarchy because each framework has its own expectations. I don''t see how to do this without traits...
 
 Another issue with the controllers is that, since they hold a reference to the memento for the parent object, it''s not immediately clear how to instantiate something basic for testing and example purposes. Maybe mock a memento? Pass the actual object? I think the two are polymorphic.'
 ]
