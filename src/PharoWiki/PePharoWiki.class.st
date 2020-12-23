@@ -183,12 +183,31 @@ cleanNameInput: aString
 ]]]
 
 For PetitParser, ==#parse:withContext:== seems to be a good sanitation hook:
-[[[language=smalltalk
+[[[language=plain
 MyParser >> #parse: aString withContext: context
 	| cleanInput |
 	cleanInput := self cleanInput: aString.
 	^ super parse: cleanInput withContext: context.
-]]]'
+]]]
+!Blocks and STON
+Sven offered this on Discord on 12/01/2020...
+This is a recurring question. BlockClosures are way too general and powerful to be serialised. That is why serialising BlockClosures is not supported in STON. The code inside a block can refer to and even affect state outside the block. Furthermore the return operator is quite special as it returns from some outer context. A subset of BlockClosures are those that are clean. These do not close over other variables, nor do they contain a return. By using their source code representation, it is possible to serialise/materialise them. You can try this by adding the following methods: 
+BlockClosure>>#stonOn: stonWriter
+ self isClean
+   ifTrue: [ stonWriter writeObject: self listSingleton: self printString ]
+   ifFalse: [ stonWriter error: ''Only clean blocks can be serialized'' ]
+
+BlockClosure>>#stonContainSubObjects
+ ^ false
+
+BlockClosure class>>#fromSton: stonReader
+ ^ self compilerClass new 
+     source: stonReader parseListSingleton; 
+     evaluate
+     
+With these additions you can do the following: 
+ STON fromString: (STON toString: [ :x :y | x + y ]).
+Note that the actual class name depends on the Pharo version (BlockClosure in Pharo 7, FullBlockClosure in Pharo 9 and maybe soon CleanBlockClosure - Marcus is working on that last one and that would be very cool because it would say exactly what it it). I am still not 100% convinced to add this as a standard feature to STON. Using source code fully exposes the implementation, while using the compiler can be dangerous. It also adds a dependency on source code and the compiler. But it would be good if people can experiment with this feature.'
 ]
 
 { #category : #wikiPages }
@@ -295,21 +314,6 @@ PePharoWiki class >> wikiPageDynabook [
 		text: 
 '!Dynabook
 Although I have to admit that at heart I am not a programmer, but a Dynabook fanatic and it''s been emotionally difficult to see neverending hacking that never seems to lead to a system that touches the dream. Zen and the Art of Motorcycle Maintenance talks about an ideal where static (conservative, traditional, keep things as they are) and dynamic (progress, experimentation, evolution) form a feedback loop where the good parts of the last tevolution become fixed as a static foundation for the next dynamic leap. Unfortunately, in practice we seem to only have the extremes available: the static last century ideas behind Windows and Mac and a steady stream of papers, theories and experiments from the real visionaries (cough, not Steve Jobs, the real ones). I realize that the model of the latter is cathedral building and shortening the hundreds of years from printing press to saddle-sized books, but I can''t help but think that leaving a trail of usable artifacts would bring so many more people on board, playing and creating with something real. When I discovered Squeak, I got right to work with my new Dynabook, but the Morphic clean up that never happened quickly crushed my dreams of any Blue Plane ideas and I went back to hibernation waiting for a cleanup, and then Morphic 3 which was never integrated and then Frankenstein which was never publicly available for use and now Bloc which seems frought with political controversy... - 4/24/2020 on ${wikiPage:SqueakReunion}$.'
-]
-
-{ #category : #wikiPages }
-PePharoWiki class >> wikiPageExamples [
-	"This method was automatically generated."
-	<wikiPage: #Examples>
-	^APWikiPage
-		wiki: self
-		name: 'Examples (GT)'
-		text: 
-'!Finding what you need
-Feenk uses three way to navigate (per Tudor on GT Discord live-sessions channel on 10/24/2020):
-- capturing examples in ""documents"". The narrative is both the challenging and the interesting bit. To make it less challenging, we actually guide the whole design through storytelling. We often imagine how the demo would look like. It''s something we call demo-driven (http://demodriven.com/).
-- using the ""map"" and inspecting objects from left to right. This provides a quick way to navigate and find the level of abstraction/granularity you are interested in.
-- using ""queries"". When you know that you are looking for how to work with a domain class, you can search it in examples.'
 ]
 
 { #category : #wikiPages }
