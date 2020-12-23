@@ -252,10 +252,12 @@ PePharoWiki class >> wikiPageDeprecating [
 		text: 
 '!Deprecating
 When writing non-backward-compatible code, allow your users to upgrade seamlessly with just a bit of extra care. Leave deprecated methods around for a release, annotated with one of these auto-transforming deprecation message variants:
-- ${method:Object>>#deprecated:on:in:transformWith:}$
-- ${method:Object>>#deprecated:on:in:transformWith:when:}$
-- ${method:Object>>#deprecated:transformWith:}$
-- ${method:Object>>#deprecated:transformWith:when:}$
+- The simplest is ${method:Object>>#deprecated:transformWith:}$
+- If you want to add metainfo like timestamp and project version, there is ${method:Object>>#deprecated:on:in:transformWith:}$
+-The next two are variants of the first two that let you specify a matching condition to avoid false positives:
+    - ${method:Object>>#deprecated:on:in:transformWith:when:}$
+    - ${method:Object>>#deprecated:transformWith:when:}$
+Browsing senders usually provides easily adaptable examples of the somewhat-obscure rewriting syntax, which are fairly uniform for this use case.
 
 The first time your deprecated method is run, it will be automatically rewritten in your new API. The transformation is specified with ${wikiPage:#RewriteRules}$. For relevant examples, browse the senders of the above messages.'
 ]
@@ -1211,7 +1213,58 @@ PePharoWiki class >> wikiPageTraits [
 		wiki: self
 		name: 'Traits'
 		text: 
-'There is *great documentation in the Pharo Wiki>https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Traits.md#create-and-use-a-new-trait*'
+'There is *great documentation in the Pharo Wiki>https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Traits.md#create-and-use-a-new-trait*
+!Gotchas
+!!Super
+!!!From clients
+We might naively assume that we can can use ==super== to access and extend trait behavior. Something like:
+[[[
+ClassInheritingFromObjectAndUsingTrait>>#message
+	self doSomething.
+	super message.
+]]] 
+This does not work, and thinking further it becomes clear that ==super== already has a universal meaning (it is bound to ==Object== in the example above), and doesn''t change in the context of clients.
+
+The solution is to alias the method when importing the Trait e.g. ==uses: TMyTrait @ {#myTraitMessage->#message}==. The above then becomes:
+[[[
+ClassInheritingFromObjectAndUsingTrait>>#message
+	self doSomething.
+	self myTraitMessage.
+]]] 
+!!!From Traits
+What''s less clear is why this doesn''t work:
+[[[
+Trait>>#method
+	self doSomething.
+	super method.
+]]] 
+Even if the trait is installed in a class where ==super== responds to the message, an error will occur.
+
+Here is an experience report that *I posted on Pharo Dev>http://forum.world.st/Trait-Change-in-Pharo-9-tp5119000.html*, but got no response:
+
+In Pharo 9, the following fails to load: 
+
+Metacello new 
+        baseline: ''Magritte''; 
+        repository: ''github://seandenigris/Magritte''; 
+        load: ''Magritte-Bootstrap''. 
+
+Specifically, this method fails to compile: 
+TMagritteBootstrap >> doesNotUnderstand: aMessage 
+          
+        ^ self magritteDescription 
+                        detect: [ :d | d accessor handlesSelector: aMessage selector ] 
+                        ifFound: [ :handler | handler handleMessage: aMessage for: self ] 
+                        ifNone: [ super doesNotUnderstand: aMessage ]. 
+
+But instead signals that `send: #doesNotUnderstand: toSuperOf: 
+TMagritteBootstrap` is “not supported”. There is a comment which is over my 
+head: “Trait methods are copied to the users and only the last literal is 
+updated. For directed super send the literal of the super send should be 
+updated too.” 
+
+I feel like this was working previously and would like to understand why 
+it’s not now and how to fix it. '
 ]
 
 { #category : #wikiPages }
