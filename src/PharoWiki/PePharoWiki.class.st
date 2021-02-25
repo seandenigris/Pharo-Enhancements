@@ -463,6 +463,14 @@ ${method:BaselineOfPharoEnhancements>>#customProjectAttributes|expanded=true}$
 ${method:BaselineOfPharoEnhancements>>#isGTImage|expanded=true}$
 Now you can use ==#Gtoolkit== in your baseline, just like e.g. ==pharo.8.x==:
 ${method:BaselineOfPharoEnhancements>>#baseline:|expanded=true}$
+!Trimming Load from General to Specific
+It is helpful to have the spec for the latest version of Pharo be crystal clear and concise. The tradeoff is that the spec for older platforms gets more complex, but that''s much better than the reverse! However, how do you handle the case of features that were not available on older platforms (e.g. GT wasn''t available on early Pharo versions)? You''d like to say "for P9, do this; but for P8, do the same as for P9 except..." To handle cases like these, *Dale Hendrich expliains>https://groups.google.com/g/metacello/c/5ZGMm2yyx1w/m/ZG7OPOh3AQAJ*: "There are a handful of remove* methods available. See MetacelloAbstractVersionConstructor, `api` category, for the list of methods that can be used in a spec. ConfigurationOfMetacello happens to use all three remove* methods, since Metacello was undergoing significant changes during the early years." Here''s an example:
+[[[language=smalltalk
+spec
+  for: #( #pharo4.x )
+  do: [
+    spec removePackage: ''Magritte-GT'' ]
+]]]
 !Recording i.e. "What Would Metacello Do?"
 The basic script is fairly simple - just change your load script from ==load== to ==record==. For example:
 [[[
