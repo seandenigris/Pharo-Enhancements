@@ -105,6 +105,18 @@ Another issue with the controllers is that, since they hold a reference to the m
 ]
 
 { #category : #wikiPages }
+PeMagritteWiki class >> wikiPageMerging [
+	"This method was automatically generated."
+	<wikiPage: 'Merging'>
+	^APWikiPage
+		wiki: self
+		name: 'Merging'
+		text: 
+'!Auto Merge
+There is ${method:MpName>>#shouldAutoMergeBlock}$, but support doesn''t seem to have made it into Magritte. It seems the idea is to enable definition of the condition in which Magritte should assume the incoming is a "better" version of the same thing and overwrite instead of signalling a conflict.'
+]
+
+{ #category : #wikiPages }
 PeMagritteWiki class >> wikiPageQCMagritte [
 	"This method was automatically generated."
 	<wikiPage: 'QCMagritte'>
