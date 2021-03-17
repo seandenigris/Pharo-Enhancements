@@ -23,9 +23,8 @@ PePharoWiki class >> wikiPageAST [
 - ""Format source"": ==(RBParser parseMethod: source) formattedCode==
 !Code Generation
 !!DIY Approaches
-"" It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (maybe for CI).""
 !!!String Manipulation
-This has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is *okay* for simple cases, but can get unwieldy, and doesn''t benefit from e.g. (early) compiler warnings.
+This has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is *okay* for simple cases, but can get unwieldy, and doesn''t benefit from e.g. (early) compiler warnings. It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (maybe for CI). It really seems to shine for code that it really data, like a literal array, which is much easier to work with live than to deal with as source code/AST
 
 You can create and fill a template, like this:
 [[[
@@ -159,7 +158,9 @@ objs do: [ :e |
 	newMac := CwMAC_Address fromString: e macAddress.
 	e macAddress: newMac ]
 ]]]
-Notice'
+Notice
+!SortFunctions
+This is a cool addition to Pharo, but more than allowing terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For examples, see ${class:SortFunctionTest}$'
 ]
 
 { #category : #wikiPages }
