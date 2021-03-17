@@ -24,7 +24,7 @@ PePharoWiki class >> wikiPageAST [
 !Code Generation
 !!DIY Approaches
 !!!String Manipulation
-This has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is *okay* for simple cases, but can get unwieldy, and doesn''t benefit from e.g. (early) compiler warnings. It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (maybe for CI). It really seems to shine for code that it really data, like a literal array, which is much easier to work with live than to deal with as source code/AST
+This has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is *okay* for simple cases, but can get unwieldy, and doesn''t benefit from e.g. (early) compiler warnings. It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (maybe for CI).
 
 You can create and fill a template, like this:
 [[[
@@ -37,6 +37,35 @@ template format: { #returnValue -> 42 } asDictionary
 ]]]
 
 You can also build the source with a stream. See  ${method:MAElementDescription>>#addTo:as:}$ in Magritte-Developer, which also uses the noteworthy technique of  relying on ==store:== to regenerate an object instance.
+
+This approach really seems to shine for code that is really data, like a literal array, which is much easier to work with live than to deal with as source code/AST. 
+
+Here''s an example. Say you have a method that returns a literal array to be consumed as pairs, like this:
+${method:PePharoWiki>>#exampleReturningLiteralArray|expanded=true}$
+Notice the formating:
+# alphabetical items
+# two items per line
+
+Other techniques like AST manipulation would be awkward. Inserting nodes per #1 would not be straightforward and auto-formatting would prevent #2.
+
+With strings, however, we have total flexibility in how the source code will look. In this case, this is worth the complication of this low-level approach:
+[[[language=smalltalk
+| aCollection |
+"Given an updated collection"
+aCollection := #(''Adam'' (''Bubba'' ''Tiny'') ''Zed'' nil).
+
+"A new method can easily be generated"
+String streamContents: [ :str |
+	str nextPutAll: ''exampleReturningLiteralArray
+	^ #(
+		"Name" "Aliases"''.
+	aCollection pairsDo: [ :name :aliases | 
+		| aliasesToStore |
+		str cr; tab; tab; print: name; space.
+		aliasesToStore := aliases ifEmpty: [ nil ].
+		aliasesToStore storeOn: str ].
+	str cr; tab; nextPutAll: '').'' ].
+]]]
 !!!AST Manipulation
 If you start with an existing method and modify its AST, you have the advantage of working with real objects in the domain of source code, which is less error-prone than dumb strings. However, the API does not seem to be optimized for this scenario and there is a bit of a learning curve. Here is an excerpt of a script porting a Metacello baseline method from a ConfigurationOf to a BaselineOf.
 [[[
@@ -1357,4 +1386,15 @@ XMLParser: Send ${method:XMLNodeWithElements>>#removeAllFormattingNodes}$. See *
 # *http://forum.world.st/How-to-access-XML-tag-name-tt4884065.html*
 # http://forum.world.st/Parsing-XML-into-sorted-elements-tt3615867.html
 # http://forum.world.st/XMLDomParser-Changes-in-Pharo-3-0-tt4778401.html#a4778522'
+]
+
+{ #category : #accessing }
+PePharoWiki >> exampleReturningLiteralArray [
+	
+	^ #(
+		"Name" "Aliases"
+		'Bob' nil
+		'Fred' ('Bubba' 'Tiny')
+		'Zed' nil
+	)
 ]
