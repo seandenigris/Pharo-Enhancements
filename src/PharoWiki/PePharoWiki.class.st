@@ -1393,8 +1393,7 @@ PePharoWiki >> exampleReturningLiteralArray [
 	
 	^ #(
 		"Name" "Aliases"
-		'Bob' nil
-		'Fred' ('Bubba' 'Tiny')
+		'Adam' ('Bubba' 'Tiny')
 		'Zed' nil
 	)
 ]
