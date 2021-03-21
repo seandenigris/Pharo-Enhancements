@@ -37,7 +37,9 @@ ByteString >> asTitleCase [
 			
 	^ String streamContents: resultBlock
 	
-	"Implementation note: another way to do this would be to use an existing (non-Pharo) library like https://pypi.org/project/titlecase/. Possibly one could plug in one or the other depending on the environment. For example, outside libraries are likely more mature but come with dependencies"
+	"Implementation note: another way to do this would be to use an existing (non-Pharo) library like https://pypi.org/project/titlecase/. Possibly one could plug in one or the other depending on the environment. For example, outside libraries are likely more mature but come with dependencies.
+	
+	The model here could get very deep e.g. dictionary for different languages and parts of speech. Some of this is implemented in my foreign language app"
 ]
 
 { #category : #'*PharoEnhancements' }
