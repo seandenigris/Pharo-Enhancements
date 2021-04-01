@@ -1086,7 +1086,8 @@ PePharoWiki class >> wikiPageRefactoring [
 		wiki: self
 		name: 'Refactoring'
 		text: 
-'Here''s an example script to rename all the classes in a hierarchy.
+'!Deprecating Classes
+Here''s an example script to rename all the classes in a hierarchy.
 
 [[[
 col := MADescriptionMorph allSubclasses.
@@ -1106,6 +1107,14 @@ To tell Pharo the Deprecated package is... deprecated, define the following:
 [[[
 ManifestMagritteDeprecateddot class>>#isDeprecated
 	^ true
+]]]
+!Previewing Changes
+To analyze changes without actually applying them, send ==primitiveExecute== instead of ==execute==. GT allows one to easily previewing changes. First generation GT had a primitive Inspector view for viewing, but now provides a Coder-like tree where you can actually cherry pick individual or groups of changes. Adapted from Tudor Girba (via *Twitter>https://twitter.com/girba/status/1376526271929315332?s=20*):
+[[[
+env := RBNamespace new.
+candidates := Smalltalk globals allClasses select: [ :e | e name beginsWith: ''Pe'' ].
+(candidates copyFrom: 2 to: 3) do: [ :cls | (RBRenameClassRefactoring model: env rename: cls to: (cls name, ''New'')) primitiveExecute ].
+env
 ]]]'
 ]
 
