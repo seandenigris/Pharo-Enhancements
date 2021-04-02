@@ -331,7 +331,20 @@ PePharoWiki class >> wikiPageDocumentation [
 		name: 'Documentation'
 		text: 
 '!Theory
-*Here>https://documentation.divio.com* is a really interesting system to split up documentation based on the target audience and their current objective.'
+*Here>https://documentation.divio.com* is a really interesting system to split up documentation based on the target audience and their current objective.
+!Protocol
+!!In Image
+We''d like to have information flow down from one common starting point. 
+
+GT uses the BaselineOf comment for this. The problem is that a single comment is a bit limiting. TAPWiki is more flexible because one can have unlimited pages. Maybe a convention could be to add a wiki tab to the baseline, packaged with the model not to add dependencies to the baseline.
+
+Package comments can be helpful, but seem like an optional level e.g. does a test package really need a comment?
+
+Class comments are the next level.
+
+Method comment are tricky. Now that there are rich, multimedia comments at every other level, methods seem like the least alluring place to add comments.
+!!External
+Ideally, everything in this category would be exported from something live in image, with a disclaimer as to what''s being lost and a link to see the real thing. Pharo-Preferences has ${method:BaselineOf class>>#markdownComment}$ for this purpose.'
 ]
 
 { #category : #wikiPages }
