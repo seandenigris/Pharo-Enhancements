@@ -88,7 +88,7 @@ PeGToolkitWiki class >> wikiPageBloc [
 - Graphs
 	- ${class:GtMondrianVsBlocExplanation|label=''Mondrian graph builder''|show=gtCoderCommentsFor:}$ - graph builder on top of Bloc
 - Layouts
-	- ${class:BlGridLayoutUsageExplanation|show=gtCoderCommentsFor:}$ - a grid example
+	- ${class:BlGridLayoutUsageExamples|show=gtCoderCommentsFor:}$ - a grid example
 - Shapes
 	- ${class:BlRectangleShapeWithArrowExplanation|show=gtCoderCommentsFor:|label=Rectangle Shape With Arrow}$ - example of complex shape (i.e. popup-like rectangle with arrow)
 !Cookbook
