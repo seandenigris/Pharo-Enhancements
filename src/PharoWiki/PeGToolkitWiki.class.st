@@ -275,5 +275,10 @@ MyEPUB>>#gtFileFor: aView inContext: aContext
 	^ aView composite
 		title: ''File'';
 		views: (self file gtViewsInContext: aContext)
+]]]
+!Spawning
+You can start with any BlElement in the rendering tree of the tool in question:
+[[[language=smalltalk
+aBlElement phlow spawnObject: anObject 1
 ]]]'
 ]
