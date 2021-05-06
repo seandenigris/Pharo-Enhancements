@@ -253,6 +253,20 @@ PePharoWiki class >> wikiPageDatabases [
 ]
 
 { #category : #wikiPages }
+PePharoWiki class >> wikiPageDebugging [
+	"This method was automatically generated."
+	<wikiPage: 'Debugging'>
+	^APWikiPage
+		wiki: self
+		name: 'Debugging'
+		text: 
+'!Infinite Recursion
+If your image locks up do to an endless loop, you have two options:
+- you can go get a cup of coffee while waiting for the image to run out of memory and crash, or
+- you can send ==SIGUSR1== to the VM process as recommended by Guillermo Polito *on the dev ML>http://forum.world.st/breaking-infinite-loop-from-saved-image-tp4832548p4832584.html*. For example, in Mac Terminal, you could do: ==kill -USR1 $pid=='
+]
+
+{ #category : #wikiPages }
 PePharoWiki class >> wikiPageDecimal_Numbers [
 	"This method was automatically generated."
 	<wikiPage: #Decimal_Numbers>
