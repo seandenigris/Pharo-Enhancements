@@ -134,3 +134,28 @@ PeMagritteWiki class >> wikiPageQCMagritte [
 - Tutorial included: ''''"Once you have [the framework] loaded, you can start the webpage to localhost:8080 and there you have your tutorial."''''
 - Builders were apparently ported back to Magritte *per diego>http://forum.world.st/Port-of-builders-to-Magritte-Model-tp4945490.html*'
 ]
+
+{ #category : #wikiPages }
+PeMagritteWiki class >> wikiPageReading_and_Writing [
+	"This method was automatically generated."
+	<wikiPage: 'Reading and Writing'>
+	^APWikiPage
+		wiki: self
+		name: 'Reading and Writing'
+		text: 
+'The lowest level of element reading and writing uses the description''s accessor to retrieve or store the value. The main point of entry is ==readUsing:==.  This hook is needed to make ==Object== and all stand-ins (e.g. mementos) polymorphic. For more details, you can delve into the implementors:
+[[[
+#readUsing: gtImplementors
+]]]
+${class:MADescription}$ also provides a convenience method, ${method:MADescription>>#read:}$.
+
+Layered on top of the above-described ''''object'''' reading/writing is a ''''string'''' reading/writing mechanism. This is used when you want to represent a described object as a string. The most common use case is probably for GUIs. Under the covers, the workhorses are ${class:MAStringReader}$ and ${class:MAStringWriter}$, which in turn consult the object and its description, but typically these are not dealt with directly. ${class:MADescription}$ provides an API covering the common cases. Check it out:
+[[[
+(GtSearchMethodConditionsFilter 
+		condition: [ :aMethod | #(#oString #romString) anySatisfy: [ :s | aMethod selector includesSubstring: s ] ]) & ''MADescription'' gtClassMatches
+]]]
+
+While customization is possible by subclassing the reader and writer, that may seem like a heavyweight solution when you just want to alter the string representation a bit. As an example, say you have a Money object, and in different contexts you want to represent it with strings like ''$15'', ''$15 USD'', and ''$15.000''. The reader/writer subclasses would quickly grow. A recent alternative has been provided: the display string mechanism. Just send ${method:MAElementDescription>>#display:}$. This will override the default behavior of the built-in reader/writer. See its comment for details about accepted arguments.
+
+'
+]
