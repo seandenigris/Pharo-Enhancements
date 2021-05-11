@@ -259,7 +259,9 @@ PeGToolkitWiki class >> wikiPageViews [
 		wiki: self
 		name: 'Views'
 		text: 
-'!Prototyping
+'!Mondrian
+The magic happens inside the block passed to your view via ${method:GtPhlowMondrianView>>#painting:}$.  The block''s argument will be a ${class:GtMondrian}$ object. You can more or less paste in a freestanding Mondrian script. See ${class:GtMondrianBasicExamples}$ for inspiration.
+!Prototyping
 All you need is an empty view to start. For example:
 [[[
 GtPhlowEmptyView new 
