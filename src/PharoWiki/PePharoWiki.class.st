@@ -263,7 +263,14 @@ PePharoWiki class >> wikiPageDebugging [
 '!Infinite Recursion
 If your image locks up do to an endless loop, you have two options:
 - you can go get a cup of coffee while waiting for the image to run out of memory and crash, or
-- you can send ==SIGUSR1== to the VM process as recommended by Guillermo Polito *on the dev ML>http://forum.world.st/breaking-infinite-loop-from-saved-image-tp4832548p4832584.html*. For example, in Mac Terminal, you could do: ==kill -USR1 $pid=='
+- you can send ==SIGUSR1== to the VM process as recommended by Guillermo Polito *on the dev ML>http://forum.world.st/breaking-infinite-loop-from-saved-image-tp4832548p4832584.html*. For example, in Mac Terminal, you could do: ==kill -USR1 $pid==
+!Memory Hogging
+If the VM was compiled with -g you can run the VM under valgrind with callgrind_annotate to get a tree of instructions spent by vm functions (per Hernand via Pharo Discord #vm channel on 5/12/2021):
+
+[[[language=shell
+valgrind --tool=callgrind ./pharo Pharo.image
+callgrind_annotate callgrind.out.PID --inclusive=yes --tree=both
+]]]'
 ]
 
 { #category : #wikiPages }
