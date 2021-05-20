@@ -57,6 +57,10 @@ It’s an extension in MethodCoder
 Konrad Hinsen09/11/2020
 - @SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the ""clean"" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.
 - ==gt-extra== - to copy after template instantiation. See ${method:GtImageSetup class>>#copyDataAndDocsFolders}$
+
+- *Pharo Package Coder Element>https://github.com/feenkcom/gt4pharo/commit/dd9d6c* - asked on Discord 5/19/21
+
+- *Columned tree row customization>https://github.com/feenkcom/Brick/commit/2a8705*
 !Other GT Pages
 - ${wikiPage:#GT_OO_IDE}$
 - ${wikiPage:#GT_VM}$
