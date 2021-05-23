@@ -1232,6 +1232,30 @@ Then client code like ==aComposition formattingStrategy: #formatWithSimpleAlgori
 ]
 
 { #category : #wikiPages }
+PePharoWiki class >> wikiPageTesting_Examples [
+	"This method was automatically generated."
+	<wikiPage: 'Testing_Examples'>
+	^APWikiPage
+		wiki: self
+		name: 'Testing_Examples'
+		text: 
+'!Object state
+==StateSpecs== is a wonderful state specification library. It is hosted *on GH>https://github.com/dionisiydk/StateSpecs* and *the README>https://github.com/dionisiydk/StateSpecs#readme* gives quite a nice overview.
+
+The main access point is ${method:Object>>#should}$.  ${class:SpecOfShouldExpression}$ is the internal workhorse where you can see all the built-in message you can send after ==should==.
+
+To add your own class-specific messages,  subclass ${class:SpecOfShouldExpression}$ and redefine ${method:Object>>#should}$ to use your subclass. The one caveat is that it seems if you send ${method:SpecOfShouldExpression class>>#startingAt:}$, the global pragma/object setting described in ${class:SpecOfShouldExpression|show=#gtCoderCommentsFor:|label=''the class commen''}$ will prevent your subclass from being used. To work around this, just skip that message and define your message thusly:
+[[[
+MyDomainObject>>#should
+	^ MyCustomShouldSpec new
+		receiver: self;
+		yourself
+]]]
+!Mocking
+*https://github.com/dionisiydk/Mocketry*'
+]
+
+{ #category : #wikiPages }
 PePharoWiki class >> wikiPageTime_Control [
 	"This method was automatically generated."
 	<wikiPage: #Time_Control>
