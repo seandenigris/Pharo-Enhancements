@@ -144,7 +144,7 @@ PePharoWiki class >> wikiPageCode_Changes [
 		name: 'Code Changes'
 		text: 
 '!Epicea
-This is Pharo''s code change tracking system. There are two common use cases for which ==PharoEnhancements== adds extensions:
+This is Pharo''s code change tracking system. There are two common use cases for which *PharoEnhancements>https://github.com/seandenigris/Pharo-Enhancements* adds extensions:
 - ${method:EpCodeChange class>>#allSourceCodeMatching:|label=Source code substring matching}$
 - ${method:EpCodeChange class>>#allAffectingPackagesNamed:|label=Package(s) matching}$'
 ]
@@ -219,7 +219,23 @@ MyParser >> #parse: aString withContext: context
 	cleanInput := self cleanInput: aString.
 	^ super parse: cleanInput withContext: context.
 ]]]
-!Blocks and STON
+!SortedCollection Workaround
+Block issues can manifest when materializing ==SortedCollection==s with sort blocks, as *reported on the dev list>http://forum.world.st/STON-SortedCollection-Bug-tt4967138.html*. 
+
+To avoid this completely without modifying domain objects, you can usually use a ${class:SortFunction}$. 
+
+Another option is to put camparison behavior to the collection''s elements:
+1. Use the default sorting behavior (i.e. `#<=`), which means `#sortBlock` will be nil.
+2. Implement `#<=` on the domain object elements.
+!STON
+IMHO the main difference with Fuel is that you trade efficiency (plain text vs. binary) for flexibility (portable to Amber, human-readable). 
+[[[language=smalltalk
+"Serialize"
+FileLocator home / ''my_file.ston'' writeStreamDo: [ :s | STON put: myData onStream: s ].
+"Re-materialize"
+FileLocator home / ''my_file.ston'' readStreamDo: [ :s | STON fromStream: s ].
+]]]
+!!Blocks
 Sven offered this on Discord on 12/01/2020...
 This is a recurring question. BlockClosures are way too general and powerful to be serialised. That is why serialising BlockClosures is not supported in STON. The code inside a block can refer to and even affect state outside the block. Furthermore the return operator is quite special as it returns from some outer context. A subset of BlockClosures are those that are clean. These do not close over other variables, nor do they contain a return. By using their source code representation, it is possible to serialise/materialise them. You can try this by adding the following methods: 
 BlockClosure>>#stonOn: stonWriter
@@ -236,7 +252,9 @@ BlockClosure class>>#fromSton: stonReader
      evaluate
      
 With these additions you can do the following: 
+[[[
  STON fromString: (STON toString: [ :x :y | x + y ]).
+]]]
 Note that the actual class name depends on the Pharo version (BlockClosure in Pharo 7, FullBlockClosure in Pharo 9 and maybe soon CleanBlockClosure - Marcus is working on that last one and that would be very cool because it would say exactly what it it). I am still not 100% convinced to add this as a standard feature to STON. Using source code fully exposes the implementation, while using the compiler can be dangerous. It also adds a dependency on source code and the compiler. But it would be good if people can experiment with this feature.'
 ]
 
@@ -248,7 +266,25 @@ PePharoWiki class >> wikiPageDatabases [
 		wiki: self
 		name: 'Databases'
 		text: 
-'!Glorp
+'!!File-Base
+- SQLite
+	- [The SQLite3 API is very well documented, and the UDBC-SQLite3 project (https://github.com/astares/Pharo-UDBC) is a nice and clean binding to it.](http://forum.world.st/Re-Pharo-users-Digest-Vol-77-Issue-67-tp5104319.html)
+  
+	- https://github.com/juliendelplanque/SQLite3. Here''s a usage example [gist](https://gist.github.com/seandenigris/c5b2d2b025b255be1c70a2ace42e19ed).
+
+- Unqlite via punqlite
+- PostgreSQL - sven wrote a PostgreSQL wire protocol implementation called P3
+- Any SQL DB via UDBC/Garage (e.g. the above, MySQL)
+
+
+
+> Let''s not forget Gemstone, which is commercial, but free for some limited use. It has all advantages of OOP and Smalltalk, no ORM problems. You can write prepared queries in Smalltalk on Gemstone DB side, which can be optimized (to avoid large memory consumption on client side in Pharo). There is a tool GTConnector? for Pharo which looked nice in presentation. We used Gemstone in my previous job and it was most stable component of entire stack I believe. - David Bajger via Discord #learning-help 10/8/2017
+
+
+
+> For traditional multi-user ORM + SQL database I''d look at P3 from Sven for Postgres with GLORP… And I would probably generate GLORP descriptors from Magritte by default - Stephan Eggermont via Discord #learning-help 10/8/2017
+!!Glorp
+> Glorp which is an ORM works over some of these. Voyage is an OO persistence API whose main backend is mongodb, although i think there is at least one other. - Pierce Ng via Discord #learning-help 10/8/2017
 - Schema migration - *per Esteban Marg>http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html*, there is support in VW that could potentially be ported to Pharo'
 ]
 
@@ -434,18 +470,36 @@ PePharoWiki class >> wikiPageGit [
 You make a commit to a branch that exists on the remote, but when you try to push it, you realize there were commits on the remote that you hadn''t pulled and now your branch has diverged. What to do? It depends...
 !!!No Conflicts
 This would mean none of the same classes modified for Tonel, or none of the same methods modified for FileTree. This CLI script seems to be the simplest fix (replace ==master== with the branch in question):
-```language=shell
+
+[[[language=shell
 git fetch origin master
 git rebase origin/master
 git push origin master
-```
-But, if you''re more comfortable in Iceberg, you can [TODO: INSERT SOLUTION FROM GH WIKI]
+]]]
+But, if you''re more comfortable in Iceberg, you can:
+1. Drop to the command line and: ==git rebase origin/master== (assuming the remote is named ==origin==)
+2. Get Iceberg to realize it''s out of sync with the local file repo. One way is to bring up the context menu on the project and then "Extra" -> "Recalculate dirty packages".
+3. Repair repository - choose to discard image changes (don''t worry we''re not really going to do that). When the preview dialog comes up, select "DO NOT CHECKOUT..." from the dropdown. This will make sure that nothing in the image is changed except Iceberg and the local file repo will be in sync again.
 !!!Conflicts
 Here you''ll follow the Iceberg instructions for "No Conflicts", but with the following modifications:
 # Choose, "Checkout packages already loaded"
 # At the end, go into Epicea and revert the in image code changes that wipes out your changes
 
-Alternatively, you could follow the git script above and then manually resolve the conflict on the command line.
+Alternatively, you could follow the git script for ""No Conflicts"" and then manually resolve the conflict on the command line.
+!!Syncing a Fork (e.g. on GitHub)
+If your personal fork is behind the canonical, from *GitHub docs>https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork* (assumes fork remote is named ==origin==, canonical is ==upstream==, and we want to sync the ==master== branch):
+1. If needed, add remote(s) e.g. ==git remote add upstream git@github.com:magritte-metamodel/magritte.git==
+1. ==git fetch upstream==
+1. ==git merge upstream/master==
+1. ==git push origin master==
+!!Working on Multiple Features of the Same Project in the Same Image
+Scenario: While working on a feature branch that I''ve made commits to, I want to commit a fix that''s part of an unrelated feature.
+Solution: Here''s how to submit "just the second fix". NB: for *every* checkout described below, select ==DO NOT CHECKOUT ANY PACKAGES== in the preview window:
+1. Checkout the commit on the first issue branch just before work began (i.e. the commit that''s already part of the repo)
+2. Repair detached HEAD state by creating a "new branch from image commit" for the second feature
+3. Commit second feature fix
+4. Checkout the first feature branch. Remember that the second feature fix will now show as uncommitted, so if you want the second fix to remain loaded, when you make further commits to the first feature you''ll need to uncheck those changes. 
+5. As needed, switch between feature branches to make additional commits to either feature.
 !Declare Smalltalk
 Does GitHub think you''re project is 80% HTML? Want to proudly proclaim that it is in fact Smalltalk?
 Create a ==.gitattributes== file in the root folder with the following contents: ==*.st linguist-language=Smalltalk=='
@@ -459,7 +513,14 @@ PePharoWiki class >> wikiPageLauncher [
 		wiki: self
 		name: 'Launcher'
 		text: 
-'!Bug: Unzipping recent GToolkit ==gt-extra== folders
+'!Add Template Example (*Hack*)
+[[[language=smalltalk
+officialGroup := PharoLauncher new templateRepository roots detect: [ :e | e name = ''Official distributions'' ].
+officialGroup templatesAndGroups add: (self last copy 
+	setName: ''GToolkit'' url: ''https://github.com/feenkcom/gtoolkit/releases/latest/download/GT.zip'' asUrl;
+	yourself)
+]]]
+!Bug: Unzipping recent GToolkit ==gt-extra== folders
 I''m just holding on to this one because it is a minor annoyance that only applies to custom code. I''m just leaving this record of my research in case we want to follow up later. I created a template from the following (https://www.dropbox.com/s/tzy73oi3sh32x2y/GT%200.8.225.zip?dl=0, zipped for sharing, unzip to reproduce). When I tried to create an image from the template, I got an error during unzipping (something about Hoffman tables). I don''t think it''s a Launcher error, because Launcher just uses
 [[[
 | sourceFolder archive anImage aString |
@@ -901,11 +962,22 @@ PePharoWiki class >> wikiPageParsing [
 		name: #Parsing
 		text: 
 'What interests me is how to handle parsing in a generic way. How can we handle format input/output in a way that minimizes duplication and maximizes compatibility between libraries. If I define RTF grammar once, I don''t want to do it three more times to try out the four major parsing libraries. If I define the parsing in one direction, how much of that can be reused to reverse?
+!PEG Grammars
+There are apparently at least to syntaxes: the original - and more common - Byran Ford syntax, and Xtreams syntax.
+!!Converting e.g. ABNF (e.g. from rfc) to PEG
+I described my experience on Pharo Users, both documenting the twists and turns *here>http://forum.world.st/Xtreams-Extending-Bootstrap-tp4902579.html) as well as some more general useful lessons* *here>http://forum.world.st/Xtreams-Debugging-Grammars-tp4902581p4903438.html*:
+> Two problems I found copy/pasting grammars from standard docs: 
+> - Repititions (*) were prefix instead of postfix 
+> - "\" had to be escaped to "\\" 
+
+> I still wonder about debugging techniques, though. If one was building a grammar from scratch, it might be easy to start with blocks that are constantly working, but the grammar in RFC 5322 is very interwoven. It''s hard to see which rules are necessary up front.
 !Available Options
-- PetitParser
-- PetitParser2
-- Xtreams
-  - PEGActor example available *per Chris Cunningham>http://forum.world.st/Xtreams-PEGParser-now-has-a-working-PEGActor-subclass-td4925586.html*
+!!PetitParser(2)
+PetitParser was redesigned by Jan Kurs. Tudor Girba wrote *this thorough explanatory blog post>http://www.humane-assessment.com/blog/introducing-petitparser2/*. In summary:
+- Optimization offers 2-5 time speed increase
+- ==#asParser== -> ==#asPParser== so both lib versions can be loaded simultaneously. Per Tudor: "This transition is needed for parsers that rely on deeper constructs from the original PetitParser, such as concrete names of classes."
+- More understandable because Parsers have been split into Nodes and Visitors.
+- Streams eliminate need to have entire input in memory.
 !!SmaCC
 !!!Docs
   - *Website>http://www.refactoryworkers.com/SmaCC/ASTs.html*
@@ -914,7 +986,21 @@ PePharoWiki class >> wikiPageParsing [
  !!!Repos
   - *Pharo port>https://github.com/SmaCCRefactoring/SmaCC*
   
-  
+!!Xtreams
+VW Library ported to Pharo
+- Repos
+  - http://www.squeaksource.com/Xtreams, from which the Pharo 4 Config Browser loads
+  - https://github.com/seandenigris/Xtreams-Pharo, which is a port of the above to GH, with some additional experiments/improvements/documentation
+  - https://github.com/mkobetic/Xtreams
+  - http://smalltalkhub.com/#!/~juampi/Xtreams/, which claims to be porting Xtreams to "Pharo 6". [Per Juan Pablo Sandoval](http://forum.world.st/Xtreams-Which-Repository-tp4887888p4887923.html):
+> I am working on the repository #2, ~juampi/Xtreams.  It is a temporal fork from the repo #1. 
+
+> At the moment, I was playing with the configuration of Xtreams to avoid the warnings and/or errors during the load on Pharo5. I think it is ok now for Pharo5. 
+
+> The next steps are: 
+> - Updating the code of the repo to latest code in VW. I did my first attempt, but as I am not a Xtreams/VW expert, it is taking more time than I expected. BTW, any suggestion for this step would be appreciated.
+> - Improving the API of Xtreams.
+  - PEGActor example available *per Chris Cunningham>http://forum.world.st/Xtreams-PEGParser-now-has-a-working-PEGActor-subclass-td4925586.html*
 !!Translating Smalltalk Code
 See *here>http://readthesourceluke.blogspot.com/2014/09/block-translators-parsing-magic.html* for a technique that avoids using a parser at all. For example, if you have a select block that deals with your domain objects, you can implement a SQL equivalent.
 !Background/Theory
@@ -1116,8 +1202,8 @@ PePharoWiki class >> wikiPagePillar [
 		wiki: self
 		name: #Pillar
 		text: 
-'!Pillar
-!!Annotations
+'*Pillar>https://github.com/pillar-markup/pillar-documentation* is a text document model with associated markup syntax. Its primary reason for existence is to have total control, with the usual caveat that some features (e.g. footnotes) may be missing or limited compared to mainstream external libraries. This is described at length *here>http://forum.world.st/why-Pillar-td4868487.html*. See *the documentation>https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/PillarChap/Pillar.html* for more info.
+!Annotations
 - Parameters - available defined in class-side ==possibleParameters== (e.g. ${method:PRCitationAnnotation class>>#possibleParameters}$
 ${example:GtCoderExamples>>#scripter|label=''hi there''}$'
 ]
@@ -1130,7 +1216,25 @@ PePharoWiki class >> wikiPageRefactoring [
 		wiki: self
 		name: 'Refactoring'
 		text: 
-'!Deprecating Classes
+'!Common Scenarios
+- *Scoping>https://gist.github.com/gcotelli/8a6afbbd04809f79aa6fff25674458db*
+- *Statements, Adding>http://forum.world.st/Adding-a-statement-when-rewriting-td4668879.html*
+- Syntax via *refactory.com>https://refactory.com/rewrite-tool/* (includes images, but code poorly formatted) or *U Illinois CS via wayback>https://web.archive.org/web/20150611033245/http://st-www.cs.illinois.edu/users/brant/Refactory/Rewrite.html* (no images, but code formatted better)
+- ML Posts
+  - *http://forum.world.st/RB-API-td3781019.html*
+  - *http://forum.world.st/Classes-referenced-in-code-string-td4244214.html*
+  - *http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html*
+
+- I found *http://www.refactory.com/tools/refactoring-browser/rewrite-tool* to be quite helpful re the basics. 
+
+- ==look in the notes folder inside the ParseTreeRewriter chapter on github.== *per Steph>http://forum.world.st/Rewrite-rules-doc-tp4775759p4775928.html*
+ - *https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/RewriteTool/RewriteTool.pier.pdf*
+- *http://st-www.cs.illinois.edu/users/brant/Refactory/Lint.html via wayback>https://web.archive.org/web/20150611033230/http://st-www.cs.illinois.edu/users/brant/Refactory/Lint.html*
+- *http://www.lukas-renggli.ch/blog/ob-rb-3*
+- *http://www.lukas-renggli.ch/blog/ignoring-lint-rules*
+!Change the class of an instance
+""use with caution"": ==MyClass #adoptInstance: anObject== (thanks to Charles Monteiro via Pharo Discord)
+!Deprecating Classes
 Here''s an example script to rename all the classes in a hierarchy.
 
 [[[
@@ -1159,6 +1263,18 @@ env := RBNamespace new.
 candidates := Smalltalk globals allClasses select: [ :e | e name beginsWith: ''Pe'' ].
 (candidates copyFrom: 2 to: 3) do: [ :cls | (RBRenameClassRefactoring model: env rename: cls to: (cls name, ''New'')) primitiveExecute ].
 env
+]]]
+!Semantic Analysis
+Which classes are referenced in this source code?
+[[[language=smalltalk
+source := ''Object new. String new''.
+ast := RBParser parseExpression: source. 
+ast annotateInClass: UndefinedObject. 
+(ast allChildren 
+ select: [ :each | each isVariable and: [ each variableBinding isLiteralBinding ] ]) 
+     collect: [ :each | each variableBinding binding value ].
+
+   "--> an OrderedCollection(Object String)" 
 ]]]'
 ]
 
@@ -1178,7 +1294,14 @@ Here are a few mailing list discussions which stand out:
 - *http://forum.world.st/Adding-a-statement-when-rewriting-td4668879.html*
 - *http://forum.world.st/RB-API-td3781019.html*
 - *http://forum.world.st/Classes-referenced-in-code-string-td4244214.html*
-- *http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html*'
+- *http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html*
+!!Examples
+Replace all calls to ==#deprecated:== to ==#deprecated:on:in:== (to fix Pharo Issue 4718):
+[[[language=smalltalk
+        RBParseTreeRewriter new
+                replace: ''``@object deprecated: ``@arg1 ''
+                with: ''``@object deprecated: ``@arg1 on:('''''', dateString,  '''''') in:(''''Pharo'', versionNumber asString, '''''')''.
+]]]'
 ]
 
 { #category : #wikiPages }
