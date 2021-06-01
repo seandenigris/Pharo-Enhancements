@@ -624,19 +624,19 @@ PePharoWiki class >> wikiPageMoney [
 - *Avi''s Money project from Dabble>http://smalltalkhub.com/#!/~pdebruic/Money*. *Per Paul Debrucker>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4693053.html*: "originally comes from last chapter of Smalltalk Best Practices Patterns by Kent Beck and was uploaded by Avi Bryant." and he worked on thereafter. Originally hosted *on SqS>http://www.squeaksource.com/Money.html*.
 - Units package can be used to model money, *according to Denis Kudriashov>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4692706.html*
 !!Discussion
-- *Thread>http://forum.world.st/Smalltalk-float-to-currency-how-to-tt86320.html* with a consensus to use ${wikiPage:Decimal_Numbers|label=}$ which may have (had) a bug *described by Vanessa (then Bert)>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86339.html* where it was not properly rounded causing comparison issues
+- *Thread>http://forum.world.st/Smalltalk-float-to-currency-how-to-tt86320.html* with a consensus to use ${wikiPage:Decimal_Numbers}$ which may have (had) a bug *described by Vanessa (then Bert)>http://forum.world.st/Smalltalk-float-to-currency-how-to-tp86320p86339.html* where it was not properly rounded causing comparison issues
 - Advice to use FixedDecimal
 - *Thread that''s all over the place>http://forum.world.st/SIXX-problem-for-ScaledDecimal-tt3535135.html*
 !!Decimal Representation
 The only thing everyone seems to agree on is ''''not'''' to use Floats. Many advocate ${class:ScaledDecimal}$, but Chris Cunningham points out in several places that the scale is only for display, and precision beyond that scale is kept and used, resulting in potentially surprising results which are inappropriate for money. *He explains>http://forum.world.st/Pharo-dev-Monetary-package-tp4692670p4692890.html*: "''''In general, [this is] NOT what you want when dealing with Money - if you have an amount, it is a definite amount, and not an approximate amount.  (With the possible exceptions of interim results - but for those, you probably need strict control over exactly how precise the interim results are - which isn''t readily available in ScaleDecimal).  This is the main reason I built the FixedDecimal package on SqueakSource.''''" There is also advice to use a "Binary Coded Decimal" for money. See ${wikiPage:Decimal_Numbers}$ for (much) more (gory) detail.
 !Instance creation
 One problem is that if one uses Pharo''s built in number literals, a float is created and the game is over before it has begun. For example, ==1.11 asScaledDecimal== has already introduced imprecision, but ==ScaledDecimal readFrom: ''1.11''== has not. Thus, I''m not clear about e.g. Aconcagua''s ==1 dollars==, which would seem to have the same problem as the first approach above. The following line from the Aconcagua paper [1] lead me down a rabbit hole which I''ve finally climbed out of after much research and thought:
-
+[[[
    fc := 100 dollars * (1 + (0.1/1 year * 6 month)).
-
+]]]
 The problem is that everything I''ve read about money says "don''t use floats". It seems in order to use a class like ScaledDecimal or FixedDecimal to preserve precision, one must convert directly from a string e.g. do `ScaledDecimal readFrom: aString`. However, IIUC, using a message like `#dollars`, especially in the way demonstrated on a literal, means that except in a small subset of simple cases, you''ve already lost the precision, so an amount with a relatively simple fraction representation e.g. 59.99 = 5999/100, when converted to a ScaledDecimal, becomes 8442841926436127/140737488355328.
 
-What am I missing? Can Aconcagua really be used in the way described above and in the paper, or was that just a “cool” demonstration (you gotta love “100 dollars” for intention revealing!) that is not necessarily practical in the real world?
+What am I missing? Can Aconcagua really be used in the way described above and in the paper, or was that just a "cool" demonstration (you gotta love "100 dollars" for intention revealing!) that is not necessarily practical in the real world?
 
 1. http://sdmeta.gforge.inria.fr/Teaching/CoursAnnecy/0506-M1-COO/aconcagua-p292-wilkinson.pdf'
 ]
