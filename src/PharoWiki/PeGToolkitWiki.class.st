@@ -191,6 +191,29 @@ Taken together, they are a big clue to the problem GT solves. Take Pharo''s poor
 ]
 
 { #category : #wikiPages }
+PeGToolkitWiki class >> wikiPageScene_Driller [
+	"This method was automatically generated."
+	<wikiPage: 'Scene Driller'>
+	^APWikiPage
+		wiki: self
+		name: 'Scene Driller'
+		text: 
+'With the following script it is possible to create an arbitrary element with a scene driller functionality and then show a Scene Driller on a provided (optional) child element:
+
+
+[[[
+world := GtWorldElement new
+
+	addEventHandler: GtSceneDrillerEventHandler new;
+	yourself.
+world fireEvent: (GtSceneDrillerShowWish new
+	elementToSelect: world children first children first;
+	sceneExtent: 800@600).
+world
+]]]'
+]
+
+{ #category : #wikiPages }
 PeGToolkitWiki class >> wikiPageSmaCC [
 	"This method was automatically generated."
 	<wikiPage: 'SmaCC'>
