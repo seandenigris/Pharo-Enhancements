@@ -311,5 +311,7 @@ MyEPUB>>#gtFileFor: aView inContext: aContext
 You can start with any BlElement in the rendering tree of the tool in question:
 [[[language=smalltalk
 aBlElement phlow spawnObject: anObject 1
-]]]'
+]]]
+!Updating
+Send ${method:GtPhlowView>>#actionUpdateButtonTooltip:}$.'
 ]
