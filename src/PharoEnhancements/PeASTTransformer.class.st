@@ -1,5 +1,5 @@
 Class {
-	#name : #'PeAST_Transformer',
+	#name : #PeASTTransformer,
 	#superclass : #Object,
 	#instVars : [
 		'ast',
@@ -9,7 +9,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-PeAST_Transformer class >> on: anRBNode [
+PeASTTransformer class >> on: anRBNode [
 	"For a method, pass its #parseTree, not #ast (which is not generally what you want when you're modifying it)"
 
 	^ self new
@@ -18,7 +18,7 @@ PeAST_Transformer class >> on: anRBNode [
 ]
 
 { #category : #transforming }
-PeAST_Transformer >> addStatementFirst: aString [  
+PeASTTransformer >> addStatementFirst: aString [  
 	| node |
 	node := Smalltalk compilerClass new
 		source: aString;
@@ -27,37 +27,37 @@ PeAST_Transformer >> addStatementFirst: aString [
 ]
 
 { #category : #transforming }
-PeAST_Transformer >> addTemporaryNamed: aSymbol [
+PeASTTransformer >> addTemporaryNamed: aSymbol [
 	self ast body addTemporaryNamed: aSymbol
 ]
 
 { #category : #accessing }
-PeAST_Transformer >> ast [
+PeASTTransformer >> ast [
 	^ ast
 ]
 
 { #category : #accessing }
-PeAST_Transformer >> ast: anRBNode [ 
+PeASTTransformer >> ast: anRBNode [ 
 	ast := anRBNode
 ]
 
 { #category : #configuring }
-PeAST_Transformer >> beScript [
+PeASTTransformer >> beScript [
 	isMethod := false
 ]
 
 { #category : #testing }
-PeAST_Transformer >> isMethod [
+PeASTTransformer >> isMethod [
 	^ isMethod ifNil: [ true ]
 ]
 
 { #category : #testing }
-PeAST_Transformer >> isVariableDefined: aRBVariableNode [
+PeASTTransformer >> isVariableDefined: aRBVariableNode [
 	^ self rootNode allVariables anySatisfy: [ :e | e name = aRBVariableNode name ]
 ]
 
 { #category : #configuring }
-PeAST_Transformer >> newSource [
+PeASTTransformer >> newSource [
 
 	| undeclaredVariables |
 	undeclaredVariables := self rootNode allVariables asSet reject: [ :e | 
@@ -72,14 +72,14 @@ PeAST_Transformer >> newSource [
 ]
 
 { #category : #transforming }
-PeAST_Transformer >> replaceNodesSelect: aBlock withNode: aRBVariableNode [
+PeASTTransformer >> replaceNodesSelect: aBlock withNode: aRBVariableNode [
 	self ast allChildren
 		select: aBlock
 		thenDo: [ :e | e parent replaceNode: e withNode: aRBVariableNode ]
 ]
 
 { #category : #testing }
-PeAST_Transformer >> rootNode [
+PeASTTransformer >> rootNode [
 	^ self isMethod
 		ifTrue: [ self ast ]
 		ifFalse: [ self ast body ]
