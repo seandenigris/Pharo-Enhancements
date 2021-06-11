@@ -23,3 +23,9 @@ Object class >> given: givenBlock when: whenBlock then: thenBlock [
 		when: [ :aNumber | MyDomainClass new number: aNumber; yourself ]
 		then: [ :it | self assert: it isEmpty ]."
 ]
+
+{ #category : #'*PharoEnhancements' }
+Object class >> iceRepository [
+	"Unlike RPackage>>#iceRepository, I work with non-MC e.g. git"
+	^ IceRepository registry detect: [ :e | e includesPackageNamed: self package name ].
+]
