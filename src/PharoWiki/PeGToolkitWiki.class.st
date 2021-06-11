@@ -97,6 +97,8 @@ PeGToolkitWiki class >> wikiPageBloc [
 	- ${class:BlRectangleShapeWithArrowExplanation|show=gtCoderCommentsFor:|label=Rectangle Shape With Arrow}$ - example of complex shape (i.e. popup-like rectangle with arrow)
 !Cookbook
 - Draggable element: ==aBlElement addEventHandler: BlPullHandler new==. Here''s an example ${example:BrAnchoredExamples>>#tooltip|previewExpanded=false}$:
+!Discoverabiliity
+While the scene driller is generally straightforward to use, one curveball is with dropdowns. Visually, the dropdown''s contents are part of the header/button, but the contents are in a different branch of the rendering tree. The obvious first step is to drill into the ${class:GtRefactoringsPreviewButton}$. This will point to the next object of interest, a ${class:GtRefactoringsElement}$, but you will have to hunt around in the scene driller for the object containing it.
 !Higher Levels Built on Bloc Foundation
 - Browser engine - ${class:BaselineOfBrick|show=gtCoderCommentsFor:|label=Brick}$
 - Widgets - ${class:BaselineOfGToolkitPhlow|show=gtCoderCommentsFor:|label=Phlow}$'
