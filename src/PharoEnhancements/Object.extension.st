@@ -1,6 +1,11 @@
 Extension { #name : #Object }
 
 { #category : #'*PharoEnhancements' }
+Object class >> exampleSupportFolder [
+	^ self iceRepository location / 'example support'
+]
+
+{ #category : #'*PharoEnhancements' }
 Object >> fuelOut [
 	| target |
 	target := FileLocator imageDirectory / self printString asFileName, 'fuel'.
