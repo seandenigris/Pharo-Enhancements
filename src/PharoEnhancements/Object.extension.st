@@ -32,5 +32,5 @@ Object class >> given: givenBlock when: whenBlock then: thenBlock [
 { #category : #'*PharoEnhancements' }
 Object class >> iceRepository [
 	"Unlike RPackage>>#iceRepository, I work with non-MC e.g. git"
-	^ IceRepository registry detect: [ :e | e includesPackageNamed: self package name ].
+	^ IceRepository registry detect: [ :e | e includesPackageNamed: self package name ] ifNone: [ nil ].
 ]
