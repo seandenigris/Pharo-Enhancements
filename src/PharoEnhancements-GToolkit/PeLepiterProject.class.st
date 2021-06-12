@@ -1,3 +1,14 @@
+"
+Check out my Dashboard Coder tab.
+
+I distinguish the following statuses:
+- up-to-date
+- changes needing to be comitted
+- unloaded but available DB
+- no DB
+
+An uncovered case is when DB changes have been committed elsewhere i.e. there is an incoming commit with {{gtMethod:PeLepiterProject>>#commitMessage}}
+"
 Class {
 	#name : #PeLepiterProject,
 	#superclass : #Object,
@@ -96,7 +107,7 @@ PeLepiterProject >> buttonLabelled: aString action: aBlock [
 PeLepiterProject >> commitDatabase [
 	| repairCommand branch strategy commitCommand |
 	commitCommand := 'cd "' , self iceRepository location fullName
-				, '"; git add lepiter/*; git commit -m lepiter-sync'.
+				, '"; git add lepiter/*; git commit -m ', self commitMessage.
 	LibC system: commitCommand.
 	
 	repairCommand := IceTipCheckoutModel new.
@@ -108,6 +119,11 @@ PeLepiterProject >> commitDatabase [
 		commitish: branch;
 		diff;
 		checkout
+]
+
+{ #category : #accessing }
+PeLepiterProject >> commitMessage [
+	^ 'lepiter-sync'
 ]
 
 { #category : #actions }
