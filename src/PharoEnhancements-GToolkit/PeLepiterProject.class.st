@@ -33,7 +33,43 @@ PeLepiterProject class >> gtViewDashboardOn: aView [
 		column: 'Status' 
 			icon: [ :p | p statusIcon ]
 			width: 75;
-		column: 'Name' text: [ :p | p asString asRopedText ]
+		column: 'Name' text: [ :p | p asString asRopedText ];
+		column: 'Actions' 
+			icon: [ :p | p actionButtons first ]
+			width: 500;
+		actionUpdateButtonTooltip: 'Update'
+]
+
+{ #category : #accessing }
+PeLepiterProject >> actionButtons [
+	| result |
+	result := OrderedCollection new.
+	self hasDatabase ifFalse: [ 
+		^ result 
+			add: (self 
+				buttonLabelled: 'Create DB' 
+				action: [ self createDatabase ]);
+			yourself ].
+	self database ifNil: [ 
+		^ result 
+			add: (self 
+				buttonLabelled: 'Load DB'
+				action: [ self loadDatabase ]);
+			yourself ] .
+	^ self baseline gitHasUnstaged 
+		ifTrue: [ 
+			result 
+				add: (self 
+					buttonLabelled: 'Commit DB'
+					action: [ self commitDatabase ]);
+				yourself ] 
+		ifFalse: [ 
+			result 
+				add: (BrLabel new
+					aptitude: BrGlamorousLabelAptitude;
+					text: 'Up to date';
+					yourself);
+				yourself. ]
 ]
 
 { #category : #accessing }
@@ -46,7 +82,17 @@ PeLepiterProject >> baseline: aBaselineOf [
 	baseline := aBaselineOf
 ]
 
-{ #category : #accessing }
+{ #category : #private }
+PeLepiterProject >> buttonLabelled: aString action: aBlock [
+	^ BrButton new
+		aptitude: (BrGlamorousButtonRectangularAptitude + BrGlamorousButtonExteriorAptitude + 
+			(BrGlamorousButtonLabelAptitude new selectedColor: Color black));
+		label: aString;
+		action: aBlock;
+		yourself
+]
+
+{ #category : #actions }
 PeLepiterProject >> commitDatabase [
 	| repairCommand branch strategy commitCommand |
 	commitCommand := 'cd "' , self iceRepository location fullName
@@ -64,7 +110,7 @@ PeLepiterProject >> commitDatabase [
 		checkout
 ]
 
-{ #category : #accessing }
+{ #category : #actions }
 PeLepiterProject >> createDatabase [
 	self databaseFolder ensureCreateDirectory.
 ]
@@ -89,12 +135,17 @@ PeLepiterProject >> hasDatabase [
 	^ self databaseFolder exists
 ]
 
+{ #category : #testing }
+PeLepiterProject >> hasUnstaged [
+	^ self baseline gitHasUnstaged
+]
+
 { #category : #accessing }
 PeLepiterProject >> iceRepository [
 	^ self baseline iceRepository
 ]
 
-{ #category : #accessing }
+{ #category : #actions }
 PeLepiterProject >> loadDatabase [
 	| db |
 	self databaseFolder exists ifFalse: [ ^ self ].
@@ -107,7 +158,7 @@ PeLepiterProject >> name [
 	^ self baseline name allButFirst: 'BaselineOf' size
 ]
 
-{ #category : #accessing }
+{ #category : #printing }
 PeLepiterProject >> printOn: aStream [
 	aStream
 		nextPutAll: self  name
