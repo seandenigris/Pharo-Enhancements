@@ -11,3 +11,8 @@ BaselineOf class >> gtExamplesFor: aView [
 		loadedPackage ifNotNil: [ :p | p gtExamplesContained ] ifNil: [ #() ] ].
 	^ (GtExampleGroup withAll: examples) gtExamplesFor: aView
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+BaselineOf class >> lepiter [
+	^ PeLepiterProject fromBaseline: self
+]
