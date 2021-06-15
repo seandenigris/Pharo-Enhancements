@@ -117,6 +117,23 @@ There is ${method:MpName>>#shouldAutoMergeBlock}$, but support doesn''t seem to 
 ]
 
 { #category : #wikiPages }
+PeMagritteWiki class >> wikiPageMoney [
+	"This method was automatically generated."
+	<wikiPage: 'Money'>
+	^APWikiPage
+		wiki: self
+		name: 'Money'
+		text: 
+'There are several libraries available to model money, including:
+- Aconcagua
+- Money
+- Units
+
+We aim to provide a foundation generic enough to be used with ''''any'''' of these libraries. To that end we provide:
+- ${class:MAMoneyDescription}$ and related visitor support (${method:MAVisitor>>#visitMoneyDescription:}$)'
+]
+
+{ #category : #wikiPages }
 PeMagritteWiki class >> wikiPageQCMagritte [
 	"This method was automatically generated."
 	<wikiPage: 'QCMagritte'>
