@@ -163,10 +163,16 @@ PeLepiterProject >> iceRepository [
 
 { #category : #actions }
 PeLepiterProject >> loadDatabase [
-	| db |
+	| ldb db |
 	self databaseFolder exists ifFalse: [ ^ self ].
+	ldb := LeDatabasesRegistry defaultLogicalDatabase.
+	
+	"Properties internally prevents duplicates, so we don't need a guard"
+	ldb properties addRegisteredDirectory: self databaseFolder.
+	
+	(ldb hasDatabaseAt: self databaseFolder) ifTrue: [ ^ self ].
 	db := LeLocalStoreLoad current loadAndMonitorFrom: self databaseFolder.
-	LeDatabasesRegistry default defaultLogicalDatabase addDB: db
+	ldb addDB: db.
 ]
 
 { #category : #accessing }
