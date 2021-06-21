@@ -13,24 +13,40 @@ Class {
 	#name : #PeLepiterProject,
 	#superclass : #Object,
 	#instVars : [
-		'baseline'
+		'repository',
+		'databaseFolder',
+		'name'
 	],
 	#category : #'PharoEnhancements-GToolkit'
 }
 
 { #category : #accessing }
 PeLepiterProject class >> all [
-	| instances |
-	instances := BaselineOf allSubclasses 
+	| baselines |
+	baselines := BaselineOf allSubclasses 
 		select: [ :e | e iceRepository isNotNil ]
 		thenCollect: [ :e | self fromBaseline: e ].
-	^ instances sort: #hasDatabase descending, #name ascending
+	^ (self allFromDefaultFolder copyWithAll: baselines) sort: #hasDatabase descending, #name ascending
+]
+
+{ #category : #'instance creation' }
+PeLepiterProject class >> allFromDefaultFolder [
+	| defaultFolder dbs |
+	defaultFolder := FileLocator documents / 'lepiter'.
+	dbs := defaultFolder allDirectories select: [ :subFolders | subFolders files anySatisfy: [ :file | file basename = 'lepiter.properties' ] ].
+	^ dbs collect: [ :e | 
+		self new 
+			name: e basename capitalized;
+			databaseFolder: e; 
+			repository: defaultFolder; 
+			yourself ]
 ]
 
 { #category : #'instance creation' }
 PeLepiterProject class >> fromBaseline: aBaselineOf [
 	^ self new
-		baseline: aBaselineOf;
+		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
+		repository: aBaselineOf iceRepository; 
 		yourself
 ]
 
@@ -67,7 +83,7 @@ PeLepiterProject >> actionButtons [
 				buttonLabelled: 'Load DB'
 				action: [ self loadDatabase ]);
 			yourself ] .
-	^ self baseline gitHasUnstaged 
+	^ self hasUnstaged 
 		ifTrue: [ 
 			result 
 				add: (self 
@@ -83,16 +99,6 @@ PeLepiterProject >> actionButtons [
 				yourself. ]
 ]
 
-{ #category : #accessing }
-PeLepiterProject >> baseline [
-	^ baseline
-]
-
-{ #category : #accessing }
-PeLepiterProject >> baseline: aBaselineOf [
-	baseline := aBaselineOf
-]
-
 { #category : #private }
 PeLepiterProject >> buttonLabelled: aString action: aBlock [
 	^ BrButton new
@@ -105,20 +111,12 @@ PeLepiterProject >> buttonLabelled: aString action: aBlock [
 
 { #category : #actions }
 PeLepiterProject >> commitDatabase [
-	| repairCommand branch strategy commitCommand |
-	commitCommand := 'cd "' , self iceRepository location fullName
-				, '"; git add lepiter/*; git commit -m ', self commitMessage.
+	"Commits all unstaged files in the repo to make it easy for when the default location contains multiple DB folders. For safety/control, might want to restrict to files just in the DB folder, which you can specify instead of `-A` e.g. `lepiter/*`"
+	| commitCommand |
+	commitCommand := 'cd "' , self repositoryLocation fullName
+		, '"; git add -A; git commit -m ' , self commitMessage.
 	LibC system: commitCommand.
-	
-	repairCommand := IceTipCheckoutModel new.
-	branch := (IceTipRepositoryModel on: self iceRepository) branchModel.
-	strategy := repairCommand checkoutStrategies last.
-	self assert: (strategy isKindOf: IceCheckoutDoNotLoadPackages).
-	repairCommand
-		checkoutStrategy: strategy;
-		commitish: branch;
-		diff;
-		checkout
+	self repositoryIsIceberg ifTrue: [ self repairIceRepository ]
 ]
 
 { #category : #accessing }
@@ -143,7 +141,13 @@ PeLepiterProject >> database [
 
 { #category : #accessing }
 PeLepiterProject >> databaseFolder [
-	^ self iceRepository ifNotNil: [ :repo | repo location / 'lepiter' ].
+	databaseFolder ifNotNil: [ :dbf | ^ dbf ].
+	^ self repository ifNotNil: [ self repositoryLocation / 'lepiter' ].
+]
+
+{ #category : #accessing }
+PeLepiterProject >> databaseFolder: anObject [
+	databaseFolder := anObject
 ]
 
 { #category : #testing }
@@ -153,12 +157,15 @@ PeLepiterProject >> hasDatabase [
 
 { #category : #testing }
 PeLepiterProject >> hasUnstaged [
-	^ self baseline gitHasUnstaged
-]
-
-{ #category : #accessing }
-PeLepiterProject >> iceRepository [
-	^ self baseline iceRepository
+	"Copied from BaselineOf class>>#gitHasStaged, which could probably be moved to IceRepository, but then would still have to be copied here (unless there was also a class-side utility)"
+	| unstagedCmd cmd exitCodeString |
+	
+	"Adapted from https://stackoverflow.com/a/5139672"
+	unstagedCmd := 'git diff --quiet --exit-code; echo $?'.
+	
+	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , unstagedCmd.
+	exitCodeString := LibC resultOfCommand: cmd.
+	^ exitCodeString trimRight asNumber = 1
 ]
 
 { #category : #actions }
@@ -177,7 +184,12 @@ PeLepiterProject >> loadDatabase [
 
 { #category : #accessing }
 PeLepiterProject >> name [
-	^ self baseline name allButFirst: 'BaselineOf' size
+	^ name
+]
+
+{ #category : #accessing }
+PeLepiterProject >> name: anObject [
+	name := anObject
 ]
 
 { #category : #printing }
@@ -186,11 +198,47 @@ PeLepiterProject >> printOn: aStream [
 		nextPutAll: self  name
 ]
 
+{ #category : #actions }
+PeLepiterProject >> repairIceRepository [
+	| repairCommand branch strategy |
+	repairCommand := IceTipCheckoutModel new.
+	branch := (IceTipRepositoryModel on: self repository) branchModel.
+	strategy := repairCommand checkoutStrategies last.
+	self assert: (strategy isKindOf: IceCheckoutDoNotLoadPackages).
+	repairCommand
+		checkoutStrategy: strategy;
+		commitish: branch;
+		diff;
+		checkout
+]
+
+{ #category : #testing }
+PeLepiterProject >> repository [
+	^ repository
+]
+
+{ #category : #accessing }
+PeLepiterProject >> repository: anObject [
+	repository := anObject
+]
+
+{ #category : #actions }
+PeLepiterProject >> repositoryIsIceberg [
+	^ (self repository isKindOf: AbstractFileReference) not
+]
+
+{ #category : #testing }
+PeLepiterProject >> repositoryLocation [
+	^ self repositoryIsIceberg
+		ifTrue: [ self repository location ]
+		ifFalse: [ self repository ]
+]
+
 { #category : #accessing }
 PeLepiterProject >> statusIcon [
 	self hasDatabase ifFalse: [ ^ BrGlamorousIcons graycircle ].
 	self database ifNil: [ ^ BrGlamorousIcons redcircle ] .
-	^ self baseline gitHasUnstaged 
+	^ self hasUnstaged 
 		ifTrue: [ BrGlamorousIcons yellowcircle ] 
 		ifFalse: [ BrGlamorousIcons greencircle ]
 ]
