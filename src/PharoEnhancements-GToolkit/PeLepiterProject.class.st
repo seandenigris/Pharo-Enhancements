@@ -83,12 +83,12 @@ PeLepiterProject >> actionButtons [
 				buttonLabelled: 'Load DB'
 				action: [ self loadDatabase ]);
 			yourself ] .
-	^ self hasUnstaged 
+	^ self needsSync 
 		ifTrue: [ 
 			result 
 				add: (self 
 					buttonLabelled: 'Commit DB'
-					action: [ self commitDatabase ]);
+					action: [ self syncDatabase ]);
 				yourself ] 
 		ifFalse: [ 
 			result 
@@ -110,18 +110,22 @@ PeLepiterProject >> buttonLabelled: aString action: aBlock [
 ]
 
 { #category : #actions }
+PeLepiterProject >> commitCommand [
+	"Commits unstaged/untracked files only under the DB folder"
+
+	^ 'cd "' , self repositoryLocation fullName , '"; git add -A '
+		, self relativeDatabasePath fullName surroundedByDoubleQuotes
+		, '; git commit -m ' , self commitMessage surroundedByDoubleQuotes
+]
+
+{ #category : #actions }
 PeLepiterProject >> commitDatabase [
-	"Commits all unstaged files in the repo to make it easy for when the default location contains multiple DB folders. For safety/control, might want to restrict to files just in the DB folder, which you can specify instead of `-A` e.g. `lepiter/*`"
-	| commitCommand |
-	commitCommand := 'cd "' , self repositoryLocation fullName
-		, '"; git add -A; git commit -m ' , self commitMessage.
-	LibC system: commitCommand.
-	self repositoryIsIceberg ifTrue: [ self repairIceRepository ]
+	LibC system: self commitCommand
 ]
 
 { #category : #accessing }
 PeLepiterProject >> commitMessage [
-	^ 'lepiter-sync'
+	^ 'lepiter-sync ', self relativeDatabasePath fullName
 ]
 
 { #category : #actions }
@@ -157,15 +161,26 @@ PeLepiterProject >> hasDatabase [
 
 { #category : #testing }
 PeLepiterProject >> hasUnstaged [
-	"Copied from BaselineOf class>>#gitHasStaged, which could probably be moved to IceRepository, but then would still have to be copied here (unless there was also a class-side utility)"
+	"Adapted from BaselineOf class>>#gitHasUnstaged, which could probably be moved to IceRepository, but then would still have to be copied here (unless there was also a class-side utility)"
 	| unstagedCmd cmd exitCodeString |
 	
 	"Adapted from https://stackoverflow.com/a/5139672"
-	unstagedCmd := 'git diff --quiet --exit-code; echo $?'.
+	unstagedCmd := 'git diff --quiet --exit-code ', self relativeDatabasePath fullName surroundedByDoubleQuotes, '; echo $?'.
 	
 	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , unstagedCmd.
 	exitCodeString := LibC resultOfCommand: cmd.
 	^ exitCodeString trimRight asNumber = 1
+]
+
+{ #category : #testing }
+PeLepiterProject >> hasUntracked [
+	| untrackedCmd cmd |
+	
+	"Adapted from https://stackoverflow.com/a/5139672"
+	untrackedCmd := 'git ls-files --others --exclude-standard --directory --no-empty-directory ', self relativeDatabasePath fullName surroundedByDoubleQuotes.
+	
+	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , untrackedCmd.
+	^ (LibC resultOfCommand: cmd) isNotEmpty.
 ]
 
 { #category : #actions }
@@ -192,10 +207,20 @@ PeLepiterProject >> name: anObject [
 	name := anObject
 ]
 
+{ #category : #accessing }
+PeLepiterProject >> needsSync [
+	^ self hasUnstaged or: [ self hasUntracked ]
+]
+
 { #category : #printing }
 PeLepiterProject >> printOn: aStream [
 	aStream
 		nextPutAll: self  name
+]
+
+{ #category : #actions }
+PeLepiterProject >> relativeDatabasePath [
+	^ self databaseFolder relativeTo: self repositoryLocation
 ]
 
 { #category : #actions }
@@ -238,7 +263,13 @@ PeLepiterProject >> repositoryLocation [
 PeLepiterProject >> statusIcon [
 	self hasDatabase ifFalse: [ ^ BrGlamorousIcons graycircle ].
 	self database ifNil: [ ^ BrGlamorousIcons redcircle ] .
-	^ self hasUnstaged 
+	^ self needsSync 
 		ifTrue: [ BrGlamorousIcons yellowcircle ] 
 		ifFalse: [ BrGlamorousIcons greencircle ]
+]
+
+{ #category : #actions }
+PeLepiterProject >> syncDatabase [
+	self commitDatabase.
+	self repositoryIsIceberg ifTrue: [ self repairIceRepository ]
 ]
