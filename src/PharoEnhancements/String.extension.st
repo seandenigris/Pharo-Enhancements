@@ -23,6 +23,12 @@ String >> asFilename [
 ]
 
 { #category : #'*PharoEnhancements' }
+String >> copyToClipboard [
+
+	Clipboard clipboardText: self
+]
+
+{ #category : #'*PharoEnhancements' }
 String >> surroundedByDoubleQuotes [
 	^ self surroundedBy: '"'
 ]
