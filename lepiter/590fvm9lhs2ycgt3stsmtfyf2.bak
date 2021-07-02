@@ -34,7 +34,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-07-02T17:59:10.104027-04:00"
+									"dateAndTimeString" : "2021-07-02T17:59:11.509203-04:00"
 								}
 							},
 							"uid" : {
@@ -44,7 +44,44 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "1. The features of the PharoEnhancments libr"
+							"string" : "1. The features of the PharoEnhancments library itself"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-02T17:59:12.606668-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-02T17:59:24.291049-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "+QN9zYyCDQCb0c4gCD+vWA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "2. External libraries for which I don't have write access"
 						}
 					]
 				},
@@ -67,7 +104,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-02T17:58:59.621808-04:00"
+						"dateAndTimeString" : "2021-07-02T17:59:33.968307-04:00"
 					}
 				},
 				"uid" : {
@@ -77,7 +114,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "I contain documentation about two things:"
+				"string" : "This DB contains documentation about two things:"
 			}
 		]
 	},

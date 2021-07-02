@@ -104,7 +104,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-02T17:59:33.968307-04:00"
+						"dateAndTimeString" : "2021-07-02T17:59:48.368603-04:00"
 					}
 				},
 				"uid" : {
@@ -114,7 +114,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This DB contains documentation about two things:"
+				"string" : "This DB contains two types of documentation:"
 			}
 		]
 	},
