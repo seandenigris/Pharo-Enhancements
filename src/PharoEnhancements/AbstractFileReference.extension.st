@@ -16,7 +16,7 @@ AbstractFileReference >> macLock: aBoolean [
 ]
 
 { #category : #'*PharoEnhancements' }
-AbstractFileReference >> open [
+AbstractFileReference >> peOpen [
 	LibC system: 'open "', self fullName, '"'
 ]
 
