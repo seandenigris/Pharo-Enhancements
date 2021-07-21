@@ -23,7 +23,7 @@ GtSpotterStep >> actOn: aCandidate dueTo: anEventType from: aSpotterElement [
 	anAnnouncement isActedUpon
 		ifFalse: [ aCantidateProcessor actOn: anObjectToActOn for: self from: aSpotterElement ].
 		
-	GtSpotterResult := anObjectToActOn
+	Smalltalk globals at: #PeGtSpotterResult put: anObjectToActOn
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
