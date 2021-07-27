@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.018118-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.018118-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CGN6OoCEDQC5Wez+D3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- Reducing i.e. to present measures in the \"most tidy\" representation e.g. \"125 dollars\" instead of \"12500 cents\", \"10 cups\" instead of \"480 teaspoons\", etc. [I asked on Pharo Users ML](http://forum.world.st/Aconcagua-Documentation-tp4759781.html) in 2014 but got no answer. I also pointed out that according to the Chalten paper, reducing should be built-in but doesn't currently seem to work: `It seems this used to work...  10 years * 12 months / 24 months = 5 years “The model automatically simplifies units”... Anyone know why it was changed?\"`\r# Canonical Repo and Other Packages\r- 3/20/2015 - [I reached out to Hernan W](http://forum.world.st/Who-maintains-Aconcagua-amp-Chalten-td4813575.html), who created the library, RE the canonical location, but didn't get anything definitive.\r- 2009-10-08 - [Some packages announced by G. Cotelli](http://forum.world.st/ANN-New-Aconcagua-amp-Chalten-packages-td1301458.html), which I assume made their way to GH\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.018115-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.018115-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "For Further Research"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ca3c763a-8084-0d00-b953-1d0a0f742dd9"
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.011873-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.011873-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "s0p6OoCEDQC5VppED3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "- \"Aconcagua provides a model that represents measures as first class objects, that is, an object that encapsulates a number with its unit.\" [per G. Cotelli](http://forum.world.st/ANN-New-Aconcagua-Chalten-packages-tp1301458p1301460.html) \r# History\rIt was [originally announced](http://forum.world.st/ANN-Aconcagua-tp1403566.html) in 2006 on the VW list by Hernan W. when it was open sourced by Mercat Software.\r# Repositories\rApparently [ba-st on GH](https://github.com/ba-st/aconcagua) is the community supported one. \"I don't know if call it canonical. But certainly it is the version the community is maintaining. It's a fork of the mtaborda repo and converted to tonel format. I don't know how it was migrated from Sthub, but it was before any tool for migrating the history existed. I think it must contain all the functionality available in Sthub.\" [per G. Cotelli](http://forum.world.st/Aconcagua-Canonical-Repo-s-tp5105449p5105462.html)\r# Older / Other\r- [Hernan on StHub](http://smalltalkhub.com/HernanWilkinson/Aconcagua/commits.html) - last commit 2016 RE Pharo 4; most before that from 2014\r- [Maxi on StHub](http://smalltalkhub.com/maxi/Aconcagua/commits.html) - last commit 2015, includes a bunch of my fixes; last commit says \"same as GH\"; unclear if contains all code from Hernan's\r- [Benoit's on StHub](http://smalltalkhub.com/BenoitAstruc/Aconcagua/commits.html) - just two \"hack\" commits re Chalten\r- [DeNigris AddOns on StHub](http://smalltalkhub.com/SeanDeNigris/AconcaguaAddOns/mc/) - time, magritte, temperature, pressure, money, weights; in 2015 [I had asked](http://forum.world.st/Aconcagua-Common-Measurement-Systems-td4813202.html) if something like this existed, but got no response. The Magritte AddOn gives you MAMeasureDescription, which represents an Aconcagua Measure. It mostly acts like a number field mapped to its amount. You just have to tell it which unit to use to convert the amount number into a Measure. \r\rExample usage: \r        MAMeasureDescription new \r                accessor: #replacementPrice; \r                label: 'Replacement Price'; \r                unit: AmDollar new; \r                yourself \r\rThen, you can type 100 in a Magritte form and \"100 dollars\" will be saved to the model. Enjoy!\r\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.011819-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.011819-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Main"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "fcf3743a-8084-0d00-b950-56080f742dd9"
+	}
+}

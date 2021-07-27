@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.022172-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:49:29.022172-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3nJ6OoCEDQC5WjbQD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# To Singleton or Not to Singleton\rIn [this interesting thread on SO](https://stackoverflow.com/questions/23744072/aconcagua-measure-library-storing-baseunits), Benoit suggested using singletons:\r\r`Yes the mile base unit must be a singleton, you can take a look at the Chalten framework which is using Aconcagua, in particular the TimeUnitsGlobal class. For the Number method part, in Chalten it's done this way :\r\rNumber>>#daysMeasure\r    ^TimeUnits day with: self\rAlthough I have an issue with the way it's done there because I can't found a way to use Fuel with such units after that.`\r\rHe relates a problem with this approach when wanting to serialize via Fuel: `I can't found a way to use Fuel with such units after that.`, which I later ran into:\r\r`I finally ran into the Fuel problem you were talking about. I ended evaluating MyBaseUnit allInstancesDo: [ :e | e becomeForward: singletonInstanceOfMyBaseUnit ] after materialization. I wonder whether in practice it's really important to require aBaseUnit == aBaseUnit. For my simple cases, it'd be much easier to treat them as value objects..`\r\rHernan however, then gave a different prespective:\r\r`units are not really singletons but they use the original #= to see if two units are the same and the default implementation of #= verifies identity with #==, but that can be overridden if necessary. The reason I did it that way is because I thought it was the most generic implementation. The easiest way to use them is to store units in global variables, therefore you can define:\r\rSmalltalk at: #Mile put: (BaseUnit named: 'mile' etc etc).\r\rAnd then you can do 2*Mile witch makes a lot of sense because... it is like saying that \"the knowledge of mile is global\"\r\rAnother way to do it is how Chalten does it. That is to have a class that knows each unit and you can access them with messages like \"TimeUnits day\"\r\rThe idea is to avoid having to create a class per unit that does not make any sense... Another possibility is to 1) modify #= on Unit and use the uni's name to verify if two units are the equal 2) Subclass BaseUnit and do 1) :-)`\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.022168-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:49:29.022168-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Instance Creation"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "236c763a-8084-0d00-b954-985c0f742dd9"
+	}
+}
