@@ -17,19 +17,15 @@ Class {
 BaselineOfPharoEnhancements >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
-		spec baseline: 'ActivePapers' with: [ 
-			spec 
-				repository: 'github://seandenigris/activepapers-pharo:denigris';
-				loads: #('ActivePapers-Wiki') ].
 		spec
 			package: 'PharoEnhancements';
-			package: 'PharoEnhancements-GToolkit';
-			package: 'PharoEnhancements-PetitParser2';
-			package: 'PharoWiki' with: [ spec requires: #('ActivePapers') ].
+			package: 'PharoEnhancements-PetitParser2'.
 		spec group: 'default' with: #('PharoEnhancements') ].
 	
 	spec for: #GToolkit do: [ 
-		spec group: 'default' with: #('PharoEnhancements' 'PharoEnhancements-GToolkit' 'PharoWiki') ]
+		spec
+			package: 'PharoEnhancements-GToolkit'.
+		spec group: 'default' with: #('PharoEnhancements-GToolkit' 'PharoEnhancements-PetitParser2') ]
 ]
 
 { #category : #accessing }
