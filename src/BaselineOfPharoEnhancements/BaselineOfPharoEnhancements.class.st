@@ -35,7 +35,7 @@ BaselineOfPharoEnhancements >> baseline: spec [
 { #category : #accessing }
 BaselineOfPharoEnhancements >> customProjectAttributes [
 	^ self isGTImage
-			ifFalse: [ #() ]
+			ifFalse: [ #(notGToolkit) ]
 			ifTrue: [ #(GToolkit) ]
 ]
 
