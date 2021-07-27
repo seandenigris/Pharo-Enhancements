@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.73458-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.73458-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9fA9D32EDQCbTQRLDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Deep into Pharo has a great Sockets chapter covering TCP.\r# UDP\rUDP seems to be pretty simple. Once you create a new socket, there are *sending* messages which take the data, ipAddress, and port. It seems you can also set the ipAddress and port once and then just push data to that destination.\r## Receiving\rHere is an example of receiving data by Norbert Hartl [via Pharo Dev](http://forum.world.st/UDP-Listener-example-tp4362851p4363140.html):\r```\r| localPort sourceAddress sourcePort buffer receivedBytes socket delay | \rlocalPort := 5000. \rsourceAddress := NetNameResolver addressFromString: '255.255.255.255'. \rsourcePort := 4848. \r\rbuffer := ByteArray new: 1000. \rdelay := Delay forMilliseconds: 50. \r\rsocket := Socket newUDP setPort: localPort. \r[[ receivedBytes := socket receiveDataInto: buffer fromHost: sourceAddress port: sourcePort. \r receivedBytes isZero ] whileTrue: [ delay wait ]] \r        ensure: [ socket closeAndDestroy]. \r```\rTwo notes:\r1. The orignal used NetNameResolver, which is unnecessary if you're using ipAddress strings instead of hostnames.\r2. Norbert also commented: *Or you are better off testing it by using #receiveDataInto: instead of #receiveDataInto:fromHost:port: *\r## Sending\rHere is a (possibly working) example of sending data by Steph Ducasse [via Pharo Dev](http://forum.world.st/SysLogSender-UDP-tp4745862.html):\r```\r\"Send formatted UDP message to host and port.\" \r\r        | sock | \r        sock := Socket newUDP. \r        sock setPeer: NetNameResolver localHostAddress port: 514. \r        sock sendData: 'hi'. \r        sock waitForSendDoneFor: Socket standardTimeout. \r        sock close \r```\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.734577-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.734577-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Networking"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "779ca60e-7d84-0d00-9b27-aa930c3334de"
+	}
+}

@@ -1,0 +1,261 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:13:41.818112-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:13:41.818112-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vMTDNn2EDQCbZ32IDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Custom Platform Attributes\rHere's an example of special handling for GToolit images. The only method that needs to be implemented is `customAttributes`, but we delegate the testing to `isGTImage` so that, if changes to GT necessitate a different test, and there are a ton of these floating around in different baselines, it will be easy to find and refactor them.\r{{gtMethod:BaselineOfPharoEnhancements>>#customProjectAttributes|expanded=true}}\r{{gtMethod:BaselineOfPharoEnhancements>>#isGTImage|expanded=true}}\rNow you can use `#Gtoolkit` in your baseline, just like e.g. `pharo.8.x`:\r{{gtMethod:BaselineOfPharoEnhancements>>#baseline:|expanded=true}}\r"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:28.273864-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:29.704108-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SaGIOX2EDQCbbK9sDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Trimming Load from General to Specific\rIt is helpful to have the spec for the latest version of Pharo be crystal clear and concise. The tradeoff is that the spec for older platforms gets more complex, but that's much better than the reverse! However, how do you handle the case of features that were not available on older platforms (e.g. GT wasn't available on early Pharo versions)? You'd like to say \"for P9, do this; but for P8, do the same as for P9 except...\" To handle cases like these, [Dale Hendrich expliains](https://groups.google.com/g/metacello/c/5ZGMm2yyx1w/m/ZG7OPOh3AQAJ): \"There are a handful of remove methods, since Metacello was undergoing significant changes during the early years.\" "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:25.03726-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:35.693675-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ezlXOX2EDQCbazYoDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here's an example for a package:\r```\rspec\r  for: #( #pharo4.x )\r  do: [\r    spec removePackage: 'Magritte-GT' ]\r```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:50.430524-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:16:41.342705-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Ah5OOn2EDQCbbsshDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And an example for a project (either configuration or baseline):\n```\nspec\r  for: #( #pharo )\r  do: [\r    spec removeProject: 'OSSubprocess'.\r\tspec \r\t\tpackage: 'Tesseract' overrides: [ \r\t\t\tspec requires: (tesseractBaseDeps copyWithout: 'OSSubprocess') ]; ]\r```\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:13:46.727338-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:14:25.043802-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "0a0ON32EDQCbaSC9DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.731424-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:13:46.73128-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ouQ9D32EDQCbS2KRDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Recording i.e. \"What Would Metacello Do?\"\rThe basic script is fairly simple - just change your load script from `load` to `record`. For example:\r```\rMetacello new\r\t\"ignoreImage;\" \"uncomment to have Metacello pretend it's a fresh image\"\r\tbaseline: 'PharoEnhancements';\r\trepository: 'github://seandenigris/Pharo-Enhancements';\r\trecord.\r```\rTwo items to note:\r1. If you already have some of the packages loaded, uncommenting the line above will tell you what would be loaded if none of them were.\r2. If you \"Print It\" the above script you will get a string describing the load, but if you want to navigate the actual `loadDirective` object, you have to send `roots first` to the returned object, as clarified [on the Metacello ML](https://groups.google.com/g/metacello/c/FyiB0sVb7j8/m/SNXR8yTsAwAJ).\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.731421-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.731421-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Metacello"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "9f1a990e-7d84-0d00-9b25-7a300c3334de"
+	}
+}

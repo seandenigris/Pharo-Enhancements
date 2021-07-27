@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.715025-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.715025-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "k6Q9D32EDQCbQg99DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Deprecating\rWhen writing non-backward-compatible code, allow your users to upgrade seamlessly with just a bit of extra care. Leave deprecated methods around for a release, annotated with one of these auto-transforming deprecation message variants:\r- The simplest is {{gtMethod:Object>>#deprecated:transformWith:}}\r- If you want to add metainfo like timestamp and project version, there is {{gtMethod:Object>>#deprecated:on:in:transformWith:}}\r- The next two are variants of the first two that let you specify a matching condition to avoid false positives:\r    - {{gtMethod:Object>>#deprecated:on:in:transformWith:when:}}\r    - {{gtMethod:Object>>#deprecated:transformWith:when:}}\rBrowsing senders usually provides easily adaptable examples of the somewhat-obscure rewriting syntax, which are fairly uniform for this use case.\r\rThe first time your deprecated method is run, it will be automatically rewritten in your new API. The transformation is specified with {{gtWikiPage:#RewriteRules}}. For relevant examples, browse the senders of the above messages.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.715023-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.715023-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Deprecating"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "5290950e-7d84-0d00-9b1c-70910c3334de"
+	}
+}

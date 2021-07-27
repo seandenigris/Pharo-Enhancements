@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.748448-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.748448-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Iic+D32EDQCbVdGlDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Sound\r## Setup\rLoad PharoSound from the Pharo Project Catalog\r## Beep\r### The Pharo Way\r```language=smalltalk\rSoundSystem soundEnabled: true.\rSoundSystem current beep\r```\r### Another Way (Mac-only)\r```language=smalltalk\rLibC system: 'osascript -e \"beep\"'.\r```\r### Ways not to produce a Beep (work in the Shell, but not in Pharo)\r```language=smalltalk\rLibC system: '/usr/bin/tput bel'.\r```\r```language=smalltalk\rLibC system: 'printf \"\\a\"'.\r```\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.748445-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.748445-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Sound"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "8e8ece0e-7d84-0d00-9b2f-ff340c3334de"
+	}
+}

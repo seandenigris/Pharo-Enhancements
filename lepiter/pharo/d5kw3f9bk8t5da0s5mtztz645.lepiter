@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.729757-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.729757-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Ht49D32EDQCbSizgDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Reclaiming Memory\rOnce you eliminate common possible causes (see \"Common Causes\" below), try:\r```language=smalltalk\r10 timesRepeat: [ Smalltalk garbageCollect ].\r```\rAnd [World menu]>System>[Do image clean up]\r# Common Causes\r## Your code\rDo any of your (class/pool variable) singleton instances store data? Add a #clearAll or #reset (mySingletonVar := nil) to the class side  or whatever fits your app  and do that before that #garbageCollect block. [In fact, put that in some XXXAdmin class]\r## Windows in Morphic\rClose all windows\r## Monticello\rTry to open monticello and select any repo, right click and clear the package cache.\r## Tiling Window Manager\rIt is a great tool, but yes it gobbles memory. Every once in a while, disable it, GC [as described above](#Reclaiming-memory), and re-enable.\r# Diagnosis\rNB: These may take some time to run, especially in a larger image\r## Built-in Report\rFor a fairly long report on the image and memory hogs, evaluate `SmalltalkImage current reportCPUandRAM`. It writes files in the image folder containing all the information. Takes a while to run.\r## Call Graph Analysis\rThere is Spy (not sure of current repo location) which offers Roassal visualization.\r## Roll your own\r    ((Object allSubclasses collect: [ :aClass |\r        aClass -> aClass allInstances size])\r        sort: [ :a :b | a value > b value ]) inspect\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.729754-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.729754-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "MemoryHogs"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "b502980e-7d84-0d00-9b24-0f9a0c3334de"
+	}
+}

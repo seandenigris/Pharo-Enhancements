@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.751649-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.751649-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ojM+D32EDQCbVysUDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Object state\r`StateSpecs` is a wonderful state specification library. It is hosted [on GH](https://github.com/dionisiydk/StateSpecs) and [the README](https://github.com/dionisiydk/StateSpecs#readme) gives quite a nice overview.\r\rThe main access point is {{gtMethod:Object>>#should}}.  {{gtClass:SpecOfShouldExpression}} is the internal workhorse where you can see all the built-in message you can send after `should`.\r\rTo add your own class-specific messages,  subclass {{gtClass:SpecOfShouldExpression}} and redefine {{gtMethod:Object>>#should}} to use your subclass. The one caveat is that it seems if you send {{gtMethod:SpecOfShouldExpression class>>#startingAt:}}, the global pragma/object setting described in {{gtClass:SpecOfShouldExpression|show=#gtCoderCommentsFor:|label='the class commen'}} will prevent your subclass from being used. To work around this, just skip that message and define your message thusly:\r```\rMyDomainObject>>#should\r\t^ MyCustomShouldSpec new\r\t\treceiver: self;\r\t\tyourself\r```\r# Mocking\r<https://github.com/dionisiydk/Mocketry>\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.751646-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.751646-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Testing_Examples"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "fee6ce0e-7d84-0d00-9b31-74140c3334de"
+	}
+}

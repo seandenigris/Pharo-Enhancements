@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.711768-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.711768-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2pc9D32EDQCbQMFWDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Infinite Recursion\rIf your image locks up do to an endless loop, you have two options:\r- you can go get a cup of coffee while waiting for the image to run out of memory and crash, or\r- you can send `SIGUSR1` to the VM process as recommended by Guillermo Polito [on the dev ML](http://forum.world.st/breaking-infinite-loop-from-saved-image-tp4832548p4832584.html). For example, in Mac Terminal, you could do: `kill -USR1 $pid`\r# Memory Hogging\rIf the VM was compiled with -g you can run the VM under valgrind with callgrind_annotate to get a tree of instructions spent by vm functions (per Hernand via Pharo Discord #vm channel on 5/12/2021):\r\r```language=shell\rvalgrind --tool=callgrind ./pharo Pharo.image\rcallgrind_annotate callgrind.out.PID --inclusive=yes --tree=both\r```\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.711765-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.711765-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Debugging"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "0b2b940e-7d84-0d00-9b1a-7d7c0c3334de"
+	}
+}

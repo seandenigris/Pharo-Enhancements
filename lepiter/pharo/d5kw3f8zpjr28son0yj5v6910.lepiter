@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.708055-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.708055-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WYk9D32EDQCbPijJDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Sanitizing Input\rWhen importing a large amount of data, inconsistencies (e.g. due to manual error) are common. For instance, \"all\" names are stored as \"last name, first name\" except that some omit the comma, some are \"first name last name\", etc. Rather than trying to extend parsers and other input processing machinery to handle every case, it may be easier to map and fix the anomalies first. For example:\r```language=smalltalk\rcleanNameInput: aString\r\t| map |\r\tmap := { \r\t\t'Smiiiiith, John' -> 'Smith, John'. \"Last name misspelled\"\r\t\t'Doe Jr., Jane' -> 'Doe, Jane Jr.'. \"generational in a weird place\"\r\t} asDictionary.\r\t^ map at: aString ifPresent: [ :v | v ] ifAbsent: [ aString ]\r```\r\rFor PetitParser, `#parse:withContext:` seems to be a good sanitation hook:\r```language=plain\rMyParser >> #parse: aString withContext: context\r\t| cleanInput |\r\tcleanInput := self cleanInput: aString.\r\t^ super parse: cleanInput withContext: context.\r```\r# SortedCollection Workaround\rBlock issues can manifest when materializing `SortedCollection`s with sort blocks, as [reported on the dev list](http://forum.world.st/STON-SortedCollection-Bug-tt4967138.html). \r\rTo avoid this completely without modifying domain objects, you can usually use a {{gtClass:SortFunction}}. \r\rAnother option is to put camparison behavior to the collection's elements:\r1. Use the default sorting behavior (i.e. `#<=`), which means `#sortBlock` will be nil.\r2. Implement `#<=` on the domain object elements.\r# STON\rIMHO the main difference with Fuel is that you trade efficiency (plain text vs. binary) for flexibility (portable to Amber, human-readable). \r```language=smalltalk\r\"Serialize\"\rFileLocator home / 'my_file.ston' writeStreamDo: [ :s | STON put: myData onStream: s ].\r\"Re-materialize\"\rFileLocator home / 'my_file.ston' readStreamDo: [ :s | STON fromStream: s ].\r```\r## Blocks\rSven offered this on Discord on 12/01/2020...\rThis is a recurring question. BlockClosures are way too general and powerful to be serialised. That is why serialising BlockClosures is not supported in STON. The code inside a block can refer to and even affect state outside the block. Furthermore the return operator is quite special as it returns from some outer context. A subset of BlockClosures are those that are clean. These do not close over other variables, nor do they contain a return. By using their source code representation, it is possible to serialise/materialise them. You can try this by adding the following methods: \rBlockClosure>>#stonOn: stonWriter\r self isClean\r   ifTrue: [ stonWriter writeObject: self listSingleton: self printString ]\r   ifFalse: [ stonWriter error: 'Only clean blocks can be serialized' ]\r\rBlockClosure>>#stonContainSubObjects\r ^ false\r\rBlockClosure class>>#fromSton: stonReader\r ^ self compilerClass new \r     source: stonReader parseListSingleton; \r     evaluate\r     \rWith these additions you can do the following: \r```\r STON fromString: (STON toString: [ :x :y | x + y ]).\r```\rNote that the actual class name depends on the Pharo version (BlockClosure in Pharo 7, FullBlockClosure in Pharo 9 and maybe soon CleanBlockClosure - Marcus is working on that last one and that would be very cool because it would say exactly what it it). I am still not 100% convinced to add this as a standard feature to STON. Using source code fully exposes the implementation, while using the compiler can be dangerous. It also adds a dependency on source code and the compiler. But it would be good if people can experiment with this feature.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.708052-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.708052-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Data Import and Export"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "34d6920e-7d84-0d00-9b18-168f0c3334de"
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.744772-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.744772-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xhg+D32EDQCbU1LJDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Common Scenarios\r- [Scoping](https://gist.github.com/gcotelli/8a6afbbd04809f79aa6fff25674458db)\r- [Statements, Adding](http://forum.world.st/Adding-a-statement-when-rewriting-td4668879.html)\r- Syntax via [refactory.com](https://refactory.com/rewrite-tool/) (includes images, but code poorly formatted) or [U Illinois CS via wayback](https://web.archive.org/web/20150611033245/http://st-www.cs.illinois.edu/users/brant/Refactory/Rewrite.html) (no images, but code formatted better)\r- ML Posts\r  - <http://forum.world.st/RB-API-td3781019.html>\r  - <http://forum.world.st/Classes-referenced-in-code-string-td4244214.html>\r  - <http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html>\r\r- I found <http://www.refactory.com/tools/refactoring-browser/rewrite-tool> to be quite helpful re the basics. \r\r- `look in the notes folder inside the ParseTreeRewriter chapter on github.` [per Steph](http://forum.world.st/Rewrite-rules-doc-tp4775759p4775928.html)\r - <https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/RewriteTool/RewriteTool.pier.pdf>\r- [http://st-www.cs.illinois.edu/users/brant/Refactory/Lint.html via wayback](https://web.archive.org/web/20150611033230/http://st-www.cs.illinois.edu/users/brant/Refactory/Lint.html)\r- <http://www.lukas-renggli.ch/blog/ob-rb-3>\r- <http://www.lukas-renggli.ch/blog/ignoring-lint-rules>\r# Change the class of an instance\r**use with caution**: `MyClass #adoptInstance: anObject` (thanks to Charles Monteiro via Pharo Discord)\r# Deprecating Classes\rHere's an example script to rename all the classes in a hierarchy.\r\r```\rcol := MADescriptionMorph allSubclasses.\rcol do: [ :e |\r\toldClassName := e name.\r\tstem := (oldClassName allButFirst: 2) allButLast: 'Morph' size.\r\tnewClassName := 'MAMorphic', stem.\r\tr := RBRenameClassRefactoring rename: e to: newClassName.\r\tr execute.\r\tnewClassName asClass subclass: oldClassName\r\t\tinstanceVariableNames: ''\r\t\tclassVariableNames: ''\r\t\tpackage: 'Magritte-Deprecated3dot7' ]\r```\r\rTo tell Pharo the Deprecated package is... deprecated, define the following:\r```\rManifestMagritteDeprecateddot class>>#isDeprecated\r\t^ true\r```\r# Previewing Changes\rTo analyze changes without actually applying them, send `primitiveExecute` instead of `execute`. GT allows one to easily previewing changes. First generation GT had a primitive Inspector view for viewing, but now provides a Coder-like tree where you can actually cherry pick individual or groups of changes. Adapted from Tudor Girba (via [Twitter](https://twitter.com/girba/status/1376526271929315332?s=20)):\r```\renv := RBNamespace new.\rcandidates := Smalltalk globals allClasses select: [ :e | e name beginsWith: 'Pe' ].\r(candidates copyFrom: 2 to: 3) do: [ :cls | (RBRenameClassRefactoring model: env rename: cls to: (cls name, 'New')) primitiveExecute ].\renv\r```\r# Semantic Analysis\rWhich classes are referenced in this source code?\r```language=smalltalk\rsource := 'Object new. String new'.\rast := RBParser parseExpression: source. \rast annotateInClass: UndefinedObject. \r(ast allChildren \r select: [ :each | each isVariable and: [ each variableBinding isLiteralBinding ] ]) \r     collect: [ :each | each variableBinding binding value ].\r\r   \"--> an OrderedCollection(Object String)\" \r```\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.74477-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.74477-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Refactoring"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "de05ce0e-7d84-0d00-9b2d-2edc0c3334de"
+	}
+}

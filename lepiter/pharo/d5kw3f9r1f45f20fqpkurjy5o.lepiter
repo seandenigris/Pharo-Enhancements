@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.739926-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.739926-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2AU+D32EDQCbUDBRDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "What interests me is how to handle parsing in a generic way. How can we handle format input/output in a way that minimizes duplication and maximizes compatibility between libraries. If I define RTF grammar once, I don't want to do it three more times to try out the four major parsing libraries. If I define the parsing in one direction, how much of that can be reused to reverse?\r# PEG Grammars\rThere are apparently at least to syntaxes: the original - and more common - Byran Ford syntax, and Xtreams syntax.\r## Converting e.g. ABNF (e.g. from rfc) to PEG\rI described my experience on Pharo Users, both documenting the twists and turns [here](http://forum.world.st/Xtreams-Extending-Bootstrap-tp4902579.html) as well as some more general useful lessons) [here](http://forum.world.st/Xtreams-Debugging-Grammars-tp4902581p4903438.html):\r> Two problems I found copy/pasting grammars from standard docs: \r> - Repititions (*) were prefix instead of postfix \r> - \"\" had to be escaped to \"\\\" \r\r> I still wonder about debugging techniques, though. If one was building a grammar from scratch, it might be easy to start with blocks that are constantly working, but the grammar in RFC 5322 is very interwoven. It's hard to see which rules are necessary up front.\r# Available Options\r## PetitParser(2)\rPetitParser was redesigned by Jan Kurs. Tudor Girba wrote [this thorough explanatory blog post](http://www.humane-assessment.com/blog/introducing-petitparser2/). In summary:\r- Optimization offers 2-5 time speed increase\r- `#asParser` -> `#asPParser` so both lib versions can be loaded simultaneously. Per Tudor: \"This transition is needed for parsers that rely on deeper constructs from the original PetitParser, such as concrete names of classes.\"\r- More understandable because Parsers have been split into Nodes and Visitors.\r- Streams eliminate need to have entire input in memory.\r## SmaCC\r### Docs\r  - [Website](http://www.refactoryworkers.com/SmaCC/ASTs.html)\r  - [Swiki entry](http://wiki.squeak.org/squeak/3117)\r  - [Antlr C++ grammar](https://github.com/antlr/grammars-v4/blob/master/cpp/CPP14Lexer.g4) - how was this converted to SmaCC?\r !!!Repos\r  - [Pharo port](https://github.com/SmaCCRefactoring/SmaCC)\r  \r## Xtreams\rVW Library ported to Pharo\r- Repos\r  - http://www.squeaksource.com/Xtreams, from which the Pharo 4 Config Browser loads\r  - https://github.com/seandenigris/Xtreams-Pharo, which is a port of the above to GH, with some additional experiments/improvements/documentation\r  - https://github.com/mkobetic/Xtreams\r  - http://smalltalkhub.com/#!/~juampi/Xtreams/, which claims to be porting Xtreams to \"Pharo 6\". [Per Juan Pablo Sandoval](http://forum.world.st/Xtreams-Which-Repository-tp4887888p4887923.html):\r> I am working on the repository #2, ~juampi/Xtreams.  It is a temporal fork from the repo #1. \r\r> At the moment, I was playing with the configuration of Xtreams to avoid the warnings and/or errors during the load on Pharo5. I think it is ok now for Pharo5. \r\r> The next steps are: \r> - Updating the code of the repo to latest code in VW. I did my first attempt, but as I am not a Xtreams/VW expert, it is taking more time than I expected. BTW, any suggestion for this step would be appreciated.\r> - Improving the API of Xtreams.\r  - PEGActor example available [per Chris Cunningham](http://forum.world.st/Xtreams-PEGParser-now-has-a-working-PEGActor-subclass-td4925586.html)\r## Translating Smalltalk Code\rSee [here](http://readthesourceluke.blogspot.com/2014/09/block-translators-parsing-magic.html) for a technique that avoids using a parser at all. For example, if you have a select block that deals with your domain objects, you can implement a SQL equivalent.\r# Background/Theory\r- `terminal` - a thing that finally apperars verbatim e.g. in `x = 0`, the terminals are `x`, `=`, and `0`, vs. non-terminal parser artifacts like `id`, `operator`, and `number`1\r- Context-free - the non-terminal on the left side of all rules can always be replaced with the right side, regardless of surrounding tokens.1\r- `LR parser` (Left-to-right, Rightmost derivation in reverse) are \"widely used for the processing of computer languages\" ([per Wikipedia](https://en.wikipedia.org/wiki/LR_parse))\r- `GLR Parser` - (GLR standing for \"Generalized LR\", where L stands for \"left-to-right\" and R stands for \"rightmost (derivation)\") is an extension of an LR parser algorithm to handle **non-deterministic and ambiguous grammars**. ([Wikipedia](https://en.wikipedia.org/wiki/GLR_parser))\r## Material Conditional\rPer Udo Schneider on [this Pharo-Users thread](http://forum.world.st/BLOG-Block-Translators-parsing-magic-tp4779569p4779629.html):\rI'd say that's an implementation of the \"Material implication\"[1] \roperator from Propositional calculus. \r\rYou can write it as \r\rP -> Q \r\rand read it as \"P implies Q\" or (not 100% correct) \"if P (is true) then \rQ (is true)\". \r\rLet's take a look at the truth table: \r\r  P | Q | P -> Q \r- --+---+------- \r  t | t | t \r---+---+------- \r\rinserting it into the statement above yields: \r\r\"if true then true\" which is true indeed. \r\rThe funny thing starts when we look at the case(s), where P is false. \rThe general (verbal) rule says that if the premise (P) is false the \rtruth value of the conclusion doesn't matter. Hence the complete term is \rtrue: \r\r  P | Q | P -> Q \r---+---+------- \r  f | t | t \r---+---+------- \r  f | f | t \r---+---+------- \r\rThere is one case left: What happens if the premise is true but the \rconclusion is false? That's in direct violation of the defintion which \rstates that \"if P (is true) then Q (is true)\". As P is true and Q is \rfalse the truth value of the complete term is false! \r\r  P | Q | P -> Q \r---+---+------- \r  t | f | f \r---+---+------- \r\rOr to put it in different words: An implication can only be false if the \rpremise is true but the conclusion is false. \r\rSo we end up with this truth table: \r\r  P | Q | P -> Q \r---+---+------- \r  t | t | t \r---+---+------- \r  f | t | t \r---+---+------- \r  f | f | t \r---+---+------- \r  t | f | f \r---+---+------- \r\rWe did not take a look yet, at how to implement this with basic boolean \roperators. So we need to take a look at the table and find the \rexpression: Let's start with the exception (fourth case). We can express \rthis as: \r\r!(P & !Q) -> \"The term is false if P is true and Q is false\" \r\rI added the inner term \"P & !Q\" to the table to make it easier to follow: \r\r\r  P | Q | P -> Q | P & !Q | !(P & !Q) \r---+---+--------+--------+----------- \r  t | t | t      | f      | t \r---+---+--------+--------+----------- \r  f | t | t      | t      | f \r---+---+--------+--------+----------- \r  f | f | t      | f      | t \r---+---+--------+--------+----------- \r  t | f | f      | f      | t \r---+---+--------+--------+----------- \r\r\rThe \"last\" step is to simplify the term \"!(P & !Q)\" using one of de \rMorgan's laws: \r!(A & B) ` !A | !B \r\rUsing this for our term gives \r\r!(P & !Q) ` !P | !!Q == !P | Q \r\r  P | Q | P -> Q | P & !Q | !(P & !Q) | !P | Q \r- --+---+--------+--------+-----------+-------- \r  t | t | t      | f      | t         | t \r---+---+--------+--------+-----------+-------- \r  f | t | t      | t      | f         | f \r---+---+--------+--------+-----------+-------- \r  f | f | t      | f      | t         | t \r---+---+--------+--------+-----------+-------- \r  t | f | f      | f      | t         | t \r---+---+--------+--------+-----------+-------- \r\r\rSo our final term is \"correct\" (proof in the truth table) and is \requivalent to the smalltalk term: \r\r!P | Q  := self not or: [aBlock value] \r\r\rI have to admit though that implications in Propositional calculus \rreally gave me a headache. You might simply want to accept that they are \rdefined this way. And maybe it doesn't help ... but there are even more \rstrange things lurking around the corner [4] :-) \r\rAlthough not immidiatly obvious all the terms in Propositional calculus \rdo not neccessarly have a semantic meaning in context to each other. \rThey are totaly independent. The only thing that counts is the truth \rvalue of its terms. E.g. something like this is \rmathematically/syntacically valid but doesn't make any sense from a \rsemantic point of view: \r\rP := I am 12y old \rQ := It rains \r\rThe term \"P -> Q\" is perfectly fine mathematically/syntacically but \rdoesn't mean anything in terms of semantics. \r\r\rHope this helps. \r\rCU, \r\rUdo \r\r[1] http://en.wikipedia.org/wiki/Material_implication_(rule_of_inference) \r[2] http://en.wikipedia.org/wiki/Propositional_calculus\r[3] http://en.wikipedia.org/wiki/De_Morgan's_laws\r[4] http://en.wikipedia.org/wiki/Paradoxes_of_material_implication\r## Miscellaneous\r- [Fascinating thread](http://forum.world.st/SmaCC-First-steps-td4802170.html) as Kilon begins his journey parsing Python\r# Reference\r1. <https://en.wikipedia.org/wiki/Context-free_grammar>\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.739923-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.739923-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Parsing"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ace6b80e-7d84-0d00-9b2a-63a80c3334de"
+	}
+}

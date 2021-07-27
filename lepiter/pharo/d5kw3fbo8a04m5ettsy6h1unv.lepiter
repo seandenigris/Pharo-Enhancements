@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.713444-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.713444-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Zp49D32EDQCbQQDaDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Decimal Numbers\rThis is one of those convroversial topics inspiring endless conversation1. In summary, Floats are what computers expect, but not what naive (i.e. relying on life and primary school experience) humans expect.\r## Floats\rFloats are a computing artifact that are not like the everyday decimals we are used to. They seem more appropriate in computer graphics applications than one for recipes. One important feature is: *forget about exact comparison*1.\r## Scaled Decimals\r{{gtClass:ScaledDecimal}} is a little more (and less) complicated. \r\rIt keeps full precision, unlike a Float, but rounds its *display* to the precision specified by its `scale`, as seen in this example [proposed by Chris Cunningham](http://forum.world.st/SIXX-problem-for-ScaledDecimal-tp3535135p3537088.html):\r```language=smalltalk\rsd1 := (1/3) asScaledDecimal: 2.\rsd2 := (33/100) asScaledDecimal: 2.\rself assert: sd2 printString equals: '0.33s2'.\rself assert: sd2 printString equals: sd2 printString.\rself assert: sd1 ~= sd2. \"Possibly surprising\"\rself assert: (sd1 + sd1) printString equals: '0.67s2' \"Possibly surprising\" \r```\rHe goes on to say: \"*From my perspecive, ScaledDecimal is great when you want to keep as much precision as possible, but need to SHOW less precision.  It reminds me of science, where you have this measurement that is way more precise than you can really measure, so you 'scale' it back to a precision that is reliable.*\"\r\rThis thread from 20012 has the familiar gnashing of teeth over this class, with an argument made that it shouldn't keep more precision than its scale.\r## Fixed Decimal\rFrom [the project description](http://www.squeaksource.com/FixedDecimal.html): \rA FixedDecimal is similar to a ScaledDecimal, but different in certain select ways. It's primary purpose was to be able to represent precise decimals for such things as representing money - where ScaledDecimals leave something to be desired. For instance, with ScaledDecimals, you get: (33.333s withScale:2) + (33.333s withScale:2) print it yields 66.67s but with FixedDecimals, you would get: (33.333 asFixedDecimal: 2) + (33.333 asFixedDecimal: 2) print it yields 66.66. So, FixedDecimals round the numbers to the exact scale you specify - converting a float (or fraction) to a FixedDecimal and back will not necessarily return the starting number, unlike ScaledDecimals.\r\rIn the announcement thread, [Nicolas Cellier pointed out some problems](http://forum.world.st/ANN-FixedDecimals-tp66327p66328.html), which may have been fixed by now.\r## Binary Coded Decimal\rThis thread from 20012 suggests that a BCD is really what you want for money, and it what ScaledDecimal should be.\r## References\r1. <http://forum.world.st/Issue-940-13-10-1-3-returns-false-tt1305147.html>\r2. <http://forum.world.st/ScaledDecimal-conversion-and-equality-question-tt3359724.html>\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.71344-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.71344-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Decimal_Numbers"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "7bfa940e-7d84-0d00-9b1b-71e80c3334de"
+	}
+}

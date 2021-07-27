@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.706402-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.706402-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5II9D32EDQCbPXA6DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Changing an Object's Class\rThere is {{gtMethod:Behavior>>#adoptInstance:}}, but following through the class comments, one doesn't get a warm and fuzzy feeling, as it is apparently \"*not for casual use*\".\rA specific case is when you have an object, but you want an instance of a subclass. In this case, you can use {{gtMethod:Object class>>#newFrom:}} and/or {{gtMethod:Object>>#copySameFrom:}}. For example:\r```\r\tPDFFileReference newFrom: '/path/to/file.pdf' asFileReference\r```\r# Replacing Strings with Real Objects\rA good way to start may be to search for implementors of the accessor. In this example, we search for implementors of `macAddress`. For each relevant method:\r```\robjs := self methodClass allSubInstances select: [ :e | e macAddress isNotNil ].\robjs collect: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\t{ e macAddress. newMac } ]. \"Compare current values with replacements\"\robjs do: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\te macAddress: newMac ]\r```\rNotice\r# SortFunctions\rThis is a cool addition to Pharo, but more than allowing terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For examples, see {{gtClass:SortFunctionTest}}\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.706399-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.706399-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Cookbook 2"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2666920e-7d84-0d00-9b17-30b60c3334de"
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.709626-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.709626-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fI89D32EDQCbP63dDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## File-Base\r- SQLite\r\t- [The SQLite3 API is very well documented, and the UDBC-SQLite3 project (https://github.com/astares/Pharo-UDBC) is a nice and clean binding to it.](http://forum.world.st/Re-Pharo-users-Digest-Vol-77-Issue-67-tp5104319.html)\r  \r\t- https://github.com/juliendelplanque/SQLite3. Here's a usage example [gist](https://gist.github.com/seandenigris/c5b2d2b025b255be1c70a2ace42e19ed).\r\r- Unqlite via punqlite\r- PostgreSQL - sven wrote a PostgreSQL wire protocol implementation called P3\r- Any SQL DB via UDBC/Garage (e.g. the above, MySQL)\r\r\r\r> Let's not forget Gemstone, which is commercial, but free for some limited use. It has all advantages of OOP and Smalltalk, no ORM problems. You can write prepared queries in Smalltalk on Gemstone DB side, which can be optimized (to avoid large memory consumption on client side in Pharo). There is a tool GTConnector? for Pharo which looked nice in presentation. We used Gemstone in my previous job and it was most stable component of entire stack I believe. - David Bajger via Discord #learning-help 10/8/2017\r\r\r\r> For traditional multi-user ORM + SQL database I'd look at P3 from Sven for Postgres with GLORP… And I would probably generate GLORP descriptors from Magritte by default - Stephan Eggermont via Discord #learning-help 10/8/2017\r## Glorp\r> Glorp which is an ORM works over some of these. Voyage is an OO persistence API whose main backend is mongodb, although i think there is at least one other. - Pierce Ng via Discord #learning-help 10/8/2017\r- Schema migration - [per Esteban Marg](http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html), there is support in VW that could potentially be ported to Pharo\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.709624-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.709624-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Databases"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "076a930e-7d84-0d00-9b19-2a170c3334de"
+	}
+}

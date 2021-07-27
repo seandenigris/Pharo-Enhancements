@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.701457-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.701457-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mW89D32EDQCbOge4DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Cookbook\rNB. The following all use NeoCSV unless otherwise indicated.\r\rLet's use GnuCash CSV transaction export files as an example to illustrate two scenarios reequiring a little creativity...\r## Rows Depending on Other Rows\rEach transaction is represented by a transaction row is followed by one or more \"split\" rows, which are actually part of the initial transaction. This makes `#upToEnd` and even `#collect:` insufficient. `#inject:into:` can help here.\r## Rows Representing Multiple Objects\rThe situation is even slightly more complicated, because each row starts with columns representing the overall transaction, and ends with rows representing a relevant split. Thus the first row is actually a transaction *and* its first split.\r\rThe following script shows an example handling both of these issues:\r\r```\r\t^ rows\r\t\tinject: OrderedCollection new\r\t\tinto: [ :col :rowDict | \r\t\t\t| newTransaction split recordedTransaction |\r\t\t\tnewTransaction := VsTransaction fromGnuCashCSV: rowDict.\r\t\t\tsplit := VsSplit fromGnuCashCSV: rowDict.\r\t\t\trecordedTransaction := newTransaction isValid\r\t\t\t\tifTrue: [ col add: newTransaction ]\r\t\t\t\tifFalse: [ col last ].\r\t\t\trecordedTransaction splits add: split.\r\t\t\tcol ]\r```\r# NeoCSV\rFor the basics, start with the [paper](https://github.com/svenvc/docs/blob/master/neo/neo-csv-paper.md).\r\rOver the course of much practical use, a few common situations have arisen...\r## Intermediary Objects - More expressive than arrays, and cheaper than creating a class\rIdeally, you parse directly to domain objects, but there are situations when this will not work. For example, when a record represents multiple objects, or certain columns (e.g. *account name* and *account ID*) must be combined into one object field (e.g. *account*). In cases like these, when you don't want to bother creating a class 'just' to represent a record, you can send {{gtMethod:NeoCSVReader>>#namedColumnsConfiguration}} to your reader. Instead of plain arrays, this will return dictionary records where each value is keyed by the column header.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.701453-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.701453-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "CSV"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "3309920e-7d84-0d00-9b14-8c960c3334de"
+	}
+}

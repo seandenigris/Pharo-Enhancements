@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.727999-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.727999-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Qdc9D32EDQCbSfmiDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Add Template Example ()\r```language=smalltalk\rofficialGroup := PharoLauncher new templateRepository roots detect: [ :e | e name = 'Official distributions' ].\rofficialGroup templatesAndGroups add: (self last copy \r\tsetName: 'GToolkit' url: 'https://github.com/feenkcom/gtoolkit/releases/latest/download/GT.zip' asUrl;\r\tyourself)\r```\r# Bug: Unzipping recent GToolkit `gt-extra` folders\rI'm just holding on to this one because it is a minor annoyance that only applies to custom code. I'm just leaving this record of my research in case we want to follow up later. I created a template from the following (https://www.dropbox.com/s/tzy73oi3sh32x2y/GT%200.8.225.zip?dl=0, zipped for sharing, unzip to reproduce). When I tried to create an image from the template, I got an error during unzipping (something about Hoffman tables). I don't think it's a Launcher error, because Launcher just uses\r```\r| sourceFolder archive anImage aString |\rsourceFolder := FileLocator home / 'Downloads' / 'GT 0.8.225'.\rarchive := ZipArchive new.\r\tarchive\r\t\taddFile: anImage imageFile as: aString , '.image';\r\t\taddFile: anImage changesFile as: aString , '.changes'.\r\t[ archive addFile: anImage sourcesFile as: anImage sourcesFile basename ]\r\t\ton: NotFound \r\t\tdo: [ :e | \"ignore the file\" ].\r\tanImage versionFile exists\r\t\tifTrue: [ archive addFile: anImage versionFile as: anImage versionFile basename ].\r\tanImage addSupportFilesToTemplateArchive: archive.\r\tarchive writeToFile: (self localTemplatesDirectory / aString , 'zip'). \r```\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.727996-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.727996-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Launcher"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "d6b4970e-7d84-0d00-9b23-48880c3334de"
+	}
+}

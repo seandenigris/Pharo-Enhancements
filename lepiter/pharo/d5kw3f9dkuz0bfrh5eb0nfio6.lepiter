@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.750074-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:10:51.94232-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "fC0+D32EDQCbVrmCDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# StrategyPattern\r{{gtWikiPage:DesignPatternsSmalltalkCompanion}} (p. 339) proposed the following \"Smalltalk way\" as an alternative to the common class-per-strategy implementation:\r```language=smalltalk\rComposition>>repair\r\t\"Without the strategy pattern, but using perform:.\"\r\t| selector |\r\t\"Construct the name of the method to invoke:\"\r\tselector := ('formatWith', formattingStrategy, 'Algorithm') asSymbol.\r\tself perform: selector\r```\r\rIt then dismissed the approach as \"*clever but difficult from a program understanding perspective. Even static analysis tools such as code browsers' \"senders\" and \"messages\" fail on this code.*\"\r\rIt struck me as perhaps a bit extreme (i.e. too clever indeed) to construct the algorithm selector via string concatenation. Maybe \"senders\" search capabilities have gotten more sophhisticated since publication, but Pharo seems to support symbol arguments, even for e.g. message renames. Why not the following:\r```language=smalltalk\rComposition>>repair\r\t\"Without the strategy pattern, but using perform:.\"\r\tself perform: self formattingStrategy\r```\rThen client code like `aComposition formattingStrategy: #formatWithSimpleAlgorithm` would show up in senders, message renames, etc."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.750071-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.750071-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "StrategyPattern"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "46b3ce0e-7d84-0d00-9b30-ed9b0c3334de"
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.754799-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.754799-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8T8+D32EDQCbWan5DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# TODO\r## Communications\r- Something rotten with Pharo's including outside projects in core image; why not GH fork? Isn't best of both worlds\r- Why doesn't Pharo adopt GToolit; maybe refocus core effort on minimal tools?\r- Famix for Smalltalk? Not needed?\r- Publishing. How Feenk blog created? The GT and Pharo post seems to have diverged from what's in latest GT image\r- How would one integrate Examples into CI pipeline?\r- Parameterized examples - `dependsOn:` are arguments? Will they be runnable from e.g. Coder?\r- How to change main window title?\r## Tasks\r- GT Launcher\r  - gt-extras etc go with images, not VM - otherwise doc links broken\r- Classes should show custom views in Coder e.g. Wiki pages\r- Investigate SmaCC\r- Debugger: add do, dive, debug buttons\r- Coder show superclass(es) methods is filter WIP per Tudor\r- Git Tool - browse change\r```\rBrGlamorousWithContextMenuLook\r\t\t\t\t\t\tcontent: [ BrGlamorousSimpleContextMenuContent new\r\t\t\t\t\t\t\t\titems:\r\t\t\t\t\t\t\t\t\t{('Revert changes'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | self workingCopy diffToReferenceCommit revertChanges: anIceNode ]).\r\t\t\t\t\t\t\t\t\t('Browse'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | anIceNode value definition browse ])};\r\t\t\t\t\t\t\t\tyourself ])\r```\r# Dreams\r- Since views are explicitly annotated, could there be documentation connected specifically with <gtView> so that it shows (or shows that it is available) whenever such a method is being worked on? E.g. the slideshow\r- Link to headings inside documenter doc, like GH does with HTML anchors. I know Pillar already has section tags but never used them...\r- Universal undo\r- Documentation organization e.g. tags, hierarchy\r## Complete\r- Exemplifier and explainer are engines\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.754797-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.754797-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Todo"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "3512390f-7d84-0d00-9b33-178e0c3334de"
+	}
+}

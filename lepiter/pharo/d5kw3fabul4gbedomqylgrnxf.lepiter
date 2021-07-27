@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.718194-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.718194-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9LA9D32EDQCbRBRvDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Theory\r[Here](https://documentation.divio.com) is a really interesting system to split up documentation based on the target audience and their current objective.\r# Protocol\r## In Image\rWe'd like to have information flow down from one common starting point. \r\rGT uses the BaselineOf comment for this. The problem is that a single comment is a bit limiting. TAPWiki is more flexible because one can have unlimited pages. Maybe a convention could be to add a wiki tab to the baseline, packaged with the model not to add dependencies to the baseline.\r\rPackage comments can be helpful, but seem like an optional level e.g. does a test package really need a comment?\r\rClass comments are the next level.\r\rMethod comment are tricky. Now that there are rich, multimedia comments at every other level, methods seem like the least alluring place to add comments.\r## External\rIdeally, everything in this category would be exported from something live in image, with a disclaimer as to what's being lost and a link to see the real thing. Pharo-Preferences has {{gtMethod:BaselineOf class>>#markdownComment}} for this purpose.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.718191-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.718191-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Documentation"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "e3d5950e-7d84-0d00-9b1e-a7bb0c3334de"
+	}
+}

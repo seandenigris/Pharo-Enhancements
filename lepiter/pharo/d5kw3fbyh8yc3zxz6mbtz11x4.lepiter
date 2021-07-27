@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.726314-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.726314-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rdA9D32EDQCbSOc3DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Cookbook\r**Difference between two commits** (e.g. for last commit): This is built into the Iceberg UI, but on the command line you can do: `git diff HEAD~ HEAD` or `git show` ([via SO](https://stackoverflow.com/a/17563740))\r\r**Non-Smalltalk files**: If you stage (e.g. via `git add -A`), they will be included in your next Iceberg commit. Or you can commit outside the image and then adopt it in Iceberg.\r**Load Packages without a Baseline**: `((IceRepositoryCreator new url: 'git@bitbu…’; createRepository) packageNamed: #PackageName) load` (via Julián Grigera on Pharo Discord Iceberg channel on 10/24/2020)\r## Fix desynchronized repos (WIP)\rYou make a commit to a branch that exists on the remote, but when you try to push it, you realize there were commits on the remote that you hadn't pulled and now your branch has diverged. What to do? It depends...\r### No Conflicts\rThis would mean none of the same classes modified for Tonel, or none of the same methods modified for FileTree. This CLI script seems to be the simplest fix (replace `master` with the branch in question):\r\r```language=shell\rgit fetch origin master\rgit rebase origin/master\rgit push origin master\r```\rBut, if you're more comfortable in Iceberg, you can:\r1. Drop to the command line and: `git rebase origin/master` (assuming the remote is named `origin`)\r2. Get Iceberg to realize it's out of sync with the local file repo. One way is to bring up the context menu on the project and then \"Extra\" -> \"Recalculate dirty packages\".\r3. Repair repository - choose to discard image changes (don't worry we're not really going to do that). When the preview dialog comes up, select \"DO NOT CHECKOUT...\" from the dropdown. This will make sure that nothing in the image is changed except Iceberg and the local file repo will be in sync again.\r### Conflicts\rHere you'll follow the Iceberg instructions for \"No Conflicts\", but with the following modifications:\r1. Choose, \"Checkout packages already loaded\"\r2. At the end, go into Epicea and revert the in image code changes that wipes out your changes\r\rAlternatively, you could follow the git script for **No Conflicts** and then manually resolve the conflict on the command line.\r## Syncing a Fork (e.g. on GitHub)\rIf your personal fork is behind the canonical, from [GitHub docs](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) (assumes fork remote is named `origin`, canonical is `upstream`, and we want to sync the `master` branch):\r1. If needed, add remote(s) e.g. `git remote add upstream git@github.com:magritte-metamodel/magritte.git`\r1. `git fetch upstream`\r1. `git merge upstream/master`\r1. `git push origin master`\r## Working on Multiple Features of the Same Project in the Same Image\rScenario: While working on a feature branch that I've made commits to, I want to commit a fix that's part of an unrelated feature.\rSolution: Here's how to submit \"just the second fix\". NB: for  checkout described below, select `DO NOT CHECKOUT ANY PACKAGES` in the preview window:\r1. Checkout the commit on the first issue branch just before work began (i.e. the commit that's already part of the repo)\r2. Repair detached HEAD state by creating a \"new branch from image commit\" for the second feature\r3. Commit second feature fix\r4. Checkout the first feature branch. Remember that the second feature fix will now show as uncommitted, so if you want the second fix to remain loaded, when you make further commits to the first feature you'll need to uncheck those changes. \r5. As needed, switch between feature branches to make additional commits to either feature.\r# Declare Smalltalk\rDoes GitHub think you're project is 80% HTML? Want to proudly proclaim that it is in fact Smalltalk?\rCreate a `.gitattributes` file in the root folder with the following contents: `*.st linguist-language=Smalltalk`\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.726311-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.726311-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Git"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f886970e-7d84-0d00-9b22-eef10c3334de"
+	}
+}

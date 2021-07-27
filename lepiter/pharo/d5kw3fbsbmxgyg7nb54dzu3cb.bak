@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.758003-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.758003-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dUw+D32EDQCbW5Z9DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# VM\r- [2014 - Busy people from all dialects trying to work together](http://forum.world.st/Re-Pharo-dev-Simulator-in-Pharo-3-tt4743189.html#a4743209)\r- [2019-01-07 - Polito and Eliot exchange re Pharo plugin building](http://forum.world.st/Would-anyone-object-if-I-added-optional-building-of-the-processor-plugins-to-the-Pharo-builds-tt5092829.html)\r- [2019-02-17 - Spat between Steph and Eliot (incl. ESL issue)](http://forum.world.st/Re-squeak-dev-Pharo-dev-Squeak-and-Tonel-tt5095437.html)\r- [2019-02-18 - Tonel - Esteban and Eliot](http://forum.world.st/Re-squeak-dev-Squeak-and-Tonel-tt5095630.html)\r  - Eliot suggests there is a bug in Pharo's timestamp handling\r  - Eliot thinks Esteban is refusing the optional timestamp in Tonel (ESL issue?)\r  - Steph said students would have to move to Python\r  - Eliot couldn't load Clement's Scortch Tonel code\r- 2019-02-18 - [Tudor tries to get VMMaker running in Pharo ](http://forum.world.st/VMMaker-in-Pharo-Was-Squeak-and-Tonel-tt5095462.html#a5096351)\r- 2019-05-07 - [Polito tries Slang/VMMaker on Pharo](http://forum.world.st/Some-more-effort-to-make-Slang-and-VMMaker-work-on-Pharo-for-review-tt5098976.html#a5099070)\r\r- 2020-01-24 - [Polito contributes back; timestamps stripped](http://forum.world.st/Fix-for-label-duplications-in-Slang-s-case-expansion-tp5110597.html)\r  - Eliot complains about timestamps\r  - Polito apologizes, explains process trying to keep them\r  - Reschke notices Pharo has dropped timestamps; Eliot confirms\r- [2020 - Pharo builds disrupting OSVM CI](http://forum.world.st/Errored-OpenSmalltalk-opensmalltalk-vm-2103-Cog-b09b99f-tt5119367.html#a5119380)\r  - Eliot says to nuke bc Pharo \"can build its own vo (insists in forking in fact)\"\r  - Cellier \"I asked for pharo community support for this... Just like shouting in the desert... since the ML seems private, who knows...\"\r  - **WF** emailed Cellier 2020-09-02\r  - Stes also says Pharo doesn't respond, has \r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.758001-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.758001-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "VM"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "6b433b0f-7d84-0d00-9b35-3bec0c3334de"
+	}
+}
