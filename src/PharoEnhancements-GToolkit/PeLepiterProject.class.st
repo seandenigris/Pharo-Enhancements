@@ -14,8 +14,8 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'repository',
-		'databaseFolder',
-		'name'
+		'name',
+		'databaseRootFolder'
 	],
 	#category : #'PharoEnhancements-GToolkit'
 }
@@ -23,10 +23,23 @@ Class {
 { #category : #accessing }
 PeLepiterProject class >> all [
 	| baselines |
-	baselines := BaselineOf allSubclasses 
+	baselines := BaselineOf allSubclasses  asOrderedCollection
 		select: [ :e | e iceRepository isNotNil ]
 		thenCollect: [ :e | self fromBaseline: e ].
-	^ (self allFromDefaultFolder copyWithAll: baselines) sort: #hasDatabase descending, #name ascending
+	^ (baselines add: self default; yourself) sort: #hasDatabases descending, #name ascending
+]
+
+{ #category : #'instance creation' }
+PeLepiterProject class >> allFromBaseline: aBaselineOf [
+	| repoRoot lepiterFolder |
+	repoRoot := aBaselineOf iceRepository location.
+	lepiterFolder := repoRoot / 'lepiter'.
+	lepiterFolder allDirectories.
+	
+	^ self new
+		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
+		repository: aBaselineOf iceRepository; 
+		yourself
 ]
 
 { #category : #'instance creation' }
@@ -42,6 +55,25 @@ PeLepiterProject class >> allFromDefaultFolder [
 			yourself ]
 ]
 
+{ #category : #utilities }
+PeLepiterProject class >> databaseAt: folder [
+	LeDatabasesRegistry default defaultLogicalDatabase databasesDo: [ :db |
+		db localStoreRootDirectory resolve = folder resolve
+			 ifTrue: [ ^ db ] ].
+	^ nil
+]
+
+{ #category : #'instance creation' }
+PeLepiterProject class >> default [
+	| repoLocation |
+	repoLocation := FileLocator documents / 'lepiter'.
+	^ self new 
+		name: 'Lepiter Default';
+		repository: repoLocation;
+		databaseRootFolder: repoLocation; 
+		yourself
+]
+
 { #category : #'instance creation' }
 PeLepiterProject class >> fromBaseline: aBaselineOf [
 	^ self new
@@ -53,10 +85,16 @@ PeLepiterProject class >> fromBaseline: aBaselineOf [
 { #category : #views }
 PeLepiterProject class >> gtViewDashboardOn: aView [
 	<gtClassView>
+	^ self gtViewDatabases: (self all flatCollect: #databases) on: aView
+]
+
+{ #category : #views }
+PeLepiterProject class >> gtViewDatabases: aCollection on: aView [
+	
 	^ aView columnedList
-		title: 'Dashboard' translated;
+		title: 'Databases' translated;
 		priority: 80;
-		items: [ self all ];
+		items: [ aCollection ];
 		column: 'Status' 
 			icon: [ :p | p statusIcon ]
 			width: 75;
@@ -67,134 +105,71 @@ PeLepiterProject class >> gtViewDashboardOn: aView [
 		actionUpdateButtonTooltip: 'Update'
 ]
 
-{ #category : #accessing }
-PeLepiterProject >> actionButtons [
-	| result |
-	result := OrderedCollection new.
-	self hasDatabase ifFalse: [ 
-		^ result 
-			add: (self 
-				buttonLabelled: 'Create DB' 
-				action: [ self createDatabase ]);
-			yourself ].
-	self database ifNil: [ 
-		^ result 
-			add: (self 
-				buttonLabelled: 'Load DB'
-				action: [ self loadDatabase ]);
-			yourself ] .
-	^ self needsSync 
-		ifTrue: [ 
-			result 
-				add: (self 
-					buttonLabelled: 'Commit DB'
-					action: [ self syncDatabase ]);
-				yourself ] 
-		ifFalse: [ 
-			result 
-				add: (BrLabel new
-					aptitude: BrGlamorousLabelAptitude;
-					text: 'Up to date';
-					yourself);
-				yourself. ]
-]
-
-{ #category : #private }
-PeLepiterProject >> buttonLabelled: aString action: aBlock [
-	^ BrButton new
-		aptitude: (BrGlamorousButtonRectangularAptitude + BrGlamorousButtonExteriorAptitude + 
-			(BrGlamorousButtonLabelAptitude new selectedColor: Color black));
-		label: aString;
-		action: aBlock;
-		yourself
-]
-
-{ #category : #actions }
-PeLepiterProject >> commitCommand [
-	"Commits unstaged/untracked files only under the DB folder"
-
-	^ 'cd "' , self repositoryLocation fullName , '"; git add -A '
-		, self relativeDatabasePath fullName surroundedByDoubleQuotes
-		, '; git commit -m ' , self commitMessage surroundedByDoubleQuotes
-]
-
-{ #category : #actions }
-PeLepiterProject >> commitDatabase [
-	LibC system: self commitCommand
+{ #category : #utilities }
+PeLepiterProject class >> loadDatabaseAt: folder [
+	| ldb db |
+	folder exists ifFalse: [ ^ self ].
+	ldb := LeDatabasesRegistry defaultLogicalDatabase.
+	
+	"Properties internally prevents duplicates, so we don't need a guard"
+	ldb properties addRegisteredDirectory: folder.
+	
+	(ldb hasDatabaseAt: folder) ifTrue: [ ^ self databaseAt: folder ].
+	db := LeLocalStoreLoad current loadAndMonitorFrom: folder.
+	^ ldb addDB: db.
 ]
 
 { #category : #accessing }
-PeLepiterProject >> commitMessage [
-	^ 'lepiter-sync ', self relativeDatabasePath fullName
-]
-
-{ #category : #actions }
-PeLepiterProject >> createDatabase [
-	self databaseFolder ensureCreateDirectory.
-]
-
-{ #category : #accessing }
-PeLepiterProject >> database [
-	| folder |
-	folder := self databaseFolder ifNil: [ ^ nil ].
-	LeDatabasesRegistry default defaultLogicalDatabase databasesDo: [ :db |
-		db localStoreRootDirectory resolve = folder resolve
-			 ifTrue: [ ^ db ] ].
-	^ nil
-]
-
-{ #category : #accessing }
-PeLepiterProject >> databaseFolder [
-	databaseFolder ifNotNil: [ :dbf | ^ dbf ].
+PeLepiterProject >> databaseRootFolder [
+	databaseRootFolder ifNotNil: [ :dbf | ^ dbf ].
 	^ self repository ifNotNil: [ self repositoryLocation / 'lepiter' ].
 ]
 
 { #category : #accessing }
-PeLepiterProject >> databaseFolder: anObject [
-	databaseFolder := anObject
+PeLepiterProject >> databaseRootFolder: folder [
+	databaseRootFolder := folder
+]
+
+{ #category : #accessing }
+PeLepiterProject >> databases [
+	| dbFolders defaultDB shouldIncludeDefaultDB dbs isDBFolder |
+	
+	isDBFolder := [ :folder | folder files anySatisfy: [ :file | file basename = 'lepiter.properties' ] ].
+	
+	"FS is resolution happy so we have to jump through hoops to unresolve"
+	dbFolders := self databaseRootFolder exists
+		ifTrue: [ self databaseRootFolder allDirectories asOrderedCollection select: [ :folder | folder ~= self databaseRootFolder asFileReference and: [ isDBFolder value: folder ] ] ]
+		ifFalse: [ OrderedCollection new ].
+	
+	defaultDB := PeLepiterDatabase new
+		name: self name;
+		project: self;
+		folder: self databaseRootFolder;
+		yourself.
+		
+	dbs := dbFolders collect: [ :e |
+		PeLepiterDatabase new
+			name: e base;
+			project: self;
+			folder: e;
+			yourself ].
+	
+	"We have to exclude the special case of Lepiter's default location, where the repo location and DB root are the same"
+	shouldIncludeDefaultDB := (defaultDB folder exists and: [ defaultDB folder asFileReference ~= self repositoryLocation asFileReference ]) or: [ dbFolders isEmpty ].
+	shouldIncludeDefaultDB ifTrue: [ dbs add: defaultDB ].
+			
+	^ dbs
+]
+
+{ #category : #views }
+PeLepiterProject >> gtViewDashboardOn: aView [
+	<gtView>
+	^ self class gtViewDatabases: self databases on: aView
 ]
 
 { #category : #testing }
-PeLepiterProject >> hasDatabase [
-	^ self databaseFolder exists
-]
-
-{ #category : #testing }
-PeLepiterProject >> hasUnstaged [
-	"Adapted from BaselineOf class>>#gitHasUnstaged, which could probably be moved to IceRepository, but then would still have to be copied here (unless there was also a class-side utility)"
-	| unstagedCmd cmd exitCodeString |
-	
-	"Adapted from https://stackoverflow.com/a/5139672"
-	unstagedCmd := 'git diff --quiet --exit-code ', self relativeDatabasePath fullName surroundedByDoubleQuotes, '; echo $?'.
-	
-	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , unstagedCmd.
-	exitCodeString := LibC resultOfCommand: cmd.
-	^ exitCodeString trimRight asNumber = 1
-]
-
-{ #category : #testing }
-PeLepiterProject >> hasUntracked [
-	| untrackedCmd cmd |
-	
-	"Adapted from https://stackoverflow.com/a/5139672"
-	untrackedCmd := 'git ls-files --others --exclude-standard --directory --no-empty-directory ', self relativeDatabasePath fullName surroundedByDoubleQuotes.
-	
-	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , untrackedCmd.
-	^ (LibC resultOfCommand: cmd) isNotEmpty.
-]
-
-{ #category : #actions }
-PeLepiterProject >> loadDatabase [
-	| ldb db |
-	self databaseFolder exists ifFalse: [ ^ self ].
-	ldb := LeDatabasesRegistry defaultLogicalDatabase.
-	
-	"Properties internally prevents duplicates, so we don't need a guard"
-	ldb properties addRegisteredDirectory: self databaseFolder.
-	
-	(ldb hasDatabaseAt: self databaseFolder) ifTrue: [ ^ self ].
-	db := LeLocalStoreLoad current loadAndMonitorFrom: self databaseFolder.
-	ldb addDB: db.
+PeLepiterProject >> hasDatabases [
+	^ self databases anySatisfy: #existsOnDisk
 ]
 
 { #category : #accessing }
@@ -207,20 +182,10 @@ PeLepiterProject >> name: anObject [
 	name := anObject
 ]
 
-{ #category : #accessing }
-PeLepiterProject >> needsSync [
-	^ self hasUnstaged or: [ self hasUntracked ]
-]
-
 { #category : #printing }
 PeLepiterProject >> printOn: aStream [
 	aStream
 		nextPutAll: self  name
-]
-
-{ #category : #actions }
-PeLepiterProject >> relativeDatabasePath [
-	^ self databaseFolder relativeTo: self repositoryLocation
 ]
 
 { #category : #actions }
@@ -229,7 +194,7 @@ PeLepiterProject >> repairIceRepository [
 	repairCommand := IceTipCheckoutModel new.
 	branch := (IceTipRepositoryModel on: self repository) branchModel.
 	strategy := repairCommand checkoutStrategies last.
-	self assert: (strategy isKindOf: IceCheckoutDoNotLoadPackages).
+	(strategy isKindOf: IceCheckoutDoNotLoadPackages) ifFalse: [ self error: 'Danger: checkout may overwrite image changes. Abort!' ].
 	repairCommand
 		checkoutStrategy: strategy;
 		commitish: branch;
@@ -257,19 +222,4 @@ PeLepiterProject >> repositoryLocation [
 	^ self repositoryIsIceberg
 		ifTrue: [ self repository location ]
 		ifFalse: [ self repository ]
-]
-
-{ #category : #accessing }
-PeLepiterProject >> statusIcon [
-	self hasDatabase ifFalse: [ ^ BrGlamorousIcons graycircle ].
-	self database ifNil: [ ^ BrGlamorousIcons redcircle ] .
-	^ self needsSync 
-		ifTrue: [ BrGlamorousIcons yellowcircle ] 
-		ifFalse: [ BrGlamorousIcons greencircle ]
-]
-
-{ #category : #actions }
-PeLepiterProject >> syncDatabase [
-	self commitDatabase.
-	self repositoryIsIceberg ifTrue: [ self repairIceRepository ]
 ]
