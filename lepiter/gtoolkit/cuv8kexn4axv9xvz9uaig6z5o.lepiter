@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.718212-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.718212-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BqFmQ4CEDQC5bXLBD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Getting Started\rSmaCC seems designed to be managed *only* with the SmaCC GUI tools. These have been ported to Morphic, but are still WIP in Gtoolkit. The needed boilerplate to get started is: 1) a scanner class and 2) a parser class that returns the scanner class from class-side `scannerClass`. The PharoEnhancements provides a message for this:\r{{gtExample:SmaCCParser class>>#exampleNewEmptyParser}}\r# Documentation\rThe most comprehensive documentation is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched.\r# Converstion from Antlr\rHere's an example from John Brant via Discord GT general channel 9/22:\r```\r| antlrAST rwRule rewriter |\rantlrAST := Antlr4Parser parse: (ZnEasy get: 'https://raw.githubusercontent.com/antlr/grammars-v4/master/arithmetic/arithmetic.g4') contents.\rrwRule := (ZnEasy get: 'https://raw.githubusercontent.com/j-brant/SmaCC/master/rewrites/antlr/antlr.rw') contents.\rrewriter := SmaCCRewriteEngine new.\rrewriter rewriteRule: (SmaCCRewriteRuleFileParser parse: rwRule).\rrewriter rewriteTree: antlrAST\r```\r# Competion in GT\rPer John Brant in Discord GT -> how-to:\rTo build completion with a SmaCC AST, you need to create a new subclass of GtCompletionStrategy (e.g., GtPharoCompletionStrategy) and override the completionActionsFor:at:max:requested: method. That method will need to parse the text using the parseWithErrors:{startingAt:} method. This method will return an AST and where there are parse errors it will insert SmaCCErrorNodes. Now, you'll either want to create a custom visitor for  completion or you can add extension methods to your AST nodes. The GtPharoCompletionStrategy uses extension methods where several nodes defined a completionActionsFor: method. For example, the GtPharoVariableNode>>completionActionsFor: method checks that the cursor position is at the end of the variable name, and then gets a list of completions that start with the variable from both the local variables defined in the AST and externally defined variables like instance and global variables. The method then returns a collection of GtCompletionActions that are shown in the drop down. For completion, probably the most important completion action is the GtInsertTextCompletionAction, but there are actions like deleting text and composites.\r# Questions\r- Why create a rule with just one token e.g. `Number : <number> {{Number}} ;`\r- When would you not want to `%annotate_tokens;`?\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.718209-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.718209-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "SmaCC"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "7caf6543-8084-0d00-b964-6f970f742dd9"
+	}
+}

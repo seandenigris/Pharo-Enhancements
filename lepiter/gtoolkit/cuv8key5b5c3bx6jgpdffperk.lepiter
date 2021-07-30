@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.719816-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.719816-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "SadmQ4CEDQC5bu33D3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Phlow Columns\r- GtPhlowColumnedListView provides 14 methods to configure a column. These seem to simply forward requests to the underlying GtPhlowColumn (which is itself a proxy for BrColumn) using the same API. Why not just have #column:do:, which is the most powerful and allows access to the underlying column? It will greatly reduce the amount of code and users will only have to understand and work with the column API...\r- BrColumn class comment refers to classes that don't exists; unclear whether example produces a meaningful result - how do we view it?\r- Can one prototype a view in a playground?\r\rVia column:do: and stencil:, you could put any Bloc element:\rcolumn: 'Input' do: [ :clm | \r\tclm stencil: [ :e | \r\t\tBlElement new\r\t\t\t\tbackground: Color blue;\r\t\t\t\tyourself ] ];\rIncluding an editor:\rcolumn: 'Input' do: [ :clm | \r\t\t\tclm stencil: [ :e | \r\t\t\t\"Halt once.\"\r\t\t\t\"BlTextElement new\r\t\ttext: e counterparty asRopedText;\r\t\tyourself.\r\t\t\tBrEditor new\r\t\tlook: BrGlamorousEditorLook;\r\t\ttext: e counterparty;\r\t\tmatchParent;\r\t\tyourself.\r\t\t\"BlElement new\r\t\t\t\tbackground: Color blue;\r\t\t\t\tyourself ] ];\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.719813-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.719813-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "TODO"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "00326643-8084-0d00-b965-46a80f742dd9"
+	}
+}

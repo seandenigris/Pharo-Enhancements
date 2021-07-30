@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Mondrian\rThe magic happens inside the block passed to your view via {{gtMethod:GtPhlowMondrianView>>#painting:}}.  The block's argument will be a {{gtClass:GtMondrian}} object. You can more or less paste in a freestanding Mondrian script. See {{gtClass:GtMondrianBasicExamples}} for inspiration.\r# Prototyping\rAll you need is an empty view to start. For example:\r```\rGtPhlowEmptyView new \r    list \r        title: 'List';\r        items: [{1 . 2 . 3}]\r```\r# Picture in Picture\rImagine this - you have a `Tempfile` class. While a `Tempfile` logically is a special type of  {{gtClass:AbstractFileReference}}, for technical reasons it is not implemented as a subclass. Wouldn't it be nice to still have all the built-in views for files?! Another use case, an `EPUB` class. This one is a little different, because while it is a *file* from one perspective, this is not the *primary* perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:\r```\rMyEPUB>>#gtFileFor: aView inContext: aContext\r\t<gtView>\r\t^ aView composite\r\t\ttitle: 'File';\r\t\tviews: (self file gtViewsInContext: aContext)\r```\r# Spawning\rYou can start with any BlElement in the rendering tree of the tool in question:\r```language=smalltalk\raBlElement phlow spawnObject: anObject 1\r```\r# Updating\rSend {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}}.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Views"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
+	}
+}

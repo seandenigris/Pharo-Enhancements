@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.713439-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.713439-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZI5mQ4CEDQC5asKwD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# GT VM\rInitially forked as a way to immediately achieve certain short-term goals which were needed to move forward1\r\r# 1. <http://forum.world.st/why-GT-forked-the-VM-and-how-to-kill-our-fork-tt5115627.html>\rCurrently, at feenk we have feenkcom/opensmalltalk-vm: \rhttps://github.com/feenkcom/opensmalltalk-vm\r\rThis is a small fork of the headless branch from pharo-project/opensmalltalk-vm that appeared out of practical necessities, but that we would like to avoid having. This post briefly describes the changes in the feenkcom/opensmalltalk-vm repo and the functionality those changes provide for Glamorous Toolkit. \r\rFor Glamorous Toolkit we aimed for the following functionality: \r        • Open the GUI natively and have native display quality (GUI opened through FFI calls) \r        • Have a Glamorous Toolkit app for Mac OS that works as any other apps for Mac OS \r        • Create end-user applications that are fully customisable (executable name, menus, etc) \r        • Use Github actions for doing all compilations of external libraries and the vm instead of Travis CI. \r        • Have Iceberg running in native windows (which requires nested FFI callbacks) \r\rThere has been work on these issues in both OpenSmalltalk/opensmalltalk-vm and pharo-project/opensmalltalk-vm but they were not entirely addressed. We needed to have something reliable a few months ago, and forking and doing some quick changes made that possible. \r\rIdeally we want to be able to run Glamorous Toolkit on both OpenSmalltalk/opensmalltalk-vm and pharo-project/opensmalltalk-vm. \r\rTo have native GUIs we relied on Ronie Salgado’s work on the headless vm and started with pharo-project/opensmalltalk-vm - headless branch: \rhttps://github.com/pharo-project/opensmalltalk-vm/tree/headless\rThat provided a solution for opening the GUI from the image through FFI calls. Currently we use Glutin (a library for OpenGL context creation, written in pure Rust) and this made it possible to run the entire Glamorous Toolkit inside a callback. \r\rOn macOS when running an app, even a notarized one, the OS warns the user that the app is downloaded from the internet, and the user needs to confirm that they agree. Once the user agrees the app should automatically start. This is not currently possible with Pharo apps (for example PharoLaunched.app) and users have to again run the app manually after giving permission. Also Gatekeeper in macOS runs applications downloaded from zips in a randomized read-only DMG. We do not want this behaviour as users not copying Glamorous Toolkit to the Applications folder on macOS would then experience incorrect application behaviour. \r\rTo create end-user applications we also need to fully customize the executable name (what the user sees in the Task Runner/Activity monitor), icons, native menus. Part of this work is already integrated in the pharo-project/opensmalltalk-vm - headless branch (Customizing the OS X icons, Brand the VM executable and package). \r\rSince last year Github offers Github Actions similar to Travis. We found it much easier to use than Travis for external libraries and the vm. Also we get to manage the code and the builds in the same place. This work is already integrated in the pharo-project/opensmalltalk-vm - headless branch (Build the VM under GitHub actions: https://github.com/pharo-project/opensmalltalk-vm/pull/56). \r\rThe issues related to running Iceberg is a bit more technical. By moving to the headless vm we are running the entire image computation inside a callback from Glutin (https://github.com/rust-windowing/glutin/). When using Iceberg we get nested callbacks which we could not get to work using Alien. Instead we are using the ThreadedFFI Plugin and running all callback from Iceberg and Glutin using the Threaded FFI plugin (https://github.com/pharo-project/threadedFFI-Plugin). Currently we have a small fork of this plugin (feenkcom/threadedFFI-Plugin) and we also ship a custom plugin with the VM to fix a race condition due to having two copies of the callback stack (a pull request is here: https://github.com/pharo-project/threadedFFI-Plugin/pull/17). \r\rWhile not specific to our environment, openssl1.0 is no longer supported, and we are seeing users who are unable to run Pharo due to version conflicts, as reported in https://github.com/pharo-project/opensmalltalk-vm/issues/62. \r\r\rTo sum up, a fork was the easiest way to get all this running. Now some changes are already in the pharo-project/opensmalltalk-vm - headless branch. What we are still missing are the changes that get the VM to work nicely with Mac OS and a bug fix in ThreadedFFI. \r\rWe would also love it to have all these changes integrated in OpenSmalltalk/opensmalltalk-vm in the headless vm. This requires additional coordination as the required changes are somewhat deeper. \r\r\rPlease let us know you would prefer to coordinate. \r\r\rCheers, \rTudor, on behalf of the feenk team \r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.71343-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.71343-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "GT_VM"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "349f6443-8084-0d00-b961-d35b0f742dd9"
+	}
+}

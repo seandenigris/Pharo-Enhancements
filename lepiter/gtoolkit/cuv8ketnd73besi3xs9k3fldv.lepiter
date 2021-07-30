@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.704554-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.704554-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "v2tmQ4CEDQC5Z4PGD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Configuration\r## Saved Playground Scripts\rYou can specify where to save playgound snippets and other artifacts for both new and old GT. This can be useful for personal projects where images are frequently recreated, so you don't accidentally lose all your snippets in the image folder of a deleted image. A convenient place to do this would be in a Metacello baseline postload. Here's an example:\r`BaselineOfXyz>>#postLoad`\r```language=smalltalk\r\t| rootFolder |\r\trootFolder := FileLocator dynabookData / 'Virtual Stash'.\r\tGTPlayBook \r\t\tcacheDirectory: rootFolder / 'play-cache';\r\t\tstashDirectory: rootFolder / 'play-stash'.\r\tSmalltalk globals\r\t\tat: #XdPlaygroundSettings\r\t\tifPresent: [ :cls | cls directory: rootFolder / 'xdocs' ]\r```\rwhich would be triggered in the baseline like this:\r`baseline: spec`\r...\r```language=smalltalk\r\tspec for: #'common' do: [\r\t\tspec postLoadDoIt: #'postLoad'. ]\r```\r# Discoverability\r- Slideshows: I am enjoying a slideshow and want to see how it works. I bring up halos and navigate through parents until I find GtSlideElement. Via the inspector, I go to the slide and then slideshow, but there's no way to get back to GtPharo101 unless it is explicitly mentioned in the slideshow (which it is in this case, but may not be generally) (from GT Discord feedback channel 9/9/2020)\r- Views: let's say I've never implemented a view. Sure, I can: 1) \"Alt-click\" on a view tab (which already requires esoteric knowledge of that secret incantation or 2) search for existing views via pragma filtering, but that's kind of like groping around blindfolded because I already know exactly what I want to show, and I'd have to hunt around for a view that does that. I could browse senders of a view message (which I only know to do after over a decade of Smalltalk experience), but some of those messages seem pretty generic (e.g. list). How do I as a user most efficiently get from \"I want to implement a view\" or maybe more specifically \"I'm looking at an existing view (or the source for it)\" to \"this is how you implement your view\"?\u0010 And how do I know how to get there? (from GT Discord how-to channel 9/8/2020)\r# Features\rCore components - what you need to know.\r## Notifications\rThe following example displays text in the notification center. Asked for an explanation of why this works on Discord help channel on 2/24/21.\r```language=smalltalk\rBlBlocUIManagerNotification\r\trequestOrNil: #inform:\r\twith: { 'Example information' }\r```\r## Search\rThere is a live session on this and you can see examples in image via `<gtSearch>`\r## {{gtWikiPage:Views}}\r# Huh!\rI'm struggling to understand GT's Pillar annotations. What are the \"[with|without] markup\" strategies about? Then there is this mind-bending code:\rGtClassAnnotation>>#styleTextWithoutMarkup: aBlRope\r    self styleTextWithMarkup: aBlRope.\r    super styleTextWithoutMarkup: aBlRope.\rLayman's translation: \"Style without markup... I mean with markup... I mean without markup... ugh, whatever\" :stuck_out_tongue_winking_eye:\r \rtudor girba09/10/2020\rIf you press on the pencil button, you will see the markup all the time\r# Installation\rOn Mac, you may run into problems with GToolkit being quarantined. A quick google search will reveal how to unquarantine GT. If you'd like to do this in Smalltalk, check out the [ComputerWorld](https://github.com/seandenigris/Computer-World) project (search for the `unquarantine` message).\r# Magic\rThings that are difficult to find out for yourself by exploring the live system.\r- Alt-click on view tab to go to code\r# Further Research\r- baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020\rIt’s an extension in MethodCoder\r \rKonrad Hinsen09/11/2020\r- @SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the \"clean\" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.\r- `gt-extra` - to copy after template instantiation. See {{gtMethod:GtImageSetup class>>#copyDataAndDocsFolders}}\r\r- [Pharo Package Coder Element](https://github.com/feenkcom/gt4pharo/commit/dd9d6c) - asked on Discord 5/19/21\r\r- [Columned tree row customization](https://github.com/feenkcom/Brick/commit/2a8705)\r# Other GT Pages\r- {{gtWikiPage:#GT_OO_IDE}}\r- {{gtWikiPage:#GT_VM}}\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.704493-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.704493-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Main"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "035d6043-8084-0d00-b95e-5a120f742dd9"
+	}
+}
