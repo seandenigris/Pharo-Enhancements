@@ -55,14 +55,6 @@ PeLepiterProject class >> allFromDefaultFolder [
 			yourself ]
 ]
 
-{ #category : #utilities }
-PeLepiterProject class >> databaseAt: folder [
-	LeDatabasesRegistry default defaultLogicalDatabase databasesDo: [ :db |
-		db localStoreRootDirectory resolve = folder resolve
-			 ifTrue: [ ^ db ] ].
-	^ nil
-]
-
 { #category : #'instance creation' }
 PeLepiterProject class >> default [
 	| repoLocation |
@@ -105,20 +97,6 @@ PeLepiterProject class >> gtViewDatabases: aCollection on: aView [
 		actionUpdateButtonTooltip: 'Update'
 ]
 
-{ #category : #utilities }
-PeLepiterProject class >> loadDatabaseAt: folder [
-	| ldb db |
-	folder exists ifFalse: [ ^ self ].
-	ldb := LeDatabasesRegistry defaultLogicalDatabase.
-	
-	"Properties internally prevents duplicates, so we don't need a guard"
-	ldb properties addRegisteredDirectory: folder.
-	
-	(ldb hasDatabaseAt: folder) ifTrue: [ ^ self databaseAt: folder ].
-	db := LeLocalStoreLoad current loadAndMonitorFrom: folder.
-	^ ldb addDB: db.
-]
-
 { #category : #accessing }
 PeLepiterProject >> databaseRootFolder [
 	databaseRootFolder ifNotNil: [ :dbf | ^ dbf ].
@@ -141,17 +119,13 @@ PeLepiterProject >> databases [
 		ifTrue: [ self databaseRootFolder allDirectories asOrderedCollection select: [ :folder | folder ~= self databaseRootFolder asFileReference and: [ isDBFolder value: folder ] ] ]
 		ifFalse: [ OrderedCollection new ].
 	
-	defaultDB := PeLepiterDatabase new
+	defaultDB := (self newDatabaseAt: self databaseRootFolder)
 		name: self name;
-		project: self;
-		folder: self databaseRootFolder;
 		yourself.
 		
 	dbs := dbFolders collect: [ :e |
-		PeLepiterDatabase new
+		(self newDatabaseAt: e)
 			name: e base;
-			project: self;
-			folder: e;
 			yourself ].
 	
 	"We have to exclude the special case of Lepiter's default location, where the repo location and DB root are the same"
@@ -180,6 +154,15 @@ PeLepiterProject >> name [
 { #category : #accessing }
 PeLepiterProject >> name: anObject [
 	name := anObject
+]
+
+{ #category : #builders }
+PeLepiterProject >> newDatabaseAt: location [
+	"location - can be anything acceptable to #resolve: e.g. an absolute or relative string, path, or fileReference"
+	^ PeLepiterDatabase new
+		project: self;
+		folder: (self databaseRootFolder resolve: location);
+		yourself.
 ]
 
 { #category : #printing }

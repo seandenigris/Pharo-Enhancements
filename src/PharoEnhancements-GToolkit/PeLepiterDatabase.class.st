@@ -92,6 +92,13 @@ PeLepiterDatabase class >> loadDatabaseAt: folder [
 ]
 
 { #category : #accessing }
+PeLepiterDatabase class >> reloadAll [
+	LeDatabasesRegistry defaultLogicalDatabase
+		saveProperties;
+		reload
+]
+
+{ #category : #accessing }
 PeLepiterDatabase >> actionButtons [
 	| result |
 	result := OrderedCollection new.
