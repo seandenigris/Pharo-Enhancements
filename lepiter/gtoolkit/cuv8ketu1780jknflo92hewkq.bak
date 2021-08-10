@@ -362,7 +362,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-30T13:54:10.547417-04:00"
+						"dateAndTimeString" : "2021-07-30T13:53:18.872272-04:00"
 					}
 				},
 				"uid" : {
@@ -372,7 +372,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "- Browser engine - {{gtClass:BaselineOfGToolkitPhlow|show=gtCoderCommentsFor:|label=Phlow}}\r- Widgets - [[Brick]]"
+				"string" : "- Browser engine - [[Brick]]\r- Widgets - {{gtClass:BaselineOfGToolkitPhlow|show=gtCoderCommentsFor:|label=Phlow}}"
 			}
 		]
 	},
