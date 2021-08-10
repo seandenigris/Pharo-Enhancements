@@ -11,24 +11,7 @@ Class {
 
 { #category : #accessing }
 PeLepiterDatabase class >> all [
-	| baselines |
-	baselines := BaselineOf allSubclasses 
-		select: [ :e | e iceRepository isNotNil ]
-		thenCollect: [ :e | self fromBaseline: e ].
-	^ (self allFromDefaultFolder copyWithAll: baselines) sort: #hasDatabase descending, #name ascending
-]
-
-{ #category : #'instance creation' }
-PeLepiterDatabase class >> allFromBaseline: aBaselineOf [
-	| repoRoot lepiterFolder |
-	repoRoot := aBaselineOf iceRepository location.
-	lepiterFolder := repoRoot / 'lepiter'.
-	lepiterFolder allDirectories.
-	
-	^ self new
-		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
-		repository: aBaselineOf iceRepository; 
-		yourself
+	^ PeLepiterProject all flatCollect: #databases
 ]
 
 { #category : #'instance creation' }
@@ -50,14 +33,6 @@ PeLepiterDatabase class >> databaseAt: folder [
 		db localStoreRootDirectory resolve = folder resolve
 			 ifTrue: [ ^ db ] ].
 	^ nil
-]
-
-{ #category : #'instance creation' }
-PeLepiterDatabase class >> fromBaseline: aBaselineOf [
-	^ self new
-		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
-		repository: aBaselineOf iceRepository; 
-		yourself
 ]
 
 { #category : #views }
