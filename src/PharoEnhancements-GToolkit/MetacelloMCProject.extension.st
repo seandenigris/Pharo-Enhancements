@@ -1,6 +1,6 @@
-Extension { #name : #MetacelloMCProject }
+Extension { #name : 'MetacelloMCProject' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MetacelloMCProject >> version [
 	^ self currentVersion
 ]

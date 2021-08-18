@@ -1,6 +1,6 @@
-Extension { #name : #GtMethodCoder }
+Extension { #name : 'GtMethodCoder' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtMethodCoder >> debugAddOnFor: anAST into: coderAddOns [
 	<gtAstCoderAddOns: 21>
 

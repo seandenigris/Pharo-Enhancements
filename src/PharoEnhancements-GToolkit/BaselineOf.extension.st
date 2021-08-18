@@ -1,6 +1,6 @@
-Extension { #name : #BaselineOf }
+Extension { #name : 'BaselineOf' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> gtExamplesFor: aView [
 	<gtView>
 	<gtClassView>
@@ -12,7 +12,7 @@ BaselineOf class >> gtExamplesFor: aView [
 	^ (GtExampleGroup withAll: examples) gtExamplesFor: aView
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> lepiter [
 	^ PeLepiterProject fromBaseline: self
 ]
