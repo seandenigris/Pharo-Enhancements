@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.711718-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.711718-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rodmQ4CEDQC5aRemD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Structure and Navigation\rFeenk uses three ways to navigate (per Tudor on GT Discord live-sessions channel on 10/24/2020):\r- capturing examples in **documents**. The narrative is both the challenging and the interesting bit. To make it less challenging, we actually guide the whole design through storytelling. We often imagine how the demo would look like. It''s something we call demo-driven (http://demodriven.com/).\r- using the **map** and inspecting objects from left to right. This provides a quick way to navigate and find the level of abstraction/granularity you are interested in.\r- using **queries**. When you know that you are looking for how to work with a domain class, you can search it in examples.\r# Bulk\rTo get a project (baseline)-level runner, Pharo Enhancements provides a view in the Coder for the Baseline. Here's how it's implemented: {{gtMethod:BaselineOf class>>#gtExamplesFor:}}.\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.71171-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.71171-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Examples"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "56c66343-8084-0d00-b960-97e30f742dd9"
+	}
+}

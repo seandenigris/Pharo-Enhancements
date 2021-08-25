@@ -1,0 +1,113 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:09:08.978677-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:09:13.295515-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tYytU6GGDQClEVBrBVbYsA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Saved Playground Scripts"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:09:06.495187-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:09:08.982899-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GspoU6GGDQClD51gBVbYsA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "You can specify where to save playgound snippets and other artifacts for both new and old GT. This can be useful for personal projects where images are frequently recreated, so you don't accidentally lose all your snippets in the image folder of a deleted image. A convenient place to do this would be in a Metacello baseline postload. Here's an example:\r`BaselineOfXyz>>#postLoad`\r```language=smalltalk\r\t| rootFolder |\r\trootFolder := FileLocator dynabookData / 'Virtual Stash'.\r\tGTPlayBook \r\t\tcacheDirectory: rootFolder / 'play-cache';\r\t\tstashDirectory: rootFolder / 'play-stash'.\r\tSmalltalk globals\r\t\tat: #XdPlaygroundSettings\r\t\tifPresent: [ :cls | cls directory: rootFolder / 'xdocs' ]\r```\rwhich would be triggered in the baseline like this:\r`baseline: spec`\r...\r```language=smalltalk\r\tspec for: #'common' do: [\r\t\tspec postLoadDoIt: #'postLoad'. ]\r```"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-08-23T16:09:04.421711-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-08-23T16:09:04.421711-04:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Configuration"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f4066853-a186-0d00-a50e-d5960556d8b0"
+	}
+}

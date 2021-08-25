@@ -8,7 +8,45 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-08-23T16:18:47.720585-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-08-23T17:03:33.468773-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Cp7idaGGDQClmxagBVbYsA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Instead of `column:text:`, send `column:icon:`. The second parameter can be a block taking the item as an argument and returning any element.  {{gtMethod:IceWorkingCopy>>#gtPackagesFor:|label=Here's an example}}:\nThe status column is populated with the result of {{gtMethod:IcePackage>>#gtPackageStatus}}, which returns "
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -18,7 +56,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:09:46.16614-04:00"
+						"dateAndTimeString" : "2021-08-23T16:18:25.404551-04:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +67,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:09:50.115651-04:00"
+						"dateAndTimeString" : "2021-08-23T16:18:42.027793-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "g/vkVaGGDQClGHOhBVbYsA=="
+					"uidString" : "bnq7dKGGDQClmPvxBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[Configuration]]"
+				"string" : "# Element Cells (instead of Text)"
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,7 +93,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:38.341177-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:15.94173-04:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +104,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:39.666642-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:15.94173-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "y7viaqGGDQClkQ0ABVbYsA=="
+					"uidString" : "rK3JRaGGDQCk72JgBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# [[Discoverability]]"
+				"string" : "# Mondrian"
 			},
 			{
 				"__type" : "textSnippet",
@@ -92,7 +130,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:35.759218-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:26.226804-04:00"
 					}
 				},
 				"editEmail" : {
@@ -103,17 +141,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:44.400181-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:26.226804-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "dli7aqGGDQCljvWhBVbYsA=="
+					"uidString" : "055mRqGGDQCk9aBVBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Features\rCore components - what you need to know."
+				"string" : "The magic happens inside the block passed to your view via {{gtMethod:GtPhlowMondrianView>>#painting:}}.  The block's argument will be a {{gtClass:GtMondrian}} object. You can more or less paste in a freestanding Mondrian script. See {{gtClass:GtMondrianBasicExamples}} for inspiration."
 			},
 			{
 				"__type" : "textSnippet",
@@ -129,7 +167,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:30.989899-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:20.857226-04:00"
 					}
 				},
 				"editEmail" : {
@@ -140,17 +178,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:45.773613-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:26.231166-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "v5FyaqGGDQCli2kbBVbYsA=="
+					"uidString" : "YK8URqGGDQCk8cjsBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## Notifications\rThe following example displays text in the notification center. Asked for an explanation of why this works on Discord help channel on 2/24/21.\r```language=smalltalk\rBlBlocUIManagerNotification\r\trequestOrNil: #inform:\r\twith: { 'Example information' }\r```"
+				"string" : "# Prototyping"
 			},
 			{
 				"__type" : "textSnippet",
@@ -166,7 +204,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:23.675938-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:24.146223-04:00"
 					}
 				},
 				"editEmail" : {
@@ -177,17 +215,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:30.994983-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:24.146223-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "dfgCaqGGDQClhuj/BVbYsA=="
+					"uidString" : "A+BGRqGGDQCk8xMXBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## Search\rThere is a live session on this and you can see examples in image via `<gtSearch>`"
+				"string" : "All you need is an empty view to start. For example:\r```\rGtPhlowEmptyView new \r    list \r        title: 'List';\r        items: [{1 . 2 . 3}]\r```"
 			},
 			{
 				"__type" : "textSnippet",
@@ -203,7 +241,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:16.044476-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:28.41025-04:00"
 					}
 				},
 				"editEmail" : {
@@ -214,17 +252,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:23.680866-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:28.41025-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "MIaOaaGGDQClgDUyBVbYsA=="
+					"uidString" : "zuyHRqGGDQCk92BoBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## [[Views]]"
+				"string" : "# Picture in Picture"
 			},
 			{
 				"__type" : "textSnippet",
@@ -240,7 +278,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:01.731584-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:32.224676-04:00"
 					}
 				},
 				"editEmail" : {
@@ -251,17 +289,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:16.050122-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:32.224676-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Bhq0aKGGDQClbgEqBVbYsA=="
+					"uidString" : "VSTCRqGGDQCk+Qn3BVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Huh!\rI'm struggling to understand GT's Pillar annotations. What are the \"[with|without] markup\" strategies about? Then there is this mind-bending code:\rGtClassAnnotation>>#styleTextWithoutMarkup: aBlRope\r    self styleTextWithMarkup: aBlRope.\r    super styleTextWithoutMarkup: aBlRope.\rLayman's translation: \"Style without markup... I mean with markup... I mean without markup... ugh, whatever\" :stuck_out_tongue_winking_eye:\r \rtudor girba09/10/2020\rIf you press on the pencil button, you will see the markup all the time"
+				"string" : "Imagine this - you have a `Tempfile` class. While a `Tempfile` logically is a special type of  {{gtClass:AbstractFileReference}}, for technical reasons it is not implemented as a subclass. Wouldn't it be nice to still have all the built-in views for files?! Another use case, an `EPUB` class. This one is a little different, because while it is a *file* from one perspective, this is not the *primary* perspective. It would be nice to have file views available, but only as one alternative. Although discouraged as a general design principle, this is a case where sub-tabs seem appropriate. Here is an example:\r```\rMyEPUB>>#gtFileFor: aView inContext: aContext\r\t<gtView>\r\t^ aView composite\r\t\ttitle: 'File';\r\t\tviews: (self file gtViewsInContext: aContext)\r```"
 			},
 			{
 				"__type" : "textSnippet",
@@ -277,7 +315,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:04.461738-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:33.741097-04:00"
 					}
 				},
 				"editEmail" : {
@@ -288,17 +326,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:06.158614-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:33.741097-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "NsXdaKGGDQCldHx3BVbYsA=="
+					"uidString" : "vEfZRqGGDQCk+/l7BVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# [[Installation]]"
+				"string" : "# Spawning"
 			},
 			{
 				"__type" : "textSnippet",
@@ -314,7 +352,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:09.392442-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:36.722068-04:00"
 					}
 				},
 				"editEmail" : {
@@ -325,17 +363,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:11.38497-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:36.722068-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "6AUpaaGGDQCleuT+BVbYsA=="
+					"uidString" : "KsMGR6GGDQCk/WMlBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# [[Further Research]]"
+				"string" : "You can start with any BlElement in the rendering tree of the tool in question:\r```language=smalltalk\raBlElement phlow spawnObject: anObject 1\r```"
 			},
 			{
 				"__type" : "textSnippet",
@@ -351,7 +389,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T13:51:58.704554-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:38.000068-04:00"
 					}
 				},
 				"editEmail" : {
@@ -362,17 +400,54 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:09.396531-04:00"
+						"dateAndTimeString" : "2021-08-23T16:05:38.000068-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "v2tmQ4CEDQC5Z4PGD3Qt2Q=="
+					"uidString" : "NT4aR6GGDQCk/5cNBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Other GT Pages\r- {{gtWikiPage:#GT_OO_IDE}}\r- {{gtWikiPage:#GT_VM}}\r"
+				"string" : "# Updating"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:05:39.607326-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Send {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}}."
 			}
 		]
 	},
@@ -384,7 +459,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T13:51:58.704493-04:00"
+			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
 		}
 	},
 	"editEmail" : {
@@ -395,15 +470,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T13:51:58.704493-04:00"
+			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Main"
+		"title" : "Views"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "035d6043-8084-0d00-b95e-5a120f742dd9"
+		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
 	}
 }

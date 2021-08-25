@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:33.800719-04:00"
+						"dateAndTimeString" : "2021-08-23T16:12:42.205669-04:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +29,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:33.800719-04:00"
+						"dateAndTimeString" : "2021-08-23T16:12:44.108501-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Hj4BTqGGDQClBnGpBVbYsA=="
+					"uidString" : "9x1jYKGGDQClNpWGBVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Structure and Navigation"
+				"string" : "baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020\rIt’s an extension in MethodCoder"
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:35.954052-04:00"
+						"dateAndTimeString" : "2021-08-23T16:12:50.66375-04:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +66,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:35.954052-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:20.429252-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "wRciTqGGDQClCFXxBVbYsA=="
+					"uidString" : "/y3kYKGGDQClON/7BVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Feenk uses three ways to navigate (per Tudor on GT Discord live-sessions channel on 10/24/2020):\r- capturing examples in **documents**. The narrative is both the challenging and the interesting bit. To make it less challenging, we actually guide the whole design through storytelling. We often imagine how the demo would look like. It''s something we call demo-driven (http://demodriven.com/).\r- using the **map** and inspecting objects from left to right. This provides a quick way to navigate and find the level of abstraction/granularity you are interested in.\r- using **queries**. When you know that you are looking for how to work with a domain class, you can search it in examples."
+				"string" : "Konrad Hinsen09/11/2020\r@SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the \"clean\" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup."
 			},
 			{
 				"__type" : "textSnippet",
@@ -92,7 +92,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:38.22051-04:00"
+						"dateAndTimeString" : "2021-08-23T16:12:53.478559-04:00"
 					}
 				},
 				"editEmail" : {
@@ -103,17 +103,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:38.22051-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:21.912627-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "MLBETqGGDQClCjTnBVbYsA=="
+					"uidString" : "MCMPYaGGDQClOsK4BVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Bulk"
+				"string" : "`gt-extra` - to copy after template instantiation. See {{gtMethod:GtImageSetup class>>#copyDataAndDocsFolders}}"
 			},
 			{
 				"__type" : "textSnippet",
@@ -129,7 +129,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T13:51:58.711718-04:00"
+						"dateAndTimeString" : "2021-08-23T16:12:55.116461-04:00"
 					}
 				},
 				"editEmail" : {
@@ -140,17 +140,54 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:07:38.224608-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:23.965096-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "rodmQ4CEDQC5aRemD3Qt2Q=="
+					"uidString" : "kiEoYaGGDQClPGl3BVbYsA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "To get a project (baseline)-level runner, Pharo Enhancements provides a view in the Coder for the Baseline. Here's how it's implemented: {{gtMethod:BaselineOf class>>#gtExamplesFor:}}.\r"
+				"string" : "[Pharo Package Coder Element](https://github.com/feenkcom/gt4pharo/commit/dd9d6c) - asked on Discord 5/19/21"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:12:14.732784-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-08-23T16:13:07.523992-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ouyiXqGGDQClNG0KBVbYsA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[Columned tree row customization](https://github.com/feenkcom/Brick/commit/2a8705)"
 			}
 		]
 	},
@@ -162,7 +199,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T13:51:58.71171-04:00"
+			"dateAndTimeString" : "2021-08-23T16:12:12.781133-04:00"
 		}
 	},
 	"editEmail" : {
@@ -173,15 +210,15 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T13:51:58.71171-04:00"
+			"dateAndTimeString" : "2021-08-23T16:12:12.781133-04:00"
 		}
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Examples"
+		"title" : "Further Research"
 	},
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "56c66343-8084-0d00-b960-97e30f742dd9"
+		"uuid" : "f329a25e-a186-0d00-a533-ada20556d8b0"
 	}
 }
