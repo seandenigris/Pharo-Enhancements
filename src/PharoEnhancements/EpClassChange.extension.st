@@ -1,6 +1,6 @@
-Extension { #name : #EpClassChange }
+Extension { #name : 'EpClassChange' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 EpClassChange >> peNewSourceCode [
 	^ self behaviorAffected comment content
 ]

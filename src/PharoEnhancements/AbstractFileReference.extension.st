@@ -1,6 +1,6 @@
-Extension { #name : #AbstractFileReference }
+Extension { #name : 'AbstractFileReference' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> macLock: aBoolean [
 	"Adapted from https://macosx.com/threads/lock-unlock-files-with-the-terminal.317350/"
 	| keyword commandTemplate command |
@@ -15,23 +15,23 @@ AbstractFileReference >> macLock: aBoolean [
 	LibC system: command
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> peOpen [
 	LibC system: 'open "', self fullName, '"'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> preview [
 	"Reference: http://www.maclife.com/article/columns/easy_mac_hacks_using_quicklook_command_line"
 	LibC system: '/usr/bin/qlmanage -p "', self fullName, '" &'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> showInFinder [
 	LibC system: 'open --reveal ', (self fullName surroundedBy: '"')
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> verifiedCopyTo: aReference [
 	| result |
 	result := self copyTo: aReference.
@@ -39,7 +39,7 @@ AbstractFileReference >> verifiedCopyTo: aReference [
 	^ result
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 AbstractFileReference >> verifiedMoveTo: aFileReference [
 	self verifiedCopyTo: aFileReference.
 	self delete

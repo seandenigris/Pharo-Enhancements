@@ -1,6 +1,6 @@
-Extension { #name : #DateAndTime }
+Extension { #name : 'DateAndTime' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 DateAndTime >> printUS [
 
 	^ self asDate mmddyyyy, ' @ ', self asTime printMinutes.

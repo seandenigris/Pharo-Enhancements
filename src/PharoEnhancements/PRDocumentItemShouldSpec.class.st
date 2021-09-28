@@ -1,10 +1,10 @@
 Class {
-	#name : #PRDocumentItemShouldSpec,
-	#superclass : #SpecOfShouldExpression,
-	#category : #'PharoEnhancements-Core'
+	#name : 'PRDocumentItemShouldSpec',
+	#superclass : 'SpecOfShouldExpression',
+	#category : 'PharoEnhancements-Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PRDocumentItemShouldSpec >> equalPillarMarkup: aString [
 	^ (PRPillarWriter write: self receiver) should equal: aString
 ]

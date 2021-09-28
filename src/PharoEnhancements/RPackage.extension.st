@@ -1,6 +1,6 @@
-Extension { #name : #RPackage }
+Extension { #name : 'RPackage' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> createBaselineOf [
 	"Example:
 		(RPackage named: 'MyCoolPackage') createBaselineOf
@@ -18,7 +18,7 @@ RPackage >> createBaselineOf [
 		commitBaselineOfMethod
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> deprecate [
 	self packageManifest class compile: 'isDeprecated
 	^ true' classified: 'testing'

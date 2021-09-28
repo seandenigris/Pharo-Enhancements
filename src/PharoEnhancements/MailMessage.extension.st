@@ -1,6 +1,6 @@
-Extension { #name : #MailMessage }
+Extension { #name : 'MailMessage' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> timestamp [
 	| dateField dateString isWeekdayPresent safeDateString |
 	dateField := self 

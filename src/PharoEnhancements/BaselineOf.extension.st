@@ -1,6 +1,6 @@
-Extension { #name : #BaselineOf }
+Extension { #name : 'BaselineOf' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 BaselineOf class >> gitHasUnstaged [
 	| unstagedCmd cmd exitCodeString |
 	self iceRepository ifNil: [ ^ false ].

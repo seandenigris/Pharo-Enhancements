@@ -1,6 +1,6 @@
-Extension { #name : #Date }
+Extension { #name : 'Date' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Date >> addYears: anInteger [
 
 	| targetYear isLeapDay |
@@ -19,7 +19,7 @@ Date >> addYears: anInteger [
 			day: self dayOfMonth
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Date >> anniversariesThrough: laterDate [
 	| laterYymmdd yymmdd |
 	"To easily compare the dates, we shift the year, month, and day digits, so they do not overlap. We end up with e.g. 2020-02-04 becoming 2020.0204 and 2022-02-04 becoming 2022.0204, so simple subtraction shows they are 2 whole years apart"
@@ -29,7 +29,7 @@ Date >> anniversariesThrough: laterDate [
 	"This algorithm is the result of an interesting discussion on Discord Pharo general channel around 11/11/2020 between Esteban Maringolo, Martin McClure and 'Gus'. Each came up with an algorithm, but Gus' was the most concise. This is not surprising, since Gus mentioned working in superannuation and pension. After being optimized by Dave Mason, it also turned out to be the fastest. The optimization was to replace the multiple divisions with multiplcations and a single division. The optimized algorithm is the code you see here, except that the order is flipped i.e. in Dave's the argument is the earlier date, but we take it to be the later one. The other versions and examples can be found in commit a5dddae"
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Date >> anniversariesThroughExample [
 	<gtExample>
 	| data |
@@ -43,12 +43,12 @@ Date >> anniversariesThroughExample [
 		self assert: anniversaries equals: e value ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Date >> subtractYears: anInteger [
 	^ self addYears: anInteger negated
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Date >> yearsSince: aDate [
 	"Returns aNumber whose fractional part = fraction of the year from last to next anniversary rounded to the day"
 	| fullYears lastAnniversary nextAnniversary partialYear |
