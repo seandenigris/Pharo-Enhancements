@@ -1,7 +1,7 @@
-Extension { #name : 'GtMethodCoder' }
+Extension { #name : 'GtPharoMethodCoder' }
 
 { #category : '*PharoEnhancements-GToolkit' }
-GtMethodCoder >> debugAddOnFor: anAST into: coderAddOns [
+GtPharoMethodCoder >> debugAddOnFor: anAST into: coderAddOns [
 	<gtAstCoderAddOns: 21>
 
 	coderAddOns
