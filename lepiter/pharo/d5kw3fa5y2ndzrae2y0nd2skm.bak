@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:11:12.831248-04:00"
+						"dateAndTimeString" : "2021-11-04T16:11:04.311919-04:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# SortFunctions\rThis is a cool addition to Pharo. When sorting a collection, you pass a domain object as a sort block, instead of a generic block. Besides enabling terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are two to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase`"
+				"string" : "# SortFunctions\rThis is a cool addition to Pharo. When sorting a collection, you pass a domain object as a sort block, instead of a generic block. Besides allowing terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are two to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase`"
 			}
 		]
 	},
