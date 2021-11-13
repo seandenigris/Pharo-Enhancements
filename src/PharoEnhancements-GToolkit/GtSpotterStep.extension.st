@@ -1,6 +1,6 @@
-Extension { #name : 'GtSpotterStep' }
+Extension { #name : #GtSpotterStep }
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 GtSpotterStep >> actOn: aCandidate dueTo: anEventType from: aSpotterElement [
 	"Perform an action associated with the given candidate item.
 	(can be triggered by doubleClick: or keyboard Enter press)"
@@ -26,7 +26,7 @@ GtSpotterStep >> actOn: aCandidate dueTo: anEventType from: aSpotterElement [
 	Smalltalk globals at: #PeGtSpotterResult put: anObjectToActOn
 ]
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 GtSpotterStep >> bindResultAs: aSymbol [
 	
 	self spotter announcer when: GtSpotterActOn do: [ :anc :ancer |

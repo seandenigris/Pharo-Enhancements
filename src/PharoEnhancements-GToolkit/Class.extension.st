@@ -1,6 +1,6 @@
-Extension { #name : 'Class' }
+Extension { #name : #Class }
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 Class >> peAPIDocumentation [
 	| pragmas doc apiList |
 	pragmas := Pragma allNamed: #apiDocumentation from: self to: Object.
@@ -44,7 +44,7 @@ Class >> peAPIDocumentation [
 			yourself
 ]
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 Class >> peGenerateCommentFromAPI [
 	self comment: (PRPillarWriter write: self peAPIDocumentation)
 ]

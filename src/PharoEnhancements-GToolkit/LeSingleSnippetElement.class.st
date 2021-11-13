@@ -2,8 +2,8 @@
 Adapted from {{gtClass:LeCoderCommentElement}}, which Coder uses for class comments.
 "
 Class {
-	#name : 'LeSingleSnippetElement',
-	#superclass : 'BlElement',
+	#name : #LeSingleSnippetElement,
+	#superclass : #BlElement,
 	#traits : 'TLeWithFontSize',
 	#classTraits : 'TLeWithFontSize classTrait',
 	#instVars : [
@@ -12,16 +12,16 @@ Class {
 	#category : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> editorMode: aMode [
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> hasStableIds [
 	^ false
 ]
 
-{ #category : 'initialization' }
+{ #category : #initialization }
 LeSingleSnippetElement >> initializeForClassName: aSymbol [
 	"Only needed for potential refactoring/unification with LeCoderCommentElement"
 
@@ -31,7 +31,7 @@ LeSingleSnippetElement >> initializeForClassName: aSymbol [
 	self initializeForPage: page
 ]
 
-{ #category : 'initialization' }
+{ #category : #initialization }
 LeSingleSnippetElement >> initializeForPage: aPage [
 	"Hook in case we decide to allow full pages in Ideas"
 	| snippet |
@@ -40,7 +40,7 @@ LeSingleSnippetElement >> initializeForPage: aPage [
 	self initializeForSnippet: snippet
 ]
 
-{ #category : 'initialization' }
+{ #category : #initialization }
 LeSingleSnippetElement >> initializeForSnippet: aSnippet [
 	| viewModel snippetView |
 
@@ -62,31 +62,31 @@ LeSingleSnippetElement >> initializeForSnippet: aSnippet [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> itemCount [
 	^ 1
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> itemTypeAt: aPosition [
 	^ BrTextEditorLineSegmentType
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> onAttached: anEditorElement [
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> page [ 
 	"Answer the page used to hold the receiver's class comment"
 
 	^ snippetElement page
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> styler: aStyler [
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 LeSingleSnippetElement >> text: aText [
 ]

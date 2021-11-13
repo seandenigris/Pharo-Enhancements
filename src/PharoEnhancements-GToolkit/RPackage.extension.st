@@ -1,6 +1,6 @@
-Extension { #name : 'RPackage' }
+Extension { #name : #RPackage }
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 RPackage >> gtDefinedClassesFor: aView [
 	<gtView>
 	^ aView columnedList

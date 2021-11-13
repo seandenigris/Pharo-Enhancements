@@ -10,8 +10,8 @@ I distinguish the following statuses:
 An uncovered case is when DB changes have been committed elsewhere i.e. there is an incoming commit with {{gtMethod:PeLepiterProject>>#commitMessage}}
 "
 Class {
-	#name : 'PeLepiterProject',
-	#superclass : 'Object',
+	#name : #PeLepiterProject,
+	#superclass : #Object,
 	#instVars : [
 		'repository',
 		'name',
@@ -20,7 +20,7 @@ Class {
 	#category : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject class >> all [
 	| baselines |
 	baselines := BaselineOf allSubclasses  asOrderedCollection
@@ -29,7 +29,7 @@ PeLepiterProject class >> all [
 	^ (baselines add: self default; yourself) sort: #hasDatabases descending, #name ascending
 ]
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeLepiterProject class >> allFromBaseline: aBaselineOf [
 	| repoRoot lepiterFolder |
 	repoRoot := aBaselineOf iceRepository location.
@@ -42,7 +42,7 @@ PeLepiterProject class >> allFromBaseline: aBaselineOf [
 		yourself
 ]
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeLepiterProject class >> allFromDefaultFolder [
 	| defaultFolder dbs |
 	defaultFolder := FileLocator documents / 'lepiter'.
@@ -55,7 +55,7 @@ PeLepiterProject class >> allFromDefaultFolder [
 			yourself ]
 ]
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeLepiterProject class >> default [
 	| repoLocation |
 	repoLocation := FileLocator documents / 'lepiter'.
@@ -66,7 +66,7 @@ PeLepiterProject class >> default [
 		yourself
 ]
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeLepiterProject class >> fromBaseline: aBaselineOf [
 	^ self new
 		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
@@ -74,13 +74,13 @@ PeLepiterProject class >> fromBaseline: aBaselineOf [
 		yourself
 ]
 
-{ #category : 'views' }
+{ #category : #views }
 PeLepiterProject class >> gtViewDashboardOn: aView [
 	<gtClassView>
 	^ self gtViewDatabases: (self all flatCollect: #databases) on: aView
 ]
 
-{ #category : 'views' }
+{ #category : #views }
 PeLepiterProject class >> gtViewDatabases: aCollection on: aView [
 	
 	^ aView columnedList
@@ -97,18 +97,18 @@ PeLepiterProject class >> gtViewDatabases: aCollection on: aView [
 		actionUpdateButtonTooltip: 'Update'
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> databaseRootFolder [
 	databaseRootFolder ifNotNil: [ :dbf | ^ dbf ].
 	^ self repository ifNotNil: [ self repositoryLocation / 'lepiter' ].
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> databaseRootFolder: folder [
 	databaseRootFolder := folder
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> databases [
 	| dbFolders defaultDB shouldIncludeDefaultDB dbs isDBFolder |
 	
@@ -135,28 +135,28 @@ PeLepiterProject >> databases [
 	^ dbs
 ]
 
-{ #category : 'views' }
+{ #category : #views }
 PeLepiterProject >> gtViewDashboardOn: aView [
 	<gtView>
 	^ self class gtViewDatabases: self databases on: aView
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterProject >> hasDatabases [
 	^ self databases anySatisfy: #existsOnDisk
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> name [
 	^ name
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> name: anObject [
 	name := anObject
 ]
 
-{ #category : 'builders' }
+{ #category : #builders }
 PeLepiterProject >> newDatabaseAt: location [
 	"location - can be anything acceptable to #resolve: e.g. an absolute or relative string, path, or fileReference"
 	^ PeLepiterDatabase new
@@ -165,13 +165,13 @@ PeLepiterProject >> newDatabaseAt: location [
 		yourself.
 ]
 
-{ #category : 'printing' }
+{ #category : #printing }
 PeLepiterProject >> printOn: aStream [
 	aStream
 		nextPutAll: self  name
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterProject >> repairIceRepository [
 	| repairCommand branch strategy |
 	repairCommand := IceTipCheckoutModel new.
@@ -185,22 +185,22 @@ PeLepiterProject >> repairIceRepository [
 		checkout
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterProject >> repository [
 	^ repository
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterProject >> repository: anObject [
 	repository := anObject
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterProject >> repositoryIsIceberg [
 	^ (self repository isKindOf: AbstractFileReference) not
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterProject >> repositoryLocation [
 	^ self repositoryIsIceberg
 		ifTrue: [ self repository location ]

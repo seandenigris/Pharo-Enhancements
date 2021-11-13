@@ -1,6 +1,6 @@
 Class {
-	#name : 'PeLepiterDatabase',
-	#superclass : 'Object',
+	#name : #PeLepiterDatabase,
+	#superclass : #Object,
 	#instVars : [
 		'project',
 		'name',
@@ -9,12 +9,12 @@ Class {
 	#category : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase class >> all [
 	^ PeLepiterProject all flatCollect: #databases
 ]
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeLepiterDatabase class >> allFromDefaultFolder [
 	| defaultFolder dbs |
 	defaultFolder := FileLocator documents / 'lepiter'.
@@ -27,7 +27,7 @@ PeLepiterDatabase class >> allFromDefaultFolder [
 			yourself ]
 ]
 
-{ #category : 'utilities' }
+{ #category : #utilities }
 PeLepiterDatabase class >> databaseAt: folder [
 	LeDatabasesRegistry default defaultLogicalDatabase databasesDo: [ :db |
 		db localStoreRootDirectory resolve = folder resolve
@@ -35,7 +35,7 @@ PeLepiterDatabase class >> databaseAt: folder [
 	^ nil
 ]
 
-{ #category : 'views' }
+{ #category : #views }
 PeLepiterDatabase class >> gtViewDashboardOn: aView [
 	<gtClassView>
 	^ aView columnedList
@@ -52,7 +52,7 @@ PeLepiterDatabase class >> gtViewDashboardOn: aView [
 		actionUpdateButtonTooltip: 'Update'
 ]
 
-{ #category : 'utilities' }
+{ #category : #utilities }
 PeLepiterDatabase class >> loadDatabaseAt: folder [
 	| ldb db |
 	folder exists ifFalse: [ ^ self ].
@@ -66,14 +66,14 @@ PeLepiterDatabase class >> loadDatabaseAt: folder [
 	^ ldb addDB: db.
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase class >> reloadAll [
 	LeDatabasesRegistry defaultLogicalDatabase
 		saveProperties;
 		reload
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> actionButtons [
 	| result |
 	result := OrderedCollection new.
@@ -105,7 +105,7 @@ PeLepiterDatabase >> actionButtons [
 				yourself. ]
 ]
 
-{ #category : 'private' }
+{ #category : #private }
 PeLepiterDatabase >> buttonLabelled: aString action: aBlock [
 	^ BrButton new
 		aptitude: (BrGlamorousButtonRectangularAptitude + BrGlamorousButtonExteriorAptitude + 
@@ -115,7 +115,7 @@ PeLepiterDatabase >> buttonLabelled: aString action: aBlock [
 		yourself
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> commitCommand [
 	"Commits unstaged/untracked files only under the DB folder"
 
@@ -124,37 +124,37 @@ PeLepiterDatabase >> commitCommand [
 		, '; git commit -m ' , self commitMessage surroundedByDoubleQuotes
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> commitDatabase [
 	LibC system: self commitCommand
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> commitMessage [
 	^ 'lepiter-sync ', self relativeDatabasePath fullName
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> createDatabaseOnDisk [
 	self folder ensureCreateDirectory.
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterDatabase >> existsOnDisk [
 	^ self folder exists
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> folder [
 	^ folder
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> folder: anObject [
 	folder := anObject
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterDatabase >> hasUnstaged [
 	"Adapted from BaselineOf class>>#gitHasUnstaged, which could probably be moved to IceRepository, but then would still have to be copied here (unless there was also a class-side utility)"
 	| unstagedCmd cmd exitCodeString |
@@ -167,7 +167,7 @@ PeLepiterDatabase >> hasUnstaged [
 	^ exitCodeString trimRight asNumber = 1
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterDatabase >> hasUntracked [
 	| untrackedCmd cmd |
 	
@@ -178,60 +178,60 @@ PeLepiterDatabase >> hasUntracked [
 	^ (LibC resultOfCommand: cmd) isNotEmpty.
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> isLoaded [
 	^ (self class databaseAt: folder) isNotNil
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> load [
 	^ self class loadDatabaseAt: self folder
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> name [
 	^ name
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> name: anObject [
 	name := anObject
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> needsSync [
 	^ self hasUnstaged or: [ self hasUntracked ]
 ]
 
-{ #category : 'printing' }
+{ #category : #printing }
 PeLepiterDatabase >> printOn: aStream [
 	aStream
 		nextPutAll: self  name
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> project [
 	^ project
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> project: anObject [
 	project := anObject
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> relativeDatabasePath [
 	^ self folder relativeTo: self repositoryLocation
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeLepiterDatabase >> repositoryLocation [
 	^ self project repositoryIsIceberg
 		ifTrue: [ self project repository location ]
 		ifFalse: [ self project repository ]
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeLepiterDatabase >> statusIcon [
 	self existsOnDisk ifFalse: [ ^ BrGlamorousIcons graycircle ].
 	self isLoaded ifFalse: [ ^ BrGlamorousIcons redcircle ] .
@@ -240,7 +240,7 @@ PeLepiterDatabase >> statusIcon [
 		ifFalse: [ BrGlamorousIcons greencircle ]
 ]
 
-{ #category : 'actions' }
+{ #category : #actions }
 PeLepiterDatabase >> syncDatabase [
 	self commitDatabase.
 	self project repositoryIsIceberg ifTrue: [ self project repairIceRepository ]

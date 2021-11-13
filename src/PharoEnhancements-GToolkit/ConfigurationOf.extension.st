@@ -1,6 +1,6 @@
-Extension { #name : 'ConfigurationOf' }
+Extension { #name : #ConfigurationOf }
 
-{ #category : '*PharoEnhancements-GToolkit' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 ConfigurationOf class >> paintPackagesMapWith: mondrian [
 	| packages projects |
 	packages := self project version packages.
