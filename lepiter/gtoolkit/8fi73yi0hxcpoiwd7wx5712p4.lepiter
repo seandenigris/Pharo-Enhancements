@@ -2183,14 +2183,14 @@
 																	"__type" : "time",
 																	"time" : {
 																		"__type" : "dateAndTime",
-																		"dateAndTimeString" : "2021-07-27T13:51:20.06749-04:00"
+																		"dateAndTimeString" : "2021-11-14T21:00:04.460025-05:00"
 																	}
 																},
 																"uid" : {
 																	"__type" : "uid",
 																	"uidString" : "KIw8Qr6ADQC9D5syDXP93w=="
 																},
-																"code" : "folder := (BaselineOfPharoEnhancements lepiter databaseRootFolder / 'aconcagua') ensureCreateDirectory.\rdb := PeLepiterProject loadDatabaseAt: folder.\rself asLepiterPages do: [ :p | db addPage: p ]"
+																"code" : "p := PeLepiterProject fromBaseline: BaselineOfMyPeople.\rdb := p databases first createDatabaseOnDisk; load.\rPeMyPeopleWiki asLepiterPages do: [ :p | db addPage: p ]"
 															}
 														]
 													},

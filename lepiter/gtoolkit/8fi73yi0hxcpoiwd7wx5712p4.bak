@@ -2980,7 +2980,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-07-30T14:14:03.806798-04:00"
+									"dateAndTimeString" : "2021-07-30T14:14:09.451756-04:00"
 								}
 							},
 							"uid" : {
@@ -2990,7 +2990,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "**Rich text editor** - See how {{gtClass:LeCoderCommentElement}} p"
+							"string" : "**Rich text editor** - See how {{gtClass:LeCoderCommentElement}} presents a single snippet page"
 						}
 					]
 				},
