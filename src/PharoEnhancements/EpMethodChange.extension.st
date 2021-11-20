@@ -1,6 +1,6 @@
-Extension { #name : 'EpMethodChange' }
+Extension { #name : #EpMethodChange }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 EpMethodChange >> peNewSourceCode [
 	^ self methodAffectedSourceCode
 ]

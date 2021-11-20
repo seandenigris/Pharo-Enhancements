@@ -1,6 +1,6 @@
-Extension { #name : 'PRExternalLink' }
+Extension { #name : #PRExternalLink }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-GToolkit' }
 PRExternalLink class >> titled: aString targeting: aUrl [
 	| result title |
 	result := self fromReference: aUrl asString.

@@ -1,6 +1,6 @@
-Extension { #name : 'RBNode' }
+Extension { #name : #RBNode }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 RBNode >> peTransformer [
 	^ PeASTTransformer on: self
 ]

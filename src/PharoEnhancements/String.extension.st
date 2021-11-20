@@ -1,6 +1,6 @@
-Extension { #name : 'String' }
+Extension { #name : #String }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 String >> asEncodedUrl [
 	"Send this instead of `#asUrl` if I potentially have characters not allowed by the URL spec, which Zinc enforces on input to its parser. Example: `'https://en.wikipedia.org/wiki/Česká republika' asEncodedUrl`"
 
@@ -13,7 +13,7 @@ String >> asEncodedUrl [
 	^ encodedString asUrl
 ]
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 String >> asFilename [
 	"`#asFileName` leaves in $: which mac doesn't like"
 	| result |
@@ -22,13 +22,13 @@ String >> asFilename [
 	^ result
 ]
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 String >> copyToClipboard [
 
 	Clipboard clipboardText: self
 ]
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 String >> surroundedByDoubleQuotes [
 	^ self surroundedBy: '"'
 ]

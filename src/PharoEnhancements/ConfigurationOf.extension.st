@@ -1,6 +1,6 @@
-Extension { #name : 'ConfigurationOf' }
+Extension { #name : #ConfigurationOf }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 ConfigurationOf class >> createBaselineFrom: selector [
 
 	| projectName baselineName baseline methodTree commonBlockBody |

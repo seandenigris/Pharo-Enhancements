@@ -1,6 +1,6 @@
 Class {
-	#name : 'PeASTTransformer',
-	#superclass : 'Object',
+	#name : #PeASTTransformer,
+	#superclass : #Object,
 	#instVars : [
 		'ast',
 		'isMethod'
@@ -8,7 +8,7 @@ Class {
 	#category : 'PharoEnhancements'
 }
 
-{ #category : 'instance creation' }
+{ #category : #'instance creation' }
 PeASTTransformer class >> on: anRBNode [
 	"For a method, pass its #parseTree, not #ast (which is not generally what you want when you're modifying it)"
 
@@ -17,7 +17,7 @@ PeASTTransformer class >> on: anRBNode [
 		yourself
 ]
 
-{ #category : 'transforming' }
+{ #category : #transforming }
 PeASTTransformer >> addStatementFirst: aString [  
 	| node |
 	node := Smalltalk compilerClass new
@@ -26,37 +26,37 @@ PeASTTransformer >> addStatementFirst: aString [
 	self ast body addNodeFirst: node.
 ]
 
-{ #category : 'transforming' }
+{ #category : #transforming }
 PeASTTransformer >> addTemporaryNamed: aSymbol [
 	self ast body addTemporaryNamed: aSymbol
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeASTTransformer >> ast [
 	^ ast
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 PeASTTransformer >> ast: anRBNode [ 
 	ast := anRBNode
 ]
 
-{ #category : 'configuring' }
+{ #category : #configuring }
 PeASTTransformer >> beScript [
 	isMethod := false
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeASTTransformer >> isMethod [
 	^ isMethod ifNil: [ true ]
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeASTTransformer >> isVariableDefined: aRBVariableNode [
 	^ self rootNode allVariables anySatisfy: [ :e | e name = aRBVariableNode name ]
 ]
 
-{ #category : 'configuring' }
+{ #category : #configuring }
 PeASTTransformer >> newSource [
 
 	| undeclaredVariables |
@@ -71,14 +71,14 @@ PeASTTransformer >> newSource [
 	^ self rootNode newSource
 ]
 
-{ #category : 'transforming' }
+{ #category : #transforming }
 PeASTTransformer >> replaceNodesSelect: aBlock withNode: aRBVariableNode [
 	self ast allChildren
 		select: aBlock
 		thenDo: [ :e | e parent replaceNode: e withNode: aRBVariableNode ]
 ]
 
-{ #category : 'testing' }
+{ #category : #testing }
 PeASTTransformer >> rootNode [
 	^ self isMethod
 		ifTrue: [ self ast ]

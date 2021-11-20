@@ -1,18 +1,18 @@
-Extension { #name : 'GTPlayBook' }
+Extension { #name : #GTPlayBook }
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 GTPlayBook class >> browseAll [
 	<script>
 	GTPlayBook instance allFiles inspect
 ]
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 GTPlayBook class >> browseNamed [
 	<script>
 	(GTPlayBook instance allFiles reject: [ :e | e basename prefixMatchesRegex: '\d\d\d\d-' ]) inspect
 ]
 
-{ #category : '*PharoEnhancements' }
+{ #category : #'*PharoEnhancements' }
 GTPlayBook class >> menuCommandOn: aBuilder [
 	<worldMenu>
 	(aBuilder item: #'Play Pages')

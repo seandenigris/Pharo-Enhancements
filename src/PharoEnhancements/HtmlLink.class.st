@@ -1,6 +1,6 @@
 Class {
-	#name : 'HtmlLink',
-	#superclass : 'Object',
+	#name : #HtmlLink,
+	#superclass : #Object,
 	#instVars : [
 		'destination',
 		'text'
@@ -8,7 +8,7 @@ Class {
 	#category : 'PharoEnhancements'
 }
 
-{ #category : 'example' }
+{ #category : #example }
 HtmlLink class >> example [
 	<sampleInstance>
 	^ self new
@@ -17,7 +17,7 @@ HtmlLink class >> example [
 			yourself
 ]
 
-{ #category : 'example' }
+{ #category : #example }
 HtmlLink class >> exampleClip [
 	<sampleInstance>
 	^ self
@@ -29,12 +29,12 @@ HtmlLink class >> exampleClip [
 			But couldn't find a way to get the RTF back in Pharo" ]
 ]
 
-{ #category : 'comparing' }
+{ #category : #comparing }
 HtmlLink >> = rhs [
 	^ self destination = rhs destination and: [ self text = rhs text ]
 ]
 
-{ #category : 'printing' }
+{ #category : #printing }
 HtmlLink >> clip [
 	| tempFile command |
 	[ 
@@ -47,22 +47,22 @@ HtmlLink >> clip [
 	"Implementation note: the first attempt was to pass the input via a HEREDOC, but that didn't seem to work with LibC"
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 HtmlLink >> destination [
 	^ destination
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 HtmlLink >> destination: anObject [
 	destination := anObject
 ]
 
-{ #category : 'comparing' }
+{ #category : #comparing }
 HtmlLink >> hash [
 	^ self destination hash bitXor: self text
 ]
 
-{ #category : 'printing' }
+{ #category : #printing }
 HtmlLink >> printOn: aStream [
 	| template string |
 	template := '<a href="{url}">{title}</a>'.
@@ -72,12 +72,12 @@ HtmlLink >> printOn: aStream [
 	aStream nextPutAll: string
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 HtmlLink >> text [
 	^ text
 ]
 
-{ #category : 'accessing' }
+{ #category : #accessing }
 HtmlLink >> text: anObject [
 	text := anObject
 ]
