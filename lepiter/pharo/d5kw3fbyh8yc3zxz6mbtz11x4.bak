@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-24T12:50:50.085651-05:00"
+						"dateAndTimeString" : "2021-11-24T12:50:38.466333-05:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Credentials\n\nOn Mac (at least), all you need to do is add the key to the ssh-agent via `ssh-add -K \"path/to/key`\n\nThis works for public/private on GH/Gitlab without any in-image SSH configuration.\n\nIf you forget to do the above *before* adding repos to Iceberg, any such repos will be HTTPS, so you have to either (in ascending order of awkwardness): \n1. Create a new image\n2. Delete the repos\n3. Replace the HTTPS remotes with SSH"
+				"string" : "# Credentials\n\nOn Mac (at least), all you need to do is add the key to the ssh-agent via `ssh-add -K \"path/to/key`\n\nThis works for public/private on GH/Gitlab without any in-image SSH configuration.\n\nIf you forget to do the above *before* adding repos to Iceberg, any such repos that have been added to Iceberg will be HTTPS, so you have to either in ascending order of awkwardness): \n1. Create a new image\n2. Delete the repos\n3. Replace the HTTPS remotes with SSH"
 			},
 			{
 				"__type" : "textSnippet",
