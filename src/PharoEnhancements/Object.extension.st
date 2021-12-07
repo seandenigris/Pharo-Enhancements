@@ -34,3 +34,17 @@ Object class >> iceRepository [
 	"Unlike RPackage>>#iceRepository, I work with non-MC e.g. git"
 	^ IceRepository registry detect: [ :e | e includesPackageNamed: self package name ] ifNone: [ nil ].
 ]
+
+{ #category : #'*PharoEnhancements' }
+Object >> pePickUp [
+	PeGtSpotterResult := self
+]
+
+{ #category : #'*PharoEnhancements' }
+Object >> pePickUpDescription [
+	<magritteActionDescription>
+	^ MAActionDescription new
+		gtIcon: BrGlamorousVectorIcons repair;
+		action: #pePickUp;
+		yourself
+]
