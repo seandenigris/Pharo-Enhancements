@@ -45,6 +45,9 @@ Object >> pePickUpDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
 		gtIcon: BrGlamorousVectorIcons repair;
-		action: #pePickUp;
+		action: [ self pePickUp ];
+		gtAction: [ :button :actDesc |
+			actDesc action value.
+			MAActionDescription gtShowDropdownForActionButton: button ];
 		yourself
 ]

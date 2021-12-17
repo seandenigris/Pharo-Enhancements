@@ -6,7 +6,7 @@ Class {
 		'name',
 		'folder'
 	],
-	#category : 'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Lepiter'
 }
 
 { #category : #accessing }

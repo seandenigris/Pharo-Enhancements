@@ -17,7 +17,7 @@ Class {
 		'name',
 		'databaseRootFolder'
 	],
-	#category : 'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Lepiter'
 }
 
 { #category : #accessing }

@@ -9,7 +9,7 @@ Class {
 	#instVars : [
 		'snippetElement'
 	],
-	#category : 'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Lepiter'
 }
 
 { #category : #accessing }
