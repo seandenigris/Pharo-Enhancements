@@ -1,7 +1,7 @@
 Extension { #name : #MAActionDescription }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-MAActionDescription class >> gtShowDropdownForActionButton: button [ 
+MAActionDescription class >> pePickUpOnGtAction: button withReciever: anObject [
 
 	| icon label dropdownAptitude aptitude |
 	icon := button icon.
@@ -12,7 +12,7 @@ MAActionDescription class >> gtShowDropdownForActionButton: button [
 			BrButton new
 				aptitude: BrGlamorousButtonRectangularAptitude + BrGlamorousButtonIconAptitude;
 				icon: icon ]
-		content: [ (PeGtToolVariableBinder targetValue: self) treeElement ].
+		content: [ (PeGtToolVariableBinder targetValue: anObject) treeElement ].
 		
 	button aptitude looks
 		detect: [ :e | e isKindOf: BrGlamorousWithDropdownAptitude ]

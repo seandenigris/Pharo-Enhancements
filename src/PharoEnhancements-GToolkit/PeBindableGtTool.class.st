@@ -59,7 +59,7 @@ PeBindableGtTool >> sharedBindingAt: aSymbol put: anObject [
 
 { #category : #accessing }
 PeBindableGtTool >> sharedBindings [
-	^ self snippetsViewModel children atRandom coderViewModel sharedBindings
+	^ self pharoSnippets atRandom coderViewModel sharedBindings
 ]
 
 { #category : #accessing }

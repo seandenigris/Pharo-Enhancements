@@ -48,6 +48,6 @@ Object >> pePickUpDescription [
 		action: [ self pePickUp ];
 		gtAction: [ :button :actDesc |
 			actDesc action value.
-			MAActionDescription gtShowDropdownForActionButton: button ];
+			MAActionDescription pePickUpOnGtAction: button withReciever: self ];
 		yourself
 ]

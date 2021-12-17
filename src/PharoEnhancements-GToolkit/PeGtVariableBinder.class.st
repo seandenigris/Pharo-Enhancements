@@ -34,9 +34,9 @@ PeGtVariableBinder >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 		(aNodeElement childNamed: #bind) 
 			visibility: BlVisibility visible;
 			action: [ 
-					self tool 
-						sharedBindingAt: self variable name 
-						put: self targetValue ]
+				self tool 
+					sharedBindingAt: self variable name 
+					put: self targetValue ]
 ]
 
 { #category : #accessing }
