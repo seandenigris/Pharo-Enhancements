@@ -20,7 +20,7 @@ PeBindableGtTool >> gtViewTargetVariablesOn: aView [
 	<gtView>
 	^ aView list
 		title: 'Target Vars.';
-		items: self variables;
+		items: self variables asOrderedCollection;
 		itemText: #name;
 		yourself
 ]
@@ -64,7 +64,10 @@ PeBindableGtTool >> sharedBindings [
 
 { #category : #accessing }
 PeBindableGtTool >> snippets [
-	^ self snippetsViewModel children
+	^ OrderedCollection streamContents: [ :str |
+		self snippetsViewModel children do: [ :snip |
+			str nextPut: snip.
+			snip allSnippetChildrenBreadthFirstDo: [ :child | str nextPut: child ] ] ]
 ]
 
 { #category : #accessing }
@@ -110,8 +113,15 @@ PeBindableGtTool >> toolTitle [
 { #category : #accessing }
 PeBindableGtTool >> variables [
 
-	^ self pharoSnippets flatCollect: [ :s |
-		| ast |
+	| result |
+	result := Bag new.
+	self pharoSnippets do: [ :s |
+		| ast variables |
 		ast := s snippetModel coder rbAST.
-		ast allChildren select: [ :n | n isTempVariable or: [ n isUndeclaredVariable ] ] ]
+		variables := ast allChildren select: [ :n | n isTempVariable or: [ n isUndeclaredVariable ] ].
+		variables do: [ :var | 
+			result 
+				detect: [ :e | e name = var name ] 
+				ifNone: [ result add: var ] ] ].
+	^ result
 ]
