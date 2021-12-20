@@ -44,10 +44,9 @@ Object >> pePickUp [
 Object >> pePickUpDescription [
 	<magritteActionDescription>
 	^ MAActionDescription new
-		gtIcon: BrGlamorousVectorIcons repair;
+		label: 'Share with other tools';
 		action: [ self pePickUp ];
-		gtAction: [ :button :actDesc |
-			actDesc action value.
-			MAActionDescription pePickUpOnGtAction: button withReciever: self ];
+		gtAction: [ :anAction :actDesc |
+			MAActionDescription pePickUpOnGtAction: anAction of: self using: actDesc ];
 		yourself
 ]
