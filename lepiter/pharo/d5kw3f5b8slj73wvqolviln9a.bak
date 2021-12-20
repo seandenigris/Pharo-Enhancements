@@ -97,7 +97,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-10-30T11:40:35.603479-04:00"
+									"dateAndTimeString" : "2021-12-18T12:49:45.435305-05:00"
 								}
 							},
 							"editEmail" : {
@@ -108,18 +108,56 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-10-30T11:40:35.603479-04:00"
+									"dateAndTimeString" : "2021-12-18T12:50:24.699661-05:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "SHF0gPWLDQCbRDAuBeF2UQ=="
+								"uidString" : "6JxFBNGPDQCLVI8ADUZD7A=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "At first, the following \"elegant\" method seemed like a great idea:\n```\nCwIPAddressShouldSpec>>#equal: anObject\r\t^ super equal: anObject asCwIPAddress\n```\nOne could use the same method to compare an IP address to its string value, integerValue, etc.\n\nHowever, in practice it just felt a bit too magical. When reading the tests much later, the thought occurred: \"what does it mean for an IP address to equal a string?\" Sure, one could probably guess, but it was causing a bit of cognitive load. Also, once IP address was subclassed, there was no way to inject the subclass as the result of `asCwIPAddress`, causing equality to fail.\n\nIn the end, the following two methods seemed clearer and more robust:"
-						},
+							"string" : "[Pillar Should Spec](https://github.com/seandenigris/Pharo-Enhancements/blob/0ada38063b274a86dc5de532dd6630d88e90c23b/src/PharoEnhancements/PRDocumentItemShouldSpec.class.st) providing "
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-12-18T12:49:33.898583-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-12-18T12:49:38.29345-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Cd3OA9GPDQCLU7Z4DUZD7A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "StateSpec examples"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
 						{
 							"__type" : "textSnippet",
 							"children" : {
@@ -134,7 +172,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-10-30T11:34:48.082602-04:00"
+									"dateAndTimeString" : "2021-10-30T11:40:35.603479-04:00"
 								}
 							},
 							"editEmail" : {
@@ -145,17 +183,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-10-30T11:40:35.607779-04:00"
+									"dateAndTimeString" : "2021-10-30T11:40:41.923098-04:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "jqSKa/WLDQCbPXGLBeF2UQ=="
+								"uidString" : "SHF0gPWLDQCbRDAuBeF2UQ=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "```\nCwIPAddressShouldSpec>>#equalString: aString\r\t^ super equal: (self receiver value class fromString: aString)\n```\n\n```\nCwIPAddressShouldSpec>>#equalInteger: anInteger\r\t^ super equal: (self receiver value class fromInteger: anInteger)\n```"
+							"string" : "At first, the following \"elegant\" method seemed like a great idea:\n```\nCwIPAddressShouldSpec>>#equal: anObject\r\t^ super equal: anObject asCwIPAddress\n```\nOne could use the same method to compare an IP address to its string value, integerValue, etc.\n\nHowever, in practice it just felt a bit too magical. When reading the tests much later, the thought occurred: \"what does it mean for an IP address to equal a string?\" Sure, one could probably guess, but it was causing a bit of cognitive load. Also, once IP address was subclassed, there was no way to inject the subclass as the result of `asCwIPAddress`, causing equality to fail.\n\nIn the end, the following two methods seemed clearer and more robust:\n\n```\nCwIPAddressShouldSpec>>#equalString: aString\r\t^ super equal: (self receiver value class fromString: aString)\n```\n\n```\nCwIPAddressShouldSpec>>#equalInteger: anInteger\r\t^ super equal: (self receiver value class fromInteger: anInteger)\n```"
 						}
 					]
 				},
