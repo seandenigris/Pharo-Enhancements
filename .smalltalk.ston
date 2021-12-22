@@ -1,9 +1,8 @@
 SmalltalkCISpec {
   #loading : [
       SCIMetacelloLoadSpec {
-          #baseline : 'Magritte',
-          #load : [ 'Tests' ],
-          #directory : 'source',
+          #baseline : 'PharoEnhancements',
+          #directory : 'src',
           #platforms : [ #pharo ]
       }
   ]
