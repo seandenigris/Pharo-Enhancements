@@ -1,8 +1,8 @@
-Extension { #name : #MAActionDescription }
+Extension { #name : #Object }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-MAActionDescription class >> pePickUpOnGtAction: anAction of: anObject using: aDescription [
-
+Object >> peGtActionPickUpFor: anAction [
+	<gtAction>
 	^ anAction explicit
 		stencil: [ 
 			"Adapted from GtSpotterDropdownButtonStencil>>#create"
@@ -11,18 +11,19 @@ MAActionDescription class >> pePickUpOnGtAction: anAction of: anObject using: aD
 			
 			aButton
 				icon: BrGlamorousVectorIcons repair;
-				label: aDescription label;
+				label: 'aDescription label';
+				action: [ self pePickUp ];
 				aptitude: BrGlamorousButtonWithIconAptitude;
 				addAptitude: (BrGlamorousWithDropdownAptitude
 					handle: [ BrButton new
 						icon: BrGlamorousVectorIcons repair;
-						label: aDescription label;
+						label: 'aDescription label';
 						aptitude:
 							BrGlamorousButtonWithIconAptitude
 								- BrGlamorousButtonWithLabelTooltipAptitude
 								- BrGlamorousButtonExteriorAptitude ]
 						content: [ 
-							(PeGtToolVariableBinder targetValue: anObject) treeElement 
+							(PeGtToolVariableBinder targetValue: self) treeElement 
 								vFitContent; 
 								hFitContent; 
 								yourself ]);

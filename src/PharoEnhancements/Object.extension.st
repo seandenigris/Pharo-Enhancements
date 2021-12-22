@@ -39,14 +39,3 @@ Object class >> iceRepository [
 Object >> pePickUp [
 	PeGtSpotterResult := self
 ]
-
-{ #category : #'*PharoEnhancements' }
-Object >> pePickUpDescription [
-	<magritteActionDescription>
-	^ MAActionDescription new
-		label: 'Share with other tools';
-		action: [ self pePickUp ];
-		gtAction: [ :anAction :actDesc |
-			MAActionDescription pePickUpOnGtAction: anAction of: self using: actDesc ];
-		yourself
-]
