@@ -17,7 +17,10 @@ String >> asEncodedUrl [
 String >> asFilename [
 	"`#asFileName` leaves in $: which mac doesn't like"
 	| result |
-	result := self asFileName copyReplaceAll: ':' with: '-'.
+	result := result := self asFileName collect: [ :c |
+		| isUnsafeChar |
+		isUnsafeChar := c isSeparator or: [ ':/\' includes: c ].
+		isUnsafeChar ifTrue: [ $_ ] ifFalse: [ c ] ].
 	self assert: (#('' '/' '..' '.' '\') includes: result) not. "Agressively protect against wonky FS resolution of special strings"
 	^ result
 ]
