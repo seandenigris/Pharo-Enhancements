@@ -11,13 +11,12 @@ Object >> peGtActionPickUpFor: anAction [
 			
 			aButton
 				icon: BrGlamorousVectorIcons repair;
-				label: 'aDescription label';
+				label: 'Pick Up and Bind';
 				action: [ self pePickUp ];
 				aptitude: BrGlamorousButtonWithIconAptitude;
 				addAptitude: (BrGlamorousWithDropdownAptitude
 					handle: [ BrButton new
 						icon: BrGlamorousVectorIcons repair;
-						label: 'aDescription label';
 						aptitude:
 							BrGlamorousButtonWithIconAptitude
 								- BrGlamorousButtonWithLabelTooltipAptitude
@@ -29,5 +28,5 @@ Object >> peGtActionPickUpFor: anAction [
 								yourself ]);
 				yourself ].
 
-	"The reason I have this method is to prevent a dependency to GT"
+	"The reason I have this method (vs. declaring an MAAction) is to prevent a dependency to Magritte"
 ]
