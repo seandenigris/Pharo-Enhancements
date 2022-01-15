@@ -1,6 +1,12 @@
 Extension { #name : #Object }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+Object >> gtDisplayText [
+	
+	^ self displayString asRopedText
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 Object >> peGtActionPickUpFor: anAction [
 	<gtAction>
 	^ anAction explicit
