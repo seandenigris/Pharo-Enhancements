@@ -28,7 +28,7 @@ PeBindableGtTool >> gtViewTargetVariablesOn: aView [
 { #category : #accessing }
 PeBindableGtTool >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	| variableNodes |
-	variableNodes := self variables collect: [ :e | PeGtVariableBinder from: e to: anObject in: self ].
+	variableNodes := (self variables asSortedCollection: #name ascending) collect: [ :e | PeGtVariableBinder from: e to: anObject in: self ].
 	^ variableNodes "copyWith: PeGtNewVariable new"
 ]
 
