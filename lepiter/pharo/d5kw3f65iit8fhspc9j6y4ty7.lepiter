@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:17:08.953824-04:00"
+						"dateAndTimeString" : "2022-01-18T11:07:44.514785-05:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +150,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "And an example for a project (either configuration or baseline):\n```\nspec\r  for: #( #pharo )\r  do: [\r    spec removeProject: 'OSSubprocess'.\r\tspec \r\t\tpackage: 'Tesseract' overrides: [ \r\t\t\tspec requires: (tesseractBaseDeps copyWithout: 'OSSubprocess') ] ]\r```\n"
+				"string" : "And an example for a project (either configuration or baseline):\n```\nspec\r  for: #( #pharo )\r  do: [\r    spec removeProject: 'OSSubprocess'.\r\tspec \r\t\tpackage: 'Tesseract' overrides: [ \r\t\t\tspec requires: (tesseractBaseDeps copyWithout: 'OSSubprocess') ] ]\r```"
 			},
 			{
 				"__type" : "textSnippet",
@@ -214,7 +214,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:13:46.73128-04:00"
+						"dateAndTimeString" : "2022-01-18T11:07:42.940282-05:00"
 					}
 				},
 				"uid" : {
@@ -224,7 +224,44 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Recording i.e. \"What Would Metacello Do?\"\rThe basic script is fairly simple - just change your load script from `load` to `record`. For example:\r```\rMetacello new\r\t\"ignoreImage;\" \"uncomment to have Metacello pretend it's a fresh image\"\r\tbaseline: 'PharoEnhancements';\r\trepository: 'github://seandenigris/Pharo-Enhancements';\r\trecord.\r```\rTwo items to note:\r1. If you already have some of the packages loaded, uncommenting the line above will tell you what would be loaded if none of them were.\r2. If you \"Print It\" the above script you will get a string describing the load, but if you want to navigate the actual `loadDirective` object, you have to send `roots first` to the returned object, as clarified [on the Metacello ML](https://groups.google.com/g/metacello/c/FyiB0sVb7j8/m/SNXR8yTsAwAJ).\r"
+				"string" : "# Recording i.e. \"What Would Metacello Do?\"\rThe basic script is fairly simple - just change your load script from `load` to `record`. For example:\r```\rMetacello new\r\t\"ignoreImage;\" \"uncomment to have Metacello pretend it's a fresh image\"\r\tbaseline: 'PharoEnhancements';\r\trepository: 'github://seandenigris/Pharo-Enhancements';\r\trecord.\r```\rTwo items to note:\r1. If you already have some of the packages loaded, uncommenting the line above will tell you what would be loaded if none of them were.\r2. If you \"Print It\" the above script you will get a string describing the load, but if you want to navigate the actual `loadDirective` object, you have to send `roots first` to the returned object, as clarified [on the Metacello ML](https://groups.google.com/g/metacello/c/FyiB0sVb7j8/m/SNXR8yTsAwAJ)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T11:09:05.240594-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T11:17:06.234732-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "l2epOT+SDQCApgv7Dj0y7A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Preload DoIt\nThe hook is `#preLoadDoIt:`. As an example, we'll look at a check to make sure that a certain method hasn't changed before loading an override. Here is the hook  (see the GToolkit platform spec){{gtMethod:BaselineOfPharoEnhancements>>baseline:}} and here is the preload script\n{{gtMethod:BaselineOfPharoEnhancements>>#gtPreLoad}}"
 			}
 		]
 	},

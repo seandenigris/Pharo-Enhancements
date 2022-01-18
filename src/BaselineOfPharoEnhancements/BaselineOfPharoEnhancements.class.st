@@ -23,6 +23,7 @@ BaselineOfPharoEnhancements >> baseline: spec [
 		spec group: 'default' with: #('PharoEnhancements') ].
 	
 	spec for: #GToolkit do: [ 
+		spec preLoadDoIt: #gtPreLoad.
 		spec
 			package: 'PharoEnhancements-GToolkit'.
 		spec group: 'default' with: #('PharoEnhancements-GToolkit' 'PharoEnhancements-PetitParser2') ]
@@ -33,6 +34,14 @@ BaselineOfPharoEnhancements >> customProjectAttributes [
 	^ self isGTImage
 			ifFalse: [ #(notGToolkit) ]
 			ifTrue: [ #(GToolkit) ]
+]
+
+{ #category : #accessing }
+BaselineOfPharoEnhancements >> gtPreLoad [
+	(LeContent>>#snippetBuilder) sourceCode = 'snippetBuilder
+	^ LeParentSnippetBuilder new
+		parent: self;
+		database: self database.' ifFalse: [ Warning signal: 'LeContent>>#snippetBuilder source changed. Still override?' ]
 ]
 
 { #category : #testing }
