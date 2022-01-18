@@ -38,10 +38,18 @@ BaselineOfPharoEnhancements >> customProjectAttributes [
 
 { #category : #accessing }
 BaselineOfPharoEnhancements >> gtPreLoad [
-	(LeContent>>#snippetBuilder) sourceCode = 'snippetBuilder
+	| extensionTests |
+	extensionTests := {
+		[ (LeContent>>#snippetBuilder) sourceCode = 'snippetBuilder
 	^ LeParentSnippetBuilder new
 		parent: self;
-		database: self database.' ifFalse: [ Warning signal: 'LeContent>>#snippetBuilder source changed. Still override?' ]
+		database: self database.' "LeContent>>#snippetBuilder source changed. Still override?" ].
+		[ (Metaclass includesLocalSelector: #classVariableNamed:ifAbsent:) not ].
+		[ (Object canUnderstand: #fuelOut) not ]
+	}.
+	
+	extensionTests do: [ :e |
+		e value ifFalse: [ Warning signal: 'GT preload test failed: ', e printString ] ]
 ]
 
 { #category : #testing }
