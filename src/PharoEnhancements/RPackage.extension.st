@@ -23,3 +23,14 @@ RPackage >> deprecate [
 	self packageManifest class compile: 'isDeprecated
 	^ true' classified: 'testing'
 ]
+
+{ #category : #'*PharoEnhancements' }
+RPackage >> gitUrl [
+
+	| str |
+	str := '{repoUrl}/blob/master/src/{package}/' 
+		format: {
+			#repoUrl -> (self peIceRepository origin httpsUrl allButLast: '.git' size).
+			#package -> self name } asDictionary.
+	^ str asUrl
+]
