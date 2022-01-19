@@ -18,7 +18,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-12-30T18:33:27.255003-05:00"
+						"dateAndTimeString" : "2022-01-18T16:12:05.362644-05:00"
 					}
 				},
 				"editEmail" : {
@@ -29,20 +29,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-12-30T18:35:06.343778-05:00"
+						"dateAndTimeString" : "2022-01-18T16:12:50.965068-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "bSRuN8eQDQCvHla6BFLu4w=="
+					"uidString" : "QHvYdEOSDQC7d/NpArCyow=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Say you have a container object. You want its Spotter to aggregate the processors of its children. It turns out that's pretty easy. Just override {{gtMethod:Object>>#gtSpotterProcessorsFor:}} like so:"
+				"string" : "#Customizing All Processors for a Class"
 			},
 			{
-				"__type" : "pharoSnippet",
+				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -55,7 +55,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-12-30T18:34:23.779891-05:00"
+						"dateAndTimeString" : "2021-12-30T18:33:27.255003-05:00"
 					}
 				},
 				"editEmail" : {
@@ -66,14 +66,315 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-12-30T18:35:51.924322-05:00"
+						"dateAndTimeString" : "2022-01-18T16:28:17.307167-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "R+Q5O8eQDQCvH/n0BFLu4w=="
+					"uidString" : "bSRuN8eQDQCvHla6BFLu4w=="
 				},
-				"code" : "container := #(1. 'a').\rcontainer flatCollect: [ :child | child gtSpotterProcessorsFor: aSpotterStep ]"
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Say you have a container object. You want its Spotter to aggregate the processors of its children. It turns out that's pretty easy. Just override {{gtMethod:Object>>#gtSpotterProcessorsFor:}} like [Quote Me's](https://github.com/SeanDeNigris/Quote-Me) {{gtMethod:QuLeSources>>#gtSpotterProcessorsFor:}}:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:12:29.826174-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:13:06.262418-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "pgTVc0OSDQC7day8ArCyow=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Overriding a Single Subclass Processor"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:13:18.898328-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:28:34.037128-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iuQJeUOSDQC7elm2ArCyow=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Don't include the `<gtSearch>` pragma whto avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see  {{gtMethod:MpAddressBook>>#gtGtSpotterForPeopleFor:}} which overrides {{gtMethod:GtABAddressBook>>#gtGtSpotterForPeopleFor:}}"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-01-14T13:41:59.459372-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-01-14T14:21:05.730438-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "2Wkf5fCRDQCT+O7PDGK5vA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Spotter's dropdown is created in {{gtMethod:GtSpotterDropdownButtonStencil>>#create}}. This can be easily adapted to other (Spotter or not) use cases. "
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T13:48:15.757054-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T14:25:35.6388-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "XB5t+/CRDQCT/vx2DGK5vA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[Quote Me](https://github.com/SeanDeNigris/Quote-Me)'s {{gtMethod:QuLeCitedSnippetElement>>#newSearchButton}} actually implements a Spotter, and so uses the stencil directly, which is much simpler"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T13:41:52.529785-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T14:22:13.407021-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "lqq15PCRDQCT91H5DGK5vA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "PharoEnhancement's {{gtMethod:Object>>#peGtActionPickUpFor:}} is a non-Spotter adaptation that also has a secondary action on button click"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T13:40:46.806763-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-01-14T14:26:22.323891-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "jDay4PCRDQCT9S2JDGK5vA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a non-Spotter adaptation that shows how to close the dropdown programmatically"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-01-14T13:41:49.600639-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-01-14T13:41:59.466827-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "E/uI5PCRDQCT9qkfDGK5vA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Here are some examples:"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-14T13:38:19.242793-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:17:40.406932-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "/ThH1/CRDQCT8IWEDGK5vA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Dropdowns"
 			}
 		]
 	},
