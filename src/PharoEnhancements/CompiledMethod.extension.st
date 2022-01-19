@@ -1,7 +1,9 @@
 Extension { #name : #CompiledMethod }
 
 { #category : #'*PharoEnhancements' }
-CompiledMethod >> gitUrl [
+CompiledMethod >> gitHubUrl [
 
-	self package gitUrl file: self name, '.extension.st'
+	^ self isExtension
+		ifFalse: [ self methodClass gitHubUrl ]
+		ifTrue: [ self package gitHubUrl addPathSegment: self methodClass name, '.extension.st' ]
 ]

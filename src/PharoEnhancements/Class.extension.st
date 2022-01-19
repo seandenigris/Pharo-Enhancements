@@ -1,7 +1,7 @@
 Extension { #name : #Class }
 
 { #category : #'*PharoEnhancements' }
-Class >> gitUrl [
+Class >> gitHubUrl [
 
-	^ self package gitUrl file: self name, '.class.st'
+	^ self package gitHubUrl addPathSegment: self name, '.class.st'
 ]

@@ -25,7 +25,7 @@ RPackage >> deprecate [
 ]
 
 { #category : #'*PharoEnhancements' }
-RPackage >> gitUrl [
+RPackage >> gitHubUrl [
 
 	| str |
 	str := '{repoUrl}/blob/master/src/{package}/' 
