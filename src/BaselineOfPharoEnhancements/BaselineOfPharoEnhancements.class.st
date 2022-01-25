@@ -45,7 +45,13 @@ BaselineOfPharoEnhancements >> gtPreLoad [
 		parent: self;
 		database: self database.' "LeContent>>#snippetBuilder source changed. Still override?" ].
 		[ (Metaclass includesLocalSelector: #classVariableNamed:ifAbsent:) not ].
-		[ (Object canUnderstand: #fuelOut) not ]
+		[ (Object canUnderstand: #fuelOut) not ].
+		[ (LePage class>>#leJsonV4AttributeMapping) sourceCode = 'leJsonV4AttributeMapping
+
+	^ super leJsonV4AttributeMapping
+		add: (#type -> #pageType);
+		add: (#basicUid -> #uid);
+		yourself' ].
 	}.
 	
 	extensionTests do: [ :e |
