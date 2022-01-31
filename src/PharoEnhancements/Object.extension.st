@@ -36,6 +36,15 @@ Object class >> iceRepository [
 ]
 
 { #category : #'*PharoEnhancements' }
+Object >> interestingPointersTo [
+
+| pointers |
+	pointers := self pointersTo.
+^ pointers reject: [ :e | ({ BlockClosure. Context. OpalCompiler } anySatisfy: [ :cls | e isKindOf: cls])
+	or: [ #('Brick' 'GT' 'GToolkit' 'Magritte' 'Lepiter' 'NewTools' 'Spec2') anySatisfy: [ :pkgPre | e class category beginsWith: pkgPre ] ] ].
+]
+
+{ #category : #'*PharoEnhancements' }
 Object >> pePickUp [
 	PeGtSpotterResult := self
 ]
