@@ -6,13 +6,6 @@ Object class >> exampleSupportFolder [
 ]
 
 { #category : #'*PharoEnhancements' }
-Object >> fuelOut [
-	| target |
-	target := FileLocator imageDirectory / self printString asFileName, 'fuel'.
-	self serializeToFileNamed: target nextVersion fullName
-]
-
-{ #category : #'*PharoEnhancements' }
 Object class >> given: givenBlock when: whenBlock then: thenBlock [
 	"Useful for most common example pattern. Example usage in comment below"
 	| whenResult givenResult |

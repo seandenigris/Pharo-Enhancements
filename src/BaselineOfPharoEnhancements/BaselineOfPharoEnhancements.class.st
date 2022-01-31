@@ -23,9 +23,7 @@ BaselineOfPharoEnhancements >> baseline: spec [
 		spec group: 'default' with: #('PharoEnhancements') ].
 	
 	spec for: #GToolkit do: [ 
-		spec preLoadDoIt: #gtPreLoad.
-		spec
-			package: 'PharoEnhancements-GToolkit'.
+		spec package: 'PharoEnhancements-GToolkit'.
 		spec group: 'default' with: #('PharoEnhancements-GToolkit' 'PharoEnhancements-PetitParser2') ]
 ]
 
@@ -34,28 +32,6 @@ BaselineOfPharoEnhancements >> customProjectAttributes [
 	^ self isGTImage
 			ifFalse: [ #(notGToolkit) ]
 			ifTrue: [ #(GToolkit) ]
-]
-
-{ #category : #accessing }
-BaselineOfPharoEnhancements >> gtPreLoad [
-	| extensionTests |
-	extensionTests := {
-		[ (LeContent>>#snippetBuilder) sourceCode = 'snippetBuilder
-	^ LeParentSnippetBuilder new
-		parent: self;
-		database: self database.' "LeContent>>#snippetBuilder source changed. Still override?" ].
-		[ (Metaclass includesLocalSelector: #classVariableNamed:ifAbsent:) not ].
-		[ (Object canUnderstand: #fuelOut) not ].
-		[ (LePage class>>#leJsonV4AttributeMapping) sourceCode = 'leJsonV4AttributeMapping
-
-	^ super leJsonV4AttributeMapping
-		add: (#type -> #pageType);
-		add: (#basicUid -> #uid);
-		yourself' ].
-	}.
-	
-	extensionTests do: [ :e |
-		e value ifFalse: [ Warning signal: 'GT preload test failed: ', e printString ] ]
 ]
 
 { #category : #testing }
