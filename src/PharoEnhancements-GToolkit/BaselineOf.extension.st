@@ -16,3 +16,8 @@ BaselineOf class >> gtExamplesFor: aView [
 BaselineOf class >> lepiter [
 	^ PeLepiterProject fromBaseline: self
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+BaselineOf class >> loadLepiterDocumentation [
+	self lepiter databases do: #load
+]

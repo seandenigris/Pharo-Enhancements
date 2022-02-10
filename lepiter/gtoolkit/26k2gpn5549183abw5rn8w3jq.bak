@@ -16,6 +16,43 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-10T17:35:12.43757-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-10T17:35:12.43757-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kHXiTBOUDQClDiZYDvb0EA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [
 						{
 							"__type" : "textSnippet",
@@ -341,7 +378,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-02-10T10:41:21.664983-05:00"
+												"dateAndTimeString" : "2022-02-10T10:41:37.042222-05:00"
 											}
 										},
 										"uid" : {
@@ -351,7 +388,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Until Lepiter is enhanced to allow page element customization, a hook has been installed for our custom classes in {{gtMethod:LePageToolContentTreeElement>>#onPageViewModelChanged}}. As its last action, it will send `#onPageViewModelChanged` to an instance in the {{gtClass:PeLePageElement}} hierarchy which wraps that content element. See the class comment of {{gtClass:PeLePageElement}} for guidance on subclassing, or check out the [Quote Me](https://github.com/SeanDeNigris/Quote-Me) project's {{gtClass:QuL}}"
+										"string" : "Until Lepiter is enhanced to allow page element customization, a hook has been installed for our custom classes in {{gtMethod:LePageToolContentTreeElement>>#onPageViewModelChanged}}. As its last action, it will send `#onPageViewModelChanged` to an instance in the {{gtClass:PeLePageElement}} hierarchy which wraps that content element. See the class comment of {{gtClass:PeLePageElement}} for guidance on subclassing, or check out the [Quote Me](https://github.com/SeanDeNigris/Quote-Me) project's {{gtClass:QuLeTranscriptPageElement}} for a real world example."
 									}
 								]
 							},
