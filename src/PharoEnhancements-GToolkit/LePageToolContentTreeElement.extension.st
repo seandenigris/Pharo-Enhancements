@@ -24,6 +24,6 @@ LePageToolContentTreeElement >> onPageViewModelChanged [
 	self pageViewModel shouldFocusFirstSnippet
 		ifTrue: [ pageSnippetsTreeViewModel focusFirstSnippet ].
 		
-	self flag: 'monkey patch to allow toolbar customization'.
-	self pageViewModel pageModel type peCustomizePageToolContentTreeElement: self.
+	self flag: 'PharoEnhancements monkey patch to allow element customization, simulating page subclasses'.
+	self peAsLePageElement onPageViewModelChanged.
 ]

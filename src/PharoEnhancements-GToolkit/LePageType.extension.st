@@ -1,10 +1,8 @@
 Extension { #name : #LePageType }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-LePageType >> peCustomizePageToolContentTreeElement: aLePageToolContentElement [
-	| header |
-	header := aLePageToolContentElement headerElement.
-	header removeChildNamed: #peHeader
+LePageType >> pageElementClass [
+	^ PeLePageElement
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
