@@ -1,6 +1,12 @@
 Extension { #name : #LePage }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+LePage >> asContentUIModel [
+	<return: #LeContentViewModel>
+	^ self type asContentUIModel
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 LePage class >> leJsonV4AttributeMapping [
 
 	^ super leJsonV4AttributeMapping

@@ -1,6 +1,11 @@
 Extension { #name : #LePageType }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+LePageType >> asContentUIModel [
+	^ LePageViewModel new pageModel: self page
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 LePageType >> pageElementClass [
 	^ PeLePageElement
 ]
