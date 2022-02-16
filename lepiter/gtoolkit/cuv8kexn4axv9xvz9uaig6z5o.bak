@@ -74,7 +74,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-16T16:39:52.557856-05:00"
+						"dateAndTimeString" : "2022-02-16T16:39:21.302392-05:00"
 					}
 				},
 				"uid" : {
@@ -84,7 +84,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Documentation\n- The most comprehensive documentation of the grammar is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched.\n- [Original docs](http://www.refactoryworkers.com/SmaCC.html)"
+				"string" : "# Documentation\n- [Original docs](http://www.refactoryworkers.com/SmaCC.html)\rThe most comprehensive documentation of the grammar is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched."
 			},
 			{
 				"__type" : "textSnippet",
