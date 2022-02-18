@@ -42,7 +42,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-17T15:07:06.630788-05:00"
+									"dateAndTimeString" : "2022-02-17T15:07:04.929332-05:00"
 								}
 							},
 							"uid" : {
@@ -52,44 +52,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "{{gtPage:SmaCC|db=cuv8kevtsvlflhfg40xx2pnhd}} page in PE's GT Lepiter DB"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-17T15:07:24.18485-05:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-17T15:07:29.03355-05:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "QJs0DJ6UDQCUezQSDXKwbA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "{{gtPage:How to translate an ANTLr parser into SmaCC|db=2j9m7db2i4oz116bexd7wbdxo}} in GT Book"
+							"string" : "{{gtPage:SmaCC|db=cuv8kevtsvlflhfg40xx2pnhd}} page in PE's GT "
 						}
 					]
 				},
