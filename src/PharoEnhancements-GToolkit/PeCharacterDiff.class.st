@@ -45,7 +45,7 @@ PeCharacterDiff class >> ndiffParser [
 { #category : #accessing }
 PeCharacterDiff >> characters [
 
-	^ characters
+	^ characters ifNil: [ {} ]
 ]
 
 { #category : #accessing }

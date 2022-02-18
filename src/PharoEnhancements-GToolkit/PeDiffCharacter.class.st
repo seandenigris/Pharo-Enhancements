@@ -62,6 +62,6 @@ PeDiffCharacter >> textAttributes [
 	self isAdded
 		ifTrue: [ ^ {
 			BlFontWeightAttribute bold.
-    		BlTextHighlightAttribute paint: BrGlamorousColors class>>#successBackgroundColor } ].
+    		BlTextHighlightAttribute paint: BrGlamorousColors successBackgroundColor } ].
 	^ { BlTextForegroundAttribute paint: Color black }
 ]
