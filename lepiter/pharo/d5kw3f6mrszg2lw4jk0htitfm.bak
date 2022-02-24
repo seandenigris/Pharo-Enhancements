@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "8286390f-7d84-0d00-9b34-74400c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Traits"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -18,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:07:44.220067-04:00"
+						"dateAndTimeString" : "2021-07-27T10:08:05.041226-04:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +37,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:07:44.220067-04:00"
+						"dateAndTimeString" : "2022-02-24T11:21:22.374377-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "oEFzIX2EDQCbYJkIDDM03g=="
+					"uidString" : "LvewIn2EDQCbYeZaDDM03g=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "There is [great documentation in the Pharo Wiki](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Traits.md#create-and-use-a-new-trait)\r# Gotchas\r## Super\r### From clients\rWe might naively assume that we can can use `super` to access and extend trait behavior. Something like:\r```\rClassInheritingFromObjectAndUsingTrait>>#message\r\tself doSomething.\r\tsuper message.\r]```\rThis does not work, and thinking further it becomes clear that `super` already has a universal meaning (it is bound to `Object` in the example above), and doesn't change in the context of clients.\r\rThe solution is to alias the method when importing the Trait e.g. `uses: TMyTrait @ {#myTraitMessage->#message}`. The above then becomes:\r```\rClassInheritingFromObjectAndUsingTrait>>#message\r\tself doSomething.\r\tself myTraitMessage.\r]```\r### From Traits\rWhat's less clear is why this doesn't work:\r```\rTrait>>#method\r\tself doSomething.\r\tsuper method.\r]```\rEven if the trait is installed in a class where `super` responds to the message, an error will occur.\r\rHere is an experience report that [I posted on Pharo Dev](http://forum.world.st/Trait-Change-in-Pharo-9-tp5119000.html), but got no response:\r\rIn Pharo 9, the following fails to load: \r```\rMetacello new \r        baseline: 'Magritte'; \r        repository: 'github://seandenigris/Magritte'; \r        load: 'Magritte-Bootstrap'. "
+				"string" : "There is [great documentation in the Pharo Wiki](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Traits.md#create-and-use-a-new-trait)\r# Gotchas\r## Super\r### From clients\rWe might naively assume that we can can use `super` to access and extend trait behavior. Something like:\r```\rClassInheritingFromObjectAndUsingTrait>>#message\r\tself doSomething.\r\tsuper message.\r]```\rThis does not work, and thinking further it becomes clear that `super` already has a universal meaning (it is bound to `Object` in the example above), and doesn't change in the context of clients.\r\rThe solution is to alias the method when importing the Trait e.g. `uses: TMyTrait @ {#myTraitMessage->#message}`. The above then becomes:\r```\rClassInheritingFromObjectAndUsingTrait>>#message\r\tself doSomething.\r\tself myTraitMessage.\r]```\r### From Traits\rWhat's less clear is why this doesn't work:\r```\rTrait>>#method\r\tself doSomething.\r\tsuper method.\r]```\rEven if the trait is installed in a class where `super` responds to the message, an error will occur.\r\rHere is an experience report that [I posted on Pharo Dev](http://forum.world.st/Trait-Change-in-Pharo-9-tp5119000.html), but got no response:\r\rIn Pharo 9, the following fails to load: \r```\rMetacello new \r        baseline: 'Magritte'; \r        repository: 'github://seandenigris/Magritte'; \r        load: 'Magritte-Bootstrap'. ```\n\nSpecifically, this method fails to compile: \rTMagritteBootstrap >> doesNotUnderstand: aMessage \r          \r        ^ self magritteDescription \r                        detect: [ :d | d accessor handlesSelector: aMessage selector ] \r                        ifFound: [ :handler | handler handleMessage: aMessage for: self ] \r                        ifNone: [ super doesNotUnderstand: aMessage ]. \r\rBut instead signals that `send: #doesNotUnderstand: toSuperOf: \rTMagritteBootstrap` is “not supported”. There is a comment which is over my \rhead: “Trait methods are copied to the users and only the last literal is \rupdated. For directed super send the literal of the super send should be \rupdated too.” \r\rI feel like this was working previously and would like to understand why \rit’s not now and how to fix it. "
 			},
 			{
 				"__type" : "textSnippet",
@@ -55,7 +63,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.756423-04:00"
+						"dateAndTimeString" : "2022-02-24T11:21:25.805213-05:00"
 					}
 				},
 				"editEmail" : {
@@ -66,17 +74,54 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:07:44.224736-04:00"
+						"dateAndTimeString" : "2022-02-24T11:21:29.066167-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "SUY+D32EDQCbWiEfDDM03g=="
+					"uidString" : "YurGtSeVDQCftXeuCszwNQ=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Specifically, this method fails to compile: \rTMagritteBootstrap >> doesNotUnderstand: aMessage \r          \r        ^ self magritteDescription \r                        detect: [ :d | d accessor handlesSelector: aMessage selector ] \r                        ifFound: [ :handler | handler handleMessage: aMessage for: self ] \r                        ifNone: [ super doesNotUnderstand: aMessage ]. \r\rBut instead signals that `send: #doesNotUnderstand: toSuperOf: \rTMagritteBootstrap` is “not supported”. There is a comment which is over my \rhead: “Trait methods are copied to the users and only the last literal is \rupdated. For directed super send the literal of the super send should be \rupdated too.” \r\rI feel like this was working previously and would like to understand why \rit’s not now and how to fix it. \r"
+				"string" : "# Flattening"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-24T11:22:21.47219-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-24T11:22:53.176687-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nR4+tieVDQCftnrVCszwNQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[Apparently], there used to be `#flattenDownTraits`, but it no longer existed as of P8"
 			}
 		]
 	},
@@ -101,13 +146,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.75642-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Traits"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "8286390f-7d84-0d00-9b34-74400c3334de"
 	}
 }
