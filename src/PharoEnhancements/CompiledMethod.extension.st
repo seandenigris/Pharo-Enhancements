@@ -4,6 +4,6 @@ Extension { #name : #CompiledMethod }
 CompiledMethod >> gitHubUrl [
 
 	^ self isExtension
-		ifFalse: [ self methodClass gitHubUrl ]
-		ifTrue: [ self package gitHubUrl addPathSegment: self methodClass name, '.extension.st' ]
+		ifFalse: [ self origin instanceSide gitHubUrl ]
+		ifTrue: [ self package gitHubUrl addPathSegment: self origin name, '.extension.st' ]
 ]

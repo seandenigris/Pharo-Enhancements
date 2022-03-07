@@ -28,9 +28,10 @@ RPackage >> deprecate [
 RPackage >> gitHubUrl [
 
 	| str |
-	str := '{repoUrl}/blob/master/src/{package}/' 
+	str := '{repoUrl}/blob/master/{codeFolder}/{package}/' 
 		format: {
 			#repoUrl -> (self peIceRepository origin httpsUrl allButLast: '.git' size).
+			#codeFolder -> self peIceRepository subdirectory.
 			#package -> self name } asDictionary.
 	^ str asUrl
 ]
