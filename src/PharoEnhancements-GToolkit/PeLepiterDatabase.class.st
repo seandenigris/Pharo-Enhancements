@@ -145,6 +145,15 @@ PeLepiterDatabase >> existsOnDisk [
 ]
 
 { #category : #accessing }
+PeLepiterDatabase >> exportForGitHub [
+	self load pagesDo: [ :p |
+		| visitor |
+		visitor := LeGitHubExporterVisitor new.
+		p acceptVisitor: visitor.
+		(self folder parent / 'doc--md-export' / p title asFilename, 'md') ensureCreateFile writeStreamDo: [ :fStr | fStr << visitor stream contents ] ]
+]
+
+{ #category : #accessing }
 PeLepiterDatabase >> folder [
 	^ folder
 ]
