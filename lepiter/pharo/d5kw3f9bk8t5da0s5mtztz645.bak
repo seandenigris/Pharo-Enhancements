@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-11T13:19:06.22546-05:00"
+						"dateAndTimeString" : "2022-03-11T13:18:45.311602-05:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Diagnosis\rNB: These may take some time to run, especially in a larger image\r## Built-in Reporting\n### Textual\rFor a fairly long report on the image and memory hogs, evaluate:\n```smalltalk\nSmalltalkImage current reportCPUandRAM\n```\nIt writes files in the image folder containing all the information. In this case, you're probably most interested in `Log-MemoryAnalysis.txt`. NB. Takes a while to run.\n## OO\nTo interact with the live objects used to produce that textual report, try:\n```smalltalk\nSpaceTally new systemWideSpaceTally\n```\n## Roll your own\nIllustrating the superpowers of using Smalltalk, it's not hard to stitch something similar together, but there's not much avlue added over `SpaceTally`:\n```smalltalk\r    (Object withAllSubclasses collect: [ :aClass |\r        aClass -> aClass instanceCount ])\r        sort: #value descending\r```\r## Call Graph Analysis\rThere is Spy (not sure of current repo location) which offers Roassal visualization."
+				"string" : "# Diagnosis\rNB: These may take some time to run, especially in a larger image\r## Built-in Reporting\n### Textual\rFor a fairly long report on the image and memory hogs, evaluate:\n```smalltalk\nSmalltalkImage current reportCPUandRAM\n```\nIt writes files in the image folder containing all the information. In this case, you're probably most interested in `Log-MemoryAnalysis.txt`. NB. Takes a while to run.\n## OO\nTo interact with the live objects used to produce that textual report, try:\n```smalltalk\nSpaceTally new systemWideSpaceTally\n```\n## Roll your own\nIlit's not hard to stitch something similar together, but there's not much avlue added over `SpaceTally`\n```smalltalk\r    (Object withAllSubclasses collect: [ :aClass |\r        aClass -> aClass instanceCount ])\r        sort: #value descending\r```\r## Call Graph Analysis\rThere is Spy (not sure of current repo location) which offers Roassal visualization."
 			}
 		]
 	},
