@@ -1,0 +1,366 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "7caf6543-8084-0d00-b964-6f970f742dd9"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "SmaCC"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-16T15:57:41.787409-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-16T16:38:47.674553-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6zs0o4qUDQCQF5a/ABGn9Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Getting Started\rSmaCC seems designed to be managed *only* with the SmaCC GUI tools. These have been ported to Morphic, but are still WIP in Gtoolkit. The needed boilerplate to get started is: 1) a scanner class and 2) a parser class that returns the scanner class from class-side `scannerClass`. Coder now supports new SmaCC creation from the same menu as creating a new class"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-16T15:57:30.636449-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T12:19:38.539856-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "gDiKooqUDQCQEZ+DABGn9Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Documentation\n- The most comprehensive documentation of the grammar is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched.\n- [Original docs](http://www.refactoryworkers.com/SmaCC.html)\r- [Swiki entry](http://wiki.squeak.org/squeak/3117)\r- [Antlr C++ grammar](https://github.com/antlr/grammars-v4/blob/master/cpp/CPP14Lexer.g4) - how was this converted to SmaCC?\n- [HTML Antlr grammar]('https://raw.githubusercontent.com/antlr/grammars-v4/master/html/HTMLParser.g4')\n### Repos\r- [Pharo port](https://github.com/SmaCCRefactoring/SmaCC)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:28:21.898294-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:28:21.898294-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UBj3rfqWDQCs6395Atkdbw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "\n# Conversion from Antlr"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:27:57.187791-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:29:19.150894-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "LBx+rPqWDQCs6EwrAtkdbw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The GT Book now has a page on this: {{gtPage:How to translate an ANTLr parser into SmaCC|db=2j9m7db2i4oz116bexd7wbdxo}}, which seems to be adapted from an example from John Brant via Discord GT general channel 9/22. To get your feet wet, you may want to try porting this simple grammar:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:28:59.364664-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:29:07.522258-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dA0zsPqWDQCs8Y5vAtkdbw=="
+				},
+				"code" : "antlrGrammar := (ZnEasy get: 'https://raw.githubusercontent.com/antlr/grammars-v4/master/arithmetic/arithmetic.g4') contents."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:29:21.466785-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:29:33.653629-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WsLksPqWDQCs84zQAtkdbw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Get the rewrite rule like this because the instructions in the page don't work (see [issue](https://github.com/feenkcom/gtoolkit/issues/2463)):"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:28:50.84341-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T17:28:52.156226-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Rgexr/qWDQCs8OHhAtkdbw=="
+				},
+				"code" : "rwRuleFile := FileLocator temp / 'antlr.rw'.\nZnClient new\n    url: 'https://raw.githubusercontent.com/j-brant/SmaCC/master/rewrites/antlr/antlr.rw';\n    downloadTo: rwRuleFile."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-16T15:57:38.89523-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-02-16T15:57:38.89523-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qjQIo4qUDQCQFSVsABGn9Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Completion in GT\rPer John Brant in Discord GT -> how-to:\rTo build completion with a SmaCC AST, you need to create a new subclass of GtCompletionStrategy (e.g., GtPharoCompletionStrategy) and override the completionActionsFor:at:max:requested: method. That method will need to parse the text using the parseWithErrors:{startingAt:} method. This method will return an AST and where there are parse errors it will insert SmaCCErrorNodes. Now, you'll either want to create a custom visitor for  completion or you can add extension methods to your AST nodes. The GtPharoCompletionStrategy uses extension methods where several nodes defined a completionActionsFor: method. For example, the GtPharoVariableNode>>completionActionsFor: method checks that the cursor position is at the end of the variable name, and then gets a list of completions that start with the variable from both the local variables defined in the AST and externally defined variables like instance and global variables. The method then returns a collection of GtCompletionActions that are shown in the drop down. For completion, probably the most important completion action is the GtInsertTextCompletionAction, but there are actions like deleting text and composites."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T13:51:58.718212-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-19T22:58:53.001868-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BqFmQ4CEDQC5bXLBD3Qt2Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Questions\r- Why create a rule with just one token e.g. `Number : <number> {{Number}} ;`\r- When would you not want to `%annotate_tokens;`?\r- From the SmaCC booklet Section 3.4: \"If a token is not referenced from a grammar specification, it will not be in- cluded in the generated scanner, unless the token’s name is also a name of\na method (see previous section). **This, coupled with the ability to do substitutions, allows you to have the equivalent of macros within your scanner specification.**\""
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.718209-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T13:51:58.718209-04:00"
+		}
+	}
+}

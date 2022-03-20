@@ -1,7 +1,7 @@
 Class {
 	#name : #PeTOMLScanner,
 	#superclass : #SmaCCScanner,
-	#category : #'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-TOML'
 }
 
 { #category : #'generated-initialization' }
@@ -31,17 +31,10 @@ PeTOMLScanner >> errorTokenId [
 PeTOMLScanner >> scan1 [
 
 	[ 
-	self recordMatch: #( 8 9 ).
+	self recordMatch: #( 9 ).
 	self step.
 	currentCharacter == Character lf ] whileTrue.
 	currentCharacter == Character cr ifTrue: [ ^ self scan2 ].
-	(currentCharacter isSeparator or: [ 
-		 currentCharacter == Character pageUp ]) ifTrue: [ 
-		[ 
-		self recordMatch: #( 8 ).
-		self step.
-		currentCharacter isSeparator or: [ 
-			currentCharacter == Character pageUp ] ] whileTrue ].
 	^ self reportLastMatch
 ]
 
@@ -49,7 +42,7 @@ PeTOMLScanner >> scan1 [
 PeTOMLScanner >> scan10 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan12 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan12 ].
 	('+-' includes: currentCharacter) ifTrue: [ ^ self scan11 ].
 	^ self reportLastMatch
 ]
@@ -58,7 +51,7 @@ PeTOMLScanner >> scan10 [
 PeTOMLScanner >> scan11 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan12 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan12 ].
 	^ self reportLastMatch
 ]
 
@@ -69,7 +62,7 @@ PeTOMLScanner >> scan12 [
 	self recordMatch: #( 16 ).
 	self step.
 	currentCharacter == $_ ifTrue: [ ^ self scan11 ].
-	currentCharacter between: $0 and: $9 ] whileTrue.
+	currentCharacter isDigit ] whileTrue.
 	^ self reportLastMatch
 ]
 
@@ -82,9 +75,9 @@ PeTOMLScanner >> scan13 [
 	currentCharacter == $. ifTrue: [ ^ self scan9 ].
 	currentCharacter == $_ ifTrue: [ 
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan13 ].
+		currentCharacter isDigit ifTrue: [ ^ self scan13 ].
 		^ self reportLastMatch ].
-	currentCharacter between: $0 and: $9 ] whileTrue.
+	currentCharacter isDigit ] whileTrue.
 	('Ee' includes: currentCharacter) ifTrue: [ ^ self scan10 ].
 	^ self reportLastMatch
 ]
@@ -96,7 +89,7 @@ PeTOMLScanner >> scan14 [
 	self step.
 	currentCharacter == $+ ifTrue: [ ^ self scan11 ].
 	currentCharacter == $- ifTrue: [ ^ self scan15 ].
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan16 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan16 ].
 	((currentCharacter between: $A and: $Z) or: [ 
 		 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ]) 
 		ifTrue: [ 
@@ -116,7 +109,7 @@ PeTOMLScanner >> scan15 [
 
 	self recordMatch: #( 27 ).
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan16 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan16 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ]) 
@@ -139,7 +132,7 @@ PeTOMLScanner >> scan16 [
 	self recordMatch: #( 16 27 ).
 	self step.
 	currentCharacter == $_ ifTrue: [ ^ self scan15 ].
-	currentCharacter between: $0 and: $9 ] whileTrue.
+	currentCharacter isDigit ] whileTrue.
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter between: $a and: $z ] ]) ifTrue: [ 
@@ -162,7 +155,7 @@ PeTOMLScanner >> scan17 [
 	self step.
 	currentCharacter == $. ifTrue: [ ^ self scan9 ].
 	currentCharacter == $_ ifTrue: [ ^ self scan18 ].
-	currentCharacter between: $0 and: $9 ] whileTrue.
+	currentCharacter isDigit ] whileTrue.
 	('Ee' includes: currentCharacter) ifTrue: [ ^ self scan14 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $D) or: [ 
@@ -185,7 +178,7 @@ PeTOMLScanner >> scan18 [
 
 	self recordMatch: #( 27 ).
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan17 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan17 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ]) 
@@ -261,16 +254,8 @@ PeTOMLScanner >> scan19 [
 { #category : #generated }
 PeTOMLScanner >> scan2 [
 
-	self recordMatch: #( 8 ).
 	self step.
 	currentCharacter == Character lf ifTrue: [ ^ self scan1 ].
-	(currentCharacter isSeparator or: [ 
-		 currentCharacter == Character pageUp ]) ifTrue: [ 
-		[ 
-		self recordMatch: #( 8 ).
-		self step.
-		currentCharacter isSeparator or: [ 
-			currentCharacter == Character pageUp ] ] whileTrue ].
 	^ self reportLastMatch
 ]
 
@@ -335,7 +320,7 @@ PeTOMLScanner >> scan21 [
 
 	self recordMatch: #( 27 ).
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan22 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan22 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ]) 
@@ -356,7 +341,7 @@ PeTOMLScanner >> scan22 [
 
 	self recordMatch: #( 27 ).
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan23 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan23 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ]) 
@@ -380,27 +365,27 @@ PeTOMLScanner >> scan23 [
 	currentCharacter == $- ifTrue: [ 
 		self recordMatch: #( 27 ).
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self recordMatch: #( 27 ).
 			self step.
-			(currentCharacter between: $0 and: $9) ifTrue: [ 
+			currentCharacter isDigit ifTrue: [ 
 				self recordMatch: #( 25 27 ).
 				self step.
 				currentCharacter == Character space ifTrue: [ 
 					self step.
-					(currentCharacter between: $0 and: $9) ifTrue: [ 
+					currentCharacter isDigit ifTrue: [ 
 						self step.
-						(currentCharacter between: $0 and: $9) ifTrue: [ 
+						currentCharacter isDigit ifTrue: [ 
 							self step.
 							currentCharacter == $: ifTrue: [ ^ self scan24 ] ] ].
 					^ self reportLastMatch ].
 				('Tt' includes: currentCharacter) ifTrue: [ 
 					self recordMatch: #( 27 ).
 					self step.
-					(currentCharacter between: $0 and: $9) ifTrue: [ 
+					currentCharacter isDigit ifTrue: [ 
 						self recordMatch: #( 27 ).
 						self step.
-						(currentCharacter between: $0 and: $9) ifTrue: [ 
+						currentCharacter isDigit ifTrue: [ 
 							self recordMatch: #( 27 ).
 							self step.
 							currentCharacter == $: ifTrue: [ ^ self scan24 ].
@@ -479,26 +464,26 @@ PeTOMLScanner >> scan23 [
 PeTOMLScanner >> scan24 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self step.
 			currentCharacter == $: ifTrue: [ 
 				self step.
-				(currentCharacter between: $0 and: $9) ifTrue: [ 
+				currentCharacter isDigit ifTrue: [ 
 					self step.
-					(currentCharacter between: $0 and: $9) ifTrue: [ 
+					currentCharacter isDigit ifTrue: [ 
 						self recordMatch: #( 24 ).
 						self step.
 						currentCharacter == $. ifTrue: [ 
 							self step.
-							(currentCharacter between: $0 and: $9) ifTrue: [ 
+							currentCharacter isDigit ifTrue: [ 
 								[ 
 								self recordMatch: #( 24 ).
 								self step.
 								currentCharacter == $Z ifTrue: [ 
 									^ self recordAndReportMatch: #( 23 ) ].
-								currentCharacter between: $0 and: $9 ] whileTrue.
+								currentCharacter isDigit ] whileTrue.
 								('+-' includes: currentCharacter) ifTrue: [ ^ self scan25 ] ].
 							^ self reportLastMatch ].
 						currentCharacter == $Z ifTrue: [ 
@@ -511,15 +496,15 @@ PeTOMLScanner >> scan24 [
 PeTOMLScanner >> scan25 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self step.
 			currentCharacter == $: ifTrue: [ 
 				self step.
-				(currentCharacter between: $0 and: $9) ifTrue: [ 
+				currentCharacter isDigit ifTrue: [ 
 					self step.
-					(currentCharacter between: $0 and: $9) ifTrue: [ 
+					currentCharacter isDigit ifTrue: [ 
 						^ self recordAndReportMatch: #( 23 ) ] ] ] ] ].
 	^ self reportLastMatch
 ]
@@ -528,24 +513,24 @@ PeTOMLScanner >> scan25 [
 PeTOMLScanner >> scan26 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self step.
 			currentCharacter == $: ifTrue: [ 
 				self step.
-				(currentCharacter between: $0 and: $9) ifTrue: [ 
+				currentCharacter isDigit ifTrue: [ 
 					self step.
-					(currentCharacter between: $0 and: $9) ifTrue: [ 
+					currentCharacter isDigit ifTrue: [ 
 						self recordMatch: #( 26 ).
 						self step.
 						currentCharacter == $. ifTrue: [ 
 							self step.
-							(currentCharacter between: $0 and: $9) ifTrue: [ 
+							currentCharacter isDigit ifTrue: [ 
 								[ 
 								self recordMatch: #( 26 ).
 								self step.
-								currentCharacter between: $0 and: $9 ] whileTrue ] ] ] ] ] ] ].
+								currentCharacter isDigit ] whileTrue ] ] ] ] ] ] ].
 	^ self reportLastMatch
 ]
 
@@ -634,14 +619,14 @@ PeTOMLScanner >> scan29 [
 
 	self recordMatch: #( 27 ).
 	self step.
-	((currentCharacter between: $0 and: $9) or: [ 
+	(currentCharacter isDigit or: [ 
 		 (currentCharacter between: $A and: $F) or: [ 
 			 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 		[ 
 		self recordMatch: #( 20 27 ).
 		self step.
 		currentCharacter == $_ ifTrue: [ ^ self scan29 ].
-		(currentCharacter between: $0 and: $9) or: [ 
+		currentCharacter isDigit or: [ 
 			(currentCharacter between: $A and: $F) or: [ 
 				currentCharacter between: $a and: $f ] ] ] whileTrue.
 		(currentCharacter == $- or: [ 
@@ -692,19 +677,19 @@ PeTOMLScanner >> scan4 [
 	self step.
 	currentCharacter == $U ifTrue: [ 
 		self step.
-		((currentCharacter between: $0 and: $9) or: [ 
+		(currentCharacter isDigit or: [ 
 			 (currentCharacter between: $A and: $F) or: [ 
 				 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 			self step.
-			((currentCharacter between: $0 and: $9) or: [ 
+			(currentCharacter isDigit or: [ 
 				 (currentCharacter between: $A and: $F) or: [ 
 					 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 				self step.
-				((currentCharacter between: $0 and: $9) or: [ 
+				(currentCharacter isDigit or: [ 
 					 (currentCharacter between: $A and: $F) or: [ 
 						 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 					self step.
-					((currentCharacter between: $0 and: $9) or: [ 
+					(currentCharacter isDigit or: [ 
 						 (currentCharacter between: $A and: $F) or: [ 
 							 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 						^ self scan5 ] ] ] ].
@@ -718,19 +703,19 @@ PeTOMLScanner >> scan4 [
 PeTOMLScanner >> scan5 [
 
 	self step.
-	((currentCharacter between: $0 and: $9) or: [ 
+	(currentCharacter isDigit or: [ 
 		 (currentCharacter between: $A and: $F) or: [ 
 			 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 		self step.
-		((currentCharacter between: $0 and: $9) or: [ 
+		(currentCharacter isDigit or: [ 
 			 (currentCharacter between: $A and: $F) or: [ 
 				 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 			self step.
-			((currentCharacter between: $0 and: $9) or: [ 
+			(currentCharacter isDigit or: [ 
 				 (currentCharacter between: $A and: $F) or: [ 
 					 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 				self step.
-				((currentCharacter between: $0 and: $9) or: [ 
+				(currentCharacter isDigit or: [ 
 					 (currentCharacter between: $A and: $F) or: [ 
 						 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 					^ self scan3 ] ] ] ].
@@ -754,19 +739,19 @@ PeTOMLScanner >> scan6 [
 			^ self reportLastMatch ].
 		currentCharacter == $U ifTrue: [ 
 			self step.
-			((currentCharacter between: $0 and: $9) or: [ 
+			(currentCharacter isDigit or: [ 
 				 (currentCharacter between: $A and: $F) or: [ 
 					 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 				self step.
-				((currentCharacter between: $0 and: $9) or: [ 
+				(currentCharacter isDigit or: [ 
 					 (currentCharacter between: $A and: $F) or: [ 
 						 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 					self step.
-					((currentCharacter between: $0 and: $9) or: [ 
+					(currentCharacter isDigit or: [ 
 						 (currentCharacter between: $A and: $F) or: [ 
 							 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 						self step.
-						((currentCharacter between: $0 and: $9) or: [ 
+						(currentCharacter isDigit or: [ 
 							 (currentCharacter between: $A and: $F) or: [ 
 								 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 							^ self scan7 ] ] ] ].
@@ -782,19 +767,19 @@ PeTOMLScanner >> scan6 [
 PeTOMLScanner >> scan7 [
 
 	self step.
-	((currentCharacter between: $0 and: $9) or: [ 
+	(currentCharacter isDigit or: [ 
 		 (currentCharacter between: $A and: $F) or: [ 
 			 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 		self step.
-		((currentCharacter between: $0 and: $9) or: [ 
+		(currentCharacter isDigit or: [ 
 			 (currentCharacter between: $A and: $F) or: [ 
 				 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 			self step.
-			((currentCharacter between: $0 and: $9) or: [ 
+			(currentCharacter isDigit or: [ 
 				 (currentCharacter between: $A and: $F) or: [ 
 					 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 				self step.
-				((currentCharacter between: $0 and: $9) or: [ 
+				(currentCharacter isDigit or: [ 
 					 (currentCharacter between: $A and: $F) or: [ 
 						 currentCharacter between: $a and: $f ] ]) ifTrue: [ 
 					^ self scan6 ] ] ] ].
@@ -808,24 +793,24 @@ PeTOMLScanner >> scan8 [
 	self step.
 	currentCharacter == $' ifTrue: [ 
 		(self scanForString: '''''') ifTrue: [ 
-			[ 
-			self recordMatch: #( 15 ).
-			self step.
-			currentCharacter == $' ] whileTrue ].
+			^ self recordAndReportMatch: #( 15 ) ].
 		^ self scan8 ].
-	true ] whileTrue
+	currentCharacter <= $& or: [ 
+		(currentCharacter between: $( and: $[) or: [ currentCharacter >= $] ] ] ]
+		whileTrue.
+	^ self reportLastMatch
 ]
 
 { #category : #generated }
 PeTOMLScanner >> scan9 [
 
 	self step.
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		[ 
 		self recordMatch: #( 16 ).
 		self step.
 		currentCharacter == $_ ifTrue: [ ^ self scan9 ].
-		currentCharacter between: $0 and: $9 ] whileTrue.
+		currentCharacter isDigit ] whileTrue.
 		('Ee' includes: currentCharacter) ifTrue: [ ^ self scan10 ] ].
 	^ self reportLastMatch
 ]
@@ -835,7 +820,6 @@ PeTOMLScanner >> scanForToken [
 
 	self step.
 	currentCharacter == Character lf ifTrue: [ ^ self scan1 ].
-	currentCharacter == Character cr ifTrue: [ ^ self scan2 ].
 	^ self scanForTokenX11
 ]
 
@@ -846,21 +830,20 @@ PeTOMLScanner >> scanForTokenX1 [
 	self step.
 	currentCharacter == $. ifTrue: [ ^ self scan9 ].
 	currentCharacter == $b ifTrue: [ ^ self scan27 ].
-	currentCharacter == $o ifTrue: [ ^ self scan28 ].
 	^ self scanForTokenX1X3
 ]
 
 { #category : #generated }
 PeTOMLScanner >> scanForTokenX10 [
 
+	currentCharacter == $i ifTrue: [ ^ self scan19 ].
 	currentCharacter == $n ifTrue: [ ^ self scan20 ].
 	currentCharacter == ${ ifTrue: [ ^ self recordAndReportMatch: #( 6 ) ].
 	currentCharacter == $} ifTrue: [ ^ self recordAndReportMatch: #( 7 ) ].
-	(currentCharacter between: $1 and: $9) ifTrue: [ 
-		^ self scanForTokenX3 ].
-	(currentCharacter isSeparator or: [ 
-		 currentCharacter == Character pageUp ]) ifTrue: [ 
-		^ self scanForTokenX9 ].
+	currentCharacter isDigit ifTrue: [ ^ self scanForTokenX3 ].
+	(currentCharacter == Character tab or: [ 
+		 currentCharacter == Character space ]) ifTrue: [ 
+		^ self scanForTokenX8 ].
 	((currentCharacter between: $A and: $Z) or: [ 
 		 currentCharacter == $_ or: [ 
 			 (currentCharacter between: $a and: $h) or: [ 
@@ -873,8 +856,9 @@ PeTOMLScanner >> scanForTokenX10 [
 { #category : #generated }
 PeTOMLScanner >> scanForTokenX11 [
 
+	currentCharacter == Character cr ifTrue: [ ^ self scan2 ].
 	currentCharacter == $" ifTrue: [ ^ self scanForTokenX5 ].
-	currentCharacter == $# ifTrue: [ ^ self scanForTokenX8 ].
+	currentCharacter == $# ifTrue: [ ^ self scanForTokenX9 ].
 	currentCharacter == $' ifTrue: [ ^ self scanForTokenX6 ].
 	currentCharacter == $+ ifTrue: [ ^ self scanForTokenX4 ].
 	currentCharacter == $, ifTrue: [ ^ self recordAndReportMatch: #( 1 ) ].
@@ -884,7 +868,6 @@ PeTOMLScanner >> scanForTokenX11 [
 	currentCharacter == $= ifTrue: [ ^ self recordAndReportMatch: #( 3 ) ].
 	currentCharacter == $[ ifTrue: [ ^ self recordAndReportMatch: #( 4 ) ].
 	currentCharacter == $] ifTrue: [ ^ self recordAndReportMatch: #( 5 ) ].
-	currentCharacter == $i ifTrue: [ ^ self scan19 ].
 	^ self scanForTokenX10
 ]
 
@@ -894,10 +877,10 @@ PeTOMLScanner >> scanForTokenX1X1 [
 	self recordMatch: #( 27 ).
 	self step.
 	currentCharacter == $: ifTrue: [ ^ self scan26 ].
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		self recordMatch: #( 27 ).
 		self step.
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self recordMatch: #( 27 ).
 			self step.
 			currentCharacter == $- ifTrue: [ ^ self scan21 ].
@@ -945,9 +928,9 @@ PeTOMLScanner >> scanForTokenX1X2 [
 { #category : #generated }
 PeTOMLScanner >> scanForTokenX1X3 [
 
+	currentCharacter == $o ifTrue: [ ^ self scan28 ].
 	currentCharacter == $x ifTrue: [ ^ self scan29 ].
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
-		^ self scanForTokenX1X1 ].
+	currentCharacter isDigit ifTrue: [ ^ self scanForTokenX1X1 ].
 	('Ee' includes: currentCharacter) ifTrue: [ ^ self scan14 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $D) or: [ 
@@ -969,7 +952,7 @@ PeTOMLScanner >> scanForTokenX2 [
 	currentCharacter == $0 ifTrue: [ ^ self scanForTokenX2X1 ].
 	currentCharacter == $i ifTrue: [ ^ self scan19 ].
 	currentCharacter == $n ifTrue: [ ^ self scan20 ].
-	(currentCharacter between: $1 and: $9) ifTrue: [ ^ self scan17 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan17 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $Z) or: [ 
 			 currentCharacter == $_ or: [ 
@@ -1019,19 +1002,18 @@ PeTOMLScanner >> scanForTokenX3 [
 	self step.
 	currentCharacter == $. ifTrue: [ ^ self scan9 ].
 	currentCharacter == $_ ifTrue: [ ^ self scan18 ].
-	(currentCharacter between: $0 and: $9) ifTrue: [ 
+	currentCharacter isDigit ifTrue: [ 
 		self recordMatch: #( 19 27 ).
 		self step.
 		currentCharacter == $. ifTrue: [ ^ self scan9 ].
 		currentCharacter == $: ifTrue: [ ^ self scan26 ].
 		currentCharacter == $_ ifTrue: [ ^ self scan18 ].
-		(currentCharacter between: $0 and: $9) ifTrue: [ 
+		currentCharacter isDigit ifTrue: [ 
 			self recordMatch: #( 19 27 ).
 			self step.
 			currentCharacter == $. ifTrue: [ ^ self scan9 ].
 			currentCharacter == $_ ifTrue: [ ^ self scan18 ].
-			(currentCharacter between: $0 and: $9) ifTrue: [ 
-				^ self scanForTokenX3X1 ] ] ].
+			currentCharacter isDigit ifTrue: [ ^ self scanForTokenX3X1 ] ] ].
 	('Ee' includes: currentCharacter) ifTrue: [ ^ self scan14 ].
 	(currentCharacter == $- or: [ 
 		 (currentCharacter between: $A and: $D) or: [ 
@@ -1050,21 +1032,27 @@ PeTOMLScanner >> scanForTokenX3X1 [
 	currentCharacter == $- ifTrue: [ ^ self scan21 ].
 	currentCharacter == $. ifTrue: [ ^ self scan9 ].
 	currentCharacter == $_ ifTrue: [ ^ self scan18 ].
-	(currentCharacter between: $0 and: $9) ifTrue: [ ^ self scan17 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan17 ].
 	('Ee' includes: currentCharacter) ifTrue: [ ^ self scan14 ].
 	((currentCharacter between: $A and: $D) or: [ 
 		 (currentCharacter between: $F and: $Z) or: [ 
 			 (currentCharacter between: $a and: $d) or: [ 
 				 currentCharacter between: $f and: $z ] ] ]) ifTrue: [ 
-		[ 
-		self recordMatch: #( 27 ).
-		self step.
-		currentCharacter == $- or: [ 
-			(currentCharacter between: $0 and: $9) or: [ 
-				(currentCharacter between: $A and: $Z) or: [ 
-					currentCharacter == $_ or: [ 
-						currentCharacter between: $a and: $z ] ] ] ] ] whileTrue ].
+		self scanForTokenX3X1X1 ].
 	^ self reportLastMatch
+]
+
+{ #category : #generated }
+PeTOMLScanner >> scanForTokenX3X1X1 [
+
+	[ 
+	self recordMatch: #( 27 ).
+	self step.
+	currentCharacter == $- or: [ 
+		(currentCharacter between: $0 and: $9) or: [ 
+			(currentCharacter between: $A and: $Z) or: [ 
+				currentCharacter == $_ or: [ currentCharacter between: $a and: $z ] ] ] ] ]
+		whileTrue
 ]
 
 { #category : #generated }
@@ -1098,7 +1086,7 @@ PeTOMLScanner >> scanForTokenX4 [
 		(self scanForString: 'an') ifTrue: [ 
 			^ self recordAndReportMatch: #( 18 ) ].
 		^ self reportLastMatch ].
-	(currentCharacter between: $1 and: $9) ifTrue: [ ^ self scan13 ].
+	currentCharacter isDigit ifTrue: [ ^ self scan13 ].
 	^ self reportLastMatch
 ]
 
@@ -1158,11 +1146,10 @@ PeTOMLScanner >> scanForTokenX7 [
 PeTOMLScanner >> scanForTokenX8 [
 
 	[ 
-	self recordMatch: #( 10 ).
+	self recordMatch: #( 8 ).
 	self step.
-	currentCharacter <= Character tab or: [ 
-		(currentCharacter between: Character pageUp and: Character newPage) 
-			or: [ currentCharacter >= (Character value: 14) ] ] ] whileTrue.
+	currentCharacter == Character tab or: [ 
+		currentCharacter == Character space ] ] whileTrue.
 	^ self reportLastMatch
 ]
 
@@ -1170,10 +1157,9 @@ PeTOMLScanner >> scanForTokenX8 [
 PeTOMLScanner >> scanForTokenX9 [
 
 	[ 
-	self recordMatch: #( 8 ).
+	self recordMatch: #( 10 ).
 	self step.
-	currentCharacter isSeparator or: [ 
-		currentCharacter == Character pageUp ] ] whileTrue.
+	currentCharacter ~~ Character lf ] whileTrue.
 	^ self reportLastMatch
 ]
 
