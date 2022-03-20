@@ -17,7 +17,7 @@ PeTOMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 PeTOMLParser class >> cacheId [
-	^'2022-03-20T09:01:29.790032-04:00'
+	^'2022-03-20T09:15:11.603969-04:00'
 ]
 
 { #category : #generated }
@@ -60,19 +60,19 @@ comment: <COMMENT>? ;
 
 key_value : key 'key' ""="" value 'value' {{}};
 
-key : simple_key | dotted_key {{}};
+key : simple_key | dotted_key;
 
 simple_key : quoted_key | unquoted_key ;
 
-unquoted_key : <UNQUOTED_KEY> ;
+unquoted_key : <UNQUOTED_KEY> 'string' {{Key}};
 
-quoted_key :  <BASIC_STRING> | <LITERAL_STRING> ;
+quoted_key :  <BASIC_STRING> 'string' | <LITERAL_STRING> 'string' {{Key}};
 
-dotted_key : simple_key (""."" simple_key)+ ;
+dotted_key : simple_key (""."" simple_key)+ {{Key}};
 
 value : string 'string' | integer | floating_point | bool_ | date_time | array_ | inline_table {{}};
 
-string : <BASIC_STRING> | <ML_BASIC_STRING> | <LITERAL_STRING> | <ML_LITERAL_STRING> ;
+string : <BASIC_STRING> 'string' | <ML_BASIC_STRING> 'string' | <LITERAL_STRING> 'string' | <ML_LITERAL_STRING> 'string' ;
 
 integer : <DEC_INT> | <HEX_INT> | <OCT_INT> | <BIN_INT> ;
 
@@ -167,72 +167,72 @@ PeTOMLParser class >> reduceTable [
 ^#(
 	#(33 0 #nil 1084417 false) 
 	#(33 1 #liftFirstValue: 1084418 false) 
-	#(38 1 #reduceActionForquoted_key1: 1270785 false) 
-	#(38 1 #reduceActionForquoted_key2: 1270786 false) 
-	#(37 1 #liftFirstValue: 1236993 false) 
+	#(38 1 #liftFirstValue: 1282049 false) 
+	#(38 1 #reduceActionForquoted_key2: 1282050 false) 
+	#(37 1 #reduceActionForquoted_key2: 1231873 false) 
 	#(31 0 #reduceActionFor__NL__expression__expression___1: 936961 false) 
 	#(32 1 #reduceActionForexpression3: 976899 false) 
 	#(35 1 #liftFirstValue: 1156097 false) 
-	#(36 1 #reduceActionForsimple_key2: 1193986 false) 
-	#(36 1 #reduceActionForsimple_key1: 1193985 false) 
-	#(35 1 #reduceActionForkey2: 1156098 false) 
-	#(56 1 #liftFirstValue: 2048001 false) 
-	#(56 1 #liftFirstValue: 2048002 false) 
+	#(36 1 #liftFirstValue: 1188866 false) 
+	#(36 1 #liftFirstValue: 1188865 false) 
+	#(35 1 #liftFirstValue: 1156098 false) 
+	#(56 1 #liftFirstValue: 2128897 false) 
+	#(56 1 #liftFirstValue: 2128898 false) 
 	#(29 2 #reduceActionFordocument1: 901121 false) 
 	#(32 2 #liftFirstValue: 976897 false) 
-	#(41 1 #reduceActionFor_____simple_key__1: 1347585 false) 
-	#(39 2 #reduceActionFordotted_key1: 1323009 false) 
+	#(41 1 #reduceActionFor_____simple_key__1: 1384449 false) 
+	#(39 2 #reduceActionFordotted_key1: 1359873 false) 
 	#(32 2 #liftFirstValue: 976898 false) 
-	#(57 3 #reduceActionForstandard_table1: 2088961 false) 
+	#(57 3 #reduceActionForstandard_table1: 2169857 false) 
 	#(31 2 #reduceActionFor__NL__expression__expression___2: 936962 false) 
-	#(52 0 #reduceActionFor__NL__expression__expression___1: 1987585 false) 
-	#(59 0 #reduceActionForinline_table_keyvals1: 2180097 false) 
-	#(46 1 #liftFirstValue: 1669121 false) 
-	#(43 1 #liftFirstValue: 1473537 false) 
-	#(43 1 #liftFirstValue: 1473538 false) 
-	#(43 1 #liftFirstValue: 1473539 false) 
-	#(43 1 #liftFirstValue: 1473540 false) 
-	#(45 1 #reduceActionForfloating_point1: 1624065 false) 
-	#(45 1 #reduceActionForfloating_point2: 1624066 false) 
-	#(45 1 #reduceActionForsimple_key2: 1624067 false) 
-	#(44 1 #reduceActionForinteger1: 1563649 false) 
-	#(44 1 #reduceActionForinteger2: 1563650 false) 
-	#(44 1 #reduceActionForinteger3: 1563651 false) 
-	#(44 1 #reduceActionForinteger4: 1563652 false) 
-	#(47 1 #reduceActionForinteger1: 1690625 false) 
-	#(47 1 #reduceActionForinteger2: 1690626 false) 
-	#(47 1 #reduceActionForinteger3: 1690627 false) 
-	#(47 1 #reduceActionForinteger4: 1690628 false) 
+	#(52 0 #reduceActionFor__NL__expression__expression___1: 2068481 false) 
+	#(59 0 #reduceActionForinline_table_keyvals1: 2260993 false) 
+	#(46 1 #liftFirstValue: 1750017 false) 
+	#(43 1 #liftFirstValue: 1517569 false) 
+	#(43 1 #liftFirstValue: 1517570 false) 
+	#(43 1 #liftFirstValue: 1517571 false) 
+	#(43 1 #liftFirstValue: 1517572 false) 
+	#(45 1 #reduceActionForfloating_point1: 1704961 false) 
+	#(45 1 #reduceActionForfloating_point2: 1704962 false) 
+	#(45 1 #reduceActionForfloating_point3: 1704963 false) 
+	#(44 1 #reduceActionForinteger1: 1644545 false) 
+	#(44 1 #reduceActionForinteger2: 1644546 false) 
+	#(44 1 #reduceActionForinteger3: 1644547 false) 
+	#(44 1 #reduceActionForinteger4: 1644548 false) 
+	#(47 1 #reduceActionForinteger1: 1771521 false) 
+	#(47 1 #reduceActionForinteger2: 1771522 false) 
+	#(47 1 #reduceActionForinteger3: 1771523 false) 
+	#(47 1 #reduceActionForinteger4: 1771524 false) 
 	#(34 3 #reduceActionForkey_value1: 1107969 false) 
-	#(42 1 #liftFirstValue: 1369089 false) 
-	#(42 1 #liftFirstValue: 1369090 false) 
-	#(42 1 #liftFirstValue: 1369091 false) 
-	#(42 1 #liftFirstValue: 1369092 false) 
-	#(42 1 #liftFirstValue: 1369093 false) 
-	#(42 1 #liftFirstValue: 1369094 false) 
-	#(42 1 #reduceActionForvalue7: 1369095 false) 
-	#(40 2 #reduceActionFor_____simple_key_1: 1347585 false) 
-	#(41 2 #reduceActionFor_____simple_key__2: 1347586 false) 
+	#(42 1 #liftFirstValue: 1413121 false) 
+	#(42 1 #liftFirstValue: 1413122 false) 
+	#(42 1 #liftFirstValue: 1413123 false) 
+	#(42 1 #liftFirstValue: 1413124 false) 
+	#(42 1 #liftFirstValue: 1413125 false) 
+	#(42 1 #liftFirstValue: 1413126 false) 
+	#(42 1 #reduceActionForvalue7: 1413127 false) 
+	#(40 2 #reduceActionFor_____simple_key_1: 1384449 false) 
+	#(41 2 #reduceActionFor__NL__expression__expression___2: 1384450 false) 
 	#(30 2 #reduceActionFor__NL__expression__expression__1: 936961 false) 
-	#(50 1 #reduceActionForcomment_or_nl1: 1971201 false) 
-	#(59 1 #reduceActionForcomment_or_nl1: 2180098 false) 
-	#(61 5 #reduceActionForarray_table1: 2343937 false) 
-	#(48 3 #reduceActionForarray_1: 1776641 false) 
-	#(55 0 #reduceActionFor__NL__expression__expression___1: 2025473 false) 
-	#(51 1 #reduceActionForquoted_key1: 1987585 false) 
-	#(52 2 #reduceActionFor__NL__expression__expression___2: 1987586 false) 
-	#(58 3 #reduceActionForinline_table1: 2131969 false) 
-	#(48 4 #reduceActionForarray_2: 1776642 false) 
-	#(49 3 #reduceActionForarray_values2: 1825794 false) 
-	#(53 1 #reduceActionForcomment_or_nl1: 2009089 false) 
-	#(51 2 #reduceActionFor__COMMENT____NL__2: 1987586 false) 
-	#(60 3 #reduceActionForinline_table_keyvals_non_empty1: 2239489 false) 
-	#(49 4 #reduceActionForarray_values3: 1825795 false) 
-	#(54 1 #reduceActionForquoted_key1: 2025473 false) 
-	#(55 2 #reduceActionFor__NL__expression__expression___2: 2025474 false) 
-	#(54 2 #reduceActionFor__NL__expression__expression__1: 2025474 false) 
-	#(60 5 #reduceActionForinline_table_keyvals_non_empty2: 2239490 false) 
-	#(49 6 #reduceActionForarray_values1: 1825793 false)
+	#(50 1 #reduceActionForcomment_or_nl1: 2052097 false) 
+	#(59 1 #reduceActionForcomment_or_nl1: 2260994 false) 
+	#(61 5 #reduceActionForarray_table1: 2424833 false) 
+	#(48 3 #reduceActionForarray_1: 1857537 false) 
+	#(55 0 #reduceActionFor__NL__expression__expression___1: 2106369 false) 
+	#(51 1 #reduceActionFor_____simple_key_1: 2068481 false) 
+	#(52 2 #reduceActionFor__NL__expression__expression___2: 2068482 false) 
+	#(58 3 #reduceActionForinline_table1: 2212865 false) 
+	#(48 4 #reduceActionForarray_2: 1857538 false) 
+	#(49 3 #reduceActionForarray_values2: 1906690 false) 
+	#(53 1 #reduceActionForcomment_or_nl1: 2089985 false) 
+	#(51 2 #reduceActionFor__COMMENT____NL__2: 2068482 false) 
+	#(60 3 #reduceActionForinline_table_keyvals_non_empty1: 2320385 false) 
+	#(49 4 #reduceActionForarray_values3: 1906691 false) 
+	#(54 1 #reduceActionFor_____simple_key_1: 2106369 false) 
+	#(55 2 #reduceActionFor__NL__expression__expression___2: 2106370 false) 
+	#(54 2 #reduceActionFor__NL__expression__expression__1: 2106370 false) 
+	#(60 5 #reduceActionForinline_table_keyvals_non_empty2: 2320386 false) 
+	#(49 6 #reduceActionForarray_values1: 1906689 false)
 	).
 ]
 
@@ -278,10 +278,9 @@ PeTOMLParser class >> symbolTypes [
 	     #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken
 	     #SmaCCToken #SmaCCToken #PeDocumentNode #PeDocumentNode
 	     #OrderedCollection #OrderedCollection #PeTomlNode #SmaCCToken
-	     #PeKeyValueNode #Object #OrderedCollection #SmaCCToken
-	     #OrderedCollection #OrderedCollection #OrderedCollection
-	     #OrderedCollection #Object #SmaCCToken #OrderedCollection
-	     #OrderedCollection #SmaCCToken #OrderedCollection
+	     #PeKeyValueNode #Object #Object #PeKeyNode #Object #PeKeyNode
+	     #OrderedCollection #OrderedCollection #Object #SmaCCToken
+	     #OrderedCollection #OrderedCollection #SmaCCToken #OrderedCollection
 	     #OrderedCollection #OrderedCollection #OrderedCollection
 	     #OrderedCollection #OrderedCollection #OrderedCollection
 	     #OrderedCollection #OrderedCollection #PeTomlNode #PeStandardTableNode
@@ -292,8 +291,8 @@ PeTOMLParser class >> symbolTypes [
 { #category : #generated }
 PeTOMLParser class >> transitionTable [
 ^#(
-#[1 0 9 0 4 0 6 0 9 0 37 0 10 0 17 0 12 0 21 0 14 0 53 0 27 0 29 0 29 0 33 0 32 0 37 0 33 0 41 0 34 0 45 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39 0 65 0 56 0 65 0 57 0 65 0 61 0 6 0 62] 
-#[1 0 77 0 4 0 17 0 12 0 21 0 14 0 53 0 27 0 81 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39] 
+#[1 0 9 0 4 0 6 0 9 0 37 0 10 0 49 0 12 0 21 0 14 0 25 0 27 0 29 0 29 0 33 0 32 0 37 0 33 0 41 0 34 0 45 0 35 0 49 0 36 0 49 0 37 0 49 0 38 0 45 0 39 0 65 0 56 0 65 0 57 0 65 0 61 0 6 0 62] 
+#[1 0 77 0 4 0 49 0 12 0 21 0 14 0 25 0 27 0 81 0 35 0 49 0 36 0 49 0 37 0 49 0 38 0 81 0 39] 
 #[0 0 10 0 9 0 62] 
 #[0 0 14 0 2 0 3 0 5] 
 #[0 0 18 0 2 0 3 0 5] 
@@ -310,21 +309,21 @@ PeTOMLParser class >> transitionTable [
 #[1 0 6 0 9 0 109 0 10 0 109 0 33 0 6 0 62] 
 #[0 0 50 0 9 0 10 0 62] 
 #[0 0 54 0 9 0 10 0 62] 
-#[1 0 17 0 12 0 21 0 14 0 53 0 27 0 113 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39] 
+#[1 0 49 0 12 0 21 0 14 0 25 0 27 0 113 0 35 0 49 0 36 0 49 0 37 0 49 0 38 0 113 0 39] 
 #[0 0 117 0 5] 
 #[1 0 121 0 9 0 125 0 30 0 58 0 62] 
 #[0 0 62 0 9 0 62] 
 #[1 0 129 0 4 0 133 0 6 0 201 0 11 0 201 0 12 0 201 0 13 0 201 0 14 0 201 0 15 0 157 0 16 0 161 0 17 0 165 0 18 0 169 0 19 0 173 0 20 0 177 0 21 0 181 0 22 0 185 0 23 0 189 0 24 0 193 0 25 0 197 0 26 0 201 0 42 0 201 0 43 0 201 0 44 0 201 0 45 0 201 0 46 0 201 0 47 0 201 0 48 0 229 0 58] 
-#[1 0 17 0 12 0 21 0 14 0 53 0 27 0 233 0 36 0 53 0 37 0 57 0 38] 
+#[1 0 233 0 12 0 21 0 14 0 25 0 27 0 233 0 36 0 233 0 37 0 233 0 38] 
 #[0 0 66 0 2 0 3 0 5] 
 #[1 0 97 0 2 0 70 0 3 0 70 0 5 0 237 0 40] 
 #[0 0 74 0 9 0 62] 
 #[0 0 241 0 5] 
 #[0 0 78 0 9 0 10 0 62] 
-#[1 0 9 0 4 0 6 0 9 0 37 0 10 0 17 0 12 0 21 0 14 0 53 0 27 0 245 0 32 0 37 0 33 0 41 0 34 0 45 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39 0 65 0 56 0 65 0 57 0 65 0 61 0 6 0 62] 
+#[1 0 9 0 4 0 6 0 9 0 37 0 10 0 49 0 12 0 21 0 14 0 25 0 27 0 245 0 32 0 37 0 33 0 41 0 34 0 45 0 35 0 49 0 36 0 49 0 37 0 49 0 38 0 45 0 39 0 65 0 56 0 65 0 57 0 65 0 61 0 6 0 62] 
 #[0 0 82 0 9 0 62] 
 #[1 0 86 0 4 0 86 0 5 0 86 0 6 0 86 0 9 0 86 0 10 0 86 0 11 0 86 0 12 0 86 0 13 0 86 0 14 0 86 0 15 0 86 0 16 0 86 0 17 0 86 0 18 0 86 0 19 0 86 0 20 0 86 0 21 0 86 0 22 0 86 0 23 0 86 0 24 0 86 0 25 0 86 0 26 0 249 0 49 0 253 0 50 1 1 0 52] 
-#[1 0 90 0 7 0 17 0 12 0 21 0 14 0 53 0 27 1 5 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39 1 9 0 59 1 13 0 60] 
+#[1 0 90 0 7 0 49 0 12 0 21 0 14 0 25 0 27 1 5 0 35 0 49 0 36 0 49 0 37 0 49 0 38 1 5 0 39 1 9 0 59 1 13 0 60] 
 #[0 0 94 0 1 0 5 0 7 0 9 0 10 0 62] 
 #[0 0 98 0 1 0 5 0 7 0 9 0 10 0 62] 
 #[0 0 102 0 1 0 5 0 7 0 9 0 10 0 62] 
@@ -376,7 +375,7 @@ PeTOMLParser class >> transitionTable [
 #[1 0 86 0 4 0 254 0 5 0 86 0 6 0 19 0 9 0 19 0 10 0 86 0 11 0 86 0 12 0 86 0 13 0 86 0 14 0 86 0 15 0 86 0 16 0 86 0 17 0 86 0 18 0 86 0 19 0 86 0 20 0 86 0 21 0 86 0 22 0 86 0 23 0 86 0 24 0 86 0 25 0 86 0 26 1 89 0 49 1 93 0 50 1 1 0 52] 
 #[1 1 2 0 1 1 2 0 5 1 2 0 9 0 23 0 10] 
 #[0 1 6 0 1 0 5 0 9 0 10] 
-#[1 0 17 0 12 0 21 0 14 0 53 0 27 1 5 0 35 0 49 0 36 0 53 0 37 0 57 0 38 0 61 0 39 1 101 0 60] 
+#[1 0 49 0 12 0 21 0 14 0 25 0 27 1 5 0 35 0 49 0 36 0 49 0 37 0 49 0 38 1 5 0 39 1 101 0 60] 
 #[1 0 86 0 5 0 86 0 9 0 86 0 10 1 105 0 50 1 1 0 52] 
 #[1 0 129 0 4 0 133 0 6 1 29 0 11 1 29 0 12 1 29 0 13 1 29 0 14 1 29 0 15 0 157 0 16 0 161 0 17 0 165 0 18 0 169 0 19 0 173 0 20 0 177 0 21 0 181 0 22 0 185 0 23 0 189 0 24 0 193 0 25 0 197 0 26 1 29 0 42 1 29 0 43 1 29 0 44 1 29 0 45 1 29 0 46 1 29 0 47 1 29 0 48 0 229 0 58] 
 #[0 1 10 0 1 0 5 0 9 0 10] 
@@ -429,11 +428,8 @@ PeTOMLParser >> reduceActionFor__NL__expression__expression___2: nodes [
 PeTOMLParser >> reduceActionFor_____simple_key_1: nodes [
 
 	| result |
-	result := Array new: 4.
+	result := Array new: 2.
 	result at: 1 put: (nodes at: 1).
-	result at: 2 put: ((nodes at: 2) at: 1).
-	result at: 3 put: ((nodes at: 2) at: 2).
-	result at: 4 put: ((nodes at: 2) at: 3).
 	^ result
 ]
 
@@ -441,27 +437,11 @@ PeTOMLParser >> reduceActionFor_____simple_key_1: nodes [
 PeTOMLParser >> reduceActionFor_____simple_key__1: nodes [
 
 	| result |
-	result := Array new: 4.
+	result := Array new: 2.
 	result at: 1 put: (OrderedCollection new: 2).
 	result at: 2 put: (OrderedCollection new: 2).
-	result at: 3 put: (OrderedCollection new: 2).
-	result at: 4 put: (OrderedCollection new: 2).
 	self add: ((nodes at: 1) at: 1) to: (result at: 1).
 	self add: ((nodes at: 1) at: 2) to: (result at: 2).
-	self add: ((nodes at: 1) at: 3) to: (result at: 3).
-	self add: ((nodes at: 1) at: 4) to: (result at: 4).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
-PeTOMLParser >> reduceActionFor_____simple_key__2: nodes [
-
-	| result |
-	result := nodes at: 1.
-	self add: ((nodes at: 2) at: 1) to: (result at: 1).
-	self add: ((nodes at: 2) at: 2) to: (result at: 2).
-	self add: ((nodes at: 2) at: 3) to: (result at: 3).
-	self add: ((nodes at: 2) at: 4) to: (result at: 4).
 	^ result
 ]
 
@@ -588,18 +568,9 @@ PeTOMLParser >> reduceActionFordocument1: nodes [
 PeTOMLParser >> reduceActionFordotted_key1: nodes [
 
 	| result |
-	result := Array new: 4.
-	result at: 1 put: (OrderedCollection new: 2).
-	result at: 2 put: (OrderedCollection new: 2).
-	result at: 3 put: (OrderedCollection new: 2).
-	result at: 4 put: (OrderedCollection new: 2).
-	self add: ((nodes at: 1) at: 1) to: (result at: 1).
-	self add: ((nodes at: 1) at: 2) to: (result at: 2).
-	self add: ((nodes at: 1) at: 3) to: (result at: 3).
-	self addAll: ((nodes at: 2) at: 1) to: (result at: 4).
-	self addAll: ((nodes at: 2) at: 2) to: (result at: 1).
-	self addAll: ((nodes at: 2) at: 3) to: (result at: 2).
-	self addAll: ((nodes at: 2) at: 4) to: (result at: 3).
+	result := PeKeyNode new.
+	result addTokens: ((nodes at: 2) at: 1) to: result periodTokens.
+	result addTokens: ((nodes at: 2) at: 2) to: result strings.
 	^ result
 ]
 
@@ -627,6 +598,15 @@ PeTOMLParser >> reduceActionForfloating_point2: nodes [
 	| result |
 	result := Array new: 3.
 	result at: 2 put: (nodes at: 1).
+	^ result
+]
+
+{ #category : #'generated-reduction actions' }
+PeTOMLParser >> reduceActionForfloating_point3: nodes [
+
+	| result |
+	result := Array new: 3.
+	result at: 3 put: (nodes at: 1).
 	^ result
 ]
 
@@ -724,20 +704,6 @@ PeTOMLParser >> reduceActionForinteger4: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-PeTOMLParser >> reduceActionForkey2: nodes [
-
-	| result |
-	result := PeKeyNode new.
-	result addTokens: ((nodes at: 1) at: 1) to: result bASIC_STRINGTokens.
-	result
-		addTokens: ((nodes at: 1) at: 2)
-		to: result lITERAL_STRINGTokens.
-	result addTokens: ((nodes at: 1) at: 3) to: result uNQUOTED_KEYTokens.
-	result addTokens: ((nodes at: 1) at: 4) to: result periodTokens.
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
 PeTOMLParser >> reduceActionForkey_value1: nodes [
 
 	| result |
@@ -749,39 +715,11 @@ PeTOMLParser >> reduceActionForkey_value1: nodes [
 ]
 
 { #category : #'generated-reduction actions' }
-PeTOMLParser >> reduceActionForquoted_key1: nodes [
-
-	| result |
-	result := Array new: 2.
-	result at: 1 put: (nodes at: 1).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
 PeTOMLParser >> reduceActionForquoted_key2: nodes [
 
 	| result |
-	result := Array new: 2.
-	result at: 2 put: (nodes at: 1).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
-PeTOMLParser >> reduceActionForsimple_key1: nodes [
-
-	| result |
-	result := Array new: 3.
-	result at: 1 put: ((nodes at: 1) at: 1).
-	result at: 2 put: ((nodes at: 1) at: 2).
-	^ result
-]
-
-{ #category : #'generated-reduction actions' }
-PeTOMLParser >> reduceActionForsimple_key2: nodes [
-
-	| result |
-	result := Array new: 3.
-	result at: 3 put: (nodes at: 1).
+	result := PeKeyNode new.
+	result addToken: (nodes at: 1) to: result strings.
 	^ result
 ]
 

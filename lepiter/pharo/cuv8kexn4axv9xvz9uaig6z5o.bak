@@ -269,6 +269,81 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:38:14.183169-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:38:54.615743-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "SbLAEAmXDQCRt0PfD5CXjg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Converting non-greedy to greedy: {{gtClass:PythonParser}}'s `<longString"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-20T10:37:59.151474-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-20T10:38:02.601613-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "O4sSEAmXDQCRtjOvD5CXjg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Helpful Examples"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [ ]
 				},
 				"createEmail" : {
@@ -327,7 +402,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T22:58:53.001868-04:00"
+						"dateAndTimeString" : "2022-03-19T22:59:02.494893-04:00"
 					}
 				},
 				"uid" : {
@@ -337,7 +412,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Questions\r- Why create a rule with just one token e.g. `Number : <number> {{Number}} ;`\r- When would you not want to `%annotate_tokens;`?\r- From the SmaCC booklet Section 3.4: \"If a token is not referenced from a grammar specification, it will not be in- cluded in the generated scanner, unless the token’s name is also a name of\na method (see previous section). **This, coupled with the ability to do substitutions, allows you to have the equivalent of macros within your scanner specification.**\""
+				"string" : "# Questions\r- Why create a rule with just one token e.g. `Number : <number> {{Number}} ;`\r- When would you not want to `%annotate_tokens;`?\r- From the SmaCC booklet Section 3.4: \"If a token is not referenced from a grammar specification, it will not be in- cluded in the generated scanner, unless the token’s name is also a name of\na method (see previous section). **This, coupled with the ability to do substitutions, allows you to have the equivalent of macros within your scanner specification.**\" What does the intriguing statement in bold mean?"
 			}
 		]
 	},

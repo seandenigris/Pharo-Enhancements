@@ -31,7 +31,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-17T15:06:58.851668-05:00"
+									"dateAndTimeString" : "2022-03-20T10:36:01.497128-04:00"
 								}
 							},
 							"editEmail" : {
@@ -42,17 +42,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-17T15:07:06.630788-05:00"
+									"dateAndTimeString" : "2022-03-20T10:36:24.740607-04:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "EupCCZ6UDQCUWwcBDXKwbA=="
+								"uidString" : "dItYBQmXDQCRj8/xD5CXjg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "{{gtPage:SmaCC|db=cuv8kevtsvlflhfg40xx2pnhd}} page in PE's GT Lepiter DB"
+							"string" : "{{gtPage:SmaCC|db=d5kw3f8u5sk7bqljmxfujb5jn}} page in this project's Pharo DB"
 						},
 						{
 							"__type" : "textSnippet",
@@ -160,43 +160,6 @@
 					"__type" : "textStyle"
 				},
 				"string" : "[TOML's GH repo](https://github.com/toml-lang/toml) seems to be a good first stop for info. For example, it includes [TOML's ABNF grammar](https://github.com/toml-lang/toml/blob/master/toml.abnf)"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-16T16:08:50.514822-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-16T16:26:27.919288-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "AcA9yoqUDQCQvAVFABGn9Q=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "The first strategy that came to mind (after the usual foolish attempt to \"quickly\" handroll one) was to convert [the antlr4 grammar](https://raw.githubusercontent.com/antlr/grammars-v4/master/toml/toml.g4)"
 			},
 			{
 				"__type" : "textSnippet",
@@ -366,6 +329,81 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-02-16T16:08:50.514822-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-02-16T16:26:27.919288-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "AcA9yoqUDQCQvAVFABGn9Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "The first strategy that came to mind (after the usual foolish attempt to \"quickly\" handroll one) was to convert [the antlr4 grammar](https://raw.githubusercontent.com/antlr/grammars-v4/master/toml/toml.g4)"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-20T10:29:41.704109-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-03-20T10:29:44.420093-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "U29g8giXDQCQ694oD5CXjg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Porting"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
 									"dateAndTimeString" : "2022-02-16T16:10:17.206625-05:00"
 								}
 							},
@@ -377,7 +415,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-02-16T16:11:16.996166-05:00"
+									"dateAndTimeString" : "2022-03-20T10:32:25.325424-04:00"
 								}
 							},
 							"uid" : {
@@ -387,7 +425,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "It doesn't seem to ignore whitespace by default. `<whitespace> : \\s+ ;` seems to do the trick, but I can't remember why that works!"
+							"string" : "It doesn't seem to ignore whitespace by default. Renaming the `<WS>` token to `<whitespace>` fixes it because it matches by name to the built in SmaCC method that consumes its contents"
 						},
 						{
 							"__type" : "textSnippet",
@@ -647,7 +685,147 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-19T14:10:27.240922-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-19T14:11:48.871574-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "83cu6veWDQCsqGQ9Atkdbw=="
+							},
+							"code" : "tree := Antlr4Parser parse: (ZnEasy get:'https://raw.githubusercontent.com/antlr/grammars-v4/master/toml/toml.g4') contents."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-19T14:11:49.671403-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-19T17:29:48.531792-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "LUIY7/eWDQCsq0YJAtkdbw=="
+							},
+							"code" : "rwRuleFile := FileLocator temp / 'antlr.rw'.\nZnClient new\n    url: 'https://raw.githubusercontent.com/j-brant/SmaCC/master/rewrites/antlr/antlr.rw';\n    downloadTo: rwRuleFile."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-19T14:11:58.038126-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:33:57.414325-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "z+yX7/eWDQCsrCXJAtkdbw=="
+							},
+							"code" : "rewriter := SmaCCRewriteEngine new.\nrewriter\n    rewriteRule:\n        (SmaCCRewriteRuleFileParser\n            parseFile: rwRuleFile).\nrewriter rewriteTree: tree"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:34:07.412574-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:34:23.910944-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "F+L0AQmXDQCRdmbKD5CXjg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Annotate - Class and variable names"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -657,7 +835,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:10:22.490845-04:00"
+						"dateAndTimeString" : "2022-03-20T10:33:46.872217-04:00"
 					}
 				},
 				"editEmail" : {
@@ -668,7 +846,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:10:23.083162-04:00"
+						"dateAndTimeString" : "2022-03-20T10:33:48.581735-04:00"
 					}
 				},
 				"uid" : {
@@ -678,13 +856,125 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Port"
+				"string" : "Progress"
 			},
 			{
-				"__type" : "pharoSnippet",
+				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:48:03.218371-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:48:36.754992-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "UFWEMwmXDQCRwPbUD5CXjg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Is there a hook to configure SmaCC coder input newLines so that you can type a multiline input in and the crs automatically get converted into what's expected by the parser?"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:49:03.810543-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:51:01.170526-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "d1JDNgmXDQCRwQGxD5CXjg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "What do you do when you get down to parse rules that map to Smalltalk types?"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:51:25.21265-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-03-20T10:51:28.529375-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "4yjlPgmXDQCRwjnRD5CXjg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Is there a way to get a "
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -694,7 +984,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:10:27.240922-04:00"
+						"dateAndTimeString" : "2022-03-20T10:47:49.791606-04:00"
 					}
 				},
 				"editEmail" : {
@@ -705,82 +995,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:11:48.871574-04:00"
+						"dateAndTimeString" : "2022-03-20T10:47:51.041173-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "83cu6veWDQCsqGQ9Atkdbw=="
+					"uidString" : "8zjiMgmXDQCRv8IgD5CXjg=="
 				},
-				"code" : "tree := Antlr4Parser parse: (ZnEasy get:'https://raw.githubusercontent.com/antlr/grammars-v4/master/toml/toml.g4') contents."
-			},
-			{
-				"__type" : "pharoSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
+				"paragraphStyle" : {
+					"__type" : "textStyle"
 				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:11:49.671403-04:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T17:29:48.531792-04:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "LUIY7/eWDQCsq0YJAtkdbw=="
-				},
-				"code" : "rwRuleFile := FileLocator temp / 'antlr.rw'.\nZnClient new\n    url: 'https://raw.githubusercontent.com/j-brant/SmaCC/master/rewrites/antlr/antlr.rw';\n    downloadTo: rwRuleFile."
-			},
-			{
-				"__type" : "pharoSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T14:11:58.038126-04:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T17:29:53.070912-04:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "z+yX7/eWDQCsrCXJAtkdbw=="
-				},
-				"code" : "rewriter := SmaCCRewriteEngine new.\nrewriter\n    rewriteRule:\n        (SmaCCRewriteRuleFileParser\n            parseFile: rwRule).\nrewriter rewriteTree: tree"
+				"string" : "Questions"
 			}
 		]
 	},
