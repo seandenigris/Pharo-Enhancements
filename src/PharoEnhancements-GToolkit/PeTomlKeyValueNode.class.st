@@ -1,6 +1,6 @@
 Class {
-	#name : #PeKeyValueNode,
-	#superclass : #PeTomlNode,
+	#name : #PeTomlKeyValueNode,
+	#superclass : #PeTomlParseNode,
 	#instVars : [
 		'key',
 		'equalToken',
@@ -10,31 +10,31 @@ Class {
 }
 
 { #category : #generated }
-PeKeyValueNode >> acceptVisitor: aTomlVisitor [
+PeTomlKeyValueNode >> acceptVisitor: aParseVisitor [
 
-	^ aTomlVisitor visitKeyValue: self
+	^ aParseVisitor visitKeyValue: self
 ]
 
 { #category : #generated }
-PeKeyValueNode >> equalToken [
+PeTomlKeyValueNode >> equalToken [
 
 	^ equalToken
 ]
 
 { #category : #generated }
-PeKeyValueNode >> equalToken: aSmaCCToken [
+PeTomlKeyValueNode >> equalToken: aSmaCCToken [
 
 	equalToken := aSmaCCToken
 ]
 
 { #category : #generated }
-PeKeyValueNode >> key [
+PeTomlKeyValueNode >> key [
 
 	^ key
 ]
 
 { #category : #generated }
-PeKeyValueNode >> key: anObject [
+PeTomlKeyValueNode >> key: anObject [
 
 	self setParent: self key to: nil.
 	key := anObject.
@@ -42,25 +42,25 @@ PeKeyValueNode >> key: anObject [
 ]
 
 { #category : #generated }
-PeKeyValueNode >> otherVariables [
+PeTomlKeyValueNode >> otherVariables [
 
 	^ #( #key #value )
 ]
 
 { #category : #generated }
-PeKeyValueNode >> tokenVariables [
+PeTomlKeyValueNode >> tokenVariables [
 
 	^ #( #equalToken )
 ]
 
 { #category : #generated }
-PeKeyValueNode >> value [
+PeTomlKeyValueNode >> value [
 
 	^ value
 ]
 
 { #category : #generated }
-PeKeyValueNode >> value: anObject [
+PeTomlKeyValueNode >> value: anObject [
 
 	self setParent: self value to: nil.
 	value := anObject.

@@ -18,13 +18,13 @@ PeTOMLScanner class >> initializeKeywordMap [
 { #category : #generated }
 PeTOMLScanner >> emptySymbolTokenId [
 
-	^ 62
+	^ 66
 ]
 
 { #category : #generated }
 PeTOMLScanner >> errorTokenId [
 
-	^ 63
+	^ 67
 ]
 
 { #category : #generated }

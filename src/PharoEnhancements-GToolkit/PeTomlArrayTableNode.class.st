@@ -1,6 +1,6 @@
 Class {
-	#name : #PeArrayTableNode,
-	#superclass : #PeTomlNode,
+	#name : #PeTomlArrayTableNode,
+	#superclass : #PeTomlParseNode,
 	#instVars : [
 		'leftBracketTokens',
 		'key',
@@ -10,32 +10,32 @@ Class {
 }
 
 { #category : #generated }
-PeArrayTableNode >> acceptVisitor: aTomlVisitor [
+PeTomlArrayTableNode >> acceptVisitor: aParseVisitor [
 
-	^ aTomlVisitor visitArrayTable: self
+	^ aParseVisitor visitArrayTable: self
 ]
 
 { #category : #generated }
-PeArrayTableNode >> compositeTokenVariables [
+PeTomlArrayTableNode >> compositeTokenVariables [
 
 	^ #( #leftBracketTokens #rightBracketTokens )
 ]
 
 { #category : #'generated-initialize-release' }
-PeArrayTableNode >> initialize [
+PeTomlArrayTableNode >> initialize [
 	super initialize.
 	leftBracketTokens := OrderedCollection new: 2.
 	rightBracketTokens := OrderedCollection new: 2.
 ]
 
 { #category : #generated }
-PeArrayTableNode >> key [
+PeTomlArrayTableNode >> key [
 
 	^ key
 ]
 
 { #category : #generated }
-PeArrayTableNode >> key: anObject [
+PeTomlArrayTableNode >> key: anObject [
 
 	self setParent: self key to: nil.
 	key := anObject.
@@ -43,31 +43,31 @@ PeArrayTableNode >> key: anObject [
 ]
 
 { #category : #generated }
-PeArrayTableNode >> leftBracketTokens [
+PeTomlArrayTableNode >> leftBracketTokens [
 
 	^ leftBracketTokens
 ]
 
 { #category : #generated }
-PeArrayTableNode >> leftBracketTokens: anOrderedCollection [
+PeTomlArrayTableNode >> leftBracketTokens: anOrderedCollection [
 
 	leftBracketTokens := anOrderedCollection
 ]
 
 { #category : #generated }
-PeArrayTableNode >> otherVariables [
+PeTomlArrayTableNode >> otherVariables [
 
 	^ #( #key )
 ]
 
 { #category : #generated }
-PeArrayTableNode >> rightBracketTokens [
+PeTomlArrayTableNode >> rightBracketTokens [
 
 	^ rightBracketTokens
 ]
 
 { #category : #generated }
-PeArrayTableNode >> rightBracketTokens: anOrderedCollection [
+PeTomlArrayTableNode >> rightBracketTokens: anOrderedCollection [
 
 	rightBracketTokens := anOrderedCollection
 ]

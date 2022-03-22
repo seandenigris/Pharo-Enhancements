@@ -1,11 +1,11 @@
 Class {
-	#name : #PeTomlNode,
+	#name : #PeTomlParseNode,
 	#superclass : #SmaCCParseNode,
 	#category : #'PharoEnhancements-GToolkit-TOML'
 }
 
 { #category : #generated }
-PeTomlNode >> acceptVisitor: aTomlVisitor [
+PeTomlParseNode >> acceptVisitor: aParseVisitor [
 
-	^ aTomlVisitor visitToml: self
+	^ aParseVisitor visitParse: self
 ]

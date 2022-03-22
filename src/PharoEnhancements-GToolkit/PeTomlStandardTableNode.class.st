@@ -1,6 +1,6 @@
 Class {
-	#name : #PeStandardTableNode,
-	#superclass : #PeTomlNode,
+	#name : #PeTomlStandardTableNode,
+	#superclass : #PeTomlParseNode,
 	#instVars : [
 		'leftBracketToken',
 		'key',
@@ -10,19 +10,19 @@ Class {
 }
 
 { #category : #generated }
-PeStandardTableNode >> acceptVisitor: aTomlVisitor [
+PeTomlStandardTableNode >> acceptVisitor: aParseVisitor [
 
-	^ aTomlVisitor visitStandardTable: self
+	^ aParseVisitor visitStandardTable: self
 ]
 
 { #category : #generated }
-PeStandardTableNode >> key [
+PeTomlStandardTableNode >> key [
 
 	^ key
 ]
 
 { #category : #generated }
-PeStandardTableNode >> key: anObject [
+PeTomlStandardTableNode >> key: anObject [
 
 	self setParent: self key to: nil.
 	key := anObject.
@@ -30,37 +30,37 @@ PeStandardTableNode >> key: anObject [
 ]
 
 { #category : #generated }
-PeStandardTableNode >> leftBracketToken [
+PeTomlStandardTableNode >> leftBracketToken [
 
 	^ leftBracketToken
 ]
 
 { #category : #generated }
-PeStandardTableNode >> leftBracketToken: aSmaCCToken [
+PeTomlStandardTableNode >> leftBracketToken: aSmaCCToken [
 
 	leftBracketToken := aSmaCCToken
 ]
 
 { #category : #generated }
-PeStandardTableNode >> otherVariables [
+PeTomlStandardTableNode >> otherVariables [
 
 	^ #( #key )
 ]
 
 { #category : #generated }
-PeStandardTableNode >> rightBracketToken [
+PeTomlStandardTableNode >> rightBracketToken [
 
 	^ rightBracketToken
 ]
 
 { #category : #generated }
-PeStandardTableNode >> rightBracketToken: aSmaCCToken [
+PeTomlStandardTableNode >> rightBracketToken: aSmaCCToken [
 
 	rightBracketToken := aSmaCCToken
 ]
 
 { #category : #generated }
-PeStandardTableNode >> tokenVariables [
+PeTomlStandardTableNode >> tokenVariables [
 
 	^ #( #leftBracketToken #rightBracketToken )
 ]
