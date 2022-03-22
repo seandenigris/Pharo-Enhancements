@@ -24,6 +24,12 @@ TPeTomlParseNodeVisitor >> visitExpression: anExpression [
 ]
 
 { #category : #generated }
+TPeTomlParseNodeVisitor >> visitKeyValue: aKeyValue [
+
+	^ self visitParse: aKeyValue
+]
+
+{ #category : #generated }
 TPeTomlParseNodeVisitor >> visitParse: aParse [
 
 	^ self visitSmaCCParseNode: aParse

@@ -17,7 +17,7 @@ PeTOMLParser class >> ambiguousTransitions [
 
 { #category : #'generated-accessing' }
 PeTOMLParser class >> cacheId [
-	^'2022-03-21T14:10:09.099867-04:00'
+	^'2022-03-22T10:42:30.117357-04:00'
 ]
 
 { #category : #generated }
@@ -58,7 +58,7 @@ expression : key_value 'keyValue' comment 'comment' | table comment 'comment' | 
 
 comment: <COMMENT>? ;
 
-key_value : key 'key' ""="" value 'value' { key -> value };
+key_value : key 'key' ""="" value 'value' {{}};
 
 key : simple_key | dotted_key;
 
@@ -195,76 +195,76 @@ PeTOMLParser class >> reduceTable [
 ^#(
 	#(33 0 #nil 1089537 false) 
 	#(33 1 #liftFirstValue: 1089538 false) 
-	#(40 1 #reduceActionForbasicString1: 1459201 false) 
-	#(39 1 #reduceActionForbasicString1: 1355777 false) 
-	#(37 1 #reduceActionForunquoted_key1: 1249281 false) 
+	#(40 1 #reduceActionForbasicString1: 1446913 false) 
+	#(39 1 #reduceActionForbasicString1: 1343489 false) 
+	#(37 1 #reduceActionForunquoted_key1: 1236993 false) 
 	#(31 0 #reduceActionFor__NL__expression__expression___1: 942081 false) 
 	#(32 1 #reduceActionForexpression3: 982019 false) 
-	#(35 1 #liftFirstValue: 1173505 false) 
-	#(36 1 #liftFirstValue: 1206274 false) 
-	#(36 1 #liftFirstValue: 1206273 false) 
-	#(38 1 #liftFirstValue: 1308674 false) 
-	#(38 1 #liftFirstValue: 1308673 false) 
-	#(35 1 #liftFirstValue: 1173506 false) 
-	#(60 1 #liftFirstValue: 2701313 false) 
-	#(60 1 #liftFirstValue: 2701314 false) 
+	#(35 1 #liftFirstValue: 1161217 false) 
+	#(36 1 #liftFirstValue: 1193986 false) 
+	#(36 1 #liftFirstValue: 1193985 false) 
+	#(38 1 #liftFirstValue: 1296386 false) 
+	#(38 1 #liftFirstValue: 1296385 false) 
+	#(35 1 #liftFirstValue: 1161218 false) 
+	#(60 1 #liftFirstValue: 2689025 false) 
+	#(60 1 #liftFirstValue: 2689026 false) 
 	#(29 2 #reduceActionFordocument1: 906241 false) 
 	#(32 2 #liftFirstValue: 982017 false) 
-	#(43 1 #liftFirstValue: 1584129 false) 
-	#(41 2 #liftFirstValue: 1559553 false) 
+	#(43 1 #liftFirstValue: 1571841 false) 
+	#(41 2 #liftFirstValue: 1547265 false) 
 	#(32 2 #liftFirstValue: 982018 false) 
-	#(61 3 #reduceActionForstandard_table1: 2742273 false) 
+	#(61 3 #reduceActionForstandard_table1: 2729985 false) 
 	#(31 2 #reduceActionFor__NL__expression__expression___2: 942082 false) 
-	#(56 0 #nil 2640897 false) 
-	#(63 0 #nil 2833409 false) 
-	#(50 1 #reduceActionForbool_1: 2160641 false) 
-	#(47 1 #reduceActionFormlBasicString1: 1890305 false) 
-	#(46 1 #reduceActionFormlBasicString1: 1782785 false) 
-	#(49 1 #liftFirstValue: 2115585 false) 
-	#(49 1 #liftFirstValue: 2115586 false) 
-	#(49 1 #liftFirstValue: 2115587 false) 
-	#(48 1 #reduceActionForinteger1: 1994753 false) 
-	#(48 1 #liftFirstValue: 1994754 false) 
-	#(48 1 #liftFirstValue: 1994755 false) 
-	#(48 1 #liftFirstValue: 1994756 false) 
-	#(51 1 #reduceActionFordate_time1: 2212865 false) 
-	#(51 1 #reduceActionFordate_time1: 2212866 false) 
-	#(51 1 #reduceActionFordate_time3: 2212867 false) 
-	#(51 1 #reduceActionFordate_time4: 2212868 false) 
-	#(45 1 #liftFirstValue: 1708035 false) 
-	#(45 1 #liftFirstValue: 1708033 false) 
+	#(56 0 #nil 2628609 false) 
+	#(63 0 #nil 2821121 false) 
+	#(50 1 #reduceActionForbool_1: 2148353 false) 
+	#(47 1 #reduceActionFormlBasicString1: 1878017 false) 
+	#(46 1 #reduceActionFormlBasicString1: 1770497 false) 
+	#(49 1 #liftFirstValue: 2103297 false) 
+	#(49 1 #liftFirstValue: 2103298 false) 
+	#(49 1 #liftFirstValue: 2103299 false) 
+	#(48 1 #reduceActionForinteger1: 1982465 false) 
+	#(48 1 #liftFirstValue: 1982466 false) 
+	#(48 1 #liftFirstValue: 1982467 false) 
+	#(48 1 #liftFirstValue: 1982468 false) 
+	#(51 1 #reduceActionFordate_time1: 2200577 false) 
+	#(51 1 #reduceActionFordate_time1: 2200578 false) 
+	#(51 1 #reduceActionFordate_time3: 2200579 false) 
+	#(51 1 #reduceActionFordate_time4: 2200580 false) 
+	#(45 1 #liftFirstValue: 1695747 false) 
+	#(45 1 #liftFirstValue: 1695745 false) 
 	#(34 3 #reduceActionForkey_value1: 1113089 false) 
-	#(44 1 #liftFirstValue: 1604609 false) 
-	#(45 1 #liftFirstValue: 1708036 false) 
-	#(45 1 #liftFirstValue: 1708034 false) 
-	#(44 1 #liftFirstValue: 1604610 false) 
-	#(44 1 #liftFirstValue: 1604611 false) 
-	#(44 1 #liftFirstValue: 1604612 false) 
-	#(44 1 #liftFirstValue: 1604613 false) 
-	#(44 1 #liftFirstValue: 1604614 false) 
-	#(44 1 #liftFirstValue: 1604615 false) 
-	#(42 2 #liftSecondValue: 1584129 false) 
-	#(43 2 #liftFirstValue: 1584130 false) 
+	#(44 1 #liftFirstValue: 1592321 false) 
+	#(45 1 #liftFirstValue: 1695748 false) 
+	#(45 1 #liftFirstValue: 1695746 false) 
+	#(44 1 #liftFirstValue: 1592322 false) 
+	#(44 1 #liftFirstValue: 1592323 false) 
+	#(44 1 #liftFirstValue: 1592324 false) 
+	#(44 1 #liftFirstValue: 1592325 false) 
+	#(44 1 #liftFirstValue: 1592326 false) 
+	#(44 1 #liftFirstValue: 1592327 false) 
+	#(42 2 #liftSecondValue: 1571841 false) 
+	#(43 2 #liftFirstValue: 1571842 false) 
 	#(30 2 #reduceActionFor__NL__expression__expression__1: 942081 false) 
-	#(54 1 #liftFirstValue: 2624513 false) 
-	#(63 1 #liftFirstValue: 2833410 false) 
-	#(65 5 #reduceActionForarray_table1: 2997249 false) 
-	#(52 3 #liftSecondValue: 2429953 false) 
-	#(59 0 #nil 2678785 false) 
-	#(55 1 #liftFirstValue: 2640897 false) 
-	#(56 2 #liftFirstValue: 2640898 false) 
-	#(62 3 #liftSecondValue: 2785281 false) 
-	#(52 4 #liftSecondValue: 2429954 false) 
-	#(53 3 #liftFirstValue: 2479106 false) 
-	#(57 1 #liftFirstValue: 2662401 false) 
-	#(55 2 #liftFirstValue: 2640898 false) 
-	#(64 3 #liftFirstValue: 2892801 false) 
-	#(53 4 #liftFirstValue: 2479107 false) 
-	#(58 1 #liftFirstValue: 2678785 false) 
-	#(59 2 #liftFirstValue: 2678786 false) 
-	#(58 2 #liftFirstValue: 2678786 false) 
-	#(64 5 #liftFirstValue: 2892802 false) 
-	#(53 6 #liftFirstValue: 2479105 false)
+	#(54 1 #liftFirstValue: 2612225 false) 
+	#(63 1 #liftFirstValue: 2821122 false) 
+	#(65 5 #reduceActionForarray_table1: 2984961 false) 
+	#(52 3 #liftSecondValue: 2417665 false) 
+	#(59 0 #nil 2666497 false) 
+	#(55 1 #liftFirstValue: 2628609 false) 
+	#(56 2 #liftFirstValue: 2628610 false) 
+	#(62 3 #liftSecondValue: 2772993 false) 
+	#(52 4 #liftSecondValue: 2417666 false) 
+	#(53 3 #liftFirstValue: 2466818 false) 
+	#(57 1 #liftFirstValue: 2650113 false) 
+	#(55 2 #liftFirstValue: 2628610 false) 
+	#(64 3 #liftFirstValue: 2880513 false) 
+	#(53 4 #liftFirstValue: 2466819 false) 
+	#(58 1 #liftFirstValue: 2666497 false) 
+	#(59 2 #liftFirstValue: 2666498 false) 
+	#(58 2 #liftFirstValue: 2666498 false) 
+	#(64 5 #liftFirstValue: 2880514 false) 
+	#(53 6 #liftFirstValue: 2466817 false)
 	).
 ]
 
@@ -311,11 +311,11 @@ PeTOMLParser class >> symbolTypes [
 	     #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken
 	     #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken
 	     #SmaCCToken #SmaCCToken #PeTomlDocumentNode #PeTomlDocumentNode
-	     #OrderedCollection #OrderedCollection #Object #SmaCCToken
+	     #OrderedCollection #OrderedCollection #PeTomlParseNode
+	     #SmaCCToken #PeTomlKeyValueNode #Object #Object #Object #Object
 	     #Object #Object #Object #Object #Object #Object #Object #Object
-	     #Object #Object #Object #Object #Object #Object #Object #SmaCCToken
-	     #Object #Object nil nil nil #SmaCCToken nil nil #SmaCCToken
-	     nil #PeTomlParseNode #PeTomlStandardTableNode
+	     #Object #Object #SmaCCToken #Object #Object nil nil nil #SmaCCToken
+	     nil nil #SmaCCToken nil #PeTomlParseNode #PeTomlStandardTableNode
 	     #Object #Object #Object #PeTomlArrayTableNode
 	     #SmaCCToken #SmaCCErrorNode )
 ]
@@ -498,9 +498,9 @@ PeTOMLParser >> reduceActionFordocument1: nodes [
 
 	| result |
 	result := PeTomlDocumentNode new.
-	result addObject: (nodes at: 1) to: result expressions.
+	result addNode: (nodes at: 1) to: result expressions.
 	result addTokens: ((nodes at: 2) at: 1) to: result nLTokens.
-	result addObjects: ((nodes at: 2) at: 2) to: result expressions.
+	result addNodes: ((nodes at: 2) at: 2) to: result expressions.
 	^ result
 ]
 
@@ -522,7 +522,12 @@ PeTOMLParser >> reduceActionForinteger1: nodes [
 { #category : #'generated-reduction actions' }
 PeTOMLParser >> reduceActionForkey_value1: nodes [
 
-	^ (nodes at: 1) -> (nodes at: 3)
+	| result |
+	result := PeTomlKeyValueNode new.
+	result key: (nodes at: 1).
+	result equalToken: (nodes at: 2).
+	result value: (nodes at: 3).
+	^ result
 ]
 
 { #category : #'generated-reduction actions' }

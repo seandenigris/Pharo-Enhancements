@@ -15,6 +15,12 @@ PeTomlDocumentNode >> acceptVisitor: aParseVisitor [
 ]
 
 { #category : #generated }
+PeTomlDocumentNode >> compositeNodeVariables [
+
+	^ #( #expressions )
+]
+
+{ #category : #generated }
 PeTomlDocumentNode >> compositeTokenVariables [
 
 	^ #( #nLTokens )
@@ -29,9 +35,9 @@ PeTomlDocumentNode >> expressions [
 { #category : #generated }
 PeTomlDocumentNode >> expressions: anOrderedCollection [
 
-	self setParent: self expressions to: nil.
+	self setParents: self expressions to: nil.
 	expressions := anOrderedCollection.
-	self setParent: self expressions to: self
+	self setParents: self expressions to: self
 ]
 
 { #category : #'generated-initialize-release' }
@@ -51,10 +57,4 @@ PeTomlDocumentNode >> nLTokens [
 PeTomlDocumentNode >> nLTokens: anOrderedCollection [
 
 	nLTokens := anOrderedCollection
-]
-
-{ #category : #generated }
-PeTomlDocumentNode >> otherVariables [
-
-	^ #( #expressions )
 ]
