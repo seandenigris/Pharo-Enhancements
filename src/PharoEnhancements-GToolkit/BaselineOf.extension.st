@@ -1,6 +1,15 @@
 Extension { #name : #BaselineOf }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+BaselineOf class >> gitHubComment [
+	| page visitor |
+	page := LePharoClassDatabase uniqueInstance pageNamed: self name.
+	visitor := LeGitHubExporterVisitor new.
+	page acceptVisitor: visitor.
+	^ visitor stream contents
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 BaselineOf class >> gtExamplesFor: aView [
 	<gtView>
 	<gtClassView>

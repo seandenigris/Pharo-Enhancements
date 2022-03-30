@@ -60,10 +60,5 @@ LeGitHubExporterAnnotationVisitor >> writeBehaviorOrMethod: aClassOrMethod annot
 		ifTrue: [ anAnnotation label ]
 		ifFalse: [ aString ].
 
-	self stream
-		nextPut: $[;
-		nextPutAll: label;
-		nextPutAll: '](';
-		nextPutAll: aClassOrMethod gitHubUrl asString;
-		nextPut: $)
+	self stream nextPutAll: aClassOrMethod gitHubMarkdownLink
 ]
