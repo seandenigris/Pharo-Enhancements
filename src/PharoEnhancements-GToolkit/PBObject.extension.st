@@ -53,7 +53,7 @@ PBObject >> __module__ [
 	"The name of the module the function was defined in, or None if unavailable.
 
 	Reference: https://docs.python.org/3/reference/datamodel.html#objects"
-	^ self getAttribute: #__module__
+	^ self getAttribute: #__module__ 
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
@@ -94,6 +94,13 @@ PBObject >> defaultsAttribute [
 PBObject >> dir [
 	^ self newCommandFactory
 		<< (#dir asP3GI callWith: { self });
+		sendAndWait
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+PBObject >> getAttribute: aSymbol [
+	^ self newCommandFactory
+		<< (self => aSymbol);
 		sendAndWait
 ]
 
