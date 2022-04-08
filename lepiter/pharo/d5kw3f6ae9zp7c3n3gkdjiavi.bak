@@ -116,7 +116,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-01T13:00:06.279128-04:00"
+									"dateAndTimeString" : "2022-04-01T12:59:08.020645-04:00"
 								}
 							},
 							"uid" : {
@@ -126,7 +126,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[mpv](https://github.com/mpv-player/mpv#system-requirements) *is* a CLI player with some [external bindings](https://github.com/mpv-player/mpv/wiki/Language-bindings). [python-mpv](https://github.com/jaseg/python-mpv) via PythonBridge sounded perfect and seems to work nicely! For the future, there are apparently [other ways to drive mpv](https://unix.stackexchange.com/a/691380). And here is [the manual](https://mpv.io/manual/master/#synopsis)"
+							"string" : "[mpv](https://github.com/mpv-player/mpv#system-requirements) *is* a CLI player with some [external bindings](https://github.com/mpv-player/mpv/wiki/Language-bindings). [python-mpv](https://github.com/jaseg/python-mpv) sounded perfect and seems to work nicely! For the future, there are apparently [other ways to drive mpv](https://unix.stackexchange.com/a/691380). And here is [the manual](https://mpv.io/manual/master/#synopsis)"
 						}
 					]
 				},

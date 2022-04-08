@@ -3,11 +3,11 @@
 	"__type" : "page",
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "8e8ece0e-7d84-0d00-9b2f-ff340c3334de"
+		"uuid" : "1d444792-7398-0d00-b399-75910cf53a0e"
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Sound"
+		"title" : "Web scraping"
 	},
 	"children" : {
 		"__type" : "snippets",
@@ -26,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.748448-04:00"
+						"dateAndTimeString" : "2022-04-07T11:11:04.702664-04:00"
 					}
 				},
 				"editEmail" : {
@@ -37,17 +37,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-04-01T12:51:30.413231-04:00"
+						"dateAndTimeString" : "2022-04-07T11:11:04.702664-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Iic+D32EDQCbVdGlDDM03g=="
+					"uidString" : "7Eqrn3OYDQCznVJADPU6Dg=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Sound\r## Setup\rLoad PharoSound from the Pharo Project Catalog\r## Beep\r### The Pharo Way\r```language=smalltalk\rSoundSystem soundEnabled: true.\rSoundSystem current beep\r```\r### Another Way (Mac-only)\r```language=smalltalk\rLibC system: 'osascript -e \"beep\"'.\r```\r### Ways not to produce a Beep (work in the Shell, but not in Pharo)\r```language=smalltalk\rLibC system: '/usr/bin/tput bel'.\r```\r```language=smalltalk\rLibC system: 'printf \"\\a\"'.\r```"
+				"string" : ""
 			},
 			{
 				"__type" : "textSnippet",
@@ -68,7 +68,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-01T12:52:01.98603-04:00"
+									"dateAndTimeString" : "2022-04-07T11:08:18.284057-04:00"
 								}
 							},
 							"editEmail" : {
@@ -79,17 +79,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-01T12:54:15.603361-04:00"
+									"dateAndTimeString" : "2022-04-07T11:08:41.942693-04:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "cLvmVPyXDQCV0exqBIpZMQ=="
+								"uidString" : "DSt/lXOYDQCzm5PGDPU6Dg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "IINA is a Mac app based on mpv. It has a CLI, but it appears to be basic, buggy, and unsupported. I found almost no documentation except for [the release notes](https://github.com/iina/iina/releases/tag/v0.0.15). mpv arguments and options seems to only work sometimes."
+							"string" : "Use browser dev tools to snoop on what the browser is actually doing when it loads the dynamic content and duplicate it"
 						},
 						{
 							"__type" : "textSnippet",
@@ -105,7 +105,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-01T12:54:20.136359-04:00"
+									"dateAndTimeString" : "2022-04-07T11:10:02.812243-04:00"
 								}
 							},
 							"editEmail" : {
@@ -116,17 +116,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-01T13:00:06.279128-04:00"
+									"dateAndTimeString" : "2022-04-07T11:10:20.211769-04:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "CuayXfyXDQCV1BksBIpZMQ=="
+								"uidString" : "powul3OYDQCznM+kDPU6Dg=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[mpv](https://github.com/mpv-player/mpv#system-requirements) *is* a CLI player with some [external bindings](https://github.com/mpv-player/mpv/wiki/Language-bindings). [python-mpv](https://github.com/jaseg/python-mpv) via PythonBridge sounded perfect and seems to work nicely! For the future, there are apparently [other ways to drive mpv](https://unix.stackexchange.com/a/691380). And here is [the manual](https://mpv.io/manual/master/#synopsis)"
+							"string" : "Use browser automation e.g. Playwright or Selenium to drive an actual browser"
 						}
 					]
 				},
@@ -138,7 +138,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-04-01T12:51:40.795311-04:00"
+						"dateAndTimeString" : "2022-04-07T11:07:29.302772-04:00"
 					}
 				},
 				"editEmail" : {
@@ -149,17 +149,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-04-01T12:51:47.700056-04:00"
+						"dateAndTimeString" : "2022-04-07T11:09:58.000767-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "rcnUU/yXDQCVz6W4BIpZMQ=="
+					"uidString" : "0klIknOYDQCzmre4DPU6Dg=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Player, In-Image"
+				"string" : "Naive web scraping is easily foiled by dynamic content i.e. javascript. There are two basic strategies to overcome this ([this Mechanize doc](https://mechanize.readthedocs.io/en/latest/faq.html#javascript-is-messing-up-my-web-scraping-what-do-i-do) goes into greater detail:"
 			}
 		]
 	},
@@ -171,7 +171,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T10:02:38.748445-04:00"
+			"dateAndTimeString" : "2022-04-07T11:07:20.043727-04:00"
 		}
 	},
 	"editEmail" : {
@@ -182,7 +182,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T10:02:38.748445-04:00"
+			"dateAndTimeString" : "2022-04-07T11:07:26.534846-04:00"
 		}
 	}
 }
