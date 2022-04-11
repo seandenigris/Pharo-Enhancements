@@ -126,6 +126,19 @@ PBObject >> gtDirFor: aView [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+PBObject >> gtDocFor: aView [
+	<gtView>
+	
+	| doc |
+	doc := self __doc__.
+	doc ifEmpty: [ ^ aView empty ].
+	^ aView text
+		title: 'Doc';
+		priority: 12;
+		text: doc
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 PBObject >> gtPyPrintFor: aView [
 	<gtView>
 	
