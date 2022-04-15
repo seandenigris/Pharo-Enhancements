@@ -1,0 +1,1239 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "9c01268b-ce79-0d00-8103-6b950736410f"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Parsing 2"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:38:38.956115-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:39:53.376512-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "HcglzjQJAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Arbitrary-length predicate matches. In my PP2 fork, see PP2FlexiblePredicateSequenceNode, which lets you do e.g.:\n```smalltalk\nparser := PP2FlexiblePredicateSequenceNode\non: [ :value | Object new respondsTo: value asSymbol ]\nmessage: 'message to an object'\nwhile: [ :e | e ~= Character space ].\n\n(parser parse: 'hash ijk') isPetitFailure not. \n(parser parse: '99 ijk') isPetitFailure.\n```"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:14:23.189876-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:14:35.422718-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "EOmyYpYLAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Add rules to e.g. `PEGParser class>>grammarPEG`"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:09:25.554972-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:14:45.234627-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "9iyPyjXqAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Example: Accept number values in the form \"/d97\" instead of \"\\x000061\"\n```smalltalk\n    '/ BACKSLASH [d] [0-9]+ '\n```\nI first naively tried to extend PEGParserGenerator and PEGParserParser with `Escape: backslash character: character hexes: hexes`, but the above method is just the handler for the rule, akin to PetitParser's ==> block"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:15:54.077262-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:16:24.773736-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "2whfRwLzAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Example: Allow rules to contain dashes (a common practice in the parsing world)\n```smalltalk\n    \"Replace: `Identifier <- [a-zA-Z_] [a-zA-Z0-9_]*` with:\"\n    'Identifier <- [a-zA-Z_] [a-zA-Z0-9_\\-]*'\n```"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:16:27.713146-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:17:56.084593-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "zCoPvyGvAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Example: Allow Brian Ford rule name/definition separator\n```smalltalk\n    \"Replace: `ASSIGN <- \"\"<-\"\"` with:\"\n    'ASSIGN <- \"<-\" / \"=\"'\n```"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:07:57.584579-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:38:13.281771-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "6GtsDzixAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Extend Xtream Grammar"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [
+															{
+																"__type" : "textSnippet",
+																"children" : {
+																	"__type" : "snippets",
+																	"items" : [ ]
+																},
+																"createEmail" : {
+																	"__type" : "email",
+																	"emailString" : "my@email.com"
+																},
+																"createTime" : {
+																	"__type" : "time",
+																	"time" : {
+																		"__type" : "dateAndTime",
+																		"dateAndTimeString" : "2021-03-13T11:02:05.031428-05:00"
+																	}
+																},
+																"editEmail" : {
+																	"__type" : "email",
+																	"emailString" : "my@email.com"
+																},
+																"editTime" : {
+																	"__type" : "time",
+																	"time" : {
+																		"__type" : "dateAndTime",
+																		"dateAndTimeString" : "2021-03-13T11:07:49.696392-05:00"
+																	}
+																},
+																"uid" : {
+																	"__type" : "uid",
+																	"uidString" : "CtVA6A0hAAAAAAAAAAAAAA=="
+																},
+																"paragraphStyle" : {
+																	"__type" : "textStyle"
+																},
+																"string" : "Use `and` and `not`. Let's say you wanted to parse a name fragment that was an optional first name followed by a \"Jr\" or \"Sr\" generational. How do you say \"only match as a first name if it's not a valid generational\"? Here's how:\n```smalltalk\nidentifier := #letter asParser plus flatten. \ngen := 'Jr' asParser / 'Sr' asParser. \nrestricted := gen not, identifier. \nparser := (restricted optional, (#space asParser, gen) \noptional) end. \nparser parse: 'Paul Jr'. \nparser parse: 'Paul'. \nparser parse: 'Jr'. \n```\nHat tip to [[Jan Kurs]] and [[Peter Kenny]] for [the discussion leading up to this solution](http://forum.world.st/PetitParser-Parse-X-as-long-as-it-s-not-Y-tp4958895.html)."
+															}
+														]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T10:59:19.704317-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:01:53.948233-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "E9OH1zDzAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "PetitParser"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T10:59:02.209882-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T10:59:15.828767-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "cQbgL4X/AAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Parse aString as long as it's not anotherString"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:19:38.586164-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:19:46.665418-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "s5dxQlHRAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "##General Parsing"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:20:31.984509-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:21:49.004063-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "dSPybs5vAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Custom node classes: \"XMLHTMLParser is a subclass of XMLDOMParser, which allows the specification \nof a node factory to provide custom handling of nodes.\" - [[Peter Kenny]] via [ML](http://forum.world.st/HTML-Parser-w-custom-nodes-tp4832169p4832204.html)"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:20:26.042774-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:20:27.616081-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "T2j8bWe9AAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "##HTML"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T10:58:56.170522-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T10:58:58.420583-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "VpGylJkqAAAAAAAAAAAAAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Cookbook"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T10:54:37.56469-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:22:25.038965-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "uODaAMO9AAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Consider the following problem:\nGiven:\n```smalltalk\n\tgenerationalPart := (#space asParser, generational) ==> #second. \n\tmiddleName := (#space asParser, (generational not, abbreviatableToken) ==> #second) ==> #second. \n\tlastName := (#space asParser, (generational not, token) ==> #second) ==> #second. \n```\nand \n```smalltalk\n\tinput := 'John Smith Jr'. \n```\nThe following parser fails:\n```smalltalk\n\tabbreviatableToken, middleName optional, lastName, generationalPart optional.\n```\n\nBut this one succeeds: \n```smalltalk\n\t(abbreviatableToken, middleName, lastName, generationalPart optional) / \n(abbreviatableToken, nil asParser, lastName, generationalPart optional)\n```\n\nWhat is the difference?\n\nAs Peter Kenny [explains](http://forum.world.st/PetitParser-Mystery-tp4970341p4970500.html): \"The top-level construct in your parser is PPSequenceParser, which works in a simple-minded way; it just checks whether each of its component parsers succeeds. If one of them fails, the whole sequence fails; it does not try backtracking. (You can see the code at PPSequenceParser>>#parseOn:) In your case, the second component parser, which is 'middleName optional', succeeds, because 'Smith' could be a middle name. The next component, 'lastName', fails because 'Jr' is not a valid last name, but there is no way for the sequence parser to recall that the previous component had an optional element. So the sequence fails. \n\nThe only way to cope with this that I can see is to make the options explicit by using the slash, which does show the parser where to backtrack to. This is what your second parser does. You could limit the scope of the backtracking to avoid re-parsing the first name, by writing something like: \n```smalltalk\n\tfirstName, ((middleName, lastName)/ lasName), generational optional \n```\n(I'm not sure whether the innermost parentheses are necessary, but at least \nthey do no harm.) \n\nThinking about this, I wondered how 'optional' could ever be used except at \nthe end of a sequence. I think the answer is that it works if the optional \ntoken has a format or structure which identifies it uniquely if it does \noccur; in this case, the effect of 'optional' is to say 'forget it if it \ndoesn't occur'.\""
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T10:46:40.985039-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T10:48:02.204941-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "2eVNvCtPAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "##Optional Patterns and Ambiguity"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T10:46:22.775919-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T10:46:27.649421-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HGzpgqdEAAAAAAAAAAAAAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Gotchas"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:41:05.993937-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:44:44.119275-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "XkyRHXXLAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Benefits: Julien Delplanque stays \"on PetitParser for multiple (personal) reasons:\n1. Most important: It costs me nothing, my parser/AST builder work. I have no reason to spend energy on the migration.\n1 bis. I am not aware of any tutorial to migrate from PP1 to PP2\n2. My parser makes heavy uses of dependencies between parsers feature. I have no idea if this still exists in PP2. If I look on PPCompositeNode class-side I do not see the #dependencies method present in PPCompositeParser.\n2 bis. I have no idea what would be the cost to migrate my parser dependencies setup from PP1 to PP2.\n3. I have more confidence in PP1 because it has been widely used by a lot of people for several years (it is only my feeling but, PP2 seems less stable than PP1 to me).\n4. PP2 lacks of documentation on classes (in PetitParser2 package, only 13/92 classes as I look right now).\n\nIf one day I write another parser, I will consider PetitParser2 of course. But for now, I will stick to PetitParser.\" (via [ML](http://forum.world.st/PetitParser-release-v2-1-0-tp5091600p5091664.html))"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:40:35.909111-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:40:49.177822-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "E0Od7c9YAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "PetitParser"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:43:12.666397-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:43:12.666397-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "d6CSv085AAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "PP2 has lots of improvements and extensions, and speedups"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:43:05.896741-05:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "my@email.com"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2021-03-13T11:43:05.896741-05:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "U+ENCX/aAAAAAAAAAAAAAA=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "PP2PEGGrammar for reading grammar files"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:45:36.324958-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:45:42.145969-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "UN/z0XTGAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Benefits"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:42:16.441608-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:42:19.800969-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "qaiEpfq8AAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "PetitParser2"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T11:40:26.861721-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T11:40:32.934722-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "l7eyN920AAAAAAAAAAAAAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Libraries"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T10:38:49.747004-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T10:40:10.649023-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "IGP7hURtAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "\"#memoized is one of the most efficient and hardest optimizations. It cannot be done efficiently in an automated way. It depends on input. Best way is to identify repeated invocation of the same parser combinator at the same position for a typical input, pp2 has a tooling support for this, I wrote a chapter about #memoized in PP2 [1]. PP2 does the poor-man version of memoization (based on grammar analysis) automatically, just by calling #optimize. \n\nIf really needed, provide me with parser and input, I can check and suggest optimizations. \" - [Jan Kurs](http://forum.world.st/Re-vwnc-Parsing-in-Smalltalk-tp5086276p5086356.html)"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T10:38:29.212269-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T11:40:29.338341-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "7pUP2a48AAAAAAAAAAAAAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Optimization"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:33:45.490378-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:34:16.342122-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Wc4LDiUNAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "<http://www.vpri.org/pdf/m2008001_parseback.pdf>. I emailed back and forth with the author and think I even have a relevant image somewhere - maybe Frankenstein?"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:33:34.123863-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:33:38.053834-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ZKAlHFFkAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Parsing in Reverse"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:27:40.894992-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:32:33.503154-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "BU+D9sWQAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "\"From conceptual and practical point of view, OMeta - is not yet another \"system tool\" written for Squeak or another fork, in contrary to XTreams (a generalized stream/iterator framework written in Smalltalk) burned in Pharo. OMeta is a language which allows to simplify an existed tools in it's hosted language (Squeak, Pharo, JavaScript, etc) where it is implemented, while not porting, learning and using another ones, like XTreams. So, redefined tools with OMeta could become really portable and mobile, ready for using in any other fork, even in another language, like JavaScript... I couldn't say better then it is written on the author's site and his paper (<http://www.tinlizzie.org/~awarth/papers/dls07.pdf>), how OMeta goes beyond.\" - [[Nikolay Suslov]] on [ML](http://forum.world.st/Re-Ometa-vs-XTreams-PEG-PetitParser-Helvetia-tp3418056.html)"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:32:13.958759-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "my@email.com"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-03-13T11:33:13.840417-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "hMnCkrQjAAAAAAAAAAAAAA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "\"OMeta is ridiculously cool. You can do source to source translation in some cases, for example, without a pretty printer by running your grammar transformations through backward. I'm not aware of any other system that let's you do that.\n\nThere's a small dilemma here for me. The experimental side of my being that says \"what if?\" loves the idea, bit the professional side of me worries that we'd be solving problems that don't exist in Squeak (I don't hack on the compiler much, or on the Slang code,) but when I punch Cmd-S, my Smalltalk code compiles happily and consistently. Introducing new parsing technology is likely to break stuff, and compilers are complex animals. Yes, I recognize that OMeta could potentially speak to this complexity (it's designed for that.)\n\nActually, I think OMeta's most potentially interesting application in the context of Squeak would be improving Slang. It'd be kind of cool if we could use it to try out new features, etc. Turing completeness and all (compiler people, correct me if I'm wrong here) we might be able to use something like hygenic macros and a little bit of support code (maybe a plugin?) to get, say, closure behavior in Slang. Wouldn't it be cool if Slang got to be so powerful that you didn't need to reach for C to do low level stuff (in any context) anymore?\" - [[Casey Ransberger]] on [ML](http://forum.world.st/Re-Ometa-vs-XTreams-PEG-PetitParser-Helvetia-tp3418056p3418875.html)"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:32:08.971455-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:32:08.971455-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "vvigUjkoAAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "OMeta"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:23:14.446793-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "my@email.com"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-03-13T11:27:32.450474-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "3RN4p7i4AAAAAAAAAAAAAA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Web scraping: \"[N]ow that I've played with [custom HTML node classes], I realize that most of the web scraping use cases that I've encountered seem like they could really benefit from a PetitParser style tool, where one could specify the output for each rule (e.g. `dataRowRule ==> [ \"code translating the node/element into a domain object\" ]`, and so parse the markup directly to domain objects...\" - [[Sean]] on [ML](http://forum.world.st/HTML-Parser-w-custom-nodes-tp4832169p4832257.html)"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T11:22:28.532575-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "my@email.com"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-03-13T11:22:51.802786-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xbEG37UOAAAAAAAAAAAAAA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Research"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "my@email.com"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-03-13T10:38:21.98633-05:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2022-04-15T11:24:32.289746-04:00"
+		}
+	}
+}

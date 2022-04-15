@@ -95,7 +95,356 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [ ]
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:16:35.379254-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:18:25.583563-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "bgQcohSZDQCl6fhwCBnETA=="
+													},
+													"code" : "[\r\t[\r\t\t\"0.1 & 0.2 second waits seemed to produce frequent hangs, but not sure of cause\"\r\t\t0.3 seconds asDelay wait.\r\t\tjs := SuJSScript new\r\t\t\ttemplate: 'document.querySelector(\"video\") == null';\r\t\tyourself.\r\t\tnoVideo := CwSafari reference doJavascript: js ] whileTrue.\r\tApplescript \r\t\ttell: 'System Events'\r\t\tto: 'click at {100, 200}'.\r\tCwSafari exampleVideoSpeedDouble ]\r\t\tvalueWithin: 1 minute onTimeout: []."
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-04-15T11:16:49.930772-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-04-15T11:18:17.818274-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "T7WaohSZDQCl6q5sCBnETA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Example using Mac System Events via AppleScript to wait for UI condition. NB. the coordinates are hardcoded because there is apparently no way to translate JS client coordinates to screen coordinates"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:02.501337-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:20.512065-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "7fkHshSZDQCl8oNbCBnETA=="
+													},
+													"code" : "buttonRect := 'document.querySelector(\"button[title=''Play'']\").getBoundingClientRect()'"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:21.025516-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:30.444634-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "AaIisxSZDQCl9dRqCBnETA=="
+													},
+													"code" : "buttonTop := CwSafari reference doJavascript: buttonRect, '.top'"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:22.655825-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:35.529607-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "cII7sxSZDQCl9+HiCBnETA=="
+													},
+													"code" : "buttonHeight := CwSafari reference doJavascript: buttonRect, '.height'"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:23.313111-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:40.522897-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "BYpFsxSZDQCl+eQ6CBnETA=="
+													},
+													"code" : "buttonCenterY := buttonTop + (buttonHeight / 2) \"slightly too big, presumably due to window toolbar(s), but doesn't match up with offset below...\""
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:23.985207-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:46.067077-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "TstPsxSZDQCl+rs/CBnETA=="
+													},
+													"code" : "ih := CwSafari reference doJavascript: 'window.innerHeight'"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:21:24.536084-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:22:25.449909-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "JTNYsxSZDQCl+zrOCBnETA=="
+													},
+													"code" : "oh := CwSafari reference doJavascript: 'window.outerHeight'"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:22:25.870393-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-04-15T11:22:26.84038-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "VhYAtxSZDQCmAExlCBnETA=="
+													},
+													"code" : "oh - ih \"Bizzarely big number\""
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2021-07-16T22:12:06.19393-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-04-15T11:20:29.025536-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "08KW96mDDQCcWoT2AX2EtA=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Experiment to find video play button failed due to apparent impossibility of converting client coordinates to screen coordinates"
+									}
+								]
 							},
 							"createEmail" : {
 								"__type" : "email",
