@@ -3,14 +3,10 @@ Class {
 	#superclass : #PBCommandFactory,
 	#instVars : [
 		'statements',
-		'resultAssignment'
+		'resultVariableName'
 	],
 	#category : #'PharoEnhancements-GToolkit'
 }
-
-{ #category : #accessing }
-PBCommandSourceFactory >> assignLastStatement [
-]
 
 { #category : #accessing }
 PBCommandSourceFactory >> bindings: convertibleToDictionary [
@@ -22,18 +18,23 @@ PBCommandSourceFactory >> bindings: convertibleToDictionary [
 { #category : #accessing }
 PBCommandSourceFactory >> buildCommand [
 
-	resultAssignment ifNotNil: [ 
+	self resultVariableName ifNotNil: [ 
 		| lastStatement |
 		lastStatement := statements last.
-		lastStatement string: resultAssignment, ' = ', lastStatement string. ].
+		lastStatement string: self resultVariableName, ' = ', lastStatement string. ].
 	
 	statements do: [ :statement | self << statement ].
 	^ super buildCommand
 ]
 
 { #category : #accessing }
-PBCommandSourceFactory >> resultAssignment: aSymbol [
-	resultAssignment := aSymbol
+PBCommandSourceFactory >> resultVariableName [
+	^ resultVariableName
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> resultVariableName: aSymbol [
+	resultVariableName := aSymbol
 ]
 
 { #category : #accessing }
@@ -47,4 +48,9 @@ PBCommandSourceFactory >> template: aString format: convertibleToDictionary [
 	| filled |
 	filled := aString format: convertibleToDictionary asDictionary.
 	self source: filled
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> useRandomVariableName [
+	self resultVariableName: 'st', UUIDGenerator next asString36
 ]
