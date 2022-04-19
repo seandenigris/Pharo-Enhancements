@@ -1,6 +1,11 @@
 Extension { #name : #PBApplication }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+PBApplication >> newCommandSourceFactory [
+	^ self executionHandler newCommandSourceFactory
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 PBApplication >> sendSource: aString withBindings: convertibleToDictionary [
 	
 	| statements commandFactory |

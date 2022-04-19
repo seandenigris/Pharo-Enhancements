@@ -150,6 +150,12 @@ PBObject >> gtPyPrintFor: aView [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+PBObject >> newCommandSourceFactory [
+
+	^ self application newCommandSourceFactory
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 PBObject >> pythonID [
 	^ self newCommandFactory
 		<< (#id asP3GI callWith: { self });
