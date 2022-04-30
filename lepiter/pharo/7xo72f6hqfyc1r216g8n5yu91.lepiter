@@ -1,0 +1,616 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "a52ee42b-4a84-0d00-bcb9-464c08910986"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Fuel Migration"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T10:54:32.702407-07:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T11:49:05.758978-07:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "plVllkSaDQCWm4PHDJk4ww=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The first step is to make sure the loaded Fuel version matches that of the data you want to materialize. Fuel 1.9.4 seems to be a likely starting point for older data. It can be loaded with minimal fixing in Pharo 8, but doesn't seem to load in Pharo 9 (even after adding platform attribute in both places of error):"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T11:31:56.376856-07:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T11:48:58.984164-07:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Qd9aHEWaDQCWo3rlDJk4ww=="
+				},
+				"code" : "Metacello new\n    repository: 'http://smalltalkhub.com/mc/Pharo/Fuel/main';\n    configuration: 'Fuel';\r    version: '1.9.4';\r    onConflict: #useIncoming;\n    load."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T11:43:00.327661-07:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T11:44:39.00098-07:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ibHdQ0WaDQCWpi2qDJk4ww=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "You'll then have to make edit `FLWordObjectCluster>>#materializeInstanceWith:`, changing `Smalltalk isBigEndian` to `EndianDetector isBigEndian asBit` ([per Max Leske](https://github.com/theseion/Fuel/issues/261#issuecomment-1004652920)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T11:45:08.289833-07:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T11:46:57.034275-07:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "wh1hS0WaDQCWpxEUDJk4ww=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "That might be enough,  but if you get an error saying \"SmallFloat64s can only be created by performing arithmetic\", compile the following ([via Fuel issue](https://github.com/theseion/Fuel/issues/224)):\n```smalltalk\nFloat class>>#materializeFrom: aDecoder\n    ^ (BoxedFloat64 new: 2)\n        at: 1 put: aDecoder nextEncodedUint32;\n        at: 2 put: aDecoder nextEncodedUint32;\n        * 1.\n```"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T11:47:33.943099-07:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T11:49:34.98075-07:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "v9/xU0WaDQCWqsgPDJk4ww=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you're on Pharo 8 to rescue version 1.9.4 data, there are a few issues you may need to address to get Fuel working, which were originally fleshed out in [a fuel issue](https://github.com/theseion/Fuel/issues/261), and are condensed here."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:20:22.2362-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-04-30T10:56:04.780809-07:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TJxzLUqEDQC8vCKwCJEJhg=="
+				},
+				"code" : "inputFileName := 'QuoteMeDB.72'.\rinputFile := FileLocator dynabookData / 'QuoteMeDB' / inputFileName."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:20:54.329945-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:20:54.331072-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "elJdL0qEDQC8vnxMCJEJhg=="
+							},
+							"code" : "data := (FLMaterializer materializeFromFileNamed: inputFile fullName) first."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:20:28.473556-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:20:51.031027-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "DNPDLUqEDQC8vXe2CJEJhg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you get lucky and class names haven't changed, you can do this:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:21:50.413966-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:21:51.701534-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "xRi1MkqEDQC8wCduCJEJhg=="
+							},
+							"code" : "str := File openForReadFileNamed: inputFile fullName.\rdata := (FLMaterializer newDefault\r\tmigrateClassNamed: #LivingLibrary toClass: LlLibrary;\r\tmigrateClassNamed: #WrittenWork toClass: LlAuthoredWork;\r\tmigrateClassNamed: #RlWebResource toClass: LlWebResource;\r\tmigrateClassNamed: #RlPhysicalResource toClass: LlPhysicalResource;\r\tmigrateClassNamed: #Presentation toClass: LlPresentation;\r\tmigrateClassNamed: #RlDVD toClass: LlDVD;\r\tmaterializeFrom: str) root."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:21:12.544065-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:21:44.790191-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1p5HMEqEDQC8v5ahCJEJhg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Otherwise, you'll have to configure the materializer. Note the stream creation, which is how it must be done in P7. P8 and later can use FS."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:22:20.846386-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:22:20.847697-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "XXWFNEqEDQC8wlDaCJEJhg=="
+							},
+							"code" : "Metacello new\r    repository: 'github://theseion/Fuel:3.0.0/repository';\r    baseline: 'Fuel';\r    load."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:21:57.777997-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:22:11.377152-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ElL1MkqEDQC8wbVHCJEJhg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Now upgrade Fuel to match the target image version"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:22:41.731742-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T10:57:03.642723-07:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "xSTENUqEDQC8xIiICJEJhg=="
+							},
+							"code" : "FLSerializer serialize: data toFileNamed: FileLocator documents / '.fuel-upgraded'."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:22:29.225102-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:22:33.078693-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "8CrbNEqEDQC8w1E1CJEJhg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "And then serialize:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-24T21:20:03.532824-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-04-30T10:57:41.096992-07:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "PjhWLEqEDQC8u2vECJEJhg=="
+							},
+							"code" : "(FileLocator documents / inputFileName, 'ston') ensureCreateFile writeStreamDo: [ :str |\rSTON put: data onStream: str ]"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:23:05.934921-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-24T21:23:20.500049-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "UQicNkqEDQC8xbOxCJEJhg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Another option is STON, but it can't handle class renames:"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-24T21:19:56.059441-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-24T21:19:56.059441-04:00"
+		}
+	}
+}
