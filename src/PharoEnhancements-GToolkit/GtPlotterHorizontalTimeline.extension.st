@@ -10,8 +10,11 @@ GtPlotterHorizontalTimeline >> createProjections: aCollectionOfDomainObjects [
 		constraintsDo: [ :c | c vertical matchParent. ];
 		hideOverlapping;
 		valueElement: [ :aGtPlotterSingleScaleContext |
+			| domainObject |
+			domainObject := aGtPlotterSingleScaleContext originalValue.
 			BlElement new
 				layout: (BlLinearLayout vertical alignCenter);
+				addEventHandlerOn: BlClickEvent do: [ :evt | evt currentTarget phlow spawnObject: domainObject ];
 				constraintsDo: [ :c |
 					c vertical matchParent.
 					c horizontal fitContent ];
@@ -39,10 +42,13 @@ GtPlotterHorizontalTimeline >> createTimelineDots: aCollectionOfDomainObjects [
 		x: [ :each | 0.5 ];
 		y: timelineDataBlock;
 		constraintsDo: [ :c | c vertical fitContent ];
-		markerStyle: [ :anElement |
+		markerStyle: [ :anElement :scale |
+			| domainObject |
+			domainObject := scale originalValue.
 			anElement
 				size: 10@10;
 				border: (BlBorder paint: Color black width: 2);
-				background: Color black ];
+				background: Color black;
+				addEventHandlerOn: BlClickEvent do: [ :evt | evt currentTarget phlow spawnObject: domainObject ] ];
 		values: aCollectionOfDomainObjects
 ]
