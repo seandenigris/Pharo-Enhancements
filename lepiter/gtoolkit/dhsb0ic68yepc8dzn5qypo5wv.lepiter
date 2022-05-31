@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ef946d37-c790-0d00-af1d-c96a0452eee3"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Spotter"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -309,6 +317,43 @@
 											"__type" : "textStyle"
 										},
 										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a non-Spotter adaptation that shows how to close the dropdown programmatically"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-05-31T15:37:13.501442-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-05-31T15:38:30.173981-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "GsYmCoucDQCAI/oHDmfjkw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown programmatically "
 									}
 								]
 							},
@@ -399,13 +444,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-12-30T18:33:24.51279-05:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Spotter"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "ef946d37-c790-0d00-af1d-c96a0452eee3"
 	}
 }
