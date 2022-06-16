@@ -100,7 +100,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:12:29.826174-05:00"
+						"dateAndTimeString" : "2022-06-15T10:43:33.658544-04:00"
 					}
 				},
 				"editEmail" : {
@@ -111,54 +111,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:13:06.262418-05:00"
+						"dateAndTimeString" : "2022-06-15T10:44:06.578384-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "pgTVc0OSDQC7day8ArCyow=="
+					"uidString" : "WKo5SN+dDQCdXTjQBiNVbg=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Overriding a Single Subclass Processor"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:13:18.898328-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:29:15.59163-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "iuQJeUOSDQC7elm2ArCyow=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "Don't include the `<gtSearch>` pragma whto avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see [My People's](https://github.com/SeanDeNigris/My-People) {{gtMethod:MpAddressBook>>#gtGtSpotterForPeopleFor:}} which overrides {{gtMethod:GtABAddressBook>>#gtGtSpotterForPeopleFor:}}"
+				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552))"
 			},
 			{
 				"__type" : "textSnippet",
@@ -420,6 +383,80 @@
 					"__type" : "textStyle"
 				},
 				"string" : "#Dropdowns"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:12:29.826174-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:13:06.262418-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "pgTVc0OSDQC7day8ArCyow=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Overriding a Single Subclass Processor"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-01-18T16:13:18.898328-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-06-15T10:30:34.065621-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "iuQJeUOSDQC7elm2ArCyow=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Don't include the `<gtSearch>` pragma to avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see [My People's](https://github.com/SeanDeNigris/My-People) {{gtMethod:MpAddressBook>>#gtGtSpotterForPeopleFor:}} which overrides {{gtMethod:GtABAddressBook>>#gtGtSpotterForPeopleFor:}}"
 			}
 		]
 	},
