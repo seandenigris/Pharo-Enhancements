@@ -69,7 +69,7 @@ PeCharacterDiff >> text [
 	string := String streamContents: [ :str |
 	self characters do: [ :e |
 		str << e character ] ].
-	text := BlRopedText string: string.
+	text := BlRunRopedText string: string.
 	self characters doWithIndex: [ :e :i | 
 		(text from: i to: i)
     		attributes: e textAttributes ].
