@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'characters'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Diffing'
 }
 
 { #category : #accessing }

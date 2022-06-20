@@ -5,7 +5,7 @@ Class {
 		'statements',
 		'resultVariableName'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Python'
 }
 
 { #category : #accessing }

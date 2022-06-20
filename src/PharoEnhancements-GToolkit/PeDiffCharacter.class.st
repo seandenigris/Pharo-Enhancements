@@ -5,7 +5,7 @@ Class {
 		'status',
 		'character'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Diffing'
 }
 
 { #category : #accessing }

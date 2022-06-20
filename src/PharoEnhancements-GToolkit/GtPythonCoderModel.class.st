@@ -6,7 +6,7 @@ Class {
 		'pharoBindings',
 		'selfObject'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : #'PharoEnhancements-GToolkit-Python'
 }
 
 { #category : #converting }
