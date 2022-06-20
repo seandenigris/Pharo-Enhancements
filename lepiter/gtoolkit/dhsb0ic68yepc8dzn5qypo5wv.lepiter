@@ -269,7 +269,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-01-14T14:26:22.323891-05:00"
+												"dateAndTimeString" : "2022-06-20T09:39:30.526959-04:00"
 											}
 										},
 										"uid" : {
@@ -279,7 +279,44 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a non-Spotter adaptation that shows how to close the dropdown programmatically"
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a date picker (non-Spotter) adaptation that presents a calendar widget"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-06-16T21:16:08.155896-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-06-20T09:39:47.983679-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "KTlqPPydDQCqrIABAnzIdw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown in response to click events "
 									},
 									{
 										"__type" : "textSnippet",
@@ -306,7 +343,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-05-31T15:38:30.173981-04:00"
+												"dateAndTimeString" : "2022-06-20T09:40:56.559789-04:00"
 											}
 										},
 										"uid" : {
@@ -316,7 +353,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown programmatically "
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:OlObjectCompletionResult>>#newSpotterElementFor:}} is a Spotter that is opened by default, which requires an enqueued action on an element already in the scene"
 									}
 								]
 							},

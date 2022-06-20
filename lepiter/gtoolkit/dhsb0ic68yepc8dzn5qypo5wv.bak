@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-06-15T10:43:51.815164-04:00"
+						"dateAndTimeString" : "2022-06-15T10:44:06.578384-04:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba via"
+				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552))"
 			},
 			{
 				"__type" : "textSnippet",
@@ -295,6 +295,43 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-06-16T21:16:08.155896-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-06-16T21:16:08.155896-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "KTlqPPydDQCqrIABAnzIdw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown programmatically "
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
 												"dateAndTimeString" : "2022-05-31T15:37:13.501442-04:00"
 											}
 										},
@@ -306,7 +343,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-05-31T15:38:30.173981-04:00"
+												"dateAndTimeString" : "2022-06-16T21:16:18.612264-04:00"
 											}
 										},
 										"uid" : {
@@ -316,7 +353,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown programmatically "
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:OlObjectCompletionResult>>#newSpotterElementFor:}} is a Spotter that is opened by default, which requires an enqueued action on an element already in the scen"
 									}
 								]
 							},
