@@ -47,3 +47,17 @@ Object >> peGtActionPickUpFor: anAction [
 
 	"The reason I have this method (vs. declaring an MAAction) is to prevent a dependency to Magritte"
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+Object class >> peGtSpotterNewInstanceFor: aStep [
+	^ aStep listProcessor
+		title: 'New ', self name;
+		priority: 50;
+		itemName: [ :input | 'New ', self name, ': ', input ];
+		previewObject: [ :input | self fromString: input ];
+		wantsToDisplayOnEmptyQuery: false;
+		filter: GtNullFilter
+			item: [ :filter :aContext | 
+				filter value: aContext textTrimmed ];
+		send: [ :input :spotterStep | self fromString: input ]
+]
