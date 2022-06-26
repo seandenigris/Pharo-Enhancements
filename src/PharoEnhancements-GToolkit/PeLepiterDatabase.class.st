@@ -210,7 +210,10 @@ PeLepiterDatabase >> load [
 
 { #category : #accessing }
 PeLepiterDatabase >> name [
-	^ name
+	| realDB |
+	realDB := self class databaseAt: folder.
+	realDB ifNil: [ ^ name ].
+	^ realDB properties databaseName ifNil: [ ^ name ]
 ]
 
 { #category : #accessing }
