@@ -77,16 +77,16 @@ PeLepiterProject class >> fromBaseline: aBaselineOf [
 { #category : #views }
 PeLepiterProject class >> gtViewDashboardOn: aView [
 	<gtClassView>
-	^ self gtViewDatabases: (self all flatCollect: #databases) on: aView
+	^ self gtViewDatabases: [ self all flatCollect: #databases ] on: aView
 ]
 
 { #category : #views }
-PeLepiterProject class >> gtViewDatabases: aCollection on: aView [
+PeLepiterProject class >> gtViewDatabases: aValuable on: aView [
 	
 	^ aView columnedList
 		title: 'Databases' translated;
 		priority: 80;
-		items: [ aCollection ];
+		items: aValuable;
 		column: 'Status' 
 			icon: [ :p | p statusIcon ]
 			width: 75;
@@ -110,16 +110,28 @@ PeLepiterProject >> databaseRootFolder: folder [
 
 { #category : #accessing }
 PeLepiterProject >> databases [
-	| dbFolders defaultDB shouldIncludeDefaultDB dbs isDBFolder |
+	| dbFolders defaultDB shouldIncludeDefaultDB dbs isDBFolder defaultDBFolder |
 	
 	isDBFolder := [ :folder | folder files anySatisfy: [ :file | file basename = 'lepiter.properties' ] ].
 	
 	"FS is resolution happy so we have to jump through hoops to unresolve"
 	dbFolders := self databaseRootFolder exists
-		ifTrue: [ self databaseRootFolder allDirectories asOrderedCollection select: [ :folder | folder ~= self databaseRootFolder asFileReference and: [ isDBFolder value: folder ] ] ]
+		ifTrue: [ 
+			| candidates |
+			"Convert to OrderedCollection now, so one will be returned by select below"
+			candidates := self databaseRootFolder allDirectories asOrderedCollection.
+			candidates select: [ :folder | 
+				folder ~= self databaseRootFolder asFileReference 
+					and: [ isDBFolder value: folder ] ] ]
 		ifFalse: [ OrderedCollection new ].
 	
-	defaultDB := (self newDatabaseAt: self databaseRootFolder)
+	defaultDBFolder := dbFolders
+		ifEmpty: [ self databaseRootFolder ] 
+		ifNotEmpty: [ 
+			"Nest if there are multiple DBs due to GT limitation"
+			self databaseRootFolder / 'default' ].
+	
+	defaultDB := (self newDatabaseAt: defaultDBFolder)
 		name: self name;
 		yourself.
 		
@@ -129,7 +141,7 @@ PeLepiterProject >> databases [
 			yourself ].
 	
 	"We have to exclude the special case of Lepiter's default location, where the repo location and DB root are the same"
-	shouldIncludeDefaultDB := (defaultDB folder exists and: [ defaultDB folder asFileReference ~= self repositoryLocation asFileReference ]) or: [ dbFolders isEmpty ].
+	shouldIncludeDefaultDB := (defaultDB folder exists and: [ defaultDB folder asFileReference ~= self repositoryLocation asFileReference and: [ (dbs includes: defaultDB) not ] ]) or: [ dbFolders isEmpty ].
 	shouldIncludeDefaultDB ifTrue: [ dbs add: defaultDB ].
 			
 	^ dbs
@@ -138,7 +150,7 @@ PeLepiterProject >> databases [
 { #category : #views }
 PeLepiterProject >> gtViewDashboardOn: aView [
 	<gtView>
-	^ self class gtViewDatabases: self databases on: aView
+	^ self class gtViewDatabases: [ self databases ] on: aView
 ]
 
 { #category : #testing }

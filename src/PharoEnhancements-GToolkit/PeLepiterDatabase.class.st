@@ -73,6 +73,12 @@ PeLepiterDatabase class >> reloadAll [
 		reload
 ]
 
+{ #category : #comparing }
+PeLepiterDatabase >> = rhs [
+	self species = rhs species ifFalse: [ ^ false ].
+	^ self folder asFileReference = rhs folder asFileReference
+]
+
 { #category : #accessing }
 PeLepiterDatabase >> actionButtons [
 	| result |
@@ -185,6 +191,11 @@ PeLepiterDatabase >> hasUntracked [
 	
 	cmd := 'cd "' , self repositoryLocation fullName , '"; ' , untrackedCmd.
 	^ (LibC resultOfCommand: cmd) isNotEmpty.
+]
+
+{ #category : #comparing }
+PeLepiterDatabase >> hash [
+	^ self folder hash
 ]
 
 { #category : #accessing }
