@@ -31,10 +31,8 @@ PeLepiterProject class >> all [
 
 { #category : #'instance creation' }
 PeLepiterProject class >> allFromBaseline: aBaselineOf [
-	| repoRoot lepiterFolder |
+	| repoRoot |
 	repoRoot := aBaselineOf iceRepository location.
-	lepiterFolder := repoRoot / 'lepiter'.
-	lepiterFolder allDirectories.
 	
 	^ self new
 		name: (aBaselineOf name allButFirst: 'BaselineOf' size);
