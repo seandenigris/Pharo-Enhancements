@@ -62,7 +62,9 @@ LeGitHubExporterTextSnippetVisitor >> visitDocumenterAnnotation: aDocumenterAnno
 
 { #category : #generated }
 LeGitHubExporterTextSnippetVisitor >> visitHeader: aHeader [
-	self stream nextPutAll: aHeader source
+	aHeader headerLevel timesRepeat: [ self stream nextPut: $# ].
+	self stream space.
+	aHeader parts do: [ :part | self stream nextPutAll: part source ]
 ]
 
 { #category : #generated }
