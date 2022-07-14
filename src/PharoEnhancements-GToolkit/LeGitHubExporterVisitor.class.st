@@ -7,7 +7,8 @@ Class {
 		'stream',
 		'level',
 		'externalPicturesWriter',
-		'isOutline'
+		'isOutline',
+		'shouldIncludeTitle'
 	],
 	#category : #'PharoEnhancements-GToolkit-Lepiter-Exporting'
 }
@@ -39,6 +40,17 @@ LeGitHubExporterVisitor >> level: anObject [
 { #category : #visiting }
 LeGitHubExporterVisitor >> newLine [
 	^ Character cr asString
+]
+
+{ #category : #accessing }
+LeGitHubExporterVisitor >> shouldIncludeTitle [
+
+	^ shouldIncludeTitle ifNil: [ true ]
+]
+
+{ #category : #accessing }
+LeGitHubExporterVisitor >> shouldIncludeTitle: aBoolean [
+	shouldIncludeTitle := aBoolean
 ]
 
 { #category : #accessing }
@@ -74,7 +86,7 @@ LeGitHubExporterVisitor >> visitGitHubIssueSnippet: aLeGitHubIssueSnippet [
 { #category : #visiting }
 LeGitHubExporterVisitor >> visitPage: aLePage [
 
-	aLePage hasTitle ifTrue:
+	(aLePage hasTitle and: [ self shouldIncludeTitle ]) ifTrue:
 		[ self stream 
 			<< '# ';
 			<< aLePage title;

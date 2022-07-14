@@ -4,7 +4,9 @@ Extension { #name : #BaselineOf }
 BaselineOf class >> gitHubComment [
 	| page visitor |
 	page := LePharoClassDatabase uniqueInstance pageNamed: self name.
-	visitor := LeGitHubExporterVisitor new.
+	visitor := LeGitHubExporterVisitor new
+		shouldIncludeTitle: false;
+		yourself.
 	page acceptVisitor: visitor.
 	^ visitor stream contents
 ]
