@@ -11,6 +11,15 @@ Class {
 }
 
 { #category : #accessing }
+PP2DateParser class >> exampleMonthName [
+	<gtExample>
+	^ self
+		given: [ 'March 14, 2022' ]
+		when: [ :input | self parse: input ]
+		then: [ :result | result should equal: '3/14/2022' asDate ]
+]
+
+{ #category : #accessing }
 PP2DateParser >> mmddyyyy [
 	| separator |
 	separator := $/ asPParser.
@@ -40,4 +49,9 @@ PP2DateParser >> upToFourDigits [
 { #category : #accessing }
 PP2DateParser >> upToTwoDigits [
 	^ self upToDigits: 2
+]
+
+{ #category : #accessing }
+PP2DateParser >> whitespace [
+	^ Character tab asPParser / Character space asPParser
 ]
