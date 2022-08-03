@@ -26,7 +26,7 @@ PP2DateParserTest >> parse: input rule: aSymbol [
 { #category : #tests }
 PP2DateParserTest >> parse: input rule: aSymbol do: aBlock [ 
 	| parser |
-	parser := PP2DateParser new perform: aSymbol.
+	parser := Date pp2Parser perform: aSymbol.
 	result := parser end parse: input.
 	aBlock value
 ]
