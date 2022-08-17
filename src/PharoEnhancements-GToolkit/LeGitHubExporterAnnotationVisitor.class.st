@@ -43,7 +43,7 @@ LeGitHubExporterAnnotationVisitor >> visitMethodAnnotation: aMethodAnnotation [
 { #category : #generated }
 LeGitHubExporterAnnotationVisitor >> writeBehaviorOrMethod: aClassOrMethod annotation: anAnnotation string: aString [
 
-	| destination label |
+	| label |
 	(anAnnotation doesReferenceExist not or: [ aClassOrMethod package peIceRepository isNil ]) ifTrue: [
 		self stream
 			<< $`
