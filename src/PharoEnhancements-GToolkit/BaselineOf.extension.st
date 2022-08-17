@@ -29,6 +29,18 @@ BaselineOf class >> lepiter [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+BaselineOf class >> loadGtIconFromRepositoryPath: aString [
+	"aString - partial path from repository root folder"
+	
+	| result iconFile |
+	iconFile := self iceRepository location / aString.
+	result := ImageReadWriter formFromFileNamed: iconFile.
+	^ result asElement asScalableElement
+		size: 16 @ 16;
+		yourself
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 BaselineOf class >> loadLepiterDocumentation [
 	self lepiter databases do: #load
 ]
