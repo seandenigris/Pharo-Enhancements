@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-06-15T10:44:06.578384-04:00"
+						"dateAndTimeString" : "2022-08-25T17:23:51.164086-04:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552))"
+				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552)). But you can't just stick this in a processor, as I found out and [reported on GT Discord](https://discord.com/channels/729445214812504107/736333725788274819/1009874320706764851). {{gtPage:Debugging exceptions in Spotter processors|db=2j9m7db2i4oz116bexd7wbdxo}} in the GT Book explained the proper workflow."
 			},
 			{
 				"__type" : "textSnippet",

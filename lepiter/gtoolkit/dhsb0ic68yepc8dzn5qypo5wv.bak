@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-06-15T10:44:06.578384-04:00"
+						"dateAndTimeString" : "2022-08-25T17:23:47.767479-04:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552))"
+				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552)). But you can't just stick this in a processor, as I found out and [reported on GT Discord](https://discord.com/channels/729445214812504107/736333725788274819/1009874320706764851). {{gtPage:Debugging exceptions in Spotter processors|db=2j9m7db2i4oz116bexd7wbdxo}} in the GT Book explained the proper wor"
 			},
 			{
 				"__type" : "textSnippet",
@@ -269,7 +269,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-01-14T14:26:22.323891-05:00"
+												"dateAndTimeString" : "2022-06-20T09:39:30.526959-04:00"
 											}
 										},
 										"uid" : {
@@ -279,7 +279,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a non-Spotter adaptation that shows how to close the dropdown programmatically"
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MAElementBuilder>>#visitDateDescription:}} is a date picker (non-Spotter) adaptation that presents a calendar widget"
 									},
 									{
 										"__type" : "textSnippet",
@@ -306,7 +306,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-06-16T21:16:08.155896-04:00"
+												"dateAndTimeString" : "2022-06-20T09:39:47.983679-04:00"
 											}
 										},
 										"uid" : {
@@ -316,7 +316,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown programmatically "
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:MATokenElement>>#initialize}} is a non-Spotter adaptation that shows how to show the dropdown in response to click events "
 									},
 									{
 										"__type" : "textSnippet",
@@ -343,7 +343,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-06-16T21:16:18.612264-04:00"
+												"dateAndTimeString" : "2022-06-20T09:40:56.559789-04:00"
 											}
 										},
 										"uid" : {
@@ -353,7 +353,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:OlObjectCompletionResult>>#newSpotterElementFor:}} is a Spotter that is opened by default, which requires an enqueued action on an element already in the scen"
+										"string" : "[Magritte](https://github.com/magritte-metamodel/Magritte)'s {{gtMethod:OlObjectCompletionResult>>#newSpotterElementFor:}} is a Spotter that is opened by default, which requires an enqueued action on an element already in the scene"
 									}
 								]
 							},

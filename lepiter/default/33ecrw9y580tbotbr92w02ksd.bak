@@ -74,7 +74,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-04-07T10:58:32.434367-04:00"
+						"dateAndTimeString" : "2022-04-07T10:58:46.919883-04:00"
 					}
 				},
 				"uid" : {
@@ -84,7 +84,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[[ptyh"
+				"string" : "[[python publishing]]"
 			},
 			{
 				"__type" : "textSnippet",
@@ -419,110 +419,7 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [
-									{
-										"__type" : "pharoSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T08:57:57.338847-04:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T08:57:57.340021-04:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "CF9HAvPMAAAAAAAAAAAAAA=="
-										},
-										"code" : "PBApplication start."
-									},
-									{
-										"__type" : "pharoSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T09:01:26.784799-04:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T09:01:31.561228-04:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "9HQU+k9oAAAAAAAAAAAAAA=="
-										},
-										"code" : "PBApplication stop."
-									},
-									{
-										"__type" : "pharoSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T08:57:25.799391-04:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "my@email.com"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-04-01T08:57:57.340911-04:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "6bJilgvbAAAAAAAAAAAAAA=="
-										},
-										"code" : "[ PBApplication uniqueInstance newCommandStringFactory\n    addAllBindings: { #a -> 4 } asDictionary;\n    script: 'b = 3';\n    resultExpression: 'a+b';\n    sendAndWait ] timeToRun"
-									}
-								]
+								"items" : [ ]
 							},
 							"createEmail" : {
 								"__type" : "email",
@@ -537,13 +434,13 @@
 							},
 							"editEmail" : {
 								"__type" : "email",
-								"emailString" : "my@email.com"
+								"emailString" : "<unknown>"
 							},
 							"editTime" : {
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-03-31T16:05:32.35477-04:00"
+									"dateAndTimeString" : "2022-08-25T16:33:48.648424-04:00"
 								}
 							},
 							"uid" : {
@@ -553,7 +450,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "PythonBridge (used by Lepiter)"
+							"string" : "[[Python Bridge]] (used by Lepiter) - this seems like the go to library to communicate with Ph"
 						},
 						{
 							"__type" : "textSnippet",
