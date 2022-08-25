@@ -5,7 +5,9 @@ IceNode >> peGtViewLepiterPageDiffFor: aView [
 
 	<gtView>
 	| newPage oldPage |
-	(self definition isKindOf: GtLepiterPageDefinition) ifFalse: [ ^ aView empty ].
+	(self value leftContents isEmpty 
+		or: [ self value rightContents isEmpty 
+			or: [ (self definition isKindOf: GtLepiterPageDefinition) not ] ]) ifTrue: [ ^ aView empty ].
 	
 	^ aView forward
 		title: 'Markdown Diff';
