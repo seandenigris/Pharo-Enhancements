@@ -24,3 +24,8 @@ BaselineOf class >> gitHasUnstaged [
 	exitCodeString := LibC resultOfCommand: cmd.
 	^ exitCodeString trimRight asNumber = 1
 ]
+
+{ #category : #'*PharoEnhancements' }
+BaselineOf class >> iconFolder [
+	^ self iceRepository location / 'icons'
+]
