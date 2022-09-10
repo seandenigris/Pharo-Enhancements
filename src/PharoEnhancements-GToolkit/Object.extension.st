@@ -18,6 +18,11 @@ Object >> gtPrintFor: aView [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+Object class >> gtSpotterItemsFromString: aString [
+	^ { self fromString: aString }
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 Object >> peGtActionPickUpFor: anAction [
 	<gtAction>
 	^ anAction explicit

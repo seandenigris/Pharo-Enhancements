@@ -38,6 +38,25 @@ Object >> interestingPointersTo [
 ]
 
 { #category : #'*PharoEnhancements' }
+Object class >> peCanHandleFromString: aString [
+	"Return whether the string input is convertible to an instance of this particular class. Subclasses should override as needed"
+	
+	^ false
+]
+
+{ #category : #'*PharoEnhancements' }
+Object class >> peClassForString: aString [
+	self subclasses do: [ :cls | 
+		| matchedSubclass |
+		matchedSubclass := cls peClassForString: aString.
+		matchedSubclass ifNotNil: [ ^ matchedSubclass ] ].
+		
+	^ (self peCanHandleFromString: aString)
+		ifTrue: [ self ]
+		ifFalse: [ nil ]
+]
+
+{ #category : #'*PharoEnhancements' }
 Object >> pePickUp [
 	PeGtSpotterResult := self
 ]
