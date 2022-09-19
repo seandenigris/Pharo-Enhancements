@@ -1,9 +1,54 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f886970e-7d84-0d00-9b22-eef10c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Git"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:49:53.206902-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:50:37.300137-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "a4BcfUGlDQCkB8I/A75zaQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Some operations are available directly fromPharo via ComputerWorld's {{gtClass:CwGit}} "
+			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
@@ -66,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-24T12:50:38.466333-05:00"
+						"dateAndTimeString" : "2021-11-24T12:50:50.085651-05:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Credentials\n\nOn Mac (at least), all you need to do is add the key to the ssh-agent via `ssh-add -K \"path/to/key`\n\nThis works for public/private on GH/Gitlab without any in-image SSH configuration.\n\nIf you forget to do the above *before* adding repos to Iceberg, any such repos that have been added to Iceberg will be HTTPS, so you have to either in ascending order of awkwardness): \n1. Create a new image\n2. Delete the repos\n3. Replace the HTTPS remotes with SSH"
+				"string" : "# Credentials\n\nOn Mac (at least), all you need to do is add the key to the ssh-agent via `ssh-add -K \"path/to/key`\n\nThis works for public/private on GH/Gitlab without any in-image SSH configuration.\n\nIf you forget to do the above *before* adding repos to Iceberg, any such repos will be HTTPS, so you have to either (in ascending order of awkwardness): \n1. Create a new image\n2. Delete the repos\n3. Replace the HTTPS remotes with SSH"
 			},
 			{
 				"__type" : "textSnippet",
@@ -249,13 +294,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.726311-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Git"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "f886970e-7d84-0d00-9b22-eef10c3334de"
 	}
 }

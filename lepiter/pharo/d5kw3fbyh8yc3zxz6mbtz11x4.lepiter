@@ -1,9 +1,54 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f886970e-7d84-0d00-9b22-eef10c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Git"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:49:53.206902-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:50:37.300137-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "a4BcfUGlDQCkB8I/A75zaQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Some operations are available directly fromPharo via ComputerWorld's {{gtClass:CwGit}} "
+			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
@@ -225,6 +270,384 @@
 					"__type" : "textStyle"
 				},
 				"string" : "# Declare Smalltalk\rDoes GitHub think you're project is 80% HTML? Want to proudly proclaim that it is in fact Smalltalk?\rCreate a `.gitattributes` file in the root folder with the following contents: `*.st linguist-language=Smalltalk`\r"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T15:59:03.68612-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:40:47.844934-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "8wd0BXafDQChfSbGD0wlEA=="
+							},
+							"code" : "mRoot := FileLocator dynabookData parent / 'Working Images/Migration Pharo 7.0 - 64bit (old stable)/Soup-for-Pharo master/repository'.\rmFiles := mRoot allFiles"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T15:59:19.501168-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:41:08.11666-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "oVllBnafDQClKqvmD0wlEA=="
+							},
+							"code" : "hRoot := FileLocator dynabookData parent / 'Working Images/Migration Pharo 7.0 - 64bit (old stable)/Soup-for-Pharo hp/repository'.\rhFiles := hRoot allFiles"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:00:38.94412-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:09:04.430417-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "sI0hC3afDQClK8BsD0wlEA=="
+							},
+							"code" : "diffFiles := mFiles reject: [ :e |\r\t| hFile |\r\trelPath  := e relativeTo: mRoot.\r\thFile := hRoot resolvePath: relPath.\r\thFile md5 = e md5 ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:14:22.985526-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:14:27.109853-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Wm0/PHafDQClNaYtD0wlEA=="
+							},
+							"code" : "jsons := diffFiles select: [ :e | e basename = '.filetree' or: [ e extension = 'json' ] ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:14:24.927604-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:27:15.70072-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jQ9dPHafDQClNgm8D0wlEA=="
+							},
+							"code" : "missingInHp := jsons select: [ :e |\r\trelPath  := e relativeTo: mRoot.\r\thFile := hRoot resolvePath: relPath.\r\thFile exists not ].\r\"Only missing in hp are method metadata, which we no longer need\"\rmissingNames := missingInHp collectAsSet: #basename.\r(missingNames size = 1 and: [ missingNames atRandom = 'methodProperties.json' ]) ifFalse: [ self error ].\rmodedJsons := jsons difference: missingInHp"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:07:17.153983-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:27:56.494138-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "3cDdInafDQClMQ5pD0wlEA=="
+							},
+							"code" : "actuallyModedJsons := modedJsons reject: [ :e |\r\trelPath  := e relativeTo: mRoot.\r\thFile := hRoot resolvePath: relPath.\r\th := STON fromString: hFile contents.\r\tm := STON fromString: e contents.\r\th = m ].\ractuallyModedJsons ifNotEmpty: [ self error ]"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:17:10.023422-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:17:24.949872-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ITk0RnafDQClN0fpD0wlEA=="
+							},
+							"code" : "nonJsons := diffFiles difference: jsons"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:17:41.201674-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:18:29.471264-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "O/cPSHafDQClOC1pD0wlEA=="
+							},
+							"code" : "nonMeta := nonJsons reject: [ :e | e basename = 'version' ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:18:58.292437-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:19:27.698964-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "+kaoTHafDQClOXxbD0wlEA=="
+							},
+							"code" : "nonMeta collect: [ :e |\r\t| hFile |\r\trelPath  := e relativeTo: mRoot.\r\thFile := hRoot resolvePath: relPath.\r\t{ e. hFile } ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:28:35.191652-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-07-05T16:29:33.415717-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "nA8Lb3afDQClOmrdD0wlEA=="
+							},
+							"code" : "hFilesDiffInM := hFiles reject: [ :e |\r\t| mFile |\r\trelPath  := e relativeTo: mRoot.\r\tmFile := hRoot resolvePath: relPath.\r\tmFile md5 = e md5 ].\rhFilesDiffInM ifNotEmpty: [ self error ]"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:29:59.677799-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-17T09:30:05.875148-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZCwhNkGlDQCj2Ob+A75zaQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Merge Helpers"
 			}
 		]
 	},
@@ -249,13 +672,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.726311-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Git"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "f886970e-7d84-0d00-9b22-eef10c3334de"
 	}
 }
