@@ -54,8 +54,9 @@ Object >> peGtActionPickUpFor: anAction [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
-Object class >> peGtSpotterNewInstanceFor: aStep [
-	^ aStep listProcessor
+Object class >> peGtSpotterNewInstanceFor: aSearch [
+	
+	^ aSearch list
 		title: 'New ', self name;
 		priority: 50;
 		itemName: [ :input | 'New ', self name, ': ', input ];
