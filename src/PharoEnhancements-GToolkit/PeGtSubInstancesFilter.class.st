@@ -1,6 +1,8 @@
 Class {
 	#name : #PeGtSubInstancesFilter,
-	#superclass : #GtFilter,
+	#superclass : #Object,
+	#traits : 'TGtSpotterFilter',
+	#classTraits : 'TGtSpotterFilter classTrait',
 	#instVars : [
 		'rootClass'
 	],
@@ -8,18 +10,15 @@ Class {
 }
 
 { #category : #accessing }
-PeGtSubInstancesFilter >> applyFilter [
+PeGtSubInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 
-	| matchedClasses |
-	matchedClasses := self rootClass withAllSubclasses select: [ :cls | cls peCanHandleFromString: self context text ].
+	| matchedClasses instances |
+	matchedClasses := self rootClass withAllSubclasses select: [ :cls | cls peCanHandleFromString: aSpotterContext searchQuery ].
 	
-	matchedClasses do: [ :cls |
-		| newInstances |
-		newInstances  := cls gtSpotterItemsFromString: self context text.
-		self addItems: newInstances.
-		"self filteredItems: { matchedClass }" ].
+	instances := matchedClasses flatCollect: [ :cls |
+		cls gtSpotterItemsFromString: aSpotterContext searchQuery ].
 		
-	^ self filteredItems
+	^ instances asAsyncStream
 ]
 
 { #category : #accessing }
