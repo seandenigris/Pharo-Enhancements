@@ -55,15 +55,9 @@ Object >> peGtActionPickUpFor: anAction [
 
 { #category : #'*PharoEnhancements-GToolkit' }
 Object class >> peGtSpotterNewInstanceFor: aSearch [
-	
 	^ aSearch list
-		title: 'New ', self name;
+		title: 'New ' , self name;
 		priority: 50;
-		itemName: [ :input | 'New ', self name, ': ', input ];
-		previewObject: [ :input | self fromString: input ];
-		wantsToDisplayOnEmptyQuery: false;
-		filter: GtNullFilter
-			item: [ :filter :aContext | 
-				filter value: aContext textTrimmed ];
-		send: [ :input :spotterStep | self fromString: input ]
+		itemName: [ :result | '+ ', result gtDisplayText ];
+		search: [ :aContext | { self fromString: aContext searchQuery trimmed } ]
 ]

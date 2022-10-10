@@ -8,18 +8,20 @@ Class {
 }
 
 { #category : #accessing }
-PeGtDeepestSubInstanceFilter >> applyFilter [
+PeGtDeepestSubInstanceFilter >> applyInScope: aStream context: aSpotterContext [
 
-	| matchedClass |
-	matchedClass := self rootClass peClassForString: self context text.
+	| matchedClass input result |
+	input := aSpotterContext searchQuery trimmed.
+	result := OrderedCollection new.
+
+	matchedClass := self rootClass peClassForString: input.
 	
 	matchedClass ifNotNil: [ :cls |
 		| newInstances |
-		newInstances  := cls gtSpotterItemsFromString: self context text.
-		self addItems: newInstances.
-		"self filteredItems: { matchedClass }" ].
+		newInstances  := cls gtSpotterItemsFromString: input.
+		result addAll: newInstances ].
 		
-	^ self filteredItems
+	^ result asAsyncStream
 ]
 
 { #category : #accessing }

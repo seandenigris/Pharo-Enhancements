@@ -8,17 +8,16 @@ Class {
 }
 
 { #category : #accessing }
-PeGtInstancesFilter >> applyFilter [
+PeGtInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 
-	| canHandle newInstances |
-	canHandle := self rootClass peCanHandleFromString: self context text.
-	canHandle ifFalse: [ ^ self filteredItems ].
+	| canHandle newInstances input |
+	input := aSpotterContext searchQuery trimmed.
+	canHandle := self rootClass peCanHandleFromString: input.
+	canHandle ifFalse: [ ^ { } ].
 		
-	newInstances  := self rootClass gtSpotterItemsFromString: self context text.
-	self addItems: newInstances.
-	"self filteredItems: { matchedClass }".
+	newInstances  := self rootClass gtSpotterItemsFromString: input.
 		
-	^ self filteredItems
+	^ newInstances asAsyncStream
 ]
 
 { #category : #accessing }
