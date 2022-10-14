@@ -90,6 +90,43 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-10-12T14:57:39.842837-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-10-12T14:59:15.750337-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9CcrtDynDQCJFPtQAtnwKg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Converting Python to Smalltalk** \n{{gtMethod:PBApplication>>#sendSource:withBindings:}} is a nice utility that let's you copy/paste Python source code into a Smalltalk statement. Lepiter Python snippets are great for exploration, but when you're ready to reify into real domain objects, PharoEnhancements provides "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [
 						{
 							"__type" : "pythonSnippet",
@@ -369,7 +406,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-06-08T11:43:18.963322-04:00"
+									"dateAndTimeString" : "2022-08-25T16:34:14.531828-04:00"
 								}
 							},
 							"uid" : {
@@ -379,7 +416,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "In [[Lepiter]], you can just write python code in a dedicated Python snippet type. For example:"
+							"string" : "In Lepiter, you can just write python code in a dedicated Python snippet type. For example:"
 						},
 						{
 							"__type" : "pythonSnippet",
@@ -440,7 +477,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-08-25T16:33:48.648424-04:00"
+									"dateAndTimeString" : "2022-08-25T16:33:57.336549-04:00"
 								}
 							},
 							"uid" : {
@@ -450,7 +487,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "[[Python Bridge]] (used by Lepiter) - this seems like the go to library to communicate with Ph"
+							"string" : "[[PythonBridge]] (used by Lepiter) - this seems like the go to library to communicate with Python from Pharo"
 						},
 						{
 							"__type" : "textSnippet",
