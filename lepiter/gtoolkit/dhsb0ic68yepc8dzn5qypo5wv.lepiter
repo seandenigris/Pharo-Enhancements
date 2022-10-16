@@ -74,7 +74,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:28:17.307167-05:00"
+						"dateAndTimeString" : "2022-10-16T17:14:58.280213-04:00"
 					}
 				},
 				"uid" : {
@@ -84,7 +84,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Say you have a container object. You want its Spotter to aggregate the processors of its children. It turns out that's pretty easy. Just override {{gtMethod:Object>>#gtSpotterProcessorsFor:}} like [Quote Me's](https://github.com/SeanDeNigris/Quote-Me) {{gtMethod:QuLeSources>>#gtSpotterProcessorsFor:}}:"
+				"string" : "Say you have a container object. You want its Spotter to aggregate the processors of its children. It turns out that's pretty easy. Just override {{gtMethod:ProtoObject>>#gtSpotterSearchesInContext:}} like [Quote Me's](https://github.com/SeanDeNigris/Quote-Me) {{gtMethod:PeGtCompositeSearch>>#gtSpotterSearchesInContext:}}:"
 			},
 			{
 				"__type" : "textSnippet",
@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-08-25T17:23:51.164086-04:00"
+						"dateAndTimeString" : "2022-10-16T17:16:07.794963-04:00"
 					}
 				},
 				"uid" : {
@@ -738,7 +738,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:13:06.262418-05:00"
+						"dateAndTimeString" : "2022-10-16T17:16:32.882057-04:00"
 					}
 				},
 				"uid" : {
@@ -748,7 +748,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Overriding a Single Subclass Processor"
+				"string" : "#Overriding a Single Superclass Processor"
 			},
 			{
 				"__type" : "textSnippet",
@@ -775,7 +775,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-06-15T10:30:34.065621-04:00"
+						"dateAndTimeString" : "2022-10-16T17:16:19.494633-04:00"
 					}
 				},
 				"uid" : {
@@ -785,7 +785,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Don't include the `<gtSearch>` pragma to avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see [My People's](https://github.com/SeanDeNigris/My-People) {{gtMethod:MpAddressBook>>#gtGtSpotterForPeopleFor:}} which overrides {{gtMethod:GtABAddressBook>>#gtGtSpotterForPeopleFor:}}"
+				"string" : "Don't include the `<gtSearch>` pragma to avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see [My People's](https://github.com/SeanDeNigris/My-People) {{gtMethod:MpAddressBook>>#peopleSearchFor:}} which overrides {{gtMethod:MpGtABAddressBook>>#peopleSearchFor:}} "
 			}
 		]
 	},
