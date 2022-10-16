@@ -63,6 +63,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-10-15T17:45:13.868035-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-10-15T17:45:30.111446-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "VYL1ZHunDQCQm7pHDMbPsA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Documentation\n- The most comprehensive documentation of the grammar is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched.\n- [Pharo booklet](https://books.pharo.org/booklet-Smacc/)\n- [Original docs](http://www.refactoryworkers.com/SmaCC.html)\r- [Swiki entry](http://wiki.squeak.org/squeak/3117)\r- [Antlr C++ grammar](https://github.com/antlr/grammars-v4/blob/master/cpp/CPP14Lexer.g4) - how was this converted to SmaCC?\n- [HTML Antlr grammar]('https://raw.githubusercontent.com/antlr/grammars-v4/master/html/HTMLParser.g4') "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2022-02-16T15:57:30.636449-05:00"
 					}
 				},
@@ -74,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-19T12:19:38.539856-04:00"
+						"dateAndTimeString" : "2022-10-15T17:44:36.131882-04:00"
 					}
 				},
 				"uid" : {
@@ -84,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Documentation\n- The most comprehensive documentation of the grammar is {{gtClass:SmaCCDefinitionParser}} itself. With the SmaCC GUI tools, or GToolkit views, you can easily browse and test the productions. You will find lots of interesting little details that may be too arcane for most written docs. For example, did you know that productions can use either `:` or the more standard `::`=? How do we know, we checked out the `<production>` rule and in GToolkit even live-tested `::`= as a sanity check to make sure it matched.\n- [Original docs](http://www.refactoryworkers.com/SmaCC.html)\r- [Swiki entry](http://wiki.squeak.org/squeak/3117)\r- [Antlr C++ grammar](https://github.com/antlr/grammars-v4/blob/master/cpp/CPP14Lexer.g4) - how was this converted to SmaCC?\n- [HTML Antlr grammar]('https://raw.githubusercontent.com/antlr/grammars-v4/master/html/HTMLParser.g4')\n### Repos\r- [Pharo port](https://github.com/SmaCCRefactoring/SmaCC)"
+				"string" : "### Repos\r- [Pharo port](https://github.com/SmaCCRefactoring/SmaCC)"
 			},
 			{
 				"__type" : "textSnippet",
