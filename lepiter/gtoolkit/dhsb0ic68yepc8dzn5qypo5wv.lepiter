@@ -37,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-01-18T16:12:50.965068-05:00"
+						"dateAndTimeString" : "2022-10-16T21:04:40.373984-04:00"
 					}
 				},
 				"uid" : {
@@ -47,13 +47,88 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Customizing All Processors for a Class"
+				"string" : "#Customizing Processors per Instance"
 			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-10-16T21:07:11.08115-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-10-16T21:11:40.348663-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "CM0KVZKnDQCeCFk3B9CHhQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : " 1. Total replacement: Say you have a container object. You want its Spotter to aggregate the processors of its children. You can do something like {{gtMethod:PeGtCompositeSearch>>#gtSpotterSearchesInContext:|expanded}}. "
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-10-16T21:08:39.767714-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-10-16T21:10:48.441849-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "vBJUWpKnDQCeC2/3B9CHhQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "2. Adding processors to the pragma-based ones. In that case, you would do something like this:\n```smalltalk\n\t| pragmaSearches |\r\tpragmaSearches := super gtSpotterSearchesInContext: aSpotterContext.\r\t^ pragmaSearches merge: self otherSearches asAsyncStream\n```\nFor example, [The Project Project](https://github.com/SeanDeNigris/The-Project-Project) uses this  approach in several places."
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -63,7 +138,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-12-30T18:33:27.255003-05:00"
+						"dateAndTimeString" : "2022-10-16T21:05:11.299139-04:00"
 					}
 				},
 				"editEmail" : {
@@ -74,17 +149,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-10-16T17:14:58.280213-04:00"
+						"dateAndTimeString" : "2022-10-16T21:05:11.299139-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "bSRuN8eQDQCvHla6BFLu4w=="
+					"uidString" : "xBfnTZKnDQCeBC+/B9CHhQ=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Say you have a container object. You want its Spotter to aggregate the processors of its children. It turns out that's pretty easy. Just override {{gtMethod:ProtoObject>>#gtSpotterSearchesInContext:}} like [Quote Me's](https://github.com/SeanDeNigris/Quote-Me) {{gtMethod:PeGtCompositeSearch>>#gtSpotterSearchesInContext:}}:"
+				"string" : "What if you want to augment or totally replace the processors for an instance? It turns out that's pretty easy. Just override {{gtMethod:ProtoObject>>#gtSpotterSearchesInContext:}}. There seem to be two common approaches:"
 			},
 			{
 				"__type" : "textSnippet",
