@@ -18,5 +18,7 @@ MailMessage >> timestamp [
 			dateStringNoWeekday := dateString copyAfter: $,.
 			dateStringNoWeekday trimLeft ]
 		ifFalse: [ dateString ].
-	^ safeDateString asDateAndTime
+	^ [ safeDateString asDateAndTime ]
+		on: Error
+		do: [ nil ]
 ]
