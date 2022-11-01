@@ -396,6 +396,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-11-01T15:19:21.613847-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-11-01T15:22:54.235005-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Y6SCVs+oDQCb4YVTDmFlEA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Text\nIn fall of 2022, `BlRopedText` was replaced by {{gtClass:BlRunRopedText}}. If you have instances you need to convert (NB any formatting will be lost), file in `BlAbstractRopedText`, `BlRopedText`, and `BlAttributeRope` the and do the following:\n```smalltalk\nBlRopedText allSubInstances collect: [ :t | t becomeForward: (t asString asRopedText) ]\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2021-07-30T13:52:15.249723-04:00"
 					}
 				},

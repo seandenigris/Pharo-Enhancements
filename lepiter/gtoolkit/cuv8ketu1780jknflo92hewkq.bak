@@ -222,7 +222,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-06-16T08:11:00.775989-04:00"
+						"dateAndTimeString" : "2022-06-16T08:11:07.783748-04:00"
 					}
 				},
 				"uid" : {
@@ -232,7 +232,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "####Sending\nThere are:\n- {{gtMethod:TBlEventTarget>>#fireEvent:|label='#fireEvent:'}}, which propagates from target to root element\n- {{gtMethod:TBlEventTarget>>#dispatchEvent:|label='#dispatchEvent:'}}, which only sends the event to the receiver"
+				"string" : "#### Sending\nThere are:\n- {{gtMethod:TBlEventTarget>>#fireEvent:|label='#fireEvent:'}}, which propagates from target to root element\n- {{gtMethod:TBlEventTarget>>#dispatchEvent:|label='#dispatchEvent:'}}, which only sends the event to the receiver"
 			},
 			{
 				"__type" : "textSnippet",
@@ -381,6 +381,43 @@
 					"__type" : "textStyle"
 				},
 				"string" : "### Shapes\r\t- {{gtClass:BlRectangleShapeWithArrowExplanation|show=gtCoderCommentsFor:|label=Rectangle Shape With Arrow}} - example of complex shape (i.e. popup-like rectangle with arrow)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-11-01T15:19:21.613847-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-11-01T15:22:44.348372-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Y6SCVs+oDQCb4YVTDmFlEA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Text\nIn fall of 2022, `BlRopedText` was replaced by {{gtClass:BlRunRopedText}}. If you have instances you need to convert (NB any formatting will be lost), file in `BlAbstractRopedText`, BlRopedText, and BlAttributeRope the old class and do the following:\n```smalltalk\nBlRopedText allSubInstances collect: [ :t | t becomeForward: (t asString asRopedText) ]\n```"
 			},
 			{
 				"__type" : "textSnippet",
