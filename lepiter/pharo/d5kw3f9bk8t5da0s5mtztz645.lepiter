@@ -37,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-11T12:46:34.136968-05:00"
+						"dateAndTimeString" : "2022-11-02T14:57:40.296298-04:00"
 					}
 				},
 				"uid" : {
@@ -47,7 +47,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Reclaiming Memory\rOnce you eliminate common possible causes (see \"Common Causes\" below), try:\r```language=smalltalk\r10 timesRepeat: [ Smalltalk garbageCollect ].\r```\rAnd [World menu]>System>[Do image clean up]"
+				"string" : "# Reclaiming Memory\rOnce you eliminate common possible causes (see \"Common Causes\" below), try:\r```smalltalk\r10 timesRepeat: [ Smalltalk garbageCollect ].\r```\rAnd [World menu]>System>[Do image clean up]"
 			},
 			{
 				"__type" : "textSnippet",
@@ -90,7 +90,374 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-11-02T14:54:36.520836-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-11-02T14:54:37.80156-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "d73oG+OoDQCcO6xPCuPESw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "### Textual\rFor a fairly long report on the image and memory hogs, evaluate:\n```smalltalk\nSmalltalkImage current reportCPUandRAM\n```\nIt writes files in the image folder containing all the information. In this case, you're probably most interested in `Log-MemoryAnalysis.txt`. NB. Takes a while to run."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:54:43.611725-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:55:11.689766-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "Qu9UHOOoDQCcPJxECuPESw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "To interact with the live objects used to produce that textual report, try:\n```smalltalk\nSpaceTally new systemWideSpaceTally\n```"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:55:26.50632-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:55:41.107012-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "V2zLHuOoDQCcRcMSCuPESw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "To find the space used by specific objects, you can do something like this:"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:56:07.602772-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:56:08.808858-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "fpJWIeOoDQCcTXxvCuPESw=="
+													},
+													"code" : "\"Tally Dynabook data size\"\rspaceTally := GtSpaceTally new.\rspaceTally computeSpaceUsageResultsForClassesInstancesAssociations: (SeansDynabookDB deepRoots groupedBy: #class)."
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:56:18.820319-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:56:43.047405-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "4DrxIeOoDQCcTpvpCuPESw=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "And to dive down on a class of interest from SpaceTally, try something like:"
+												},
+												{
+													"__type" : "pharoSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:55:43.959686-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2022-11-02T14:55:48.715384-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "nc7tH+OoDQCcRvecCuPESw=="
+													},
+													"code" : "insts := ByteString allInstances.\rhashed := (insts groupedBy: #hash) sorted: #size descending.\rhashed collect: [ :e | { e atRandom. e size } ] "
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-11-02T14:55:11.687336-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2022-11-02T14:55:11.687336-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "KFkBHuOoDQCcQbH8CuPESw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "## OO"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-11-02T14:54:29.78488-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-11-02T14:54:31.630879-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "8PWBG+OoDQCcN/1oCuPESw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "## Built-in Reporting"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-11-02T14:54:58.63488-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-11-02T14:55:03.174913-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "6SU6HeOoDQCcQO/lCuPESw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "## Roll your own\nIllustrating the superpowers of using Smalltalk, it's not hard to stitch something similar together, but there's not much value added over `SpaceTally`:\n```smalltalk\r    (Object withAllSubclasses collect: [ :aClass |\r        aClass -> aClass instanceCount ])\r        sort: #value descending\r```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-27T10:02:38.729757-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-11-02T14:54:58.638808-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Ht49D32EDQCbSizgDDM03g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "## Call Graph Analysis\rThere is Spy (not sure of current repo location) which offers Roassal visualization."
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -100,7 +467,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.729757-04:00"
+						"dateAndTimeString" : "2022-11-02T14:54:16.881358-04:00"
 					}
 				},
 				"editEmail" : {
@@ -111,17 +478,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-03-11T13:19:06.22546-05:00"
+						"dateAndTimeString" : "2022-11-02T14:54:16.881358-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "Ht49D32EDQCbSizgDDM03g=="
+					"uidString" : "uxG9GuOoDQCcM1dlCuPESw=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Diagnosis\rNB: These may take some time to run, especially in a larger image\r## Built-in Reporting\n### Textual\rFor a fairly long report on the image and memory hogs, evaluate:\n```smalltalk\nSmalltalkImage current reportCPUandRAM\n```\nIt writes files in the image folder containing all the information. In this case, you're probably most interested in `Log-MemoryAnalysis.txt`. NB. Takes a while to run.\n## OO\nTo interact with the live objects used to produce that textual report, try:\n```smalltalk\nSpaceTally new systemWideSpaceTally\n```\n## Roll your own\nIllustrating the superpowers of using Smalltalk, it's not hard to stitch something similar together, but there's not much avlue added over `SpaceTally`:\n```smalltalk\r    (Object withAllSubclasses collect: [ :aClass |\r        aClass -> aClass instanceCount ])\r        sort: #value descending\r```\r## Call Graph Analysis\rThere is Spy (not sure of current repo location) which offers Roassal visualization."
+				"string" : "# Diagnosis\rNB: These may take some time to run, especially in a larger image"
 			}
 		]
 	},
