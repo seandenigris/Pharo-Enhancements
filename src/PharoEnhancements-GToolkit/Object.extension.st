@@ -55,7 +55,7 @@ Object >> peGtActionPickUpFor: anAction [
 
 { #category : #'*PharoEnhancements-GToolkit' }
 Object class >> peGtSpotterNewInstanceFor: aSearch [
-	^ aSearch list
+	^ aSearch explicit
 		title: 'New ' , self name;
 		priority: 50;
 		itemName: [ :result | '+ ', result gtDisplayText ];
