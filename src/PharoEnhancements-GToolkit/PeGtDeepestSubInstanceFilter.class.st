@@ -1,6 +1,6 @@
 Class {
 	#name : #PeGtDeepestSubInstanceFilter,
-	#superclass : #GtFilter,
+	#superclass : #Object,
 	#instVars : [
 		'rootClass'
 	],
