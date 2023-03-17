@@ -1,12 +1,6 @@
 Extension { #name : #Object }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-Object >> gtDisplayText [
-	
-	^ self displayString asRopedText
-]
-
-{ #category : #'*PharoEnhancements-GToolkit' }
 Object >> gtPrintFor: aView [
 	<gtView>
 	^ aView textEditor
