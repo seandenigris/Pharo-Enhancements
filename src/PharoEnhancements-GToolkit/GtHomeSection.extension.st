@@ -1,7 +1,7 @@
 Extension { #name : #GtHomeSection }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-GtHomeSection >> buttonTitled: aString iconFileNamed: iconName tooltip: tipString inspecting: anObject [
+GtHomeSection >> buttonTitled: aString iconFileNamed: iconName tooltip: tipString inspecting: aValuable [
 	^ GtToolButtonStencil new 
 		title: aString;
 		icon: (self iconFromFileNamed: iconName);
@@ -11,7 +11,7 @@ GtHomeSection >> buttonTitled: aString iconFileNamed: iconName tooltip: tipStrin
 				showSpaceWithTitle: aString
 				with:
 					(GtInspector
-						createOn: anObject) maximized
+						createOn: aValuable value) maximized
 				from: card ];
 		description: tipString.
 ]
