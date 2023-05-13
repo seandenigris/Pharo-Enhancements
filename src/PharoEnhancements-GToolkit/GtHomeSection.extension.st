@@ -18,9 +18,6 @@ GtHomeSection >> buttonTitled: aString iconFileNamed: iconName tooltip: tipStrin
 
 { #category : #'*PharoEnhancements-GToolkit' }
 GtHomeSection >> iconFromFileNamed: aString [
-	| result |
-	result := GtFileUtility imageElementFromFileReference: self iconFolder / aString.
-	^ result
-		alignBottomCenter;
-		yourself	
+	
+	^ GtFileUtility imageElementFromFileReference: self iconFolder / aString.
 ]
