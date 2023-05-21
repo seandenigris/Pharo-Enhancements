@@ -8,6 +8,12 @@ Class {
 }
 
 { #category : #accessing }
+PeGtToolVariableBinder class >> allSpaces [
+
+	^ BlParallelUniverse all flatCollect:  #spaces
+]
+
+{ #category : #accessing }
 PeGtToolVariableBinder class >> allTabs [
 
 	^ GtWorld allInstances flatCollect: [ :w | 
@@ -82,5 +88,5 @@ PeGtToolVariableBinder >> treeElement [
 						label: 'Bind')
 					as: #bind ];
 				nodeDataBinder: [ :aNodeElement :anInstance | anInstance peGtPharoSourceCoderTreeInitializeNode: aNodeElement ];
-				items: self class allToolTabs lazy: [ :e | e peGtPharoSourceCoderTreeChildrenForValue: self targetValue ]
+				items: self class allSpaces lazy: [ :e | e peGtPharoSourceCoderTreeChildrenForValue: self targetValue ]
 ]

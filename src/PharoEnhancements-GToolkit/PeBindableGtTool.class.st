@@ -3,15 +3,36 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'tab',
-		'toolContentElement',
-		'targetValue'
+		'targetValue',
+		'toolElement'
 	],
 	#category : #'PharoEnhancements-GToolkit-Variable-Sharing'
 }
 
 { #category : #testing }
 PeBindableGtTool class >> canModel: anElement [
-	^ anElement isKindOf: LePageToolContentElement
+	^ anElement id = #tool asBlocElementId
+]
+
+{ #category : #accessing }
+PeBindableGtTool class >> on: aToolElement [
+	
+	| cls |
+	cls := self.
+	aToolElement
+		allChildrenBreadthFirstDetect: [ :e | (e isKindOf: LePageToolContentTreeElement) and: [ e id = #content asBlocElementId ] ]
+		ifFound: [ :e | cls := PeBindableLepiterTool ].
+		
+	^ cls new
+		toolElement: aToolElement;
+		yourself
+]
+
+{ #category : #accessing }
+PeBindableGtTool class >> on: aToolElement inTab: aTabModel [
+	^ (self on: aToolElement)
+		tab: aTabModel;
+		yourself
 ]
 
 { #category : #accessing }
@@ -27,8 +48,10 @@ PeBindableGtTool >> gtViewTargetVariablesOn: aView [
 
 { #category : #accessing }
 PeBindableGtTool >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
-	| variableNodes |
-	variableNodes := (self variables asSortedCollection: #name ascending) collect: [ :e | PeGtVariableBinder from: e to: anObject in: self ].
+	| variableNodes sortedVariables |
+	sortedVariables := self variables asSortedCollection: #name ascending.
+	variableNodes := sortedVariables collect: [ :e | 
+		PeGtVariableBinder from: e to: anObject in: self ].
 	^ variableNodes "copyWith: PeGtNewVariable new"
 ]
 
@@ -64,16 +87,18 @@ PeBindableGtTool >> sharedBindings [
 
 { #category : #accessing }
 PeBindableGtTool >> snippets [
+
 	^ OrderedCollection streamContents: [ :str |
-		self snippetsViewModel children do: [ :snip |
-			str nextPut: snip.
-			snip allSnippetChildrenBreadthFirstDo: [ :child | str nextPut: child ] ] ]
-]
-
-{ #category : #accessing }
-PeBindableGtTool >> snippetsViewModel [
-
-	^ self toolContentElement snippetsViewModel
+		self toolElement 
+			allChildrenBreadthFirstDetect: [ :e | e id = #playground asBlocElementId ]
+			ifFound: [ :playground | str nextPutAll: playground page allChildrenDepthFirst ].
+   		         
+		self toolElement 
+			allChildrenBreadthFirstDetect: [ :e | e id = #page asBlocElementId ]
+			ifFound: [ :aPage | 
+				aPage snippetsViewModel children do: [ :snip |
+					str nextPut: snip.
+					snip allSnippetChildrenBreadthFirstDo: [ :child | str nextPut: child ] ] ] ]
 ]
 
 { #category : #accessing }
@@ -94,20 +119,19 @@ PeBindableGtTool >> tabTitle [
 ]
 
 { #category : #accessing }
-PeBindableGtTool >> toolContentElement [
-	
-	^ toolContentElement
+PeBindableGtTool >> toolElement [
+	^ toolElement
 ]
 
 { #category : #accessing }
-PeBindableGtTool >> toolContentElement: anObject [
-
-	toolContentElement := anObject
+PeBindableGtTool >> toolElement: anObject [
+	toolElement := anObject
 ]
 
 { #category : #accessing }
 PeBindableGtTool >> toolTitle [
-	^ self toolContentElement titleElement titleElement text asString
+	
+	^ (((self toolElement childNamed: #content) childNamed: #header) childNamed: #label) text asString
 ]
 
 { #category : #accessing }

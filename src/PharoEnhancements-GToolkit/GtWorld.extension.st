@@ -28,3 +28,11 @@ GtWorld class >> dismissAllNotifications [
             	ifFound: [ :bdg | bdg ] ] ].
 badges do: [ :badge | badge notifications asArray do: #requestRemoval ]
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+GtWorld >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
+
+	^ self root
+		allChildrenBreadthFirstDetect: [ :e | e class = BrTabGroup ]
+		ifFound: [ :tabGroup | tabGroup tabs reject: [ :e | e model isNil ] ]
+]
