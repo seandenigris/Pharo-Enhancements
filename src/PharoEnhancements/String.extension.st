@@ -32,6 +32,14 @@ String >> copyToClipboard [
 ]
 
 { #category : #'*PharoEnhancements' }
+String >> isValidAbsoluteURL [
+
+	^ [ self asUrl isAbsolute ]
+		on: Error
+		do: [ false ]
+]
+
+{ #category : #'*PharoEnhancements' }
 String >> surroundedByDoubleQuotes [
 	^ self surroundedBy: '"'
 ]
