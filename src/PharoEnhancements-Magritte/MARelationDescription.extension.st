@@ -1,7 +1,7 @@
-Extension { #name : #MAToManyRelationDescription }
+Extension { #name : #MARelationDescription }
 
 { #category : #'*PharoEnhancements-Magritte' }
-MAToManyRelationDescription >> referenceDisplay: aSymbol [
+MARelationDescription >> referenceDisplay: aSymbol [
 
 	| stringDesc container |
 	stringDesc := MAStringDescription new   
