@@ -28,6 +28,12 @@ PeTEnumerable >> detect: aBlock ifFound: foundBlock ifNone: exceptionBlock [
 ]
 
 { #category : #accessing }
+PeTEnumerable >> detect: aBlock ifNone: exceptionBlock [
+
+	^ self privateEnumerable detect: aBlock ifNone: exceptionBlock
+]
+
+{ #category : #accessing }
 PeTEnumerable >> do: aBlock [
 
 	^ self privateEnumerable do: aBlock
