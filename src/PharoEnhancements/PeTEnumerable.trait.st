@@ -65,7 +65,7 @@ PeTEnumerable >> max: aBlock [
 
 { #category : #enumerating }
 PeTEnumerable >> privateEnumerable [
-	^ self privateFilteredContacts
+	^ self explicitRequirement
 ]
 
 { #category : #enumerating }
