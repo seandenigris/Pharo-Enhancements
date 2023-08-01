@@ -60,3 +60,22 @@ Object class >> peClassForString: aString [
 Object >> pePickUp [
 	PeGtSpotterResult := self
 ]
+
+{ #category : #'*PharoEnhancements' }
+Object >> printFromDisplayStringOn: aStream [
+
+	| title |
+	self displayStringOn: aStream.
+	
+	aStream
+		nextPutAll: ' ('.
+		
+	"Copy/pasted Object>>#printOn: because can't send super because ProtoObject DNU"
+	title := self class name.
+	aStream
+		nextPutAll: (title first isVowel ifTrue: ['an '] ifFalse: ['a ']);
+		nextPutAll: title.
+	"End copy/paste"
+	
+	aStream nextPut: $)
+]
