@@ -15,6 +15,12 @@ PeTEnumerable >> collect: aBlock [
 	^ self privateEnumerable collect: aBlock.
 ]
 
+{ #category : #enumerating }
+PeTEnumerable >> collectAsSet: aBlock [
+	
+	^ self privateEnumerable collectAsSet: aBlock.
+]
+
 { #category : #accessing }
 PeTEnumerable >> detect: aBlock [
 
