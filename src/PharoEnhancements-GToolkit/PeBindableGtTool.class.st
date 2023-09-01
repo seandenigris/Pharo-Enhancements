@@ -131,6 +131,9 @@ PeBindableGtTool >> toolElement: anObject [
 { #category : #accessing }
 PeBindableGtTool >> toolTitle [
 	
+	(self toolElement isKindOf: GtCoderElement)
+		ifTrue: [ ^ self toolElement shortTitle asString, ' Class' ].
+		
 	^ (((self toolElement childNamed: #content) childNamed: #header) childNamed: #label) text asString
 ]
 
