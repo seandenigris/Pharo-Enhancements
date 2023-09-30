@@ -49,7 +49,7 @@ PeLepiterDatabase class >> gtViewDashboardOn: aView [
 		column: 'Actions' 
 			icon: [ :p | p actionButtons first ]
 			width: 500;
-		actionUpdateButtonTooltip: 'Update'
+		actionUpdateButton
 ]
 
 { #category : #utilities }

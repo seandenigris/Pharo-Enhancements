@@ -92,7 +92,7 @@ PeLepiterProject class >> gtViewDatabases: aValuable on: aView [
 		column: 'Actions' 
 			icon: [ :p | p actionButtons first ]
 			width: 500;
-		actionUpdateButtonTooltip: 'Update'
+		actionUpdateButton
 ]
 
 { #category : #accessing }
