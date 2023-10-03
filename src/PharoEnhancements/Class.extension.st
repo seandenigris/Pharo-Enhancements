@@ -10,6 +10,11 @@ Class >> copyInstVarNamed: sourceName to: targetName [
 ]
 
 { #category : #'*PharoEnhancements' }
+Class >> displayName [
+	^ (self name allButFirst: 2) piecesCutWhereCamelCase joinUsing: Character space
+]
+
+{ #category : #'*PharoEnhancements' }
 Class >> gitHubMarkdownLink [
 
 	^ '[`', self name, '`](', self gitHubUrl asString, ')'

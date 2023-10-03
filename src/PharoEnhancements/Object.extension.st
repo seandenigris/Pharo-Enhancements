@@ -79,3 +79,8 @@ Object >> printFromDisplayStringOn: aStream [
 	
 	aStream nextPut: $)
 ]
+
+{ #category : #'*PharoEnhancements' }
+Object >> typeDisplayName [
+	^ self class displayName
+]
