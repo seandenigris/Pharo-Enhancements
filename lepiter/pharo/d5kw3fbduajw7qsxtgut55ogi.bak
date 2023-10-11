@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "12a4910e-7d84-0d00-9b12-d3de0c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "AST"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.69592-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-09T22:29:51.590561-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9Fk9D32EDQCbOHucDDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Terminology - AST vs. \"Parse Tree\"\r`parseTree` returns a generated tree suitable for modification, while `ast` returns a cached tree. For lots and lots more details, see <http://forum.world.st/ast-vs-parseTree-td4893074i40.html>\r# Usage Examples\r- **Format source**: `(RBParser parseMethod: source) formattedCode`\r# Code Generation\r## DIY Approaches\r### String Manipulation\rThis has the lowest barrier to entry,  because you are writing Smalltalk code, just inside a string. The approach is fine for simple cases, but can get unwieldy, and doesn't benefit from e.g. (early) compiler warnings. It is also lacking when one wants to offer the behavior as a method and also as a script with no dependencies (say, for CI).\r\rYou can create and fill a template, like this:\r```\r| template |\rtemplate := 'answerToEverything\r\r^ {returnValue}'.\r\rtemplate format: { #returnValue -> 42 } asDictionary\r```\r\rYou can also build the source with a stream. See  {{gtMethod:MAElementDescription>>#addTo:as:}} in Magritte-Developer, which also uses the noteworthy technique of  relying on `store:` to regenerate an object instance.\r\rThis approach really seems to shine for code that is really data, like a literal array, which is much easier to work with live than to deal with as source code/AST. \r\rHere's an example. Say you have a method that returns a literal array to be consumed as pairs, like this:\r{{gtMethod:PePharoWiki>>#exampleReturningLiteralArray|expanded=true}}\rNotice the formating:\r1. alphabetical items\r2. two items per line\r\rOther techniques like AST manipulation would be awkward. Inserting nodes per #1 would not be straightforward and auto-formatting would prevent #2.\r\rWith strings, however, we have total flexibility in how the source code will look. In this case, this is worth the complication of this low-level approach:\r```language=smalltalk\r| aCollection |\r\"Given an updated collection\"\raCollection := #('Adam' ('Bubba' 'Tiny') 'Zed' nil).\r\r\"A new method can easily be generated\"\rString streamContents: [ :str |\r\tstr nextPutAll: 'exampleReturningLiteralArray\r\t^ #(\r\t\t\"Name\" \"Aliases\"'.\r\taCollection pairsDo: [ :name :aliases | \r\t\t| aliasesToStore |\r\t\tstr cr; tab; tab; print: name; space.\r\t\taliasesToStore := aliases ifEmpty: [ nil ].\r\t\taliasesToStore storeOn: str ].\r\tstr cr; tab; nextPutAll: ').' ].\r```\r### AST Manipulation\rIf you start with an existing method and modify its AST, you have the advantage of working with real objects in the domain of source code, which is less error-prone than dumb strings. However, the API does not seem to be optimized for this scenario and there is a bit of a learning curve. Here is an excerpt of a script porting a Metacello baseline method from a ConfigurationOf to a BaselineOf.\r```\r| methodTree |\rmethodTree := (BaselineOfMyProject>>#baseline301:) parseTree.\rmethodTree selector: #baseline:.\rmethodTree pragmas at: 1 put: (RBPragmaNode selector: #baseline arguments: #()).\rBaselineOfMyProject compile: methodTree newSource classified: 'baseline'\r```\rThe full script can be viewed in {{gtMethod:ConfigurationOf class>>#createBaselineFrom:}} in the [DeNigrisPreferences project](https://github.com/seandenigris/Pharo-Preferences)\r\rOne use case that is difficult to handle with the approaches above is when one wants to offer the same behavior both as a message to an object and as a script with no dependencies (e.g. self sends), maybe for CI. Two libraries offer better support for this: `PharoCodeGenerator` and `PharoEnhancements`' {{gtClass:PeAST_Transformer}} class (see below).\r## Libraries\r- [PharoCodeGenerator](https://github.com/juliendelplanque/PharoCodeGenerator) - DSL to create methods from stratch, templates, or existing methods\r- [PlainPharoCode](https://github.com/hogoww/PlainPharoCode) - Use blocks to define the method body\r- {{gtClass:PeAST_Transformer}} offers some higher-level support for transforming the AST of an existing method\r"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.695912-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.695912-04:00"
+		}
+	}
+}

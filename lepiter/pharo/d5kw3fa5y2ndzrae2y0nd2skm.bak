@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2666920e-7d84-0d00-9b17-30b60c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Cookbook 2"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -92,6 +100,43 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-09T05:23:47.186123-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-10-09T05:23:58.83631-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "dkBg4qbDDQC8gJm/AXlXlg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[[Sort Functions]]"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2021-11-04T16:09:00.075194-04:00"
 					}
 				},
@@ -103,7 +148,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:11:04.311919-04:00"
+						"dateAndTimeString" : "2021-11-04T16:11:12.831248-04:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +158,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# SortFunctions\rThis is a cool addition to Pharo. When sorting a collection, you pass a domain object as a sort block, instead of a generic block. Besides allowing terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are two to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase`"
+				"string" : "# SortFunctions\rThis is a cool addition to Pharo. When sorting a collection, you pass a domain object as a sort block, instead of a generic block. Besides enabling terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are two to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase`"
 			}
 		]
 	},
@@ -138,13 +183,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.706399-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Cookbook 2"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "2666920e-7d84-0d00-9b17-30b60c3334de"
 	}
 }
