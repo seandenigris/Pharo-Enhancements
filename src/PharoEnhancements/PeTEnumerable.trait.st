@@ -75,9 +75,21 @@ PeTEnumerable >> privateEnumerable [
 ]
 
 { #category : #enumerating }
+PeTEnumerable >> reject: aBlock [
+	
+	^ self privateEnumerable reject: aBlock.
+]
+
+{ #category : #enumerating }
 PeTEnumerable >> select: aBlock [
 	
 	^ self privateEnumerable select: aBlock.
+]
+
+{ #category : #enumerating }
+PeTEnumerable >> select: selectBlock thenCollect: collectBlock [
+	
+	^ self privateEnumerable select: selectBlock thenCollect: collectBlock
 ]
 
 { #category : #enumerating }
