@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'delegate',
 		'message',
-		'transform'
+		'configuration'
 	],
 	#category : #'PharoEnhancements-GToolkit-Spotter'
 }
@@ -12,17 +12,27 @@ Class {
 { #category : #'magritte-descriptions' }
 PeGtDelegatedSearch class >> to: aValuable message: aSymbol [ 
 
-	^ self to: aValuable message: aSymbol transform: nil
+	^ self to: aValuable message: aSymbol configured: #yourself
 ]
 
 { #category : #'magritte-descriptions' }
-PeGtDelegatedSearch class >> to: aValuable message: aSymbol transform: sendBlock [
+PeGtDelegatedSearch class >> to: aValuable message: aSymbol configured: configBlock [
 
 	^ self new
 		delegate: aValuable;
 		message: aSymbol;
-		transform: sendBlock;
+		configuration: configBlock;
 		yourself
+]
+
+{ #category : #accessing }
+PeGtDelegatedSearch >> configuration [
+	^ configuration ifNil: #yourself
+]
+
+{ #category : #accessing }
+PeGtDelegatedSearch >> configuration: anObject [
+	configuration := anObject
 ]
 
 { #category : #accessing }
@@ -43,7 +53,7 @@ PeGtDelegatedSearch >> gtSpotterOn: aStep [
 	
 	| search |
 	search := self delegate value perform: self message with: aStep.
-	self transform ifNotNil: [ :trns | search send: trns ].
+	self configuration value: search.
 	^ search
 ]
 
@@ -57,14 +67,4 @@ PeGtDelegatedSearch >> message [
 PeGtDelegatedSearch >> message: anObject [
 
 	message := anObject
-]
-
-{ #category : #accessing }
-PeGtDelegatedSearch >> transform [
-	^ transform
-]
-
-{ #category : #accessing }
-PeGtDelegatedSearch >> transform: anObject [
-	transform := anObject
 ]

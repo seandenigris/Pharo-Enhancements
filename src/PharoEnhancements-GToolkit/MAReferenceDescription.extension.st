@@ -2,15 +2,15 @@ Extension { #name : #MAReferenceDescription }
 
 { #category : #'*PharoEnhancements-GToolkit' }
 MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol [
-	self gtSearchDelegateTo: anObjectValuable message: aSymbol transform: nil
+	self gtSearchDelegateTo: anObjectValuable message: aSymbol do: #yourself
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
-MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol transform: sendBlock [
+MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol do: configBlock [
 	| source |
 	source := PeGtDelegatedSearch 
 		to: anObjectValuable 
 		message: aSymbol
-		transform: sendBlock.
+		configured: configBlock.
 	self gtSearchSource: source
 ]
