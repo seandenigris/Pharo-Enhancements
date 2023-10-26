@@ -46,6 +46,12 @@ PeTEnumerable >> do: aBlock [
 ]
 
 { #category : #enumerating }
+PeTEnumerable >> do: doBlock separatedBy: separatorBlock [
+
+	^ self privateEnumerable do: doBlock separatedBy: separatorBlock
+]
+
+{ #category : #enumerating }
 PeTEnumerable >> flatCollect: aBlock [
 	
 	^ self privateEnumerable flatCollect: aBlock.
