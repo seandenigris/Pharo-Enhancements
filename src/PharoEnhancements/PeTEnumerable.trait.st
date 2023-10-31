@@ -69,6 +69,18 @@ PeTEnumerable >> ifEmpty: aBlock [
 	^ self privateEnumerable ifEmpty: aBlock
 ]
 
+{ #category : #testing }
+PeTEnumerable >> includes: anObject [
+
+	^ self privateEnumerable includes: anObject
+]
+
+{ #category : #testing }
+PeTEnumerable >> includesAny: anObject [
+
+	^ self privateEnumerable includesAny: anObject
+]
+
 { #category : #accessing }
 PeTEnumerable >> max: aBlock [
 
