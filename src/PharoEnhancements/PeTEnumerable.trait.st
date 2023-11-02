@@ -40,6 +40,12 @@ PeTEnumerable >> detect: aBlock ifNone: exceptionBlock [
 ]
 
 { #category : #accessing }
+PeTEnumerable >> detectMax: aBlock [
+
+	^ self privateEnumerable detectMax: aBlock
+]
+
+{ #category : #accessing }
 PeTEnumerable >> do: aBlock [
 
 	^ self privateEnumerable do: aBlock
@@ -85,6 +91,12 @@ PeTEnumerable >> includesAny: anObject [
 PeTEnumerable >> max: aBlock [
 
 	^ self privateEnumerable max: aBlock
+]
+
+{ #category : #accessing }
+PeTEnumerable >> noneSatisfy: aBlock [
+
+	^ self privateEnumerable noneSatisfy: aBlock
 ]
 
 { #category : #enumerating }
