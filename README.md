@@ -1,42 +1,10 @@
-Useful enhancements to Pharo's core
+# TLDR	Lots of little useful additions to Pharo	# InstallationIn GToolkit (preferably) or Pharo (v. 10 best supported at time of writing), do the following:```smalltalk[EpMonitor current disable.[ Metacello new	baseline: 'PharoEnhancements';	repository: 'github://seandenigris/Pharo-Enhancements';	"onConflict: [ :ex | ex allow ];"	load: #('ALL') ] ensure: [ EpMonitor current enable ].] fork.
+```N.B. you only have to do the outer fork if on GT and you want the UI to stay responsive during the load.# OverviewNB. Much of the following is an export of the class comment of [`BaselineOfPharoEnhancements`](https://github.com/seandenigris/Pharo-Enhancements/blob/master/src/BaselineOfPharoEnhancements/BaselineOfPharoEnhancements.class.st). When viewed from inside the system, it is live, dynamic and beautiful. "Just the markdown" only gives you a taste. We suggest you dive in and view the documentation as it was intended as quickly as possible - it will be more enjoyable and productive!Useful extensions to Pharo/Gtoolkit Core i.e. things we think should be ''in'' core ;-)!Wiki(s)The ${class:PharoWiki}$ is applicable to both vanilla Pharo and GToolkit, but only renders - and so is only loaded by default - in the latter.To browse it, inspect the following and view the "Pages" tab.[[language=smalltalkPharoWiki]([language=smalltalkPharoWiki.md)] # Disclaimer
 
-# Installation
+This project is part of a ~20 year (as of 2021) exploration of the [Dynabook](https://github.com/seandenigris/Dynabook) idea (a la Alan Kay). It's intensely personal and opinionated and I've open sourced it due to repeated requests. Use at your own risk. Any part may change at any time. I'm happy to give support when I have time in the form of explanations, but do not expect me to implement any particular feature, or even accept PRs if they don't feel right. That said, I'm happy to have anyone along on the journey :)
+# License Explanation
+The license is MIT. However, my original intent was to release my Dynabook libraries under a copy far left license (free use for cooperatives, but negotiated licenses for those utilizing paid labor for profit). I love sharing any work I do, but am disgusted by the prospect that (especially multi-billion-dollar) corporations will exploit my work for free, especially toward ends with which I don't philosophically agree. However, after many discussions with colleagues, it appears that at this moment there is just no way to protect one's work from parasites without effectively keeping it from everyone. Even GPL, which doesn't even come close to "solving" the problem stated above, seems enough to put off most people. In closing, now that my intentions are clear, I request the following from any entity utilizing wage labor or selling for profit who uses my work:
+1. Attribution
+2. Pay for what you use, or don't use it
 
-```smalltalk
-[
-EpMonitor current disable.
-[ Metacello new
-	baseline: 'PharoEnhancements';
-	repository: 'github://seandenigris/Pharo-Enhancements';
-	"onConflict: [ :ex | ex allow ];"
-	load: #('ALL') ] ensure: [ EpMonitor current enable ].
-
-] fork.
-```
-
-NB. the forked outer block is for GT, to prevent locking up the UI during the load. For Pharo it may be omitted.
-
-# Features (just starting, most undocumented)
-
-## FileLocator - User-Configurable Origins
-Just like we have `FileLocator home`, you can now have `FileLocator myProjectFolder`. There are two easy steps.
-
-First, tell FileLocator about your new origin:
-```smalltalk
-FileLocator class >> #myProjectFolder
-	^ self origin: #myProjectFolder
-```
-
-Then, tell `PeDynamicFSResolver` how to turn that label into a real FS object.
-```smalltalk
-PeDynamicFSResolver >> #myProjectFolder
-	<supportedOrigin>
-	
-	^ '/Users/me/myProjectFolder/' asFileReference
-```
-
-
-## Create Baseline - Two Easy Ways
-
-- If you have a ConfigurationOf, convert/promote one of it's baseline methods into a full BaselineOf class via `ConfigurationOfMyProject createBaselineFrom: #baselineMethod`
-- Starting with an RPackage, create a new BaselineOf including that package via `anRPackage createBaselineOf`
+While there may be no legal means for me to enforce the above given that this code is released under MIT, my intentions should be clear; violate the above at risk to your own conscience.

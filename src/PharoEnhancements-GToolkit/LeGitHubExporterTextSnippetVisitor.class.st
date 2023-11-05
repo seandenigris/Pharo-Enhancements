@@ -61,6 +61,12 @@ LeGitHubExporterTextSnippetVisitor >> visitDocumenterAnnotation: aDocumenterAnno
 ]
 
 { #category : #generated }
+LeGitHubExporterTextSnippetVisitor >> visitExternalLabelUrlLink: anExternalLabelUrlLink [
+	self stream
+		nextPutAll: '[', anExternalLabelUrlLink label, '](', anExternalLabelUrlLink url, ')'
+]
+
+{ #category : #generated }
 LeGitHubExporterTextSnippetVisitor >> visitHeader: aHeader [
 	aHeader headerLevel timesRepeat: [ self stream nextPut: $# ].
 	self stream space.
