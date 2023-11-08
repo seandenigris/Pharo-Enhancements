@@ -45,6 +45,12 @@ PeTEnumerable >> detectMax: aBlock [
 	^ self privateEnumerable detectMax: aBlock
 ]
 
+{ #category : #enumerating }
+PeTEnumerable >> detectMax: aBlock overThreshold: aNumber [
+
+	^ self privateEnumerable detectMax: aBlock overThreshold: aNumber
+]
+
 { #category : #accessing }
 PeTEnumerable >> do: aBlock [
 
