@@ -16,6 +16,115 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-11-17T17:38:43.618961-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-11-17T18:11:08.639706-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "860dicLGDQCD4+mZBc4rHQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**BROKEN**: Self is now (as of [GT release v1.0.183](https://github.com/feenkcom/gtoolkit/releases/tag/v1.0.183)) bound in proxy inspectors, giving a big boost to exploratory programming (see [this GH issue](https://github.com/feenkcom/gtoolkit/issues/2480) for why that's the case). But how to test it? Strings, lists and tuples are autoconverted to Smalltalk types. Okay, range works, but the functionality doesn't seem to."
+						},
+						{
+							"__type" : "pythonSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-11-17T17:38:33.435574-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2023-11-17T18:04:35.378847-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "mUiCiMLGDQCDjpG2Bc4rHQ=="
+							},
+							"code" : "#Dive on the result and then try `self.index(4)` in the inspector, which should return 3\rrange(1, 11)"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:10:31.287966-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:10:39.083607-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bGbS+sLGDQCUGbzkBc4rHQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Exploratory programming"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [ ]
 				},
 				"createEmail" : {
@@ -97,6 +206,114 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:06:08.390307-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:12:03.780985-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4+Um68LGDQCQDYafBc4rHQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Besides primitive types like numbers and strings, you can also (as of [issue 2416](https://github.com/feenkcom/gtoolkit/issues/2416)) pass a previously-returned python object back to the bridge, like this:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:06:37.057174-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:07:26.361194-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "b1Tc7MLGDQCRsLp5Bc4rHQ=="
+				},
+				"code" : "aRange := PBApplication uniqueInstance newCommandStringFactory\n    resultExpression: 'range(1, 11)';\n    sendAndWait.\rPBApplication uniqueInstance newCommandStringFactory\n    addAllBindings: { \n        #r -> aRange.\r        #i -> 4 } asDictionary;\n    resultExpression: 'r.index(i)';\n    sendAndWait."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T17:33:01.240687-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2023-11-17T18:11:15.113762-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "XWe1dMLGDQC/kB/KBc4rHQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**BROKEN**: the following source extension seems to be broken in GT v1.0.233. This is perhaps a result of GT's reimplementation of Python on top of LanguageLink. The first big shift seems to be [release 1.0.167](https://github.com/feenkcom/gtoolkit/releases/tag/v1.0.167)."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2022-08-25T16:29:58.350269-04:00"
 					}
 				},
@@ -108,7 +325,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-08-25T16:32:53.414723-04:00"
+						"dateAndTimeString" : "2023-11-17T17:18:21.264599-05:00"
 					}
 				},
 				"uid" : {
@@ -118,7 +335,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Note that there is a bit of accidental complexity. For example, you have to specify an expression returning a result separately, and you have to remember to send `#asDictionary`. To simplify usage, we add an extension that lets you copy/paste a Python script and run in in Pharo without editing. See {{gtExample:PBApplication class>>#exampleCommandSourceFactory}} "
+				"string" : "Note that there is a bit of accidental complexity. For example, you have to specify an expression returning a result separately, and you have to remember to send `#asDictionary`. To simplify usage, we add an extension that lets you copy/paste a Python script and run in it Pharo without editing. Check out this example: {{gtExample:PBApplication class>>#exampleCommandSourceFactory}} "
 			}
 		]
 	},

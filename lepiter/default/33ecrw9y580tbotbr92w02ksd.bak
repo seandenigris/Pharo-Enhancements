@@ -111,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-10-12T14:59:15.750337-04:00"
+						"dateAndTimeString" : "2023-11-17T17:27:06.267885-05:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +121,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "**Converting Python to Smalltalk** \n{{gtMethod:PBApplication>>#sendSource:withBindings:}} is a nice utility that let's you copy/paste Python source code into a Smalltalk statement. Lepiter Python snippets are great for exploration, but when you're ready to reify into real domain objects, PharoEnhancements provides "
+				"string" : "**Converting Python to Smalltalk** \n{{gtMethod:PBApplication>>#sendSource:withBindings:}} is a nice utility that let's you copy/paste Python source code into an equivalent Smalltalk statement. Lepiter Python snippets are great for exploration, but this is great when you're ready to reify into real domain objects. See [[PythonBridge]] fl"
 			},
 			{
 				"__type" : "textSnippet",
@@ -733,13 +733,13 @@
 										},
 										"editEmail" : {
 											"__type" : "email",
-											"emailString" : "my@email.com"
+											"emailString" : "<unknown>"
 										},
 										"editTime" : {
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2021-03-31T21:17:23.64596-04:00"
+												"dateAndTimeString" : "2023-11-17T17:16:39.588373-05:00"
 											}
 										},
 										"uid" : {
@@ -749,7 +749,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Pros: you can edit the AST before you send it to Pythonn"
+										"string" : "Pros: you can edit the AST before you send it to Python"
 									},
 									{
 										"__type" : "textSnippet",
