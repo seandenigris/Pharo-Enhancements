@@ -17,10 +17,10 @@ PePyDataFrame >> asDataFrame [
 PePyDataFrame >> at: index [
 	| cmd |
 	cmd := PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}[{index}]'
-		format: { 
-			#self -> self pythonVariableName.
-			#index -> index printString }.
+	source: 'self[index]';
+	addAllBindings: { 
+		#self -> self pythonInstance.
+		#index -> index }.
 	^ self seriesClass fromCommand: cmd
 ]
 
@@ -34,10 +34,10 @@ PePyDataFrame >> head: anInteger [
 	
 	^ self commandDo: [ :cmd |
 		cmd
-			template: '{self}.head({n})'
-			format: { 
-				#self -> self pythonVariableName.
-				#n -> anInteger asString }.
+			source: 'self.head(n)';
+			addAllBindings: { 
+				#self -> self pythonInstance.
+				#n -> anInteger }.
 		self class fromCommand: cmd ].
 ]
 
@@ -54,13 +54,13 @@ PePyDataFrame >> pyDataFrame: anObject [
 ]
 
 { #category : #accessing }
-PePyDataFrame >> pythonVariableName [
+PePyDataFrame >> pythonInstance [
 
 	^ pythonVariableName
 ]
 
 { #category : #accessing }
-PePyDataFrame >> pythonVariableName: anObject [
+PePyDataFrame >> pythonInstance: anObject [
 
 	pythonVariableName := anObject
 ]
@@ -74,8 +74,7 @@ PePyDataFrame >> seriesClass [
 PePyDataFrame >> toJson [
 	"Preserves type, but not order"
 	^ PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}.to_json()'
-		format: { 
-			#self -> self pythonVariableName };
-	sendAndWait.
+		source: 'self.to_json()';
+		bindingAt: #self put: self pythonInstance;
+		sendAndWait.
 ]

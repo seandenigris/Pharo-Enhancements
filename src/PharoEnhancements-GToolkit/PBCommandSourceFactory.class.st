@@ -2,44 +2,100 @@ Class {
 	#name : #PBCommandSourceFactory,
 	#superclass : #PBCommandFactory,
 	#instVars : [
-		'statements',
-		'resultVariableName'
+		'source',
+		'isLastStatementResult'
 	],
 	#category : #'PharoEnhancements-GToolkit-Python'
 }
 
-{ #category : #accessing }
-PBCommandSourceFactory >> bindings: convertibleToDictionary [
-
-	convertibleToDictionary asDictionary keysAndValuesDo: [ :aSymbol :anObject |
-		self bindingAt: aSymbol put: anObject ].
-]
-
-{ #category : #accessing }
-PBCommandSourceFactory >> buildCommand [
-
-	self resultVariableName ifNotNil: [ 
-		| lastStatement |
-		lastStatement := statements last.
-		lastStatement string: self resultVariableName, ' = ', lastStatement string. ].
+{ #category : #example }
+PBCommandSourceFactory class >> example [
+	<gtExample>
 	
-	statements do: [ :statement | self << statement ].
-	^ super buildCommand
+	^ PBApplication uniqueInstance newCommandSourceFactory
+		source: 'range(1,11)';
+		returnLastStatement;
+		sendAndWait.
 ]
 
 { #category : #accessing }
-PBCommandSourceFactory >> resultVariableName [
-	^ resultVariableName
+PBCommandSourceFactory >> addAllBindings: convertibleToDictionary [
+
+	convertibleToDictionary asDictionary keysAndValuesDo: [ :key :value |
+		self bindingAt: key put: value ]
 ]
 
 { #category : #accessing }
-PBCommandSourceFactory >> resultVariableName: aSymbol [
-	resultVariableName := aSymbol
+PBCommandSourceFactory >> instructionsWithNotifyAtEnd [
+	"Copy pasted from superclass because instVars were being used directly, but should be via accessors i.e. we need them to be"
+
+	^ String streamContents: [ :stream |
+		stream 
+			<< self script withUnixLineEndings;
+			lf;
+			<< 'notify(';
+			<< self resultExpression;
+			<< ', ';
+			print: command id;
+			<< ')' ].
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> isLastStatementResult [
+	^ isLastStatementResult
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> isLastStatementResult: anObject [
+	isLastStatementResult := anObject
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> reset [
+	super reset.
+	source := ''.
+	isLastStatementResult := false.
+	command := PBCommandString new.
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> resultExpression [
+
+	^ self isLastStatementResult
+		ifFalse: [ #None ]
+		ifTrue: [ self source lines last ]
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> returnLastStatement [
+	isLastStatementResult := true
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> script [
+
+	self isLastStatementResult ifFalse: [ ^ self source ].
+	
+	^ String streamContents: [ :str |
+		self source lines allButLast
+			do: [ :line | str << line ]
+			separatedBy: [ str lf ] ]
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> source [
+	^ source
 ]
 
 { #category : #accessing }
 PBCommandSourceFactory >> source: aString [
-	statements := LeUninterpretedPythonStatement statementsFrom: aString.
+	source := aString
+]
+
+{ #category : #accessing }
+PBCommandSourceFactory >> sourceWithResult: aString [
+	source := aString.
+	self isLastStatementResult: true
 ]
 
 { #category : #accessing }
@@ -48,9 +104,4 @@ PBCommandSourceFactory >> template: aString format: convertibleToDictionary [
 	| filled |
 	filled := aString format: convertibleToDictionary asDictionary.
 	self source: filled
-]
-
-{ #category : #accessing }
-PBCommandSourceFactory >> useRandomVariableName [
-	self resultVariableName: 'st', UUIDGenerator next asString36
 ]

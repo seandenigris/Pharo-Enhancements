@@ -2,7 +2,7 @@ Class {
 	#name : #PePyDataSeries,
 	#superclass : #Object,
 	#instVars : [
-		'pythonVariableName'
+		'pythonInstance'
 	],
 	#category : #'PharoEnhancements-PolyMath'
 }
@@ -64,10 +64,10 @@ PePyDataSeries >> crossTabulateWith: rhs [
 	
 	| cmd |
 	cmd := PBApplication uniqueInstance newCommandSourceFactory
-	template: 'pd.crosstab({self}.fillna(''missing''), {rhs}.fillna(''missing''), dropna=False, margins=True)'
-		format: { 
-			#self -> self pythonVariableName.
-			#rhs -> rhs pythonVariableName }.
+		source: 'pd.crosstab(self.fillna(''missing''), rhs.fillna(''missing''), dropna=False, margins=True)';
+		addBindings: { 
+			#self -> self pythonInstance.
+			#rhs -> rhs pythonInstance }.
 			
 	^ self frameClass fromCommand: cmd
 ]
@@ -78,51 +78,47 @@ PePyDataSeries >> frameClass [
 ]
 
 { #category : #accessing }
-PePyDataSeries >> pythonVariableName [
-	^ pythonVariableName
+PePyDataSeries >> pythonInstance [
+	^ pythonInstance
 ]
 
 { #category : #'as yet unclassified' }
-PePyDataSeries >> pythonVariableName: aString [ 
-	pythonVariableName := aString
+PePyDataSeries >> pythonInstance: aString [ 
+	pythonInstance := aString
 ]
 
 { #category : #accessing }
 PePyDataSeries >> toCsv [
 	"Preserves order, but not type"
 	^ PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}.to_csv()'
-		format: { 
-			#self -> self pythonVariableName };
-	sendAndWait.
+		source: 'self.to_csv()';
+		bindingAt: #self put: self pythonInstance;
+		sendAndWait.
 ]
 
 { #category : #accessing }
 PePyDataSeries >> toDictionary [
 	"Preserves type, but not order"
 	^ PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}.to_dict()'
-		format: { 
-			#self -> self pythonVariableName };
-	sendAndWait.
+		source: 'self.to_dict()';
+		bindingAt: #self put: self pythonInstance;
+		sendAndWait.
 ]
 
 { #category : #accessing }
 PePyDataSeries >> toJson [
 	"Preserves type, but not order"
 	^ PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}.to_json()'
-		format: { 
-			#self -> self pythonVariableName };
-	sendAndWait.
+		source: 'self.to_json()';
+		bindingAt: #self put: self pythonInstance;
+		sendAndWait.
 ]
 
 { #category : #accessing }
 PePyDataSeries >> valueCounts [
 	| cmd |
 	cmd := PBApplication uniqueInstance newCommandSourceFactory
-	template: '{self}.value_counts(dropna=False)'
-		format: { 
-			#self -> self pythonVariableName }.
+		source: 'self.value_counts(dropna=False)';
+		bindingAt: #self put: self pythonInstance.
 	^ self class fromCommand: cmd
 ]

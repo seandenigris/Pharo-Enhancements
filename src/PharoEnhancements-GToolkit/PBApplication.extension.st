@@ -9,8 +9,8 @@ PBApplication class >> exampleCommandSourceFactory [
 		when: [ :src |
 			PBApplication uniqueInstance newCommandSourceFactory
 				source: src;
-				bindings: { #x -> 2 };
-		sendAndWait ]
+				addAllBindings: { #x -> 2 };
+				sendAndWait ]
 		then: [ :result | result should equal: 3 ]
 ]
 
