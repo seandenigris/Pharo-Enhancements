@@ -1,10 +1,16 @@
 Extension { #name : #GtHomeSection }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-GtHomeSection >> buttonTitled: aString iconFileNamed: iconName tooltip: tipString inspecting: aValuable [
+GtHomeSection >> buttonTitled: aString iconFileNamed: iconable tooltip: tipString inspecting: aValuable [
+
+	| icon |
+	icon := iconable isString
+		ifTrue: [ self iconFromFileNamed: iconable ]
+		ifFalse: [ GtFileUtility imageElementFromFileReference: iconable ].
+
 	^ GtToolButtonStencil new 
 		title: aString;
-		icon: (self iconFromFileNamed: iconName);
+		icon: icon;
 		iconSize: 50@50;
 		action: [ :card | 
 			self
