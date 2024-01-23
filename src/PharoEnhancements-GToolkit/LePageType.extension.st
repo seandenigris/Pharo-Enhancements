@@ -16,3 +16,9 @@ LePageType >> snippetBuilder [
 		parent: self page;
 		database: self page database.
 ]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
+LePageType class >> updatePrimaryDBPageTypes [
+
+	LeDatabasesRegistry defaultPrimaryDatabase updatePageTypes
+]

@@ -21,10 +21,13 @@ LeDatabase >> initialize [
 
 { #category : #'*PharoEnhancements-GToolkit' }
 LeDatabase >> updatePageTypes [
+
+	"Copy-pasted from LeDatabase>>#initialize"
 	LePageType allSubclassesDo: [ :pageType |
 		pagesByType
 			at: pageType pageTypeClass
 			ifAbsentPut: [ Dictionary new ] ].
 			
-	"Copy-pasted from LeDatabase>>#initialize"
+	"Reader/writer mappines now cached"
+	LeJsonV4 cleanUp.
 ]
