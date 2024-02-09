@@ -27,10 +27,19 @@ PeTRawDataHolder >> rawDataAt: aString [
 { #category : #accessing }
 PeTRawDataHolder >> rawDataAt: aString reader: aValuable [
 		
+	^ self 
+		rawDataAt: aString 
+		reader: aValuable 
+		ifAbsent: [ nil ]
+]
+
+{ #category : #accessing }
+PeTRawDataHolder >> rawDataAt: aString reader: aValuable ifAbsent: absentBlock [
+		
 	^ self rawData 
 		at: aString
 		ifPresent: aValuable
-		ifAbsent: [  nil ]
+		ifAbsent: absentBlock
 ]
 
 { #category : #accessing }
