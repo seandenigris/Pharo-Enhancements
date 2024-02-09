@@ -22,13 +22,47 @@ AbstractFileReference >> peOpen [
 
 { #category : #'*PharoEnhancements' }
 AbstractFileReference >> preview [
+	self quickLook
+]
+
+{ #category : #'*PharoEnhancements' }
+AbstractFileReference >> quickLook [
+				
 	"Reference: http://www.maclife.com/article/columns/easy_mac_hacks_using_quicklook_command_line"
-	LibC system: '/usr/bin/qlmanage -p "', self fullName, '" &'
+	LibC system: '/usr/bin/qlmanage -p "', self quickLookInputFile fullName, '" &'
+]
+
+{ #category : #'*PharoEnhancements' }
+AbstractFileReference >> quickLookInputFile [
+	
+	| isEmail |
+	
+	"EML files may not have the right line endings to be displayed properly by quick look. See https://www.karma.net/2020/10/26/quicklook-eml-catalina"
+	isEmail := #('eml'" 'emlx'") includes: self extension.
+	
+	^ isEmail
+		ifFalse: [ self ]
+		ifTrue: [ 
+			| tempfile |
+			tempfile := FileLocator temp / DateAndTime now asString asFilename, self extension.
+			tempfile 
+				writeStreamDo: [ :str | str << self contents withUnixLineEndings ];
+				yourself ].
 ]
 
 { #category : #'*PharoEnhancements' }
 AbstractFileReference >> showInFinder [
 	LibC system: 'open --reveal ', (self fullName surroundedBy: '"')
+]
+
+{ #category : #'*PharoEnhancements' }
+AbstractFileReference >> thumbnail [
+				
+	"Reference: "
+	| result |
+	result := Tempfile rootFolder / self basename, 'png'.
+	LibC system: '/usr/bin/qlmanage -t ', self quickLookInputFile fullName surroundedByDoubleQuotes, ' -s 2048 -o ', result parent fullName surroundedByDoubleQuotes.
+	^ result
 ]
 
 { #category : #'*PharoEnhancements' }
