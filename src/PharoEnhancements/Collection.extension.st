@@ -1,23 +1,23 @@
 Extension { #name : #Collection }
 
 { #category : #'*PharoEnhancements' }
-Collection >> detectMax: aBlock overThreshold: aNumber [
-	"Evaluate aBlock with each of the receiver's elements as the argument. 
-	Answer the element for which aBlock evaluates to the highest magnitude.
-	If collection empty, return nil.  This method might also be called elect:."
+Collection >> detectMax: aBlock overThreshold: aMagnitude [
+	"Just like detectMax:, but only consider values greater than aNumber. For example: 
+		#(1 2) detectMax: #yourself overThreshold: 3 >>> nil
+		#(1 2) detectMax: #yourself overThreshold: 1 >>> 2
+		
+	`detectMax: aBlock` could be rewritten as `detectMax: aBlock overThreshold: MinusInfinity"
 
 	| maxElement maxValue |
 	self do: [:each | | val | 
-		maxValue == nil
+		maxValue isNil
 			ifFalse: [
 				val := aBlock value: each.
-				(val > maxValue and: [ val > aNumber ]) ifTrue: [
+				(val > maxValue and: [val > aMagnitude]) ifTrue: [
 					maxElement := each.
 					maxValue := val]]
-			ifTrue: ["first element"
-				maxValue := aBlock value: each.
-				maxValue > aNumber ifTrue: [ maxElement := each ].].
-				"Note that there is no way to get the first element that works 
-				for all kinds of Collections.  Must test every one."].
+			ifTrue: [
+				maxValue > aMagnitude ifTrue: [maxElement := each].
+				maxValue := aBlock value: each]].
 	^ maxElement
 ]
