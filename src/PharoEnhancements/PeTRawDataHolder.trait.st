@@ -43,13 +43,31 @@ PeTRawDataHolder >> rawDataAt: aString reader: aValuable ifAbsent: absentBlock [
 ]
 
 { #category : #accessing }
-PeTRawDataHolder >> rawDataGtViewFor: aView [
+PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext [
 	<gtView>
 	
-	^ aView forward
+	^ self 
+		rawDataGtViewFor: aView 
+		context: aContext 
+		do: [ :resultView |
+			resultView actionUpdateButton ]
+]
+
+{ #category : #accessing }
+PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
+	"If you want to customize the view (e.g. reload latest data via API on update button), send this message from your view method"
+	
+	| result |
+	result := aView explicit
 		title: 'Raw Data';
 		priority: 75;
-		object: [ self rawData ];
-		view: #gtTreeFor:context:;
-		inspectButtonFor: [ self rawData ]
+		stencil: [ 
+			(self rawData 
+				gtTreeFor: aView 
+				context: aContext) asElement ];
+		inspectButtonFor: [ self rawData ].
+		
+	aBlock value: result.
+	
+	^ result
 ]
