@@ -13,8 +13,7 @@ PBCommandSourceFactory class >> example [
 	<gtExample>
 	
 	^ PBApplication uniqueInstance newCommandSourceFactory
-		source: 'range(1,11)';
-		returnLastStatement;
+		sourceWithResult: 'range(1,11)';
 		sendAndWait.
 ]
 
