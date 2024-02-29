@@ -17,7 +17,7 @@ Collection >> detectMax: aBlock overThreshold: aMagnitude [
 					maxElement := each.
 					maxValue := val]]
 			ifTrue: [
-				maxValue > aMagnitude ifTrue: [maxElement := each].
-				maxValue := aBlock value: each]].
+				maxValue := aBlock value: each.
+				maxValue > aMagnitude ifTrue: [maxElement := each]]].
 	^ maxElement
 ]
