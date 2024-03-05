@@ -1,7 +1,7 @@
-Extension { #name : #MARelationDescription }
+Extension { #name : #MAReferenceDescription }
 
 { #category : #'*PharoEnhancements-Magritte' }
-MARelationDescription >> referenceDisplay: aSymbol [
+MAReferenceDescription >> referenceDisplay: aSymbol [
 
 	| stringDesc container |
 	stringDesc := MAStringDescription new   
