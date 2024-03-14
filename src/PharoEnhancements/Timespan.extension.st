@@ -1,6 +1,12 @@
 Extension { #name : #Timespan }
 
 { #category : #'*PharoEnhancements' }
+Timespan >> asTimespan [
+
+	^ self
+]
+
+{ #category : #'*PharoEnhancements' }
 Timespan >> workDatesDo: aBlock [
  	"Exclude Saturday and Sunday"
 
