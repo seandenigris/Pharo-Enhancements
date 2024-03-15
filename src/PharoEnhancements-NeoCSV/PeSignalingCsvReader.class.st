@@ -1,7 +1,7 @@
 Class {
 	#name : #PeSignalingCsvReader,
 	#superclass : #NeoCSVReader,
-	#category : #'PharoEnhancements-GToolkit-CSV'
+	#category : #'PharoEnhancements-NeoCSV'
 }
 
 { #category : #accessing }
