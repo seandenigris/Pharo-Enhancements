@@ -94,6 +94,18 @@ PeTEnumerable >> includesAny: anObject [
 ]
 
 { #category : #accessing }
+PeTEnumerable >> inject: thisValue into: binaryBlock [ 
+
+	^ self privateEnumerable inject: thisValue into: binaryBlock 
+]
+
+{ #category : #enumerating }
+PeTEnumerable >> isEmpty [
+
+	^ self privateEnumerable isEmpty
+]
+
+{ #category : #accessing }
 PeTEnumerable >> max: aBlock [
 
 	^ self privateEnumerable max: aBlock
