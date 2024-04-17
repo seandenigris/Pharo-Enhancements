@@ -82,6 +82,12 @@ Date >> isLeapDay [
 ]
 
 { #category : #'*PharoEnhancements' }
+Date >> longFormat [
+
+	^ self dayOfWeekName, ', ', self monthName, ' ', self dayOfMonth asString, ', ', self year asString
+]
+
+{ #category : #'*PharoEnhancements' }
 Date >> subtractYears: anInteger [
 	^ self addYears: anInteger negated
 ]
