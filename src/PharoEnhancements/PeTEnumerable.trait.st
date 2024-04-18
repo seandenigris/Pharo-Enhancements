@@ -9,6 +9,12 @@ PeTEnumerable >> anySatisfy: aBlock [
 	^ self privateEnumerable anySatisfy: aBlock
 ]
 
+{ #category : #random }
+PeTEnumerable >> atRandom [
+
+	^ self privateEnumerable atRandom
+]
+
 { #category : #enumerating }
 PeTEnumerable >> collect: aBlock [
 	
