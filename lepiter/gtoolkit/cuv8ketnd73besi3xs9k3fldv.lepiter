@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "035d6043-8084-0d00-b95e-5a120f742dd9"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Main"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -140,7 +148,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:15:45.773613-04:00"
+						"dateAndTimeString" : "2024-04-23T15:36:56.887724+00:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +158,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## Notifications\rThe following example displays text in the notification center. Asked for an explanation of why this works on Discord help channel on 2/24/21.\r```language=smalltalk\rBlBlocUIManagerNotification\r\trequestOrNil: #inform:\r\twith: { 'Example information' }\r```"
+				"string" : "## Notifications\rThe following example displays text in the notification center. Asked for an explanation of why this works on Discord help channel on 2/24/21.\r```smalltalk\rBlBlocUIManagerNotification\r\trequestOrNil: #inform:\r\twith: { 'Example information' }\r```"
 			},
 			{
 				"__type" : "textSnippet",
@@ -397,13 +405,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T13:51:58.704493-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Main"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "035d6043-8084-0d00-b95e-5a120f742dd9"
 	}
 }

@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f329a25e-a186-0d00-a533-ada20556d8b0"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Further Research"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -29,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:12:44.108501-04:00"
+						"dateAndTimeString" : "2024-04-23T15:35:59.865199+00:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +47,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "baseline-aware syntax highlighter that makes inline nested dependencies available in Coder? tudor girba08/31/2020\rIt’s an extension in MethodCoder"
+				"string" : "Where is the baseline-aware syntax highlighter implemented that makes inline nested dependencies available in Coder? tudor girba08/31/2020\rIt’s an extension in MethodCoder"
 			},
 			{
 				"__type" : "textSnippet",
@@ -212,13 +220,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-08-23T16:12:12.781133-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Further Research"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "f329a25e-a186-0d00-a533-ada20556d8b0"
 	}
 }

@@ -66,7 +66,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:13:15.063003-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:20.429252-04:00"
 					}
 				},
 				"uid" : {
@@ -76,7 +76,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Konrad Hinsen09/11/2020\r@SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the \"clean\" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup.\r"
+				"string" : "Konrad Hinsen09/11/2020\r@SeanDeNigris The rendering of annotations baffled me as well initially. What happens is that all markup is rendered first, and then the markup is hidden in the \"clean\" display mode. So maybe styleTextWithoutMarkup should better be called styleTextWithMarkupThenHideMarkup."
 			},
 			{
 				"__type" : "textSnippet",
@@ -103,7 +103,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:13:12.579934-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:21.912627-04:00"
 					}
 				},
 				"uid" : {
@@ -113,7 +113,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "`gt-extra` - to copy after template instantiation. See {{gtMethod:GtImageSetup class>>#copyDataAndDocsFolders}}\r\r"
+				"string" : "`gt-extra` - to copy after template instantiation. See {{gtMethod:GtImageSetup class>>#copyDataAndDocsFolders}}"
 			},
 			{
 				"__type" : "textSnippet",
@@ -140,7 +140,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:13:10.730769-04:00"
+						"dateAndTimeString" : "2021-08-23T16:13:23.965096-04:00"
 					}
 				},
 				"uid" : {
@@ -150,7 +150,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "[Pharo Package Coder Element](https://github.com/feenkcom/gt4pharo/commit/dd9d6c) - asked on Discord 5/19/21\r\r"
+				"string" : "[Pharo Package Coder Element](https://github.com/feenkcom/gt4pharo/commit/dd9d6c) - asked on Discord 5/19/21"
 			},
 			{
 				"__type" : "textSnippet",
