@@ -6,6 +6,14 @@ Trait {
 	#category : #PharoEnhancements
 }
 
+{ #category : #'instance creation' }
+PeTRawDataHolder classSide >> fromDictionary: aDictionary [
+
+	^ self new
+		rawData: aDictionary;
+		yourself
+]
+
 { #category : #accessing }
 PeTRawDataHolder >> rawData [
 	^ rawData
