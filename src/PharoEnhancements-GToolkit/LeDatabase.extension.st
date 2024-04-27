@@ -28,6 +28,6 @@ LeDatabase >> updatePageTypes [
 			at: pageType pageTypeClass
 			ifAbsentPut: [ Dictionary new ] ].
 			
-	"Reader/writer mappines now cached"
+	"Reader/writer mappings now cached"
 	LeJsonV4 cleanUp.
 ]
