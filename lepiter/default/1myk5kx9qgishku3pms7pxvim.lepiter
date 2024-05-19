@@ -1,0 +1,637 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ce9277b6-11d5-0d00-b8a9-af0707fea91b"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "GitHub Actions"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T02:07:02.005184+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T03:11:28.417172+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3zEyqRLVDQCIcufRB/6pGw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "There- seems to be [some pretty good documentation on the Pharo wiki](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/GithubActions.md) detailing how to set this up."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T01:01:44.619787+00:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T01:35:25.535163+00:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8qhBvxHVDQC/YZ0GB/6pGw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "The simplest way is probably just to include a step that runs a well-known command that produces interesting output. For example:\n```\n- name: What files are up there?!\n  run: ls\n```"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:00:44.031693+00:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:04:09.443017+00:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "PWY+aRPVDQCYSJyCBtkRlg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "But the gold standard seems to be [tmate](https://tmate.io), which let's you ssh into the running CI server! You just add a step like this:\n```\n- name: Setup tmate session\n  uses: mxschmitt/action-tmate@v3\n```\nWhen the step is run, check the output for a command that you can copy/paste into a local terminal to make the connection. It will look something like this: \n`ssh GSvE5PGwZkU33j9jwCGr3vzd9@nyc1.tmate.io`"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T00:59:38.678723+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T01:32:44.258063+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "KeUxuBHVDQC44/Z0B/6pGw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "It can be frustrating to debug GitHub actions because it feels like you can't \"get your hands on\" the files or even really see what's going on other than logging message. It can be especially painful to a new user, to whom it all may seem like unintelligible magic. Luckily, like other remote systems, there are ways to break through the glass."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T00:59:27.304698+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T00:59:37.297027+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "E2CEtxHVDQC4qviXB/6pGw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Debugging"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:05:21.959552+00:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:05:46.197537+00:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "3j/PeRPVDQCg1IyfBtkRlg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "1. The process is glacial compared to the fast feedback loop Smalltalkers are used to"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:05:46.51156+00:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-05-18T03:06:27.810343+00:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Ct1FexPVDQCjLnz+BtkRlg=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "2. Pushing commits and tags just to test your CI can create lots of noise in your repo"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:05:01.402828+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:05:21.42106+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "FW0xeBPVDQCfTMqPBtkRlg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "There are downsides to the approaches above:"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:06:28.887398+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:09:00.842521+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "CHrMfRPVDQCl6SdrBtkRlg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "A good guideline, then, is to do most of the work where you can develop and test easily (e.g. in the image or a shell script saved in your repo) and then use a bit of glue to invoke that from a GH action (like with the `run: ls` step above."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:10:17.902127+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:11:56.0419+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "+fZyixPVDQCwfd+iBtkRlg=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "The Pharo wiki page linked above, while stellar in most respects, illustrates the anti-pattern like this:\n```\nrun: |\n          mv /home/runner/.smalltalkCI/_builds/* .\n          mv TravisCI.image $PROJECT_NAME.image\n          mv TravisCI.changes $PROJECT_NAME.changes\n          #...\n```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:12:01.66674+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-18T03:13:03.642196+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "iEmikRPVDQCGa6HuD7VS0w=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "While it's nice to see everything in one place, any time the script has to be tweaked slightly, it could mean several commits to get right, as the only way to verify the change is correct is to run the workflow."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T03:04:41.689607+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-18T03:04:50.880606+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "esVodxPVDQCe0vJQBtkRlg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Defensive Programming"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-19T04:42:40.033336+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-19T04:44:53.746084+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Zo+g8yjVDQC/350KAQGz7Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "I put everything I learned together into the CI workflow of my BookmarkMagic project. It's lightweight enough to have a nice short build time as I worked out the kinks.\n\nStarting with the Pharo wiki mentioned above, and making a few updates and enhancements, I have a phase 1 that I'm pretty happy with. It creates [a \"continuous\" tagged release](https://github.com/seandenigris/Bookmark-Magic/releases/tag/continuous) on each commit, with the image, changes, etc. zipped along with the release.\n\nThe real work is done in [this shell script](https://github.com/seandenigris/Bookmark-Magic/blob/6a0acb065d92f1239ddd2fa4613c716fd1f1a2d3/scripts/package_pharo.sh), which is called from the workflow [here](https://github.com/seandenigris/Bookmark-Magic/blob/6a0acb065d92f1239ddd2fa4613c716fd1f1a2d3/.github/workflows/runTests.yaml#L50).\n\nThis will get me started until I need semantic version releases, which shouldn't be too hard to modify. Thanks for the help!"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-19T04:42:37.031796+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-19T04:42:39.573278+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "68By8yjVDQC/qWzKAQGz7Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Examples"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-19T01:50:58.874217+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-05-19T01:56:57.769847+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jtB/jSbVDQC3AlzoAQGz7Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "It seems ([per SO](https://stackoverflow.com/questions/58465057/trigger-a-github-action-when-another-repository-creates-a-new-release)) that the common approaches are: 1) push notification from the dependency or 2) poll with cron. Number 1 doesn't seem worth the maintenance because the dependency would have to keep track of every project that depended on it and number 2 seems a bit hacky."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-19T01:50:40.386928+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-05-19T01:50:55.713366+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tT+HjCbVDQC2YtKeAQGz7Q=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Triggering from Dependencies"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-05-18T00:59:27.304671+00:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-05-18T00:59:27.304671+00:00"
+		}
+	}
+}
