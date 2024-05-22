@@ -20,6 +20,17 @@ LeDatabase >> initialize [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+LeDatabase >> pagesByDate [
+
+	^ pagesByDate ifNil: [ 
+			pagesByDate := SortedCollection new 
+				sortBlock: #latestEditTime descending.
+			pagesByType valuesDo: [ :aCollectionOfPages |
+				pagesByDate addAll: aCollectionOfPages ].
+			pagesByDate ]
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 LeDatabase >> updatePageTypes [
 
 	"Copy-pasted from LeDatabase>>#initialize"
