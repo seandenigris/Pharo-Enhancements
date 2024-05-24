@@ -11,6 +11,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    #tags:
+     # - "v*.*.*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,29 +21,41 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    permissions:
+      contents: write
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
+
+    env:
+      PROJECT_NAME: PharoEnhancements-${{ matrix.smalltalk }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
     strategy:
       matrix:
-        smalltalk: [ GToolkit64-release, Pharo64-10 ]
+        smalltalk: [ Pharo64-11, GToolkit64-release ]
     name: ${{ matrix.smalltalk }}
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
+      - uses: actions/checkout@v4
+      # Prepares SmalltalkCI
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
           smalltalk-image: ${{ matrix.smalltalk }}
-      - name: Load Image and Run Tests
+      - name: Load Project and Run Tests
         run: smalltalkci -s ${{ matrix.smalltalk }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
         timeout-minutes: 15
-#      - name: Upload coverage to Codecov
-#        uses: codecov/codecov-action@v1
-#        with:
-#          name: ${{matrix.os}}-${{matrix.smalltalk}}
-#          token: ${{ secrets.CODECOV_TOKEN }}
+      # Here we zip the result of the build to be able to keep the artefacts
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
+      - name: Package
+        run: bash ${GITHUB_WORKSPACE}/scripts/package_pharo.sh ${PROJECT_NAME} ${{ matrix.smalltalk }} ~/.smalltalkCI/_builds
+        
+      # Save the artefact of the build under "continuous" tag
+      - name: Release
+        uses: softprops/action-gh-release@v2
+      #  if: startsWith(github.ref, 'refs/tags/')
+        with:
+          tag_name: continuous
+          files: ${{ env.PROJECT_NAME }}.zip
