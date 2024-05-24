@@ -1,0 +1,67 @@
+## Adapted from:
+##    1. Roassal3 - https://github.com/ObjectProfile/Roassal3/blob/36b92db2055501c87f2ccea5573fc83fb4916884/.github/workflows/runTests.yml
+##    2. Willow-Playground - https://github.com/ba-st/Willow-Playground/blob/2898e1afbdd5a6011721e5a640225f81ae895de2/.github/workflows/build.yml
+##    3. https://docs.github.com/en/actions/using-workflows/reusing-workflows
+
+# Controls when the action will run. 
+on:
+  # Make reusable (i.e. callable from other workflows)
+  workflow_call:
+    inputs:
+      project-name:
+        required: true
+        type: string
+      runners:
+        type: string
+        default: "['ubuntu-latest']"
+      smalltalks:
+        type: string
+        default: "[ 'Pharo64-11', 'GToolkit64-release' ]"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    #The following is required, but must be done in the calling script
+    #permissions:
+    #  contents: write
+    # The type of runner that the job will run on
+    runs-on: ${{ fromJSON(inputs.runners) }}
+
+    env:
+      BUILD_NAME: ${{ inputs.project-name }}-${{ matrix.smalltalk }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+    strategy:
+      matrix:
+        smalltalk: ${{ fromJSON(inputs.smalltalks) }}
+    name: ${{ matrix.smalltalk }}
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+      # Prepares SmalltalkCI
+      - uses: hpi-swa/setup-smalltalkCI@v1
+        with:
+          smalltalk-image: ${{ matrix.smalltalk }}
+      - name: Load Project and Run Tests
+        run: smalltalkci -s ${{ matrix.smalltalk }}
+        shell: bash
+        timeout-minutes: 15
+
+      # Debug via SSH
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
+
+      # Here we zip the result of the build to be able to keep the artefacts
+      - name: Package
+        # Adapted from https://stackoverflow.com/a/25563308
+        run: curl https://raw.githubusercontent.com/seandenigris/Pharo-Enhancements/master/scripts/prepare_release.sh | bash -s -- ${BUILD_NAME} ${{ matrix.smalltalk }} ~/.smalltalkCI/_builds
+        
+      # Save the artefact of the build under "continuous" tag
+      - name: Release
+        uses: softprops/action-gh-release@v2
+      #  if: startsWith(github.ref, 'refs/tags/')
+        with:
+          tag_name: continuous
+          files: ${{ env.BUILD_NAME }}.zip
