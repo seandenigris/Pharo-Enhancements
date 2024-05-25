@@ -13,10 +13,13 @@ on:
         type: string
       runners:
         type: string
-        default: "['ubuntu-latest']"
+        default: "[ 'macos-latest' ]"
       smalltalks:
         type: string
         default: "[ 'Pharo64-11', 'GToolkit64-release' ]"
+    secrets: 
+      CI:
+        required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,21 +28,31 @@ jobs:
     #The following is required, but must be done in the calling script
     #permissions:
     #  contents: write
-    # The type of runner that the job will run on
-    runs-on: ${{ fromJSON(inputs.runners) }}
-
     env:
       BUILD_NAME: ${{ inputs.project-name }}-${{ matrix.smalltalk }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
     strategy:
       matrix:
+        os: ${{ fromJSON(inputs.runners) }}
         smalltalk: ${{ fromJSON(inputs.smalltalks) }}
-    name: ${{ matrix.smalltalk }}
+
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+    name: ${{ matrix.smalltalk }} on ${{ matrix.os }}
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+
+      - name: Setup SSH Key (if needed)
+        # Save secret in env var to avoid error comparing a non-existent secret below
+        env: 
+          CI: ${{ secrets.CI }}
+        if: ${{ env.CI != '' }}
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.CI }}
+
       # Prepares SmalltalkCI
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
@@ -48,6 +61,8 @@ jobs:
         run: smalltalkci -s ${{ matrix.smalltalk }}
         shell: bash
         timeout-minutes: 15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Debug via SSH
       #- name: Setup tmate session

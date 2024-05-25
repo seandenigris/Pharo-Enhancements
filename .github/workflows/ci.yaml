@@ -13,7 +13,9 @@ on:
 
 # Adapted from https://docs.github.com/en/actions/using-workflows/reusing-workflows
 jobs:
-  call-workflow-passing-data:
+  test-and-release:
     uses: seandenigris/Pharo-Enhancements/.github/workflows/ci_reusable.yaml@master
     with:
       project-name: PharoEnhancements
+      #runners: "[ 'ubuntu-latest' 'macos-14' ]"
+      #smalltalks: "[ 'GToolkit64-release' ]"
