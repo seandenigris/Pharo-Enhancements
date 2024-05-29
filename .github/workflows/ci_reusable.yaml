@@ -34,10 +34,11 @@ jobs:
     env:
       BUILD_NAME: ${{ inputs.project-name }}-${{ matrix.smalltalk }}
     strategy:
+      fail-fast: false # If one job in the matrix fails, don't abort others, per https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast
       matrix:
         os: ${{ fromJSON(inputs.runners) }}
         smalltalk: ${{ fromJSON(inputs.smalltalks) }}
-
+ 
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.smalltalk }} on ${{ matrix.os }}
