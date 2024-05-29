@@ -17,6 +17,9 @@ on:
       smalltalks:
         type: string
         default: "[ 'Pharo64-11', 'GToolkit64-release' ]"
+      timeout-minutes:
+        type: number
+        default: 15
     secrets: 
       CI:
         required: false
@@ -60,7 +63,7 @@ jobs:
       - name: Load Project and Run Tests
         run: smalltalkci -s ${{ matrix.smalltalk }}
         shell: bash
-        timeout-minutes: 15
+        timeout-minutes: ${{ inputs.timeout-minutes }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
