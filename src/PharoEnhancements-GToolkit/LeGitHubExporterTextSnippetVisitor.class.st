@@ -74,6 +74,11 @@ LeGitHubExporterTextSnippetVisitor >> visitHeader: aHeader [
 ]
 
 { #category : #generated }
+LeGitHubExporterTextSnippetVisitor >> visitInlineCode: anInlineCode [
+	self stream << anInlineCode source
+]
+
+{ #category : #generated }
 LeGitHubExporterTextSnippetVisitor >> visitPageLink: aPageLink [
 
 	self stream
