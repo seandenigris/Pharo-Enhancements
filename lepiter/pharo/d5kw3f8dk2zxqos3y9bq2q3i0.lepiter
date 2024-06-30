@@ -7,7 +7,7 @@
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "RewriteRules"
+		"title" : "Rewrite Rules"
 	},
 	"children" : {
 		"__type" : "snippets",
@@ -26,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.746353-04:00"
+						"dateAndTimeString" : "2024-06-30T02:41:48.495518+00:00"
 					}
 				},
 				"editEmail" : {
@@ -37,17 +37,129 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-09-22T14:12:53.351308-04:00"
+						"dateAndTimeString" : "2024-06-30T02:41:49.687431+00:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "8h4+D32EDQCbVArADDM03g=="
+					"uidString" : "PJy8KHTYDQCrlB3YAMg7kQ=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Rewrite Rules\r## Documentation \rTo get the basics down, <http://www.refactory.com/tools/refactoring-browser/rewrite-tool> is quite helpful.\r\rHere are a few mailing list discussions which stand out:\r- <http://forum.world.st/Adding-a-statement-when-rewriting-td4668879.html>\r- <http://forum.world.st/RB-API-td3781019.html>\r- <http://forum.world.st/Classes-referenced-in-code-string-td4244214.html>\r- <http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html>\r## Examples\rReplace all calls to `#deprecated:` to `#deprecated:on:in:` (to fix Pharo Issue 4718):\r```smalltalk\r        RBParseTreeRewriter new\r                replace: '``@object deprecated: ``@arg1 '\r                with: '``@object deprecated: ``@arg1 on:(''', dateString,  ''') in:(''Pharo', versionNumber asString, ''')'.\r```\r"
+				"string" : "# Rewrite Rules\r## Documentation \rTo get the basics down, <http://www.refactory.com/tools/refactoring-browser/rewrite-tool> is quite helpful.\r\rHere are a few mailing list discussions which stand out:\r- <http://forum.world.st/Adding-a-statement-when-rewriting-td4668879.html>\r- <http://forum.world.st/RB-API-td3781019.html>\r- <http://forum.world.st/Classes-referenced-in-code-string-td4244214.html>\r- <http://forum.world.st/Adding-a-statement-programmatically-tp4454447p4459879.html>"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:41:37.502889+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:41:51.239803+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "sN8UKHTYDQCriG5dAMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Replace all calls to `#deprecated:` to `#deprecated:on:in:` (to fix Pharo Issue 4718):\r```smalltalk\r        RBParseTreeRewriter new\r                replace: '``@object deprecated: ``@arg1 '\r                with: '``@object deprecated: ``@arg1 on:(''', dateString,  ''') in:(''Pharo', versionNumber asString, ''')'.\r```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:48:06.04583+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T03:23:00.053803+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "jY89P3TYDQCvvHr8AMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Illustrating solutions to common gotchas, Tim Mackinnon offers [the following example](https://lists.pharo.org/empathy/thread/V57MFE4SHQVWX75LTJRHO5HCUUWCX2W6?hash=LIAVRDYORBCJYDNENVCC57HXQNFJHW6T#LIAVRDYORBCJYDNENVCC57HXQNFJHW6T). The main tip is to use the handy source code AST inspector to help you reason about the structure.\n\nGiven the following:\n```\nappLog: anObject\n\"Log anObject for debugging\"\n| date |\ndate := Date today.\nTranscript traceCr: 'debug: ', date printString, anObject printString.\ndate isLeapYear ifTrue: [ ^nil ].\n^anObject\n```\n\nSay you wanted change the `#traceCr:` statement into a multi-statement cascade.\n\nYou could write a match expression like this:\n```\nappLog: arg | @temps |\n`.@before.\nTranscript traceCr: #str , @exp1, @exp2.\n`.@after\n```\n\nand a rewrite rule like this:\n```\nappLog: arg | @temps |\n`.@before.\nTranscript cr; traceCr: #str, @exp1. arg traceCr.\n`.@after\n```\n\nThis demonstrates a few possible sources of confusion:\n- You have to specify the temp variables matching. If you don't specify the `@temps` section, that can leave out a lot of matches. It essentialy means 0 or more temps vs. leaving it out means no temps at all.\n- For \"bounded sea\" parsing to match 0 or more statements before and after your target expression, `@before` and `@after` are both needed. The \".\" means lists of expressions\n- To prevent greedy matching before the code of interest, apparently you need the really subtle  \".\" at the end of `@before.`\n- If you want to match a string you need to match it as a literal e.g. `#str.\n\nAfter the transcript string, just `.@exp1 doesn't match because the AST for that line is actually VariableNode(transcript) + MsgNode(MsgNode(Literal+MsgNode(exp1)), MsgNode(exp2) and so you have to either call them each out or match the entire sequence with @stmnt."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-06-30T02:41:51.234294+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-06-30T02:41:51.234294+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mFvmKHTYDQCroH5TAMg7kQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Examples"
 			}
 		]
 	},
@@ -70,7 +182,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2021-07-27T10:02:38.74635-04:00"
+			"dateAndTimeString" : "2024-06-30T03:23:21.071272+00:00"
 		}
 	}
 }

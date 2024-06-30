@@ -1,0 +1,299 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "3d2db0ee-73d8-0d00-a091-956e00c83b91"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Tonel"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:28:38.597293+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:32:22.90315+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "vL6n+XPYDQChlYROAMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Pharo 12 upgrades Tonel from version 1 to 3. If you want to develop in Pharo 12, there are two options to reduce the pain of the format update, depending on whether you also want to support earlier Pharo versions."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:25:54.30131+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:36:19.370011+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "/8Lc73PYDQCgmV2uAMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "# Upgrading (if using Pharo 12+ only)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:29:24.986664+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:33:15.090703+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "R4lr/HPYDQCivxu/AMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "If you will only be developing in Pharo 12+, you can convert all the files of a repository at once to avoid to have multiple PRs with format changes. You can use this script and commit the resulting files:\n```smalltalk\n| projectName |\nprojectName := 'Spec2'.\nrepository := IceRepository repositories detect: [ :repo | repo name = projectName ].\nrepository workingCopy packages do: [ :pkg |\nIceLibgitTonelWriter forInternalStoreFileOut: pkg latestVersion mcVersion on: repository ]\n```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:29:26.373291+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:29:35.37603+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ZbiA/HPYDQCixbyfAMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "# Backward compatibility"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:26:31.45321+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:36:47.297083+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ZqcT8nPYDQChDt87AMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "If you plan to work on a project both in Pharo 12 as well as prior versions, you can avoid the ping pong by fixing a version of tonel in the properties file. The file to update is the .properties that is in the source folder and it should look like this:\n```json\n{\n#format : #tonel,\n#version: #'1.0'\n}\n```\n\nP12 will take into account the tonel version asked and use it. In previous version of Pharo, this additional line will be ignored and Tonel v1 will be used."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:37:03.009683+00:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-06-30T02:37:23.075207+00:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "kG+4F3TYDQCqV343AMg7kQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Adapted [from the Pharo "
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-06-30T02:34:45.070792+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-06-30T02:35:14.579434+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Wal/D3TYDQCovnlqAMg7kQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Developing in Pharo 12+"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-06-30T02:25:34.602952+00:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-06-30T02:25:42.993633+00:00"
+		}
+	}
+}
