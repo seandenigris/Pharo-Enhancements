@@ -597,7 +597,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-06-30T04:19:16.524797+00:00"
+						"dateAndTimeString" : "2024-06-30T04:18:58.329658+00:00"
 					}
 				},
 				"uid" : {
@@ -607,7 +607,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "To securely access Smalltalk dependencies in other private repos, you have to add [[GitHub Machine Users]] as collaborators to those repos. To be truly secure, the private repos must be owned by an organization, because you can't add read-only collaborators to personal repos. Once the machine user is a collaborator, you add their SSH key as a \"repository secret\" (in repository settings, \"Security\" -> \"Secrets and variables\" -> \"Actions\"). Then the SSH key stored as a secret can be added to the ssh-agent in the CI workflow ([see example here](https://github.com/seandenigris/Pharo-Enhancements/blob/e0cdfd64d20bbbf21097ab09e2b10050e5204600/.github/workflows/ci_reusable.yaml#L51))"
+				"string" : "To securely access Smalltalk dependencies in other private repos, you have to add [[GitHub Machine Users]] as collaborators to those repos. To be truly secure, the private repos must be owned by an organization, because you can't add read-only collaborators to personal repos. Once the machine user is added to those repos as a collaborator, you add their SSH key as a \"repository secret\" (in repository settings, \"Security\" -> \"Secrets and variables\" -> \"Actions\"). Then the SSH key stored as a secret can be added to the ssh-agent in the CI workflow ([see example here](https://github.com/seandenigris/Pharo-Enhancements/blob/e0cdfd64d20bbbf21097ab09e2b10050e5204600/.github/workflows/ci_reusable.yaml#L51))"
 			},
 			{
 				"__type" : "textSnippet",
