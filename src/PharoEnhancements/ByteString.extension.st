@@ -31,7 +31,7 @@ ByteString >> asTitleCase [
 		[ inStr atEnd or: [ inStr peek isLetter ] ] whileFalse: [ outStr nextPut: inStr next ] ].
 	
 	resultBlock := [ :outStr |
-		| inStr word |
+		| inStr |
 		inStr := self trimBoth readStream.
 		[ inStr atEnd ] whileFalse: [ nextWordFromTo value: inStr value: outStr ] ].
 			
