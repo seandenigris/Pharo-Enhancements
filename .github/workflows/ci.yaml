@@ -17,5 +17,5 @@ jobs:
     uses: seandenigris/Pharo-Enhancements/.github/workflows/ci_reusable.yaml@master
     with:
       project-name: PharoEnhancements
-      #runners: "[ 'ubuntu-latest' 'macos-14' ]"
+      #runners: "[ 'ubuntu-latest', 'macos-14' ]"
       #smalltalks: "[ 'GToolkit64-release' ]"
