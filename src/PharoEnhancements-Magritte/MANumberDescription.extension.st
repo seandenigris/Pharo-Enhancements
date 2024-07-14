@@ -1,6 +1,6 @@
 Extension { #name : #MANumberDescription }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MANumberDescription >> defaultJsonReader [
 
 	^ [ :input | input asNumber ]

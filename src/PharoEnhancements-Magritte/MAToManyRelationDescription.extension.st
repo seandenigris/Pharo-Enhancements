@@ -1,6 +1,6 @@
 Extension { #name : #MAToManyRelationDescription }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MAToManyRelationDescription >> defaultJsonReader [
 
 	^ [ :input | self fromString: input ].

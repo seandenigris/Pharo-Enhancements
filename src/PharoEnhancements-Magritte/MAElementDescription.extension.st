@@ -1,23 +1,23 @@
 Extension { #name : #MAElementDescription }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MAElementDescription >> defaultJsonReader [
 
 	^ [ :input | self fromString: input ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MAElementDescription >> jsonFieldName: aString [
 	^ self propertyAt: #jsonFieldName put: aString
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MAElementDescription >> jsonReader [
 
 	^ self propertyAt: #jsonReader ifAbsent: [ self defaultJsonReader ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : #'*PharoEnhancements-Magritte' }
 MAElementDescription >> jsonReader: aBlock [
 	"
 	aBlock 
