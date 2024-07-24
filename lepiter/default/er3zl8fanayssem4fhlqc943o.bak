@@ -37,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-06-30T04:04:00.993946+00:00"
+						"dateAndTimeString" : "2024-06-30T04:04:11.393499+00:00"
 					}
 				},
 				"uid" : {
@@ -47,7 +47,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "2FA is recommended. It will only affect web use, not SSH/token authentication (https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/managing-bots-and-service-accounts-with-two-factor-authentication"
+				"string" : "2FA is recommended. It will only affect web use, not SSH/token authentication (per [the docs](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/managing-bots-and-service-accounts-with-two-factor-authentication))"
 			}
 		]
 	},

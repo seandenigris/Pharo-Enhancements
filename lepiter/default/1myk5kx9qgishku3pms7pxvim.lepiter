@@ -154,7 +154,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2024-05-18T01:32:44.258063+00:00"
+									"dateAndTimeString" : "2024-07-14T17:16:10.592845+00:00"
 								}
 							},
 							"uid" : {
@@ -164,7 +164,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "It can be frustrating to debug GitHub actions because it feels like you can't \"get your hands on\" the files or even really see what's going on other than logging message. It can be especially painful to a new user, to whom it all may seem like unintelligible magic. Luckily, like other remote systems, there are ways to break through the glass."
+							"string" : "It can be frustrating to debug GitHub actions because it feels like you can't \"get your hands on\" the files or even really see what's going on other than logging messages. It can be especially painful to a new user, to whom it all may seem like unintelligible magic. Luckily, like other remote systems, there are ways to break through the glass."
 						}
 					]
 				},
@@ -479,7 +479,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2024-05-19T04:42:40.033336+00:00"
+									"dateAndTimeString" : "2024-07-14T17:22:38.966211+00:00"
 								}
 							},
 							"editEmail" : {
@@ -490,17 +490,17 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2024-05-19T04:44:53.746084+00:00"
+									"dateAndTimeString" : "2024-07-14T17:30:40.762943+00:00"
 								}
 							},
 							"uid" : {
 								"__type" : "uid",
-								"uidString" : "Zo+g8yjVDQC/350KAQGz7Q=="
+								"uidString" : "9wumGJrZDQCzgA1bBi84EQ=="
 							},
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "I put everything I learned together into the CI workflow of my BookmarkMagic project. It's lightweight enough to have a nice short build time as I worked out the kinks.\n\nStarting with the Pharo wiki mentioned above, and making a few updates and enhancements, I have a phase 1 that I'm pretty happy with. It creates [a \"continuous\" tagged release](https://github.com/seandenigris/Bookmark-Magic/releases/tag/continuous) on each commit, with the image, changes, etc. zipped along with the release.\n\nThe real work is done in [this shell script](https://github.com/seandenigris/Bookmark-Magic/blob/6a0acb065d92f1239ddd2fa4613c716fd1f1a2d3/scripts/package_pharo.sh), which is called from the workflow [here](https://github.com/seandenigris/Bookmark-Magic/blob/6a0acb065d92f1239ddd2fa4613c716fd1f1a2d3/.github/workflows/runTests.yaml#L50).\n\nThis will get me started until I need semantic version releases, which shouldn't be too hard to modify. Thanks for the help!"
+							"string" : "Everything we've talked about so far is illustrated in the CI workflow of this project itself, which was lightweight enough to have a nice short build time as the kinks were worked out. We have a reasonable phase one implementation that creates [a \"continuous\" tagged release](https://github.com/seandenigris/Pharo-Enhancements/releases/tag/continuous) on each commit, with the image, changes, etc. zipped along with the release. At only twelve short lines, [the top level workflow](https://github.com/seandenigris/Pharo-Enhancements/blob/master/.github/workflows/ci.yaml) is fairly simple, and the best part is that it's easy to adapt for your own project. That's because it utilizes [this reuseable workflow](https://github.com/seandenigris/Pharo-Enhancements/blob/master/.github/workflows/ci_reusable.yaml), which was adapted from the recommendations of the Pharo wiki mentioned above, as well as a few external workflows credited in the header. As suggested above, it delegates the real packaging work to  [this shell script](https://github.com/seandenigris/Pharo-Enhancements/blob/master/scripts/prepare_release.sh).\n\nThis will get us started until we need semantic version releases, which shouldn't be too hard to modify (famous last words ha ha)."
 						}
 					]
 				},
@@ -586,6 +586,80 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:34:56.261046+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:46:00.573868+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3kSYRJrZDQCCxHNLBi84EQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If your project depends on other Smalltalk projects in private repos - even from the same user - it can be a bit tricky to securely access them. The best way seems to be adding a CI [[GitHub machine user]] as a read-only collaborator ."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:33:19.896668+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:39:38.365987+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "At7ZPprZDQCCaR+7Bi84EQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "To be truly secure, the private repos must be owned by an organization, because you can't add read-only collaborators to personal repos. Thus, personal repos would have to give the machine user, which must have a passphraseless SSH key, full access. Once the machine user is a collaborator, you add their SSH key as a \"repository secret\" (in repository settings, \"Security\" -> \"Secrets and variables\" -> \"Actions\"). "
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2024-06-30T04:05:18.267472+00:00"
 					}
 				},
@@ -597,7 +671,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-06-30T04:19:16.524797+00:00"
+						"dateAndTimeString" : "2024-07-14T17:33:19.906576+00:00"
 					}
 				},
 				"uid" : {
@@ -607,7 +681,43 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "To securely access Smalltalk dependencies in other private repos, you have to add [[GitHub Machine Users]] as collaborators to those repos. To be truly secure, the private repos must be owned by an organization, because you can't add read-only collaborators to personal repos. Once the machine user is a collaborator, you add their SSH key as a \"repository secret\" (in repository settings, \"Security\" -> \"Secrets and variables\" -> \"Actions\"). Then the SSH key stored as a secret can be added to the ssh-agent in the CI workflow ([see example here](https://github.com/seandenigris/Pharo-Enhancements/blob/e0cdfd64d20bbbf21097ab09e2b10050e5204600/.github/workflows/ci_reusable.yaml#L51))"
+				"string" : "Then the SSH key stored as a secret can be added to the ssh-agent in the CI workflow ([see example here](https://github.com/seandenigris/Pharo-Enhancements/blob/e0cdfd64d20bbbf21097ab09e2b10050e5204600/.github/workflows/ci_reusable.yaml#L51))"
+			},
+			{
+				"__type" : "pictureSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:33:23.50754+00:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-07-14T17:34:17.696506+00:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "/PsQP5rZDQCCcD+yBi84EQ=="
+				},
+				"url" : "attachments/10p6pwxnauqkf6ctjxkj0wd9d/Screenshot 2024-07-14 at 1.33.36 PM.png",
+				"caption" : "",
+				"previewHeight" : 300
 			},
 			{
 				"__type" : "textSnippet",
