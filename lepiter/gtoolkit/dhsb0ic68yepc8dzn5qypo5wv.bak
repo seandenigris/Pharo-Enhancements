@@ -116,7 +116,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-10-16T21:10:48.441849-04:00"
+									"dateAndTimeString" : "2024-08-12T21:45:22.204188-04:00"
 								}
 							},
 							"uid" : {
@@ -126,7 +126,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "2. Adding processors to the pragma-based ones. In that case, you would do something like this:\n```smalltalk\n\t| pragmaSearches |\r\tpragmaSearches := super gtSpotterSearchesInContext: aSpotterContext.\r\t^ pragmaSearches merge: self otherSearches asAsyncStream\n```\nFor example, [The Project Project](https://github.com/SeanDeNigris/The-Project-Project) uses this  approach in several places."
+							"string" : "2. Adding processors to the pragma-based ones. In that case, you would do something like this:\n```\n\t| pragmaSearches |\r\tpragmaSearches := super gtSpotterSearchesInContext: aSpotterContext.\r\t^ pragmaSearches merge: self otherSearches asAsyncStream\n```\nFor example, [The Project Project](https://github.com/SeanDeNigris/The-Project-Project) uses this  approach in several places."
 						}
 					]
 				},
@@ -186,7 +186,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-11-01T15:16:11.557903-04:00"
+						"dateAndTimeString" : "2024-08-12T21:45:25.307101-04:00"
 					}
 				},
 				"uid" : {
@@ -196,7 +196,232 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552)). But you can't just stick this in a processor, as I found out and [reported on GT Discord](https://discord.com/channels/729445214812504107/736333725788274819/1009874320706764851). {{gtPage:Debugging exceptions in Spotter processors|db=2j9m7db2i4oz116bexd7wbdxo}} in the GT Book explains the proper workflow, but at the time of writing, it explains the old API. Here is a snippet for the new streaming API:\n```smalltalk\nspotter := GtStreamingSpotter new.\rspotter switchToDebugMode.\rstep := GtStreamingSpotterStep new\r\tinitializeWithSpotter: spotter\r\torigin: anObject;\r\tyourself.\rstep searchQuery: 'abc'\n```"
+				"string" : "#Debugging\nWhen you want to debug Spotter, you need to explicitly set the debugging handler: GtSpotter>>#beDebugging (per Tudor Girba [via Discord](https://discord.com/channels/729445214812504107/735945764597006466/924338746667712552)). But you can't just stick this in a processor, as I found out and [reported on GT Discord](https://discord.com/channels/729445214812504107/736333725788274819/1009874320706764851). {{gtPage:Debugging exceptions in Spotter processors|db=2j9m7db2i4oz116bexd7wbdxo}} in the GT Book explains the proper workflow, but at the time of writing ([see GH issue](https://github.com/feenkcom/gtoolkit/issues/2859)), it explains the old API. Here is a snippet for the new streaming API:\n```\nspotter := GtStreamingSpotter new.\rspotter switchToDebugMode.\rstep := GtStreamingSpotterStep new\r\tinitializeWithSpotter: spotter\r\torigin: anObject;\r\tyourself.\rstep searchQuery: 'abc'\n```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-08-12T21:45:31.297952-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-08-12T21:45:34.723348-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GiF1gOjbDQC7eZvEB9KVNQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Delegating"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-08-12T21:46:09.778785-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-08-12T21:46:34.129653-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "1QpzgujbDQC+Er03B9KVNQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "For this, see {{gtClass:PeGtDelegatedSearch}} and its references"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-08-12T21:45:52.117031-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-08-12T21:46:03.603784-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "sdaygejbDQC81a+/B9KVNQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "1. Substitute a search method from another class"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-08-12T21:46:59.413059-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-08-12T21:47:11.681498-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "IKq1hejbDQC+UmooB9KVNQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "For this, see {{gtClass:PeGtCompositeSearch}} and its references"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-08-12T21:46:43.866952-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-08-12T21:46:57.39884-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "SHXIhOjbDQC+RiZ+B9KVNQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "2. Substitute many unrelated search methods, possibly from many classes"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-08-12T21:45:38.968636-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-08-12T21:45:51.613206-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "STjqgOjbDQC7tMAPB9KVNQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "PharoEnhancements supports two common use cases:"
 			},
 			{
 				"__type" : "textSnippet",
@@ -850,7 +1075,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-10-16T17:16:19.494633-04:00"
+						"dateAndTimeString" : "2024-08-12T21:38:13.832623-04:00"
 					}
 				},
 				"uid" : {
