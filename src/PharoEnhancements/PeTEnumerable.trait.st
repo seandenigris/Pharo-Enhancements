@@ -27,6 +27,12 @@ PeTEnumerable >> collectAsSet: aBlock [
 	^ self privateEnumerable collectAsSet: aBlock.
 ]
 
+{ #category : #enumerating }
+PeTEnumerable >> count: aBlock [
+	
+	^ self privateEnumerable count: aBlock.
+]
+
 { #category : #accessing }
 PeTEnumerable >> detect: aBlock [
 
