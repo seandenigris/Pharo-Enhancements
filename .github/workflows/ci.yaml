@@ -1,3 +1,5 @@
+# Adapted from https://github.com/seandenigris/Pharo-Enhancements/blob/master/.github/workflows/ci.yaml
+
 name: CI
 
 # Controls when the action will run. 
@@ -17,5 +19,3 @@ jobs:
     uses: seandenigris/Pharo-Enhancements/.github/workflows/ci_reusable.yaml@master
     with:
       project-name: PharoEnhancements
-      #runners: "[ 'ubuntu-latest', 'macos-14' ]"
-      #smalltalks: "[ 'GToolkit64-release' ]"

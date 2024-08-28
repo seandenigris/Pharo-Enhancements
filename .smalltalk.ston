@@ -1,8 +1,11 @@
 SmalltalkCISpec {
   #loading : [
-      SCIMetacelloLoadSpec {
-          #baseline : 'PharoEnhancements',
-          #directory : 'src'
-      }
-  ]
+    SCIMetacelloLoadSpec {
+      #baseline : 'Batcave',
+      #directory : 'src',
+      #onConflict : #useIncoming
+    }
+  ],
+  #testing : {
+      #failOnZeroTests : false  }
 }
