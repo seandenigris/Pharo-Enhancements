@@ -18,15 +18,15 @@ BaselineOfPharoEnhancements >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
 		spec
-			package: 'PharoEnhancements';
-			package: 'PharoEnhancements-Magritte';
-			package: 'PharoEnhancements-PetitParser2';
-			package: 'PharoEnhancements-PolyMath'.
-		spec group: 'default' with: #('PharoEnhancements') ].
+			package: #'PharoEnhancements';
+			package: #'PharoEnhancements-Magritte';
+			package: #'PharoEnhancements-PetitParser2';
+			package: #'PharoEnhancements-PolyMath'.
+		spec group: #'default' with: #(PharoEnhancements) ].
 	
 	spec for: #GToolkit do: [ 
-		spec package: 'PharoEnhancements-GToolkit'.
-		spec group: 'default' with: #('PharoEnhancements-GToolkit' 'PharoEnhancements-PetitParser2') ]
+		spec package: #'PharoEnhancements-GToolkit'.
+		spec group: #'default' with: #(#'PharoEnhancements-GToolkit' #'PharoEnhancements-PetitParser2') ]
 ]
 
 { #category : #accessing }
