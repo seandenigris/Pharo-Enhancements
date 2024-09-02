@@ -1,17 +1,6 @@
 Extension { #name : #Object }
 
 { #category : #'*PharoEnhancements-GToolkit' }
-Object >> gtPrintFor: aView [
-	<gtView>
-	^ aView textEditor
-		title: 'Print';
-		priority: 110;
-		aptitude: BrGlamorousCodeEditorAptitude;
-		text: [ self printString asRopedText ];
-		actionUpdateButton
-]
-
-{ #category : #'*PharoEnhancements-GToolkit' }
 Object class >> gtSpotterItemsFromString: aString [
 	^ { self fromString: aString }
 ]
