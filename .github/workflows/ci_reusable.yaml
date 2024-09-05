@@ -47,6 +47,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Option fetching all commits, 
+                         # per https://github.com/hpi-swa/setup-smalltalkCI?tab=readme-ov-file#pharos-specific-registering-repository-in-iceberg
 
       - name: Setup SSH Key (if needed)
         # Save secret in env var to avoid error comparing a non-existent secret below
