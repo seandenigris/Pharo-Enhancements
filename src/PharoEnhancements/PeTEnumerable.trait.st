@@ -87,6 +87,18 @@ PeTEnumerable >> flatCollect: aBlock as: aClass [
 	^ self privateEnumerable flatCollect: aBlock as: aClass
 ]
 
+{ #category : #enumerating }
+PeTEnumerable >> flatCollectAsSet: aBlock [
+	
+	^ self privateEnumerable flatCollectAsSet: aBlock.
+]
+
+{ #category : #enumerating }
+PeTEnumerable >> groupedBy: aBlock [
+	
+	^ self privateEnumerable groupedBy: aBlock.
+]
+
 { #category : #testing }
 PeTEnumerable >> ifEmpty: aBlock [
 
