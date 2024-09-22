@@ -1,0 +1,820 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ce2f0564-05df-0d00-a67f-b7de00e006db"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "GT Integration"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "shellCommandSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:25:37.63823-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:26:39.335216-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "/j5ZLgbfDQCt0TbFAUX1KQ=="
+										},
+										"code" : "./GlamorousToolkit.app/Contents/MacOS/GlamorousToolkit-cli --help"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:29:54.895289-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:30:06.436782-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "+ayuPQbfDQCwpgt/AUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Looks like without the --interactive switch you get the NonInteractiveUIManager. From the class comment...\nYou can replace the default UI Manager with my instance in cases, when you need to guarantee that your task(s) will run in fully automated mode. This is useful for things like:\nwhen image runs as a persistent application on a server\nimage runs headless from command-line with some batch scripts/commands\n\nYou also get a NonInteractiveTranscript which writes the transcript to stdout - ideal  to confirm what's going on - Jupiter Jones on Discord"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:29:43.460632-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:29:54.362323-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "ETUAPQbfDQCv/EI8AUX1KQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "What does this flag actually do?"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:27:13.821032-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:14:23.800427-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "RtwUNAbfDQCvGaQbAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"Currently **we do not support the case of saving an interactive image as non-interactive**. If you have an image that is interactive (so has a GUI) it should just be saved as interactive.\" - [Andrei Chis on GH](https://github.com/feenkcom/gtoolkit/issues/3901#issuecomment-2363517651)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:57:18.43733-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:58:40.958192-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "kSKlnwbfDQC5doSsAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"not yet... not because we are lazy, but because it is not trivial 🙂\" - [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244673518877151343)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:00:02.447519-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:11:24.937622-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "urprqQbfDQC6sqIqAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"if you save a GT image without --interactive, then the previously opened windows become headless\" [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244663057565745153)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:33:23.244551-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:33:29.862569-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "y9MZSgbfDQCxeibxAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Jupiter Jones on Discord: The following script is working for me to solve the specific issue:\n\nFirst launching GT non-interactively (when running a build script or CI) and saving.\nThis creates the Morphic Universe and GtWorld in the Morphic Universe.\nSubsequently launching GT interactively and opening a custom GtWorld.\n\nThis script removes the GtWorld in the Morphic universe and stops the universe.\n(BlParallelUniverse all detect: [ :u | u hostClass == BlMorphicWindowHost ]) \n    ifNotNil: [ :pu |\n        pu spaces do: #close.\n        pu\n            tryToRunDeferredActions;\n            stopUniverse.\n    ].\n\nThis is working, but I don't know if there are an implications yet. Time will tell."
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:54:58.893896-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:55:11.296614-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Ft9TlwbfDQC2Pu5gAUX1KQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Interactive images should not be saved as non-interactive"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:56:50.42106-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:14:14.035334-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "NKT5nQbfDQC5YgLQAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"If in CI builds you need to start from a non-interactive image, it would be better to use GlamorousToolkit-image-without-world.zip (every release on github has one such version of the image), and open the GUI as a last step of the build.\" - [Andrei Chis on GH](https://github.com/feenkcom/gtoolkit/issues/3901#issuecomment-2363517651)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:57:45.197718-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:59:10.708807-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "wnY9oQbfDQC5f2kYAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"to convert it to interactive you would still have to run it with --interactive\" - [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244673518877151343)"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:56:15.113298-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:56:42.987905-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "e+TemwbfDQC3inUQAUX1KQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "Non-interactive images can be used interactively after opening the GUI/world"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:50:01.078778-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T18:25:44.778921-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "e5GThQbfDQC0vgvcAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"running interactively on CI makes quite a lot of sense\" - [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244673794170425518); I asked for clarification on this point [on GH](https://github.com/feenkcom/gtoolkit/issues/3901#issuecomment-2365257130)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [
+															{
+																"__type" : "textSnippet",
+																"children" : {
+																	"__type" : "snippets",
+																	"items" : [ ]
+																},
+																"createEmail" : {
+																	"__type" : "email",
+																	"emailString" : "<unknown>"
+																},
+																"createTime" : {
+																	"__type" : "time",
+																	"time" : {
+																		"__type" : "dateAndTime",
+																		"dateAndTimeString" : "2024-09-21T13:49:42.627623-04:00"
+																	}
+																},
+																"editEmail" : {
+																	"__type" : "email",
+																	"emailString" : "<unknown>"
+																},
+																"editTime" : {
+																	"__type" : "time",
+																	"time" : {
+																		"__type" : "dateAndTime",
+																		"dateAndTimeString" : "2024-09-21T14:16:08.19906-04:00"
+																	}
+																},
+																"uid" : {
+																	"__type" : "uid",
+																	"uidString" : "Qgh6hAbfDQC0i6RIAUX1KQ=="
+																},
+																"paragraphStyle" : {
+																	"__type" : "textStyle"
+																},
+																"string" : "I would recommend you to use GlamorousToolkit-image-without-world.zip in the smalltalkCI scripts\nHere are the steps:\ndownload GlamorousToolkit-image-without-world.zip [link to the latest one](https://github.com/feenkcom/gtoolkit/releases/latest/download/GlamorousToolkit-image-without-world.zip)\ndownload VM version based on the version file in the zip above\ninstall whatever you need without --interactive\nrun tests\nif you need to have a window, run it with --interactive and do eval \"GtWorld openDefault\" or any other thing\n \non linux if you want to run with --interactive you have to setup a virtual display framebuffer\nI don't know if smalltalkci does it\nyou can use gt-installer to assist with some of the step above\n\n[Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244677514543104011)"
+															}
+														]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:52:01.131918-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:52:10.023655-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "nnC7jAbfDQC1TKeqAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "Default process recommendation"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:52:17.412202-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:52:41.40745-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "09uzjQbfDQC15kOmAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "GT's [jenkinsfile](https://github.com/feenkcom/gtoolkit/blob/main/Jenkinsfile) in the gtoolkit repo"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:00:57.795419-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:12:40.649502-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "jEW4rAbfDQC61K06AUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "See \"guide how to build a custom app on top of GT\" - [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244663397015097447)"
+												},
+												{
+													"__type" : "textSnippet",
+													"children" : {
+														"__type" : "snippets",
+														"items" : [ ]
+													},
+													"createEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"createTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T13:36:08.400171-04:00"
+														}
+													},
+													"editEmail" : {
+														"__type" : "email",
+														"emailString" : "<unknown>"
+													},
+													"editTime" : {
+														"__type" : "time",
+														"time" : {
+															"__type" : "dateAndTime",
+															"dateAndTimeString" : "2024-09-21T14:12:09.908658-04:00"
+														}
+													},
+													"uid" : {
+														"__type" : "uid",
+														"uidString" : "cOfxUwbfDQCyBc4cAUX1KQ=="
+													},
+													"paragraphStyle" : {
+														"__type" : "textStyle"
+													},
+													"string" : "\"if you just want to preserve the GT app as it is but just add a few packages, then run your scripts with --interactive\" [Aliaksei Syrel on Discord 05/27/2024](https://discord.com/channels/729445214812504107/755319168504692778/1244663753652437002)"
+												}
+											]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:48:54.78242-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2024-09-21T13:49:23.464611-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "CvifgQbfDQCzmalBAUX1KQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "CI"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T12:30:40.376077-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T13:27:07.540289-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Vm6YaQXfDQCnY3rxAOAG2w=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "`GlamorousToolkit-cli` has an `--interactive` flag to \"start image in the interactive (UI) mode\" per the help info:"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T13:31:24.147169-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T13:32:41.497418-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "g4sAQwbfDQCxQDBwAUX1KQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "botwhytho — 06/08/2024 11:11 PM\nGot something going with 'ImageMagick' which I believe works on Linux, macOS & Windows\n\nskiaImage := SkiaImage fromFile: '/run/user/1000/wardley.bmp'.\naFrame := BrFrame new\n    matchParent;\n    addChild: (skiaImage asElement\n            constraintsDo: [ :c | \n                c horizontal matchParent.\n                c vertical matchParent ]).\n\naTask := BlRepeatedTaskAction new\n        delay: 16 milliseconds;\n        action: [ | file |\n            file := '/run/user/1000/wardley.bmp'.\n            (GtSubprocessWithInMemoryOutput\n                command: 'import'\n                arguments: {'-window'.\n                        '0x0120004e'.\n                        file}) runAndWait.\n            aFrame\n                replaceChild: (aFrame childAt: 1)\n                with: ((SkiaImage fromFile: file) asElement\n                        constraintsDo: [ :c | \n                            c horizontal matchParent.\n                            c vertical matchParent ]) ].\naFrame enqueueTask: aTask.\n\n\"Stop Task\"\naTask stop.\n\n\n/run/user/1000/ is an in-memory file-system mount used by systemd on Linux. Haven't tested by writing to a 'normal' file on disk. Not sure what functionality macOS & Windows have around in-memory files "
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T12:29:03.171999-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T12:29:33.91179-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "tdEFZAXfDQCmgH3bAOAG2w=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "# Headful vs. headless"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T12:29:03.130895-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T12:29:11.916488-04:00"
+		}
+	}
+}
