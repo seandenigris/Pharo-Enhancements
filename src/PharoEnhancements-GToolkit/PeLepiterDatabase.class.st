@@ -199,13 +199,23 @@ PeLepiterDatabase >> hash [
 ]
 
 { #category : #accessing }
+PeLepiterDatabase >> isDefault [
+	^ self project databases size = 1 or: [ self folder base = 'default' ]
+]
+
+{ #category : #accessing }
 PeLepiterDatabase >> isLoaded [
-	^ (self class databaseAt: folder) isNotNil
+	^ self loadedDatabase isNotNil
 ]
 
 { #category : #actions }
 PeLepiterDatabase >> load [
 	^ self class loadDatabaseAt: self folder
+]
+
+{ #category : #accessing }
+PeLepiterDatabase >> loadedDatabase [
+	^ self class databaseAt: folder
 ]
 
 { #category : #accessing }

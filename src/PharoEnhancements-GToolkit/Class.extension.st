@@ -45,6 +45,27 @@ Class >> peAPIDocumentation [
 ]
 
 { #category : #'*PharoEnhancements-GToolkit' }
+Class >> peDocumentationGtButtonFor: anAction [
+	<gtClassAction>
+	
+	| project loadedDB repo |
+	repo := self package peIceRepository ifNil: [ ^ anAction noAction ].
+	project := PeLepiterProject new
+		repository: repo; 
+		yourself.
+	loadedDB := project defaultDatabase loadedDatabase ifNil: [ ^ anAction noAction ].
+			
+	^ anAction button
+		tooltip: 'Open Lepiter DB';
+		priority: 4;
+		icon: BrGlamorousVectorIcons note;
+		action: [ :aButton | 
+			| aPage |
+			aPage := loadedDB tableOfContents ifNil: [ loadedDB pages atRandom ].
+			aButton phlow spawnTool: aPage asPhlowTool ]
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 Class >> peGenerateCommentFromAPI [
 	self comment: (PRPillarWriter write: self peAPIDocumentation)
 ]

@@ -145,6 +145,11 @@ PeLepiterProject >> databases [
 	^ dbs
 ]
 
+{ #category : #accessing }
+PeLepiterProject >> defaultDatabase [
+	^ self databases detect: #isDefault ifNone: [ nil ]
+]
+
 { #category : #views }
 PeLepiterProject >> gtViewDashboardOn: aView [
 	<gtView>
