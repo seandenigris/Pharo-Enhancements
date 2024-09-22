@@ -1,0 +1,225 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "cd542638-0ddf-0d00-8801-c2c20d88554b"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Enumeration"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:49:26.869883-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:50:19.260367-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "i7smOA3fDQCIAoRmDYhVSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The standard API is a bit clunky for complex cases. There is a gut feeling that something better (more concise, faster) is possible."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:51:29.318913-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:53:06.580567-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "gCJzPw3fDQCMuxHwDYhVSw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "<http://smalltalkhub.com/#!/~zeroflag/Chain> [per Hernán Morales Durand](https://lists.pharo.org/empathy/thread/IK5WVNHIWHYBCMVLMZ7LSB6FPX2B6LLX?hash=CONNZTVMD6L3BIZXAFFAT4UGAFH4CPXP#CONNZTVMD6L3BIZXAFFAT4UGAFH4CPXP)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:51:21.603142-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:53:12.47395-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NGn9Pg3fDQCMn8nnDYhVSw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "<http://smalltalkhub.com/#!/~MassimoNocentini/SpecificationPattern> [per Hernán Morales Durand](https://lists.pharo.org/empathy/thread/IK5WVNHIWHYBCMVLMZ7LSB6FPX2B6LLX?hash=CONNZTVMD6L3BIZXAFFAT4UGAFH4CPXP#CONNZTVMD6L3BIZXAFFAT4UGAFH4CPXP)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:52:36.771295-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-09-21T21:55:35.021845-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "kl14Qw3fDQCOFR0oDYhVSw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Transducers was suggested [by Julien Delplanque](https://lists.pharo.org/empathy/thread/IK5WVNHIWHYBCMVLMZ7LSB6FPX2B6LLX?hash=RNCUACS2BRMJEDWO7IVDH64TA264NHCD#RNCUACS2BRMJEDWO7IVDH64TA264NHCD) and then the library's author, Steffen Märcker gave [some examples and explanation](https://lists.pharo.org/empathy/thread/IK5WVNHIWHYBCMVLMZ7LSB6FPX2B6LLX?hash=YSG4J56E7CW3GRXFXXV3KX2VHXCHIR7W#YSG4J56E7CW3GRXFXXV3KX2VHXCHIR7W)"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:50:57.915986-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:52:13.148184-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "cPaTPQ3fDQCK1KdADYhVSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The following libraries were recommended on the Pharo-Users ML:"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T21:49:31.250558-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T21:49:31.250558-04:00"
+		}
+	}
+}

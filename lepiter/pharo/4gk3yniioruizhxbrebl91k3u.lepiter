@@ -1,0 +1,113 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "0a69ab2c-0ddf-0d00-838c-aaa80d88554b"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Trait-Based Collections"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:46:43.7222-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:48:49.458403-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jMerLA3fDQCDjTUcDYhVSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "There apparently was some work to reimplement collections based on traits. I found [this slideshow](https://www.slideshare.net/slideshow/bloc-5306443/5306443#1) about it: “BLOC: A Trait-Based Collections Library”. It seemed super cool, both from the perspective of cleaning and beautifying the existing implementation, and also the possibility of composing new collection-like objects with the exact behavior needed (e.g. no more `ArrayedCollection>>#add:` shouldNotImplement hacks."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:47:51.432949-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-09-21T21:48:29.553703-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xasNMg3fDQCGBXg9DYhVSw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "But why was it never adopted? I asked [on Pharo Dev on 9/21/2024](https://lists.pharo.org/empathy/thread/OI75S4CEM4GXVVVLYM2CB73Y5ZMSLJSR?hash=OI75S4CEM4GXVVVLYM2CB73Y5ZMSLJSR#OI75S4CEM4GXVVVLYM2CB73Y5ZMSLJSR)"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T21:46:23.807473-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-09-21T21:46:23.807473-04:00"
+		}
+	}
+}
