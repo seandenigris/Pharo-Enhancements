@@ -1,0 +1,188 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "8d7c1e39-f4e1-0d00-83bf-c8de038673d2"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "git default branch"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:20:37.471503-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:21:00.022202-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "3GyfSvThDQCI6rAFA4Zz0g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Dave Mason originally reported [on Discord](https://discord.com/channels/223421264751099906/278558427796602882/783321672576794655): \"It would be nice if the current images loaded by PharoLauncher included an Iceberg that accepted eithermain or master as the main branch... I just wasted over an hour trying to figure out why I was getting errors loading a repo with main into a fresh Pharo9 image.\""
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:21:18.448559-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:22:25.745378-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "e60QTfThDQCJ8KP5A4Zz0g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "There was a long discussion, during which [I pointed out](https://discord.com/channels/223421264751099906/278558427796602882/783372980482736168) that git seems to have a concept of arbitrarily named default branches, so it seems to not be \"just a GH thing\". My exact post was: \"If I clone on the command line, git downloads the default i.e. main branch, so I assume libgit must have access to the same\""
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:27:05.10939-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2024-10-28T20:28:02.607094-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "D066YfThDQCN3MSzA4Zz0g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Finally, [Steph said](https://discord.com/channels/223421264751099906/278558427796602882/785200347324612619) that, due to limited resources, we should have a community convention instead of a more complex Iceberg"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-10-28T20:15:43.832135-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2024-10-28T20:20:36.971947-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WtweOfThDQCDwKCsA4Zz0g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Iceberg only supports default branches named `master` (e.g. not the new GH default of `main`). As of December 2020, there was no interest in adding this feature."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-10-28T20:15:52.079411-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2024-10-28T20:15:52.079411-04:00"
+		}
+	}
+}
