@@ -75,6 +75,11 @@ PeBindableGtTool >> printOn: aStream [
 ]
 
 { #category : #accessing }
+PeBindableGtTool >> receiverObject [
+	^ self snippetCoderViewModelAtRandom evaluationContext receiverObject
+]
+
+{ #category : #accessing }
 PeBindableGtTool >> sharedBindingAt: aSymbol put: anObject [
 
 	^ (self sharedBindings bindingOf: aSymbol) value: anObject
@@ -82,7 +87,12 @@ PeBindableGtTool >> sharedBindingAt: aSymbol put: anObject [
 
 { #category : #accessing }
 PeBindableGtTool >> sharedBindings [
-	^ self pharoSnippets atRandom coderViewModel sharedBindings
+	^ self snippetCoderViewModelAtRandom sharedBindings
+]
+
+{ #category : #accessing }
+PeBindableGtTool >> snippetCoderViewModelAtRandom [
+	^ self pharoSnippets atRandom coderViewModel
 ]
 
 { #category : #accessing }

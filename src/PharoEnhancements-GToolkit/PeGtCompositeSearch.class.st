@@ -20,6 +20,12 @@ PeGtCompositeSearch >> children: anObject [
 ]
 
 { #category : #accessing }
+PeGtCompositeSearch >> childrenAdd: aSource [
+
+	self children add: aSource
+]
+
+{ #category : #accessing }
 PeGtCompositeSearch >> gtSpotterSearchesInContext: aSpotterContext [
 	^ self children asAsyncStream flatCollect: [ :c | c gtSpotterSearchesInContext: aSpotterContext ]
 ]
