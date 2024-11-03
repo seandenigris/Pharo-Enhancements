@@ -84,7 +84,7 @@ PeLepiterProject class >> gtViewDatabases: aValuable on: aView [
 	^ aView columnedList
 		title: 'Databases' translated;
 		priority: 80;
-		items: aValuable;
+		items: [ aValuable value sort: #name ascending ];
 		column: 'Status' 
 			icon: [ :p | p statusIcon ]
 			width: 75;
