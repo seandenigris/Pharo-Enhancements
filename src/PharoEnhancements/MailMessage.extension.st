@@ -7,6 +7,15 @@ MailMessage >> attachmentParts [
 ]
 
 { #category : #'*PharoEnhancements' }
+MailMessage >> fieldNamed: aString ifPresent: presentBlock ifAbsent: aBlock [
+	"return the value of the field with the specified name.  If there is more than one field, then return the first one"
+	^ fields 
+		at: aString asLowercase 
+		ifPresent: [ :matchingFields | presentBlock value: matchingFields first ]
+		ifAbsent: [ aBlock value ].
+]
+
+{ #category : #'*PharoEnhancements' }
 MailMessage >> isAttachment [
 
 	| disposition |
