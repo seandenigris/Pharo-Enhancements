@@ -19,7 +19,8 @@ String >> asFilename [
 	| result |
 	result := result := self asFileName collect: [ :c |
 		| isUnsafeChar |
-		isUnsafeChar := c isSeparator or: [ ':/\,.' includes: c ].
+		"Char list adapted from https://superuser.com/a/358861"
+		isUnsafeChar := c isSeparator or: [ '\/:*?!"<>|,.' includes: c ].
 		isUnsafeChar ifTrue: [ $_ ] ifFalse: [ c ] ].
 	self assert: (#('' '/' '..' '.' '\') includes: result) not. "Aggressively protect against wonky FS resolution of special strings"
 	^ result
