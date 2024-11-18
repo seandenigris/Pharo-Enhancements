@@ -1,5 +1,5 @@
 Class {
-	#name : #PeGtCompositeSearch,
+	#name : #PeGtCollectedSearch,
 	#superclass : #Object,
 	#instVars : [
 		'children'
@@ -8,24 +8,24 @@ Class {
 }
 
 { #category : #accessing }
-PeGtCompositeSearch >> children [
+PeGtCollectedSearch >> children [
 
 	^ children ifNil: [ children := OrderedCollection new ]
 ]
 
 { #category : #accessing }
-PeGtCompositeSearch >> children: anObject [
+PeGtCollectedSearch >> children: anObject [
 
 	children := anObject
 ]
 
 { #category : #accessing }
-PeGtCompositeSearch >> childrenAdd: aSource [
+PeGtCollectedSearch >> childrenAdd: aSource [
 
 	self children add: aSource
 ]
 
 { #category : #accessing }
-PeGtCompositeSearch >> gtSpotterSearchesInContext: aSpotterContext [
-	^ self children asAsyncStream
+PeGtCollectedSearch >> gtSpotterSearchesInContext: aSpotterContext [
+	^ self children asAsyncStream flatCollect: [ :c | c gtSpotterSearchesInContext: aSpotterContext ]
 ]
