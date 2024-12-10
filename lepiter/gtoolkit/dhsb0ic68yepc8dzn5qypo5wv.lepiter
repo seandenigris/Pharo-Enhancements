@@ -79,7 +79,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-10-16T21:11:40.348663-04:00"
+									"dateAndTimeString" : "2024-11-16T20:35:23.640435-05:00"
 								}
 							},
 							"uid" : {
@@ -89,7 +89,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : " 1. Total replacement: Say you have a container object. You want its Spotter to aggregate the processors of its children. You can do something like {{gtMethod:PeGtCompositeSearch>>#gtSpotterSearchesInContext:|expanded}}. "
+							"string" : " 1. Total replacement: Say you have a container object. You want its Spotter to aggregate the processors of its children. You can do something like {{gtMethod:PeGtCollectedSearch>>#gtSpotterSearchesInContext:|expanded}}. "
 						},
 						{
 							"__type" : "textSnippet",
@@ -345,7 +345,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2024-08-12T21:47:11.681498-04:00"
+												"dateAndTimeString" : "2024-11-16T20:35:23.650848-05:00"
 											}
 										},
 										"uid" : {
@@ -355,7 +355,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "For this, see {{gtClass:PeGtCompositeSearch}} and its references"
+										"string" : "For this, see {{gtClass:PeGtCollectedSearch}} and its references"
 									}
 								]
 							},

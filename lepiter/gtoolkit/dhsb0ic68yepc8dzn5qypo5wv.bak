@@ -1075,7 +1075,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-08-12T21:38:13.832623-04:00"
+						"dateAndTimeString" : "2024-08-12T21:54:08.419968-04:00"
 					}
 				},
 				"uid" : {
@@ -1085,7 +1085,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Don't include the `<gtSearch>` pragma to avoid duplicated processors, per Tudor via Discord 7/26/2021. For an example, see [My People's](https://github.com/SeanDeNigris/My-People) {{gtMethod:MpAddressBook>>#peopleSearchFor:}} which overrides {{gtMethod:MpGtABAddressBook>>#peopleSearchFor:}} "
+				"string" : "Don't include the `<gtSearch>` pragma to avoid duplicated processors, per Tudor via Discord 7/26/2021."
 			}
 		]
 	},
