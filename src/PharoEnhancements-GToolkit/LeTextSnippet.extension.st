@@ -20,4 +20,5 @@ LeTextSnippet >> promoteToPage [
 	self database addPage: aPage.
 	self transferChildrenTo: aPage.
 	self removeSelf.
+	^ aPage
 ]
