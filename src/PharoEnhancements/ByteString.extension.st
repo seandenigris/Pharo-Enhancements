@@ -54,3 +54,17 @@ ByteString class >> exampleAsTitleCase [
 	result := 'and the dish ran away with the spoon' asTitleCase.
 	self assert: result equals: 'And the Dish Ran Away with the Spoon'
 ]
+
+{ #category : #'*PharoEnhancements' }
+ByteString >> htmlDecoded [
+
+	| result table |
+	result := self.
+	table := Dictionary newFromPairs: {  
+		'&nbsp;'. ' '.
+		'&quot;'. '"'.
+		'&rsquo;'. ''''
+	}.
+	table keysAndValuesDo: [ :k :v | result := result copyReplaceAll: k with: v ].
+	^ result
+]
