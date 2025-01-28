@@ -1,6 +1,33 @@
 Extension { #name : #GtWorldSpotterSearchStart }
 
 { #category : #'*PharoEnhancements-GToolkit' }
+GtWorldSpotterSearchStart >> gtSpotterContainingSubPartsFor: aSearch [
+	<gtSearch>
+	self hasKnowledgeBase
+		ifFalse: [ ^ aSearch empty ].
+	self hasChildren
+		ifFalse: [ ^ aSearch empty ].
+	
+	^ aSearch explicit
+		priority: 23;
+		title: 'Page contents';
+		search: [ :aContext |
+			[
+			| filter results |
+			results := OrderedCollection new.
+			filter := LeSubstringFilter new
+				caseSensitive: false;
+				query: aContext searchQuery.
+			self knowledgeBase pagesDo: [ :eachPage |
+				(filter isMatchedItem: eachPage)
+					ifTrue: [ results add: eachPage ] ].
+			results asAsyncStream
+			] asAsyncFuture asAsyncStream flatten
+		];
+		itemName: #spotterItemName
+]
+
+{ #category : #'*PharoEnhancements-GToolkit' }
 GtWorldSpotterSearchStart >> peGtSSearchNewPageFor: aStep [
 	<gtSearch>
 	
