@@ -9,5 +9,5 @@ LeTextualSnippetViewModel >> promoteToPageGtActionFor: anAction [
 		icon: BrGlamorousVectorIcons upwards;
 		target: LeSnippetContextMenuActionTarget uniqueInstance;
 		priority: 10;
-		action: [ :aButton :aSnippetElement | aSnippetElement snippetModel promoteToPage ]
+		action: [ :aButton :aSnippetElement | aSnippetElement snippet promoteToPage ]
 ]
