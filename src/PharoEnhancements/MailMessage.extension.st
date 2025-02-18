@@ -29,6 +29,14 @@ MailMessage >> isAttachment [
 ]
 
 { #category : #'*PharoEnhancements' }
+MailMessage >> isHtml [
+
+	^ self fieldNamed: 'content-type'
+		ifPresent: [ :field | field mainValue = 'text/html' ]
+		ifAbsent: [ false ].
+]
+
+{ #category : #'*PharoEnhancements' }
 MailMessage >> timestamp [
 	| dateField dateString isWeekdayPresent safeDateString |
 	dateField := self 
