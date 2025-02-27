@@ -88,3 +88,31 @@ PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
 	
 	^ result
 ]
+
+{ #category : #accessing }
+PeTRawDataHolder >> rawDataXmlAt: aString reader: aValuable ifAbsent: absentBlock [
+		
+	| el |
+	el := self rawData 
+		elementAt: aString
+		ifAbsent: [ ^ absentBlock value ].
+		
+	^ aValuable value: el
+]
+
+{ #category : #accessing }
+PeTRawDataHolder >> rawDataXmlGtViewFor: aView context: aContext do: aBlock [
+	"If you want to customize the view (e.g. reload latest data via API on update button), send this message from your view method"
+	
+	| result |
+	result := aView forward
+		title: 'XML';
+		priority: 75;
+		object: [ self rawData ];
+		view: #gtItemsFor:;
+		inspectButtonFor: [ self rawData ].
+		
+	aBlock value: result.
+	
+	^ result
+]
