@@ -12,10 +12,25 @@ PeTPythonWrapper >> application [
 ]
 
 { #category : #accessing }
-PeTPythonWrapper >> newCommandFactory [
-	^ self application newCommandSourceFactory
-		addAllBindings: {#self -> self pythonInstance};
+PeTPythonWrapper >> configureCommandFactory: aCommandFactory [
+	^ aCommandFactory
+		addAllBindings: { #self -> self pythonInstance };
 		yourself
+]
+
+{ #category : #accessing }
+PeTPythonWrapper >> newCommandFactory [
+	^ self newCommandSourceFactory
+]
+
+{ #category : #accessing }
+PeTPythonWrapper >> newCommandSourceFactory [
+	^ self configureCommandFactory: self application newCommandSourceFactory
+]
+
+{ #category : #accessing }
+PeTPythonWrapper >> newCommandStringFactory [
+	^ self configureCommandFactory: self application newCommandStringFactory
 ]
 
 { #category : #accessing }
