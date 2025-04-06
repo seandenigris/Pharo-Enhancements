@@ -98,7 +98,7 @@ PP2DateParser >> numberUpTo: aNumber [
 	
 	| result |
 	result := (aNumber to: 1 by: -1) "Interval is reversed so that e.g. 14 doesn't match just the 1"
-		inject: PP2FailingNode  new
+		inject: PP2FailingNode  instance
 		into: [ :aResult :e | 
 			| node |
 			node := e < 10
