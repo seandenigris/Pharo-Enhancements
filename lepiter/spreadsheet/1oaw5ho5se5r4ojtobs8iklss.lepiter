@@ -3,11 +3,11 @@
 	"__type" : "page",
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "bd9050f4-a0ef-0d00-85df-4a9b0311b737"
+		"uuid" : "5c9d7ff8-7aef-0d00-a6b3-f8a202424b1c"
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Overview"
+		"title" : "Table Snippet"
 	},
 	"children" : {
 		"__type" : "snippets",
@@ -26,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:35:30.17019-04:00"
+						"dateAndTimeString" : "2025-04-19T22:01:27.248714-04:00"
 					}
 				},
 				"editEmail" : {
@@ -37,17 +37,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-20T20:48:48.32589-04:00"
+						"dateAndTimeString" : "2025-04-20T20:42:06.528353-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "BGf0gI3vDQCLsAUNB5KLug=="
+					"uidString" : "lZfD3Y3vDQCNfarMB5KLug=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The Spreadsheet project is an interesting take. However, it seems that the operators available are perplexingly limited to those you might find in a spreadsheet - basic math, plus date conversion:"
+				"string" : "{{gtClass:LeWordSnippet}} has the dual edit / render modes we are interested in, holding the word, and the rendered definition based on it. It is mentioned {{gtPage:Extending Lepiter with custom snippets and annotations|db=2j9m7db2i4oz116bexd7wbdxo|label=in the GT Book}}. On second thought, is that really what we want? What if we could fiddle with code and simultaneously see the rendering change?"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -63,7 +63,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:35:38.214866-04:00"
+						"dateAndTimeString" : "2025-04-19T21:01:32.73862-04:00"
 					}
 				},
 				"editEmail" : {
@@ -74,50 +74,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:36:46.472676-04:00"
+						"dateAndTimeString" : "2025-04-19T21:19:18.828689-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "yDNvgY3vDQCLxa0zB5KLug=="
+					"uidString" : "braDB43vDQCAB77+B5KLug=="
 				},
-				"code" : "SpreadsheetRuleFunction classVarNamed: #FunctionNames"
-			},
-			{
-				"__type" : "pictureSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-25T13:46:16.910987-04:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-25T13:55:38.478024-04:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "bA/wpf/vDQCPyYz/CW4Urw=="
-				},
-				"url" : "",
-				"caption" : "",
-				"previewHeight" : 300
+				"code" : "table := PeTableElement new.\rtable\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\taddChild: (BlElement new background: Color red);\r\tyourself"
 			},
 			{
 				"__type" : "textSnippet",
@@ -133,7 +97,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:33:47.654636-04:00"
+						"dateAndTimeString" : "2025-04-20T20:56:45.105421-04:00"
 					}
 				},
 				"editEmail" : {
@@ -144,17 +108,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:35:30.174922-04:00"
+						"dateAndTimeString" : "2025-04-20T20:56:47.783284-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "3yvYeo3vDQCE7hwzB5KLug=="
+					"uidString" : "TFePBqHvDQCjj44wBexwMA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "One wonders why one would restrict oneself when one could have the full power of a Smalltalk image inside every cell."
+				"string" : "##Motivation"
 			},
 			{
 				"__type" : "textSnippet",
@@ -170,7 +134,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-20T20:48:51.579162-04:00"
+						"dateAndTimeString" : "2025-04-20T20:56:48.686615-04:00"
 					}
 				},
 				"editEmail" : {
@@ -181,20 +145,20 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-20T20:49:15.93769-04:00"
+						"dateAndTimeString" : "2025-04-20T20:58:06.226534-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "ZrP896DvDQCGA2vqAxG3Nw=="
+					"uidString" : "TcpsFKHvDQCj99M5BexwMA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "There is a Morphi  GUI, but there is also a model layer that can be manipulated directly:"
+				"string" : "Say for a presentation to executives, instead of code to execute and spawn a result, we want to have the result rendered, but still be able to live edit the code to change the result."
 			},
 			{
-				"__type" : "pharoSnippet",
+				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
 					"items" : [ ]
@@ -207,7 +171,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:20:42.913433-04:00"
+						"dateAndTimeString" : "2025-04-20T20:58:34.106209-04:00"
 					}
 				},
 				"editEmail" : {
@@ -218,14 +182,54 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-04-19T21:23:12.330212-04:00"
+						"dateAndTimeString" : "2025-04-20T21:00:44.378872-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "KfgRTI3vDQCCYBFXB5KLug=="
+					"uidString" : "zy7zGaHvDQCo50dYBexwMA=="
 				},
-				"code" : "sheet := Spreadsheet new.\rsheet\r\tcellStringAt: 1@1 put: '1';\r\tcellStringAt: 1@2 put: '2';\r\tcellStringAt: 1@3 put: '=a1+a2'.\r\t\rsheet cellStringAt: 1@3.\rsheet cellAt: 1@3"
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Before we even get that far, one can't always easily get the thing we want to be spawned. One example was that we wanted to spawn an object on the right with a particular view active. However, looked at another way, this limitation was a result of failure to fully apply moldable patterns. If contained collections were customized, we could return those instead of relying on the views in the container."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-20T21:00:46.076213-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-04-20T21:02:16.798241-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HhGTIqHvDQCzdzlXBexwMA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "An interesting, seemingly related angle is to be able to enable a customized preview for olObject annotations. The idea came from word snippets, which have the triangle next to the rendered text to open the deifinition."
 			}
 		]
 	},
@@ -237,7 +241,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-04-20T20:47:49.965295-04:00"
+			"dateAndTimeString" : "2025-04-19T21:01:28.394897-04:00"
 		}
 	},
 	"editEmail" : {
@@ -248,7 +252,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-04-20T20:47:49.965295-04:00"
+			"dateAndTimeString" : "2025-04-19T21:01:28.394897-04:00"
 		}
 	}
 }
