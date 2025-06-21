@@ -90,6 +90,17 @@ PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
 ]
 
 { #category : #accessing }
+PeTRawDataHolder >> rawDataXml: aBlock reader: aValuable ifAbsent: absentBlock [
+		
+	| el |
+	el := aBlock value: self rawData .
+	
+	^ el
+		ifNotNil: [ aValuable value: el ] 
+		ifNil: [ absentBlock value ].
+]
+
+{ #category : #accessing }
 PeTRawDataHolder >> rawDataXmlAt: aString reader: aValuable ifAbsent: absentBlock [
 		
 	| el |
