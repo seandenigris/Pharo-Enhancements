@@ -16,7 +16,117 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-06-22T21:09:55.842329-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-06-22T21:10:02.821506-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "kGtYm5T0DQCvbzLpADY77A=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "{{gtClass:BlDragAndDropExamples}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2023-08-14T21:26:08.685174-04:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-06-22T21:10:17.355085-04:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "WpvszE2/DQC/xMpmAWSvtw=="
+										},
+										"code" : "DTCardSorting open"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-06-22T21:10:11.114267-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-06-22T21:10:11.118598-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "UYCQuE2/DQC88VQmAWSvtw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Stephan Eggermont has some cool experiments in his [GToolkit Experiments repo](https://github.com/StephanEggermont/GToolkitExperiments/tree/master). Load the DrawingTool package, then try:"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -26,7 +136,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T21:20:27.103277-04:00"
+						"dateAndTimeString" : "2025-06-22T21:09:47.578576-04:00"
 					}
 				},
 				"editEmail" : {
@@ -37,51 +147,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T21:26:03.569527-04:00"
+						"dateAndTimeString" : "2025-06-22T21:09:50.566133-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "UYCQuE2/DQC88VQmAWSvtw=="
+					"uidString" : "EF3ampT0DQCvJy81ADY77A=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Stephan Eggermont has some cool experiments in his [GToolkit Experiments repo](https://github.com/StephanEggermont/GToolkitExperiments/tree/master). Load the DrawingTool package, then try:"
-			},
-			{
-				"__type" : "pharoSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T21:26:08.685174-04:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T21:26:11.206478-04:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "WpvszE2/DQC/xMpmAWSvtw=="
-				},
-				"code" : "DTCardSorting open"
+				"string" : "References:"
 			},
 			{
 				"__type" : "textSnippet",
@@ -145,14 +221,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:00:24.85571-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:22.537242-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "x5JjR06/DQCF0Ej3AWSvtw=="
 				},
-				"code" : "canvsBuilder := [ :aChild | BrFrame new\r\tlayout: BlBasicLayout new;\r\tmatchParent;\r\taddChild: aChild;\r\tyourself ]."
+				"code" : "canvasBuilder := [ :aChild | BrFrame new\r\tlayout: BlBasicLayout new;\r\tmatchParent;\r\taddChild: aChild;\r\tyourself ]."
 			},
 			{
 				"__type" : "textSnippet",
@@ -216,14 +292,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:05:57.124601-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:22.528411-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "k7izKU6/DQC/+4dTAWSvtw=="
 				},
-				"code" : "staticElement := BlElement new\r\tgeometry: BlCircleGeometry new;\r\tbackground: (Color red alpha: 0.8);\r\t\"constraintsDo: [ :c | \r\t\tc horizontal fitContent.\r\t\tc vertical fitContent ];\"\r\tyourself.\r\t\rcanvsBuilder value: staticElement"
+				"code" : "staticElement := BlElement new\r\tgeometry: BlCircleGeometry new;\r\tbackground: (Color red alpha: 0.8);\r\t\"constraintsDo: [ :c | \r\t\tc horizontal fitContent.\r\t\tc vertical fitContent ];\"\r\tyourself.\r\t\rcanvasBuilder value: staticElement"
 			},
 			{
 				"__type" : "textSnippet",
@@ -310,7 +386,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:02:30.168328-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:53.67208-04:00"
 					}
 				},
 				"editEmail" : {
@@ -321,7 +397,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:03:27.148118-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:53.677244-04:00"
 					}
 				},
 				"uid" : {
@@ -347,7 +423,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:29:12.713055-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:58.535296-04:00"
 					}
 				},
 				"editEmail" : {
@@ -358,7 +434,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:32:54.149373-04:00"
+						"dateAndTimeString" : "2025-06-22T21:11:58.539337-04:00"
 					}
 				},
 				"uid" : {
@@ -368,7 +444,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Now let's try a \"drag handler\". There are no references in the image, so we'll just "
+				"string" : "Now let's try a \"drag handler\". There are no references in the image, so we'll just dive in:"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -395,7 +471,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-08-14T22:29:51.681853-04:00"
+						"dateAndTimeString" : "2025-06-22T21:12:04.02674-04:00"
 					}
 				},
 				"uid" : {
