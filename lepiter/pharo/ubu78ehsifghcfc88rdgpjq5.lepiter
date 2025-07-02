@@ -79,7 +79,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-07T11:08:41.942693-04:00"
+									"dateAndTimeString" : "2025-07-01T22:55:56.753003-04:00"
 								}
 							},
 							"uid" : {
@@ -89,7 +89,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Use browser dev tools to snoop on what the browser is actually doing when it loads the dynamic content and duplicate it"
+							"string" : "Use browser dev tools to snoop on what the browser is actually doing when it loads the dynamic content, and then duplicate that"
 						},
 						{
 							"__type" : "textSnippet",
@@ -432,7 +432,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-04-15T11:20:29.025536-04:00"
+												"dateAndTimeString" : "2025-07-01T22:57:02.018683-04:00"
 											}
 										},
 										"uid" : {
@@ -442,7 +442,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Experiment to find video play button failed due to apparent impossibility of converting client coordinates to screen coordinates"
+										"string" : "Here is a (failed) experiment to find video play button. Unfortunately, it is apparent impossible to convert client coordinates to screen coordinates"
 									}
 								]
 							},

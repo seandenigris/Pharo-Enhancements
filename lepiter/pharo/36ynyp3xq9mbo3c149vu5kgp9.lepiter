@@ -16,7 +16,45 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2022-02-24T11:08:05.220213-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-07-01T22:59:16.872831-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "cw7IhSeVDQCfqpFYCszwNQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Linux route - If you're on Mac, install a Linux distro via Parallels or other VM"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -37,7 +75,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-24T11:07:36.249317-05:00"
+						"dateAndTimeString" : "2025-07-01T22:58:24.539328-04:00"
 					}
 				},
 				"uid" : {
@@ -47,44 +85,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "You can run old images using squeakjs in a browser (per Tim Mackinnon) on (per Jupiter Jones) both in [a Pharo Users thread](https://lists.pharo.org/empathy/thread/SANAY7V6IUO5KPAZD7EYWWTKX5GCEDSE)"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-24T11:08:05.220213-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-02-24T11:08:46.994826-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "cw7IhSeVDQCfqpFYCszwNQ=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "On Linux. If you're on Mac, install Linux distro via Parallels or other VM"
+				"string" : "You can run old images using squeakjs in a browser (per Tim Mackinnon) or on Linux (per Jupiter Jones), both from [a Pharo Users thread](https://lists.pharo.org/empathy/thread/SANAY7V6IUO5KPAZD7EYWWTKX5GCEDSE)"
 			},
 			{
 				"__type" : "textSnippet",

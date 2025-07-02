@@ -3,11 +3,11 @@
 	"__type" : "page",
 	"uid" : {
 		"__type" : "uuid",
-		"uuid" : "9f8524e3-a6c3-0d00-bce8-301701795796"
+		"uuid" : "72a5fb33-4bf5-0d00-9d74-25360063e56c"
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "Sort Functions"
+		"title" : "Changing an Object's Class"
 	},
 	"children" : {
 		"__type" : "snippets",
@@ -26,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-10-09T05:24:00.099019-04:00"
+						"dateAndTimeString" : "2021-11-04T16:08:37.358825-04:00"
 					}
 				},
 				"editEmail" : {
@@ -37,17 +37,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-07-01T22:46:28.495406-04:00"
+						"dateAndTimeString" : "2025-07-01T23:00:36.271354-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "504l46bDDQC86XYXAXlXlg=="
+					"uidString" : "xGk11F2MDQC/tg2TAYiWOw=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This is a cool addition to Pharo. When sorting a collection, you pass a wrapped symbol, instead of a block. Besides enabling terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are a few to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase` - transforms the sort value\n- `#fullTitle ascending, #birthDate ascending` - sort by one value, then "
+				"string" : "There is {{gtMethod:Behavior>>#adoptInstance:}}, but following through the class comments, one doesn't get a warm and fuzzy feeling, as it is apparently \"*not for casual use*\".\rA specific case is when you have an object, but you want an instance of a subclass. In this case, you can use {{gtMethod:Object class>>#newFrom:}} and/or {{gtMethod:Object>>#copySameFrom:}}. For example:\r```\rPDFFileReference newFrom: '/path/to/file.pdf' asFileReference\r```"
 			}
 		]
 	},
@@ -59,7 +59,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2023-10-09T05:24:00.047761-04:00"
+			"dateAndTimeString" : "2025-07-01T23:00:40.721195-04:00"
 		}
 	},
 	"editEmail" : {
@@ -70,7 +70,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2023-10-09T05:24:00.047761-04:00"
+			"dateAndTimeString" : "2025-07-01T23:00:47.243979-04:00"
 		}
 	}
 }

@@ -79,7 +79,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-04-07T11:08:41.942693-04:00"
+									"dateAndTimeString" : "2025-07-01T22:55:56.753003-04:00"
 								}
 							},
 							"uid" : {
@@ -89,7 +89,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Use browser dev tools to snoop on what the browser is actually doing when it loads the dynamic content and duplicate it"
+							"string" : "Use browser dev tools to snoop on what the browser is actually doing when it loads the dynamic content, and then duplicate that"
 						},
 						{
 							"__type" : "textSnippet",
@@ -368,7 +368,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2022-04-15T11:21:53.391208-04:00"
+															"dateAndTimeString" : "2022-04-15T11:22:25.449909-04:00"
 														}
 													},
 													"uid" : {
@@ -391,7 +391,7 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2021-07-16T22:05:12.027105-04:00"
+															"dateAndTimeString" : "2022-04-15T11:22:25.870393-04:00"
 														}
 													},
 													"editEmail" : {
@@ -402,14 +402,14 @@
 														"__type" : "time",
 														"time" : {
 															"__type" : "dateAndTime",
-															"dateAndTimeString" : "2022-04-15T11:22:09.628564-04:00"
+															"dateAndTimeString" : "2022-04-15T11:22:26.84038-04:00"
 														}
 													},
 													"uid" : {
 														"__type" : "uid",
-														"uidString" : "G5AL36mDDQCcVGhyAX2EtA=="
+														"uidString" : "VhYAtxSZDQCmAExlCBnETA=="
 													},
-													"code" : ""
+													"code" : "oh - ih \"Bizzarely big number\""
 												}
 											]
 										},
@@ -432,7 +432,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2022-04-15T11:20:29.025536-04:00"
+												"dateAndTimeString" : "2025-07-01T22:56:32.061244-04:00"
 											}
 										},
 										"uid" : {
@@ -442,7 +442,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Experiment to find video play button failed due to apparent impossibility of converting client coordinates to screen coordinates"
+										"string" : "Here is axperiment to find video play button failed due to apparent impossibility of converting client coordinates to screen coordinates"
 									}
 								]
 							},

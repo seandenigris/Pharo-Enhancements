@@ -190,7 +190,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-01T22:43:25.868964-04:00"
+									"dateAndTimeString" : "2024-06-30T02:36:47.297083+00:00"
 								}
 							},
 							"uid" : {
@@ -200,7 +200,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "If you plan to work on a project both in Pharo 12 as well as prior versions, you can avoid the ping pong by fixing a version of tonel in the properties file. The file to update is  `.properties` in the source folder and it should look like this:\n```json\n{\n#format : #tonel,\n#version: #'1.0'\n}\n```\n\nP12 will take into account the tonel version asked and use it. In previous version of Pharo, this additional line will be ignored and Tonel v1 will be used."
+							"string" : "If you plan to work on a project both in Pharo 12 as well as prior versions, you can avoid the ping pong by fixing a version of tonel in the properties file. The file to update is the .properties that is in the source folder and it should look like this:\n```json\n{\n#format : #tonel,\n#version: #'1.0'\n}\n```\n\nP12 will take into account the tonel version asked and use it. In previous version of Pharo, this additional line will be ignored and Tonel v1 will be used."
 						},
 						{
 							"__type" : "textSnippet",

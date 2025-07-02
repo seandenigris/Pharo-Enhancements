@@ -37,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2023-10-09T05:25:08.712687-04:00"
+						"dateAndTimeString" : "2025-07-01T22:46:33.841519-04:00"
 					}
 				},
 				"uid" : {
@@ -47,7 +47,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "This is a cool addition to Pharo. When sorting a collection, you pass a domain object as a sort block, instead of a generic block. Besides enabling terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are a few to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase`\n- `#fullTitle ascending, #birthDate ascending`"
+				"string" : "This is a cool addition to Pharo. When sorting a collection, you pass a wrapped symbol, instead of a block. Besides enabling terse, elegant code, it has an important benefit over block-based sorting: clean serialization. Serialization libraries like Fuel and STON are generally brittle when serializing blocks, and, according to STON creator Sven, block serialization is impossible to handle generally. For usage examples, see {{gtClass:SortFunctionTest}}. Here are a few to get you started:\n- `#fullTitle ascending`\n- `#fullTitle collatedBy: #asLowercase` - transforms the sort value\n- `#fullTitle ascending, #birthDate ascending` - sort by one value, then another"
 			}
 		]
 	},

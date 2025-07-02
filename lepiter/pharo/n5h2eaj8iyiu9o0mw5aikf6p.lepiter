@@ -74,7 +74,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-09-02T11:36:44.113844-04:00"
+						"dateAndTimeString" : "2025-07-01T22:47:18.467241-04:00"
 					}
 				},
 				"uid" : {
@@ -84,125 +84,13 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "One options is to simply subclass a kernel collection. The advantage is that my new class automatically gets all the behavior of its superclass. However, this is also the downside! We may want to have more control e.g. on modification, or reduce parts of the kernel API that's not relevant."
+				"string" : "One options is to simply subclass a kernel collection. The advantage is that my new class automatically gets all the behavior of its superclass. However, this is also the downside! We may want to have more control e.g. on modification, or omitting parts of the kernel API that's not relevant."
 			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:37:21.768217-04:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:38:50.865165-04:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "B28MPhWkDQCLUfrhC+rcCg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "One workaround is to reimplement just-a-few of the most common messages like `#detect:` and `#select:`. IMHO this makes using such a collection feel like there is an anchor tied around your arm as you type, because the collection API is so rich and such a small fraction is offered."
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:38:54.024848-04:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:39:46.613769-04:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "nMGSQxWkDQCLUgk5C+rcCg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Another workaround is to hand over a copy of the collection. This \"works\", but can be confusing and costly."
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:39:50.639121-04:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2022-09-02T11:40:38.382984-04:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "jv77RhWkDQCLU49eC+rcCg=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "A third option is to support a third party library like Iterators. This comes at the expense of a dependency and an interface with which many users may not be familiar."
-						}
-					]
+					"items" : [ ]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -223,7 +111,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-09-02T11:37:19.075087-04:00"
+						"dateAndTimeString" : "2025-07-01T22:53:30.383727-04:00"
 					}
 				},
 				"uid" : {
@@ -233,7 +121,118 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "To restrict the API and hide the implementation, we can wrap the underlying collection. However, now you must reimplement the parts of the collection API you want to support. A common use case might be to support any query, but restrict modifications e.g. adding and removing. If collections were assembled from traits, as envisioned by the experimental [BLOC](https://www.researchgate.net/publication/45942931_BLOC_a_Trait-Based_Collections_Library_-_a_Preliminary_Experience_Report) library (not to be confused with the Bloc graphics library), this could be as simple as adding a few traits. Unfortunately, this idea was never adopted, making things more complex."
+				"string" : "To restrict the API and hide the implementation, we can wrap the underlying collection. However, now you must reimplement the parts of the collection API that you want to support. A common use case might be to support any query, but restrict modifications e.g. adding and removing. If collections were assembled from traits, this could be as simple as adding a few traits. Unfortunately, while an {{gtPage:Trait-Based Collections|db=d5kw3f8u5sk7bqljmxfujb5jn|label=experiment}} was done, this idea was never adopted, making things more complex."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-02T11:37:21.768217-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-02T11:38:50.865165-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "B28MPhWkDQCLUfrhC+rcCg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "One workaround is to reimplement just-a-few of the most common messages like `#detect:` and `#select:`. IMHO this makes using such a collection feel like there is an anchor tied around your arm as you type, because the collection API is so rich and such a small fraction is offered."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-02T11:38:54.024848-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-02T11:39:46.613769-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "nMGSQxWkDQCLUgk5C+rcCg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Another workaround is to hand over a copy of the collection. This \"works\", but can be confusing and costly."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2022-09-02T11:39:50.639121-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-01T22:54:59.441293-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jv77RhWkDQCLU49eC+rcCg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "A third option is to integrate with a third party library like Iterators (see [[Enumeration]]). This comes at the expense of a dependency and an interface with which many users may not be familiar."
 			}
 		]
 	},

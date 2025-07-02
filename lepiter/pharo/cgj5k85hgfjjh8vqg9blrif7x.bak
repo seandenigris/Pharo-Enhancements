@@ -7,7 +7,7 @@
 	},
 	"pageType" : {
 		"__type" : "namedPage",
-		"title" : "git default branch"
+		"title" : "git default branch in Iceberg"
 	},
 	"children" : {
 		"__type" : "snippets",
@@ -182,7 +182,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2024-10-28T20:15:52.079411-04:00"
+			"dateAndTimeString" : "2024-10-28T20:41:02.598411-04:00"
 		}
 	}
 }

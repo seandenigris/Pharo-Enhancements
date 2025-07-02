@@ -53,6 +53,43 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-01T22:36:09.828721-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-01T22:41:08.114442-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "q5lP3Er1DQCcv7Q2As7AzA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "[Iterators](https://github.com/juliendelplanque/Iterators) seems really interesting and minimally intrusive/surprising. It doesn't use special syntax or arcane operators, and iterators can be wrapped to conform to the collection API, which makes it easier on users who are not familiar with the project."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
 					"items" : [
 						{
 							"__type" : "textSnippet",
@@ -153,7 +190,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2024-09-21T21:56:35.42163-04:00"
+									"dateAndTimeString" : "2025-07-01T22:36:01.0288-04:00"
 								}
 							},
 							"uid" : {

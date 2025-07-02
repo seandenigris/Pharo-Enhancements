@@ -42,7 +42,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2024-10-28T20:21:00.022202-04:00"
+									"dateAndTimeString" : "2025-07-01T22:34:16.296715-04:00"
 								}
 							},
 							"uid" : {
@@ -52,7 +52,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Dave Mason originally reported [on Discord](https://discord.com/channels/223421264751099906/278558427796602882/783321672576794655): \"It would be nice if the current images loaded by PharoLauncher included an Iceberg that accepted eithermain or master as the main branch... I just wasted over an hour trying to figure out why I was getting errors loading a repo with main into a fresh Pharo9 image.\""
+							"string" : "Dave Mason originally reported [on Discord](https://discord.com/channels/223421264751099906/278558427796602882/783321672576794655): \"It would be nice if the current images loaded by PharoLauncher included an Iceberg that accepted either main or master as the main branch... I just wasted over an hour trying to figure out why I was getting errors loading a repo with main into a fresh Pharo9 image.\""
 						},
 						{
 							"__type" : "textSnippet",

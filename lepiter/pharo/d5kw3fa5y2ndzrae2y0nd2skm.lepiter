@@ -16,7 +16,45 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-11-04T16:08:34.545359-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-07-01T23:01:54.965374-04:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0IAK1F2MDQC/tXCjAYiWOw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "A good way to start may be to search for implementors of the accessor. In this example, we search for implementors of `macAddress`. For each relevant method:\r```\robjs := self methodClass allSubInstances select: [ :e | e macAddress isNotNil ].\n\"Compare current values with replacements\"\robjs collect: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\t{ e macAddress. newMac } ].\n\"Actually perform the replacements\"\robjs do: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\te macAddress: newMac ]\r```"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -26,7 +64,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:08:37.358825-04:00"
+						"dateAndTimeString" : "2025-07-01T23:00:53.36813-04:00"
 					}
 				},
 				"editEmail" : {
@@ -37,54 +75,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:08:39.718307-04:00"
+						"dateAndTimeString" : "2025-07-01T23:00:53.36813-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "xGk11F2MDQC/tg2TAYiWOw=="
+					"uidString" : "z5a8NEv1DQCdd0qqAGPlbA=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Changing an Object's Class\rThere is {{gtMethod:Behavior>>#adoptInstance:}}, but following through the class comments, one doesn't get a warm and fuzzy feeling, as it is apparently \"*not for casual use*\".\rA specific case is when you have an object, but you want an instance of a subclass. In this case, you can use {{gtMethod:Object class>>#newFrom:}} and/or {{gtMethod:Object>>#copySameFrom:}}. For example:\r```\r\tPDFFileReference newFrom: '/path/to/file.pdf' asFileReference\r```"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [ ]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:08:34.545359-04:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-11-04T16:08:45.874273-04:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "0IAK1F2MDQC/tXCjAYiWOw=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "# Replacing Strings with Real Objects\rA good way to start may be to search for implementors of the accessor. In this example, we search for implementors of `macAddress`. For each relevant method:\r```\robjs := self methodClass allSubInstances select: [ :e | e macAddress isNotNil ].\robjs collect: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\t{ e macAddress. newMac } ]. \"Compare current values with replacements\"\robjs do: [ :e | \r\t| newMac |\r\tnewMac := CwMAC_Address fromString: e macAddress.\r\te macAddress: newMac ]\r```"
+				"string" : "# Replacing Strings with Real Objects"
 			},
 			{
 				"__type" : "textSnippet",
