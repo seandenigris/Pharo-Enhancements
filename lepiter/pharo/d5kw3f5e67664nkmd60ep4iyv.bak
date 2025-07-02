@@ -296,7 +296,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-07-01T20:39:23.504832-04:00"
+						"dateAndTimeString" : "2025-06-23T21:46:42.925459-04:00"
 					}
 				},
 				"uid" : {
@@ -306,88 +306,13 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "\"For traditional multi-user ORM + SQL database I'd look at P3 from Sven for Postgres with GLORP… And I would probably generate GLORP descriptors from Magritte by default\" - Stephan Eggermont via Discord #learning-help 10/8/2017"
+				"string" : "> For traditional multi-user ORM + SQL database I'd look at P3 from Sven for Postgres with GLORP… And I would probably generate GLORP descriptors from Magritte by default - Stephan Eggermont via Discord #learning-help 10/8/2017"
 			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-01T20:39:41.036009-04:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-01T20:39:41.036009-04:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "hxS/O0n1DQC6tg5SDfthnw=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "\"Glorp which is an ORM works over some of these. Voyage is an OO persistence API whose main backend is mongodb, although i think there is at least one other.\" - Pierce Ng via Discord #learning-help 10/8/2017"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-07-27T10:02:38.709626-04:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2025-07-01T20:39:42.994681-04:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "fI89D32EDQCbP63dDDM03g=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "Schema migration - [per Esteban Marg](http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html), there is support in VW that could potentially be ported to Pharo"
-						}
-					]
+					"items" : [ ]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -397,7 +322,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-07-01T20:39:35.621276-04:00"
+						"dateAndTimeString" : "2021-07-27T10:02:38.709626-04:00"
 					}
 				},
 				"editEmail" : {
@@ -408,17 +333,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-07-01T20:39:35.621276-04:00"
+						"dateAndTimeString" : "2025-06-23T21:46:48.445696-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "5XRsO0n1DQC6pNpUDfthnw=="
+					"uidString" : "fI89D32EDQCbP63dDDM03g=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "## Glorp"
+				"string" : "## Glorp\r> Glorp which is an ORM works over some of these. Voyage is an OO persistence API whose main backend is mongodb, although i think there is at least one other. - Pierce Ng via Discord #learning-help 10/8/2017\r- Schema migration - [per Esteban Marg](http://forum.world.st/Deep-QCMagritte-tutorial-tp4744612p4744943.html), there is support in VW that could potentially be ported to Pharo"
 			}
 		]
 	},
