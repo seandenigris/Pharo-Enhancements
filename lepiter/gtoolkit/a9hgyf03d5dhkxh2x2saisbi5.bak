@@ -1,0 +1,252 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "3d2387be-5af5-0d00-96de-e9300ece5cad"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Exporting a Lepiter Knowledgebase"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:33:09.650622-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:38:08.844814-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5nyHvlr1DQCW32Z1Ds5crQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "{{gtClass:LeHtmlBookExporter}} looks interesting. It's only user is {{gtMethod:LeHtmlBookExportCommandLineHandler>>activate}}, from which we can adapt usage:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:59:14.660392-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T18:03:43.342179-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vp7PG1v1DQCgd/aIDs5crQ=="
+				},
+				"code" : "db := LeDatabasesRegistry defaultLogicalDatabase databaseNamed: 'GToolkit (via PharoEnhancements)'.\r\r\"Looks like this should be the TOC, but for now we'll stub in a random page\"\rmainPage := db pages atRandom."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:35:52.990749-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:59:50.480825-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3NlDyFr1DQCZR3+oDs5crQ=="
+				},
+				"code" : "\"No idea what 'piece' means, but it has to do with the HTML template.\"\rpiece := LeHtmlGtBookPiece gtBook."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:59:55.54416-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T18:02:48.439081-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "H3Q/Hlv1DQCh24u8Ds5crQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The above class has things hardcoded that are specific to the GT Book. For example, it relies on {{gtClass:LeHtmlPageUrlAttributePiece}}, which has a hardcoded `defaultBaseUrl` of 'https://book.gtoolkit.com'."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T18:02:49.255233-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T18:03:07.868786-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jBWaKFv1DQCkNRUdDs5crQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The script below does produce something that looks like a book"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T17:33:38.329903-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-07-02T18:03:16.167493-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ixc9wFr1DQCW4aUuDs5crQ=="
+				},
+				"code" : "LeHtmlBookExporter new\r\tdatabase: db;\r\tmainPage: mainPage;\r\tpiece: piece;\r\threfBuilder: LeExportFilenameAndExtensionHypertextReferenceBuilder new;\r\tintegerSequencer;\r\t\"addGtBookAssets;\"\r\texport;\r\tsaveToRootDirectory: (FileLocator home / 'PeGt Book') ensureCreateDirectory"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-07-02T17:33:34.249548-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-07-02T17:33:34.249548-04:00"
+		}
+	}
+}
