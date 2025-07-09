@@ -16,6 +16,15 @@ MailMessage >> fieldNamed: aString ifPresent: presentBlock ifAbsent: aBlock [
 ]
 
 { #category : #'*PharoEnhancements' }
+MailMessage >> htmlPart [
+
+	self isHtml ifTrue: [ ^ self ].
+	^ self atomicParts 
+		detect: [ :part | part isHtml ] 
+		ifNone: [ nil ]
+]
+
+{ #category : #'*PharoEnhancements' }
 MailMessage >> isAttachment [
 
 	| disposition |
