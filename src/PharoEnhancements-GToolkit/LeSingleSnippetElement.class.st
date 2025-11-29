@@ -46,7 +46,7 @@ LeSingleSnippetElement >> initializeForSnippet: aSnippet [
 
 	viewModel := aSnippet asSnippetViewModel.
 	viewModel coderViewModel addShortcut: 
-		(BrEditorLineEndingShortcut new combination: (LeSnippetElement keyboardShortcut: #NewLine)).
+		(BrEditorShortcut new combination: (LeSnippetElement keyboardShortcut: #NewLine)).
 	snippetView := viewModel snippetView.
 	snippetView needsEmbellishments: false.
 	snippetElement := snippetView asElement.
