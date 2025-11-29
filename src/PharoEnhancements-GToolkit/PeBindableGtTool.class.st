@@ -11,6 +11,9 @@ Class {
 
 { #category : #testing }
 PeBindableGtTool class >> canModel: anElement [
+
+	anElement class = GtPagerWrapperElement ifTrue: [ ^ false ].
+	
 	^ anElement id = #tool asBlocElementId
 ]
 
