@@ -1,12 +1,12 @@
-Extension { #name : #MailMessage }
+Extension { #name : 'MailMessage' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> attachmentParts [
 
 	^ self parts select: [ :part | part isAttachment ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> fieldNamed: aString ifPresent: presentBlock ifAbsent: aBlock [
 	"return the value of the field with the specified name.  If there is more than one field, then return the first one"
 	^ fields 
@@ -15,7 +15,7 @@ MailMessage >> fieldNamed: aString ifPresent: presentBlock ifAbsent: aBlock [
 		ifAbsent: [ aBlock value ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> htmlPart [
 
 	self isHtml ifTrue: [ ^ self ].
@@ -24,7 +24,7 @@ MailMessage >> htmlPart [
 		ifNone: [ nil ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> isAttachment [
 
 	| disposition |
@@ -37,7 +37,7 @@ MailMessage >> isAttachment [
 	^ disposition mainValue = 'attachment'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> isHtml [
 
 	^ self fieldNamed: 'content-type'
@@ -45,7 +45,7 @@ MailMessage >> isHtml [
 		ifAbsent: [ false ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MailMessage >> timestamp [
 	| dateField dateString isWeekdayPresent safeDateString |
 	dateField := self 

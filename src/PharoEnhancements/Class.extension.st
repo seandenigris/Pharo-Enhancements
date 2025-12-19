@@ -1,6 +1,6 @@
-Extension { #name : #Class }
+Extension { #name : 'Class' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Class >> copyInstVarNamed: sourceName to: targetName [
 
 	self allSubInstancesDo: [ :obj |
@@ -9,18 +9,18 @@ Class >> copyInstVarNamed: sourceName to: targetName [
 		obj instVarNamed: #targetName put: value ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Class >> displayName [
 	^ (self name allButFirst: 2) piecesCutWhereCamelCase joinUsing: Character space
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Class >> gitHubMarkdownLink [
 
 	^ '[`', self name, '`](', self gitHubUrl asString, ')'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Class >> gitHubUrl [
 
 	^ self package gitHubUrl addPathSegment: self name, '.class.st'

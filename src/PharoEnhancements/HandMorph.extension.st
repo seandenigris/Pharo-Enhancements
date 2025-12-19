@@ -1,6 +1,6 @@
-Extension { #name : #HandMorph }
+Extension { #name : 'HandMorph' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 HandMorph >> generateKeyboardEvent: evtBuf [
 	"Override to get horizontal scrolling"
 

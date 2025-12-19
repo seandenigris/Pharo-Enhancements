@@ -1,6 +1,6 @@
-Extension { #name : #DateAndTime }
+Extension { #name : 'DateAndTime' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 DateAndTime >> asFileNameCompatibleString [
 	| stream |
 	stream := String new writeStream.
@@ -10,7 +10,7 @@ DateAndTime >> asFileNameCompatibleString [
 	^ stream contents
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 DateAndTime >> printUS [
 
 	^ self asDate mmddyyyy, ' @ ', self asTime printMinutes.

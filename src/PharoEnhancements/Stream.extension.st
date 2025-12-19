@@ -1,6 +1,6 @@
-Extension { #name : #Stream }
+Extension { #name : 'Stream' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Stream >> display: anObject [
 	"Have anObject print itself on the receiver."
 

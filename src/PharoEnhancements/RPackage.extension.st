@@ -1,6 +1,6 @@
-Extension { #name : #RPackage }
+Extension { #name : 'RPackage' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> createBaselineOf [
 	"Example:
 		(RPackage named: 'MyCoolPackage') createBaselineOf
@@ -18,13 +18,13 @@ RPackage >> createBaselineOf [
 		commitBaselineOfMethod
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> deprecate [
 	self packageManifest class compile: 'isDeprecated
 	^ true' classified: 'testing'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> gitHubUrl [
 
 	| str |
@@ -36,7 +36,7 @@ RPackage >> gitHubUrl [
 	^ str asUrl
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 RPackage >> peIceRepository [
 	"Unlike RPackage>>#iceRepository, I work with non-MC e.g. git"
 	^ IceRepository registry detect: [ :e | e includesPackageNamed: self name ] ifNone: [ nil ].

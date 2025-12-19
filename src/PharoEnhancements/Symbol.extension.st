@@ -1,6 +1,6 @@
-Extension { #name : #Symbol }
+Extension { #name : 'Symbol' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Symbol >> valueWithArguments: aCollection [
 	^ aCollection first perform: self withArguments: aCollection allButFirst.
 	

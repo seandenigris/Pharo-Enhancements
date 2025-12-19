@@ -1,19 +1,19 @@
-Extension { #name : #Timespan }
+Extension { #name : 'Timespan' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Timespan >> asTimespan [
 
 	^ self
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Timespan >> workDatesDo: aBlock [
  	"Exclude Saturday and Sunday"
 
 	self do: aBlock with: start asDate when: [ :d | d dayOfWeek > 1 and: [ d dayOfWeek < 7 ] ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Timespan >> workDays [
 
 	^ self dates count: [ :aDate | 

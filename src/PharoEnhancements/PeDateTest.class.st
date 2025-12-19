@@ -1,10 +1,12 @@
 Class {
-	#name : #PeDateTest,
-	#superclass : #TestCase,
-	#category : #'PharoEnhancements-Specification'
+	#name : 'PeDateTest',
+	#superclass : 'TestCase',
+	#category : 'PharoEnhancements-Specification',
+	#package : 'PharoEnhancements',
+	#tag : 'Specification'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 PeDateTest >> testAddYears [
 
 	| start increment cases expected |
@@ -24,7 +26,7 @@ PeDateTest >> testAddYears [
 		self assert: (start addYears: increment) equals: expected ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 PeDateTest >> testIsAnniversaryReachedBy [
 
 	| start end cases expected |
@@ -67,7 +69,7 @@ PeDateTest >> testIsAnniversaryReachedBy [
 		self assert: (start isAnniversaryReachedBy: end) equals: expected ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 PeDateTest >> testSubtractYears [
 
 	| start increment cases expected |
@@ -87,7 +89,7 @@ PeDateTest >> testSubtractYears [
 		self assert: (start subtractYears: increment) equals: expected ]
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 PeDateTest >> testYearsSince [
 
 	| start end cases expected |

@@ -1,6 +1,6 @@
-Extension { #name : #Collection }
+Extension { #name : 'Collection' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Collection >> detectMax: aBlock overThreshold: aMagnitude [
 	"Just like detectMax:, but only consider values greater than aNumber. For example: 
 		#(1 2) detectMax: #yourself overThreshold: 3 >>> nil

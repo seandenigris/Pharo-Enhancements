@@ -1,5 +1,6 @@
 Class {
-	#name : #TextConverter,
-	#superclass : #Object,
-	#category : #PharoEnhancements
+	#name : 'TextConverter',
+	#superclass : 'Object',
+	#category : 'PharoEnhancements',
+	#package : 'PharoEnhancements'
 }

@@ -1,10 +1,11 @@
 Class {
-	#name : #PeExternalDropServices,
-	#superclass : #Object,
-	#category : #PharoEnhancements
+	#name : 'PeExternalDropServices',
+	#superclass : 'Object',
+	#category : 'PharoEnhancements',
+	#package : 'PharoEnhancements'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeExternalDropServices class >> itemsFor: anObject [
 	"Answer a list of services appropriate for an object"
 

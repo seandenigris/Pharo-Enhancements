@@ -1,6 +1,6 @@
-Extension { #name : #Week }
+Extension { #name : 'Week' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Week class >> dayNameParser [
 	| rules |
 	rules := Array streamContents: [ :s |

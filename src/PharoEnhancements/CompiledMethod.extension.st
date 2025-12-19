@@ -1,12 +1,12 @@
-Extension { #name : #CompiledMethod }
+Extension { #name : 'CompiledMethod' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 CompiledMethod >> gitHubMarkdownLink [
 
 	^ '[`', self name, '`](', self gitHubUrl asString, ')'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 CompiledMethod >> gitHubUrl [
 
 	^ self isExtension

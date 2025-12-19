@@ -1,6 +1,6 @@
-Extension { #name : #MCMergeOrLoadWarning }
+Extension { #name : 'MCMergeOrLoadWarning' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MCMergeOrLoadWarning >> versions [
 	^ versions
 ]

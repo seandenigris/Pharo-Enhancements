@@ -1,6 +1,6 @@
-Extension { #name : #MacOSXPlatform }
+Extension { #name : 'MacOSXPlatform' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 MacOSXPlatform >> isARM [
 	"Doesn't report correct result when ARM VM is launched from Rosetta Launcher. Reported on Discord on 2/3"
 	^ (LibC resultOfCommand: 'arch') = 'arm64'

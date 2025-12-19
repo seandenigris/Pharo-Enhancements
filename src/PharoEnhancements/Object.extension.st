@@ -1,11 +1,11 @@
-Extension { #name : #Object }
+Extension { #name : 'Object' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object class >> exampleSupportFolder [
 	^ self iceRepository location / 'example support'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object class >> given: givenBlock when: whenBlock then: thenBlock [
 	"Useful for most common example pattern. Example usage in comment below"
 	| whenResult givenResult |
@@ -22,13 +22,13 @@ Object class >> given: givenBlock when: whenBlock then: thenBlock [
 		then: [ :it | self assert: it isEmpty ]."
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object class >> iceRepository [
 	"Unlike RPackage>>#iceRepository, I work with non-MC e.g. git"
-	^ IceRepository registry detect: [ :e | e includesPackageNamed: self package name ] ifNone: [ nil ].
+	^ self package peIceRepository
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object >> interestingPointersTo [
 
 | pointers |
@@ -37,14 +37,14 @@ Object >> interestingPointersTo [
 	or: [ #('Brick' 'GT' 'GToolkit' 'Magritte' 'Lepiter' 'NewTools' 'Spec2') anySatisfy: [ :pkgPre | e class category beginsWith: pkgPre ] ] ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object class >> peCanHandleFromString: aString [
 	"Return whether the string input is convertible to an instance of this particular class. Subclasses should override as needed"
 	
 	^ false
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object class >> peClassForString: aString [
 	self subclasses do: [ :cls | 
 		| matchedSubclass |
@@ -56,12 +56,12 @@ Object class >> peClassForString: aString [
 		ifFalse: [ nil ]
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object >> pePickUp [
 	PeGtSpotterResult := self
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object >> printFromDisplayStringOn: aStream [
 
 	| title |
@@ -80,7 +80,7 @@ Object >> printFromDisplayStringOn: aStream [
 	aStream nextPut: $)
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 Object >> typeDisplayName [
 	^ self class displayName
 ]

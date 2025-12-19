@@ -1,6 +1,6 @@
-Extension { #name : #TraitBuilderEnhancer }
+Extension { #name : 'TraitBuilderEnhancer' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 TraitBuilderEnhancer >> allSlotsForBuilder: aBuilder [
 
  	| resultingSlots |
@@ -12,7 +12,7 @@ TraitBuilderEnhancer >> allSlotsForBuilder: aBuilder [
  	^ resultingSlots
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 TraitBuilderEnhancer >> configureClass: newClass superclass: superclass withLayoutType: layoutType slots: slots [
 	| resultingSlots |
 	self validateTraitComposition: self traitComposition ofClass: builder oldClass.

@@ -1,6 +1,6 @@
-Extension { #name : #ByteString }
+Extension { #name : 'ByteString' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 ByteString >> asTitleCase [
 	"There are several styles (e.g. Chicago, APA, MLA, and AP; see https://capitalizemytitle.com for more info). Here we take a general approach, capitalizing the first word and any word not on one of the lists that start the method (e.g. articles)"
 	| articles coordinatingConjunctions prepositions isListed resultBlock caseWord nextWordFromTo isFirstWord |
@@ -42,12 +42,12 @@ ByteString >> asTitleCase [
 	The model here could get very deep e.g. dictionary for different languages and parts of speech. Some of this is implemented in my foreign language app"
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 ByteString >> copyToClipboard [
 	Clipboard clipboardText: self
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 ByteString class >> exampleAsTitleCase [
 	<gtExample>
 	| result |
@@ -55,7 +55,7 @@ ByteString class >> exampleAsTitleCase [
 	self assert: result equals: 'And the Dish Ran Away with the Spoon'
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 ByteString >> htmlDecoded [
 
 	| result table |

@@ -1,6 +1,6 @@
-Extension { #name : #BaselineOf }
+Extension { #name : 'BaselineOf' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 BaselineOf class >> allPackagesDeeply [
 
 	| projects |
@@ -14,7 +14,7 @@ BaselineOf class >> allPackagesDeeply [
 			thenCollect: [ :pkg | pkg workingCopy package correspondingRPackage ] ].
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 BaselineOf class >> gitHasUnstaged [
 	| unstagedCmd cmd exitCodeString |
 	self iceRepository ifNil: [ ^ false ].
@@ -25,7 +25,7 @@ BaselineOf class >> gitHasUnstaged [
 	^ exitCodeString trimRight asNumber = 1
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 BaselineOf class >> iconFolder [
 	^ self iceRepository location / 'icons'
 ]

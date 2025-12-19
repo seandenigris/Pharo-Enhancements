@@ -1,12 +1,13 @@
 Trait {
-	#name : #PeTRawDataHolder,
+	#name : 'PeTRawDataHolder',
 	#instVars : [
 		'rawData'
 	],
-	#category : #PharoEnhancements
+	#category : 'PharoEnhancements',
+	#package : 'PharoEnhancements'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 PeTRawDataHolder classSide >> fromDictionary: aDictionary [
 
 	^ self new
@@ -14,17 +15,17 @@ PeTRawDataHolder classSide >> fromDictionary: aDictionary [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawData [
 	^ rawData
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawData: anObject [
 	rawData := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataAt: aString [
 
 	^ self 
@@ -32,7 +33,7 @@ PeTRawDataHolder >> rawDataAt: aString [
 		reader: #yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataAt: aString ifAbsent: absentBlock [
 		
 	^ self 
@@ -41,7 +42,7 @@ PeTRawDataHolder >> rawDataAt: aString ifAbsent: absentBlock [
 		ifAbsent: absentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataAt: aString reader: aValuable [
 		
 	^ self 
@@ -50,7 +51,7 @@ PeTRawDataHolder >> rawDataAt: aString reader: aValuable [
 		ifAbsent: [ nil ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataAt: aString reader: aValuable ifAbsent: absentBlock [
 		
 	^ self rawData 
@@ -59,7 +60,7 @@ PeTRawDataHolder >> rawDataAt: aString reader: aValuable ifAbsent: absentBlock [
 		ifAbsent: absentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext [
 	<gtView>
 	
@@ -70,7 +71,7 @@ PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext [
 			resultView actionUpdateButton ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
 	"If you want to customize the view (e.g. reload latest data via API on update button), send this message from your view method"
 	
@@ -89,7 +90,7 @@ PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataXml: aBlock reader: aValuable ifAbsent: absentBlock [
 		
 	| el |
@@ -100,7 +101,7 @@ PeTRawDataHolder >> rawDataXml: aBlock reader: aValuable ifAbsent: absentBlock [
 		ifNil: [ absentBlock value ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataXmlAt: aString reader: aValuable ifAbsent: absentBlock [
 		
 	| el |
@@ -111,7 +112,7 @@ PeTRawDataHolder >> rawDataXmlAt: aString reader: aValuable ifAbsent: absentBloc
 	^ aValuable value: el
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTRawDataHolder >> rawDataXmlGtViewFor: aView context: aContext do: aBlock [
 	"If you want to customize the view (e.g. reload latest data via API on update button), send this message from your view method"
 	

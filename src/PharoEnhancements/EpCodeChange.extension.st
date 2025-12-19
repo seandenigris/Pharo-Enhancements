@@ -1,6 +1,6 @@
-Extension { #name : #EpCodeChange }
+Extension { #name : 'EpCodeChange' }
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 EpCodeChange class >> allAffectingPackagesNamed: aBlock [
 	| nodes entries filter filteredEntries groups |
 	"To see diffs on the changes, you could do:
@@ -31,7 +31,7 @@ EpCodeChange class >> allAffectingPackagesNamed: aBlock [
 	^ groups collect: [ :col | col first content ] as: OrderedCollection.
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 EpCodeChange class >> allSourceCodeMatching: regexString [
 	| nodes entries filter filteredEntries groups |
 	"To see diffs on the changes, you could do:
@@ -62,7 +62,7 @@ EpCodeChange class >> allSourceCodeMatching: regexString [
 	^ groups collect: [ :col | col first content ] as: OrderedCollection.
 ]
 
-{ #category : #'*PharoEnhancements' }
+{ #category : '*PharoEnhancements' }
 EpCodeChange >> peNewSourceCode [
 	^ ''
 ]
