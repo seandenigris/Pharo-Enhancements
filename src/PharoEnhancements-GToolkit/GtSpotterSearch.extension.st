@@ -1,6 +1,6 @@
-Extension { #name : #GtSpotterSearch }
+Extension { #name : 'GtSpotterSearch' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtSpotterSearch >> pePreviewObject: aBlock [
 
 	self previewElement: [ :anObject |

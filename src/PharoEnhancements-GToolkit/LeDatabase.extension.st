@@ -1,6 +1,6 @@
-Extension { #name : #LeDatabase }
+Extension { #name : 'LeDatabase' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeDatabase >> initialize [
 	super initialize.
 	readOnly := false.
@@ -19,7 +19,7 @@ LeDatabase >> initialize [
 		to: self.
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeDatabase >> pagesByDate [
 
 	^ pagesByDate ifNil: [ 
@@ -30,7 +30,7 @@ LeDatabase >> pagesByDate [
 			pagesByDate ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeDatabase >> updatePageTypes [
 
 	"Copy-pasted from LeDatabase>>#initialize"

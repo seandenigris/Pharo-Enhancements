@@ -1,40 +1,42 @@
 Class {
-	#name : #PeTomlArrayTableNode,
-	#superclass : #PeTomlParseNode,
+	#name : 'PeTomlArrayTableNode',
+	#superclass : 'PeTomlParseNode',
 	#instVars : [
 		'leftBracketTokens',
 		'key',
 		'rightBracketTokens'
 	],
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> acceptVisitor: aParseVisitor [
 
 	^ aParseVisitor visitArrayTable: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> compositeTokenVariables [
 
 	^ #( #leftBracketTokens #rightBracketTokens )
 ]
 
-{ #category : #'generated-initialize-release' }
+{ #category : 'generated-initialize-release' }
 PeTomlArrayTableNode >> initialize [
 	super initialize.
 	leftBracketTokens := OrderedCollection new: 2.
 	rightBracketTokens := OrderedCollection new: 2.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> key [
 
 	^ key
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> key: anObject [
 
 	self setParent: self key to: nil.
@@ -42,31 +44,31 @@ PeTomlArrayTableNode >> key: anObject [
 	self setParent: self key to: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> leftBracketTokens [
 
 	^ leftBracketTokens
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> leftBracketTokens: anOrderedCollection [
 
 	leftBracketTokens := anOrderedCollection
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> otherVariables [
 
 	^ #( #key )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> rightBracketTokens [
 
 	^ rightBracketTokens
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlArrayTableNode >> rightBracketTokens: anOrderedCollection [
 
 	rightBracketTokens := anOrderedCollection

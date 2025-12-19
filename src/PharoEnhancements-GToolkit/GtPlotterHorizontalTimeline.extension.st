@@ -1,6 +1,6 @@
-Extension { #name : #GtPlotterHorizontalTimeline }
+Extension { #name : 'GtPlotterHorizontalTimeline' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtPlotterHorizontalTimeline >> createProjections: aCollectionOfDomainObjects [
 	<gtExample>
 
@@ -34,7 +34,7 @@ GtPlotterHorizontalTimeline >> createProjections: aCollectionOfDomainObjects [
 		values: aCollectionOfDomainObjects
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtPlotterHorizontalTimeline >> createTimelineDots: aCollectionOfDomainObjects [
 	^ GtPlotterMarkersElement new
 		horizontalMarkerLayout;

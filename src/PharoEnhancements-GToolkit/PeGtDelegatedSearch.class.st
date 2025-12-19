@@ -1,21 +1,23 @@
 Class {
-	#name : #PeGtDelegatedSearch,
-	#superclass : #Object,
+	#name : 'PeGtDelegatedSearch',
+	#superclass : 'Object',
 	#instVars : [
 		'delegate',
 		'message',
 		'configuration'
 	],
-	#category : #'PharoEnhancements-GToolkit-Spotter'
+	#category : 'PharoEnhancements-GToolkit-Spotter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Spotter'
 }
 
-{ #category : #'magritte-descriptions' }
+{ #category : 'magritte-descriptions' }
 PeGtDelegatedSearch class >> to: aValuable message: aSymbol [ 
 
 	^ self to: aValuable message: aSymbol configured: #yourself
 ]
 
-{ #category : #'magritte-descriptions' }
+{ #category : 'magritte-descriptions' }
 PeGtDelegatedSearch class >> to: aValuable message: aSymbol configured: configBlock [
 
 	^ self new
@@ -25,29 +27,29 @@ PeGtDelegatedSearch class >> to: aValuable message: aSymbol configured: configBl
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> configuration [
 	^ configuration ifNil: #yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> configuration: anObject [
 	configuration := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> delegate [
 
 	^ delegate
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> delegate: aValuable [
 
 	delegate := aValuable
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> gtSpotterOn: aStep [
 	<gtSearch>
 	
@@ -57,13 +59,13 @@ PeGtDelegatedSearch >> gtSpotterOn: aStep [
 	^ search
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> message [
 
 	^ message
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDelegatedSearch >> message: anObject [
 
 	message := anObject

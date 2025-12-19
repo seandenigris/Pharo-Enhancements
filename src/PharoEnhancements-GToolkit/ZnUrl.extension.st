@@ -1,6 +1,6 @@
-Extension { #name : #ZnUrl }
+Extension { #name : 'ZnUrl' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 ZnUrl >> peLepiterClippedString [
 	"Parens and brackets are allowed in <> markup, but not [](). See issue here: https://github.com/feenkcom/gtoolkit/issues/2749"
 

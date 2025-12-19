@@ -1,6 +1,6 @@
-Extension { #name : #GtABAddress }
+Extension { #name : 'GtABAddress' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtABAddress >> = anObject [
 	self == anObject ifTrue: [ ^ true ].
 	self class = anObject class ifFalse: [ ^ false ].

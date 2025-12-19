@@ -1,28 +1,30 @@
 Class {
-	#name : #LeGitHubExporterAnnotationVisitor,
-	#superclass : #Object,
+	#name : 'LeGitHubExporterAnnotationVisitor',
+	#superclass : 'Object',
 	#traits : 'TLeAnnotationParseNodeVisitor',
 	#classTraits : 'TLeAnnotationParseNodeVisitor classTrait',
 	#instVars : [
 		'stream',
 		'externalPicturesWriter'
 	],
-	#category : #'PharoEnhancements-GToolkit-Lepiter-Exporting'
+	#category : 'PharoEnhancements-GToolkit-Lepiter-Exporting',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Lepiter-Exporting'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterAnnotationVisitor >> stream [
 
 	^ stream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterAnnotationVisitor >> stream: anObject [
 
 	stream := anObject
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterAnnotationVisitor >> visitClassAnnotation: aClassAnnotation [
 	
 	self 
@@ -31,7 +33,7 @@ LeGitHubExporterAnnotationVisitor >> visitClassAnnotation: aClassAnnotation [
 		string: aClassAnnotation nameNode source
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterAnnotationVisitor >> visitMethodAnnotation: aMethodAnnotation [
 		
 	self 
@@ -40,7 +42,7 @@ LeGitHubExporterAnnotationVisitor >> visitMethodAnnotation: aMethodAnnotation [
 		string: aMethodAnnotation nameNode source
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterAnnotationVisitor >> writeBehaviorOrMethod: aClassOrMethod annotation: anAnnotation string: aString [
 
 	| label |

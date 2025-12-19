@@ -1,6 +1,6 @@
-Extension { #name : #LeContent }
+Extension { #name : 'LeContent' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeContent >> peAsGitHubMarkdownString [
 
 	| visitor |

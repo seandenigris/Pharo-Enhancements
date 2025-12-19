@@ -1,10 +1,12 @@
 Class {
-	#name : #PeTOMLParser,
-	#superclass : #SmaCCGLRParser,
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#name : 'PeTOMLParser',
+	#superclass : 'SmaCCGLRParser',
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> ambiguousTransitions [
 ^#(
 #[ 0 218 1 49] 
@@ -15,12 +17,12 @@ PeTOMLParser class >> ambiguousTransitions [
 	).
 ]
 
-{ #category : #'generated-accessing' }
+{ #category : 'generated-accessing' }
 PeTOMLParser class >> cacheId [
 	^'2022-03-22T10:42:30.117357-04:00'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> definitionComment [
 "/*
 Licensed to the Apache Software Foundation (ASF) under one
@@ -190,7 +192,7 @@ array_table : ""["" ""["" key 'key' ""]"" ""]"" {{}};
 <UNQUOTED_KEY> : (<ALPHA> | <DIGIT> | \- | _)+ ;"
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> reduceTable [
 ^#(
 	#(33 0 #nil 1089537 false) 
@@ -268,18 +270,18 @@ PeTOMLParser class >> reduceTable [
 	).
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> scannerClass [
 	^PeTOMLScanner
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> startingStateFordocument [
 
 	^ 1
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> symbolNames [
 
 	^ #( '","' '"."' '"="' '"["' '"]"' '"{"' '"}"' '<whitespace>'
@@ -302,7 +304,7 @@ PeTOMLParser class >> symbolNames [
 	     'array_table' 'E O F' 'error' )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> symbolTypes [
 
 	^ #( #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken #SmaCCToken
@@ -320,7 +322,7 @@ PeTOMLParser class >> symbolTypes [
 	     #SmaCCToken #SmaCCErrorNode )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLParser class >> transitionTable [
 ^#(
 #[1 0 9 0 4 0 6 0 9 0 37 0 10 0 17 0 12 0 21 0 14 0 25 0 27 0 29 0 29 0 33 0 32 0 37 0 33 0 41 0 34 0 45 0 35 0 49 0 36 0 49 0 37 0 49 0 38 0 49 0 39 0 49 0 40 0 45 0 41 0 73 0 60 0 73 0 61 0 73 0 65 0 6 0 66] 
@@ -420,7 +422,7 @@ PeTOMLParser class >> transitionTable [
 	).
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFor__NL__expression__expression__1: nodes [
 
 	| result |
@@ -430,7 +432,7 @@ PeTOMLParser >> reduceActionFor__NL__expression__expression__1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFor__NL__expression__expression___1: nodes [
 
 	| result |
@@ -440,7 +442,7 @@ PeTOMLParser >> reduceActionFor__NL__expression__expression___1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFor__NL__expression__expression___2: nodes [
 
 	| result |
@@ -450,7 +452,7 @@ PeTOMLParser >> reduceActionFor__NL__expression__expression___2: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForarray_table1: nodes [
 
 	| result |
@@ -463,37 +465,37 @@ PeTOMLParser >> reduceActionForarray_table1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForbasicString1: nodes [
 
 	^ (nodes at: 1) value copyFrom: 2 to: (nodes at: 1) value size - 1
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForbool_1: nodes [
 
 	^ (nodes at: 1) value = 'true'
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFordate_time1: nodes [
 
 	^ (nodes at: 1) value asDateAndTime
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFordate_time3: nodes [
 
 	^ (nodes at: 1) value asDate
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFordate_time4: nodes [
 
 	^ (nodes at: 1) value asTime
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFordocument1: nodes [
 
 	| result |
@@ -504,7 +506,7 @@ PeTOMLParser >> reduceActionFordocument1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForexpression3: nodes [
 
 	| result |
@@ -513,13 +515,13 @@ PeTOMLParser >> reduceActionForexpression3: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForinteger1: nodes [
 
 	^ ((nodes at: 1) value copyWithoutAll: '_') asNumber
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForkey_value1: nodes [
 
 	| result |
@@ -530,13 +532,13 @@ PeTOMLParser >> reduceActionForkey_value1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionFormlBasicString1: nodes [
 
 	^ (nodes at: 1) value copyFrom: 4 to: (nodes at: 1) value size - 3
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForstandard_table1: nodes [
 
 	| result |
@@ -547,7 +549,7 @@ PeTOMLParser >> reduceActionForstandard_table1: nodes [
 	^ result
 ]
 
-{ #category : #'generated-reduction actions' }
+{ #category : 'generated-reduction actions' }
 PeTOMLParser >> reduceActionForunquoted_key1: nodes [
 
 	^ (nodes at: 1) value

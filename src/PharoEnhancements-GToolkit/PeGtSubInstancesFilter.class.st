@@ -1,15 +1,17 @@
 Class {
-	#name : #PeGtSubInstancesFilter,
-	#superclass : #Object,
+	#name : 'PeGtSubInstancesFilter',
+	#superclass : 'Object',
 	#traits : 'TGtSpotterFilter',
 	#classTraits : 'TGtSpotterFilter classTrait',
 	#instVars : [
 		'rootClass'
 	],
-	#category : #'PharoEnhancements-GToolkit-Spotter'
+	#category : 'PharoEnhancements-GToolkit-Spotter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Spotter'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtSubInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 
 	| matchedClasses instances |
@@ -21,13 +23,13 @@ PeGtSubInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 	^ instances asAsyncStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtSubInstancesFilter >> rootClass [
 
 	^ rootClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtSubInstancesFilter >> rootClass: anObject [
 
 	rootClass := anObject

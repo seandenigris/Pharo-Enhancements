@@ -1,6 +1,6 @@
-Extension { #name : #GtSpotterListSearch }
+Extension { #name : 'GtSpotterListSearch' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtSpotterListSearch >> matchSubstrings [
 	^ self filterBySubstring
 ]

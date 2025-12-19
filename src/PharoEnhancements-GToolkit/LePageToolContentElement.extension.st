@@ -1,6 +1,6 @@
-Extension { #name : #LePageToolContentElement }
+Extension { #name : 'LePageToolContentElement' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePageToolContentElement >> initializeHeaderElement [
 	headerElement := BrHorizontalPane new alignCenter.
 	headerElement
@@ -15,7 +15,7 @@ LePageToolContentElement >> initializeHeaderElement [
 	headerElement layout: BlFlowLayout horizontal
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePageToolContentElement >> peAsLePageElement [
 	^ PeLePageElement on: self
 ]

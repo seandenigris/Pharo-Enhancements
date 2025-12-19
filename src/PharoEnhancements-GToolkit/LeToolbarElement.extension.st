@@ -1,6 +1,6 @@
-Extension { #name : #LeToolbarElement }
+Extension { #name : 'LeToolbarElement' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeToolbarElement >> initialize [
 	super initialize.
 	self initializeToolbarElement.

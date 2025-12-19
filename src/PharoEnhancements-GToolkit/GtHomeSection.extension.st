@@ -1,6 +1,6 @@
-Extension { #name : #GtHomeSection }
+Extension { #name : 'GtHomeSection' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtHomeSection >> buttonTitled: aString iconFileNamed: iconable tooltip: tipString inspecting: aValuable [
 
 	| icon |
@@ -22,7 +22,7 @@ GtHomeSection >> buttonTitled: aString iconFileNamed: iconable tooltip: tipStrin
 		description: tipString.
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtHomeSection >> iconFromFileNamed: aString [
 	
 	^ GtFileUtility imageElementFromFileReference: self iconFolder / aString.

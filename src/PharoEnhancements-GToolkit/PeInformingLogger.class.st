@@ -1,10 +1,12 @@
 Class {
-	#name : #PeInformingLogger,
-	#superclass : #SignalLogger,
-	#category : #'PharoEnhancements-GToolkit-Loggers'
+	#name : 'PeInformingLogger',
+	#superclass : 'SignalLogger',
+	#category : 'PharoEnhancements-GToolkit-Loggers',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Loggers'
 }
 
-{ #category : #registering }
+{ #category : 'registering' }
 PeInformingLogger >> nextPut: anAnnouncement [
 	UIManager default inform: anAnnouncement
 	

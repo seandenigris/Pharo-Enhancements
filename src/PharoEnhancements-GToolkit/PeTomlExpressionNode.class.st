@@ -1,31 +1,33 @@
 Class {
-	#name : #PeTomlExpressionNode,
-	#superclass : #PeTomlParseNode,
+	#name : 'PeTomlExpressionNode',
+	#superclass : 'PeTomlParseNode',
 	#instVars : [
 		'comment'
 	],
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlExpressionNode >> acceptVisitor: aParseVisitor [
 
 	^ aParseVisitor visitExpression: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlExpressionNode >> comment [
 
 	^ comment
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlExpressionNode >> comment: aSmaCCToken [
 
 	comment := aSmaCCToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlExpressionNode >> tokenVariables [
 
 	^ #( #comment )

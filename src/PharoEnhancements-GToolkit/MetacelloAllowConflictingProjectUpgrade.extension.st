@@ -1,6 +1,6 @@
-Extension { #name : #MetacelloAllowConflictingProjectUpgrade }
+Extension { #name : 'MetacelloAllowConflictingProjectUpgrade' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MetacelloAllowConflictingProjectUpgrade >> gtViewDiffFor: aView [
 	<gtView>
 	^ aView textEditor
@@ -28,7 +28,7 @@ MetacelloAllowConflictingProjectUpgrade >> gtViewDiffFor: aView [
 				action: [ self useExisting ] ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MetacelloAllowConflictingProjectUpgrade >> gtViewProjectReferencesFor: aView [
 	<gtView>
 	| project |

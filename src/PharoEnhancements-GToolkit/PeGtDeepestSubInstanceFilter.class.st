@@ -1,13 +1,15 @@
 Class {
-	#name : #PeGtDeepestSubInstanceFilter,
-	#superclass : #Object,
+	#name : 'PeGtDeepestSubInstanceFilter',
+	#superclass : 'Object',
 	#instVars : [
 		'rootClass'
 	],
-	#category : #'PharoEnhancements-GToolkit-Spotter'
+	#category : 'PharoEnhancements-GToolkit-Spotter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Spotter'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDeepestSubInstanceFilter >> applyInScope: aStream context: aSpotterContext [
 
 	| matchedClass input result |
@@ -24,13 +26,13 @@ PeGtDeepestSubInstanceFilter >> applyInScope: aStream context: aSpotterContext [
 	^ result asAsyncStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDeepestSubInstanceFilter >> rootClass [
 
 	^ rootClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtDeepestSubInstanceFilter >> rootClass: anObject [
 
 	rootClass := anObject

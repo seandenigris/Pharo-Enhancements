@@ -1,10 +1,11 @@
 Class {
-	#name : #PeTableElement,
-	#superclass : #BlElement,
-	#category : #'PharoEnhancements-GToolkit'
+	#name : 'PeTableElement',
+	#superclass : 'BlElement',
+	#category : 'PharoEnhancements-GToolkit',
+	#package : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 PeTableElement >> initialize [
 	super initialize.
 	self layout: BlGridLayout horizontal.

@@ -1,6 +1,6 @@
-Extension { #name : #PeTEnumerable }
+Extension { #name : 'PeTEnumerable' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 PeTEnumerable >> itemsGtViewFor: aView [
 	<gtView>
 	

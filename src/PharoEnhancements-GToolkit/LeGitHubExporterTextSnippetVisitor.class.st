@@ -1,6 +1,6 @@
 Class {
-	#name : #LeGitHubExporterTextSnippetVisitor,
-	#superclass : #Object,
+	#name : 'LeGitHubExporterTextSnippetVisitor',
+	#superclass : 'Object',
 	#traits : 'TSmaCCCompositeVisitor + (TLeContentNodeVisitor - {#acceptNode:})',
 	#classTraits : 'TSmaCCCompositeVisitor classTrait + TLeContentNodeVisitor classTrait',
 	#instVars : [
@@ -8,39 +8,41 @@ Class {
 		'level',
 		'externalPicturesWriter'
 	],
-	#category : #'PharoEnhancements-GToolkit-Lepiter-Exporting'
+	#category : 'PharoEnhancements-GToolkit-Lepiter-Exporting',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Lepiter-Exporting'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterTextSnippetVisitor >> level [
 
 	^ level
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterTextSnippetVisitor >> level: anObject [
 
 	level := anObject
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 LeGitHubExporterTextSnippetVisitor >> newLine [
 	^ Character cr asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterTextSnippetVisitor >> stream [
 
 	^ stream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 LeGitHubExporterTextSnippetVisitor >> stream: anObject [
 
 	stream := anObject
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitCodeBlock: aCodeBlock [
 	
 	self stream
@@ -50,7 +52,7 @@ LeGitHubExporterTextSnippetVisitor >> visitCodeBlock: aCodeBlock [
 	 ^ self visitContent: aCodeBlock
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitDocumenterAnnotation: aDocumenterAnnotation [
 	| annotationVisitor |
 	annotationVisitor := LeGitHubExporterAnnotationVisitor new 
@@ -60,32 +62,32 @@ LeGitHubExporterTextSnippetVisitor >> visitDocumenterAnnotation: aDocumenterAnno
 	aDocumenterAnnotation annotation acceptVisitor: annotationVisitor
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitExternalLabelUrlLink: anExternalLabelUrlLink [
 	self stream
 		nextPutAll: '[', anExternalLabelUrlLink label, '](', anExternalLabelUrlLink url, ')'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitHeader: aHeader [
 	aHeader headerLevel timesRepeat: [ self stream nextPut: $# ].
 	self stream space.
 	aHeader parts do: [ :part | self stream nextPutAll: part source ]
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitInlineCode: anInlineCode [
 	self stream << anInlineCode source
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitPageLink: aPageLink [
 
 	self stream
 		nextPutAll: '[', aPageLink link value, '](', aPageLink link value, '.md)'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 LeGitHubExporterTextSnippetVisitor >> visitText: aText [
 	self stream << aText content
 ]

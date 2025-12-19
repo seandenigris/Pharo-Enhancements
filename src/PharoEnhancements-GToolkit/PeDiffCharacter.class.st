@@ -1,59 +1,61 @@
 Class {
-	#name : #PeDiffCharacter,
-	#superclass : #Object,
+	#name : 'PeDiffCharacter',
+	#superclass : 'Object',
 	#instVars : [
 		'status',
 		'character'
 	],
-	#category : #'PharoEnhancements-GToolkit-Diffing'
+	#category : 'PharoEnhancements-GToolkit-Diffing',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Diffing'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> character [
 
 	^ character
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> character: anObject [
 
 	character := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> isAdded [
 	^ self status = $+
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> isRemoved [
 	^ self status = $-
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> isUnchanged [
 	^ self status = Character space
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> printOn: aStream [
 	status ifNotNil: [ aStream nextPut: status ].
 	character ifNotNil: [ aStream nextPut: character ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> status [
 
 	^ status
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> status: anObject [
 
 	status := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeDiffCharacter >> textAttributes [
 	self isRemoved 
 		ifTrue: [ ^ {

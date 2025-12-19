@@ -1,39 +1,41 @@
 Class {
-	#name : #PeTomlKeyValueNode,
-	#superclass : #PeTomlParseNode,
+	#name : 'PeTomlKeyValueNode',
+	#superclass : 'PeTomlParseNode',
 	#instVars : [
 		'key',
 		'equalToken',
 		'value'
 	],
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> acceptVisitor: aParseVisitor [
 
 	^ aParseVisitor visitKeyValue: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> equalToken [
 
 	^ equalToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> equalToken: aSmaCCToken [
 
 	equalToken := aSmaCCToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> key [
 
 	^ key
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> key: anObject [
 
 	self setParent: self key to: nil.
@@ -41,25 +43,25 @@ PeTomlKeyValueNode >> key: anObject [
 	self setParent: self key to: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> otherVariables [
 
 	^ #( #key #value )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> tokenVariables [
 
 	^ #( #equalToken )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> value [
 
 	^ value
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlKeyValueNode >> value: anObject [
 
 	self setParent: self value to: nil.

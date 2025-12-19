@@ -1,6 +1,6 @@
-Extension { #name : #GtPhlowView }
+Extension { #name : 'GtPhlowView' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtPhlowView >> inspectButtonFor: aValuable [
 
 	self actionButtonIcon: BrGlamorousVectorIcons inspect

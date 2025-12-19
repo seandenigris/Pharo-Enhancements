@@ -1,12 +1,12 @@
-Extension { #name : #LePage }
+Extension { #name : 'LePage' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePage >> asContentUIModel [
 	<return: #LeContentViewModel>
 	^ self type asContentUIModel
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePage class >> leJsonV4AttributeMapping [
 
 	^ super leJsonV4AttributeMapping
@@ -15,7 +15,7 @@ LePage class >> leJsonV4AttributeMapping [
 		yourself
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePage >> peGtExpandCollapseButtonFor: anAction [
 	<lePageAction>
 	
@@ -28,7 +28,7 @@ LePage >> peGtExpandCollapseButtonFor: anAction [
 				ifNone: [ aModel pageElement treeElement expandAll ] ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePage >> snippetBuilder [
 	^ self type snippetBuilder
 ]

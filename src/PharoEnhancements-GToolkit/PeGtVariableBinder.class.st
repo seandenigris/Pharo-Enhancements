@@ -1,15 +1,17 @@
 Class {
-	#name : #PeGtVariableBinder,
-	#superclass : #Object,
+	#name : 'PeGtVariableBinder',
+	#superclass : 'Object',
 	#instVars : [
 		'tool',
 		'variable',
 		'targetValue'
 	],
-	#category : #'PharoEnhancements-GToolkit-Variable-Sharing'
+	#category : 'PharoEnhancements-GToolkit-Variable-Sharing',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Variable-Sharing'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder class >> from: anRBVariable to: anObject in: aTool [
 	^ self new
 		variable: anRBVariable;
@@ -18,17 +20,17 @@ PeGtVariableBinder class >> from: anRBVariable to: anObject in: aTool [
 		yourself 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> peGtPharoSourceCoderTreeChildren [
 	^ #()
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	^ #()
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 		(aNodeElement childNamed: #label) text: self variable name.
 		(aNodeElement childNamed: #bind) 
@@ -39,37 +41,37 @@ PeGtVariableBinder >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 					put: self targetValue ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> targetValue [
 
 	^ targetValue ifNil: [ PeGtSpotterResult ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> targetValue: anObject [
 
 	targetValue := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> tool [
 
 	^ tool
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> tool: anObject [
 
 	tool := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> variable [
 
 	^ variable
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtVariableBinder >> variable: anObject [
 
 	variable := anObject

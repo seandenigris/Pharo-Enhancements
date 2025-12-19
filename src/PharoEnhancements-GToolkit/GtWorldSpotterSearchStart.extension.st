@@ -1,6 +1,6 @@
-Extension { #name : #GtWorldSpotterSearchStart }
+Extension { #name : 'GtWorldSpotterSearchStart' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtWorldSpotterSearchStart >> gtSpotterContainingSubPartsFor: aSearch [
 	<gtSearch>
 	self hasKnowledgeBase
@@ -27,7 +27,7 @@ GtWorldSpotterSearchStart >> gtSpotterContainingSubPartsFor: aSearch [
 		itemName: #spotterItemName
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtWorldSpotterSearchStart >> peGtSSearchNewPageFor: aStep [
 	<gtSearch>
 	

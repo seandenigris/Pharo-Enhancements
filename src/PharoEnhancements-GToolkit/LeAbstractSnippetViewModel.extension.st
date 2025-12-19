@@ -1,6 +1,6 @@
-Extension { #name : #LeAbstractSnippetViewModel }
+Extension { #name : 'LeAbstractSnippetViewModel' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeAbstractSnippetViewModel >> selfObject [
 	^ sharedContext selfObject
 ]

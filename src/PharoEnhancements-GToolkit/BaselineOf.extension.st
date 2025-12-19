@@ -1,6 +1,6 @@
-Extension { #name : #BaselineOf }
+Extension { #name : 'BaselineOf' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> gitHubComment [
 	| page visitor |
 	page := LePharoClassDatabase uniqueInstance pageNamed: self name.
@@ -11,7 +11,7 @@ BaselineOf class >> gitHubComment [
 	^ visitor stream contents
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> gtExamplesFor: aView [
 	<gtView>
 	<gtClassView>
@@ -23,12 +23,12 @@ BaselineOf class >> gtExamplesFor: aView [
 	^ (GtExampleGroup withAll: examples) gtExamplesFor: aView
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> lepiter [
 	^ PeLepiterProject fromBaseline: self
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> loadGtIconFromRepositoryPath: aString [
 	"aString - partial path from repository root folder"
 	
@@ -40,7 +40,7 @@ BaselineOf class >> loadGtIconFromRepositoryPath: aString [
 		yourself
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BaselineOf class >> loadLepiterDocumentation [
 	self lepiter databases do: #load
 ]

@@ -1,6 +1,6 @@
-Extension { #name : #BrTabModel }
+Extension { #name : 'BrTabModel' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BrTabModel >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	^ OrderedCollection streamContents: [ :str | 
 		self model root allChildrenBreadthFirstDo: [ :e |
@@ -10,7 +10,7 @@ BrTabModel >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 				str nextPut: instance ] ] ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BrTabModel >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 	(aNodeElement childNamed: #label) text: self model title.
 	(aNodeElement childNamed: #bind) visibility: BlVisibility hidden

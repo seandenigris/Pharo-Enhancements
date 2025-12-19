@@ -1,1 +1,1 @@
-Package { #name : #'PharoEnhancements-GToolkit' }
+Package { #name : 'PharoEnhancements-GToolkit' }

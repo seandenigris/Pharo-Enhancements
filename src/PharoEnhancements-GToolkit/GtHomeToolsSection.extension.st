@@ -1,6 +1,6 @@
-Extension { #name : #GtHomeToolsSection }
+Extension { #name : 'GtHomeToolsSection' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtHomeToolsSection >> newMorphicWorldButtonStencil [
 	<gtToolButton>
 

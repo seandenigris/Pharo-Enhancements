@@ -1,6 +1,6 @@
-Extension { #name : #LeMethodNameArgumentNode }
+Extension { #name : 'LeMethodNameArgumentNode' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeMethodNameArgumentNode >> peImageObject [
 	| cls |
 	cls := super imageObject.

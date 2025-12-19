@@ -1,6 +1,6 @@
-Extension { #name : #SmaCCParser }
+Extension { #name : 'SmaCCParser' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 SmaCCParser class >> simulateRule: nameString parse: inputString [
 	| simulator |
 	simulator := SmaCCParserSimulator on: self definitionString.

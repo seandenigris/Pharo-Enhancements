@@ -1,6 +1,6 @@
-Extension { #name : #GtSpotterStep }
+Extension { #name : 'GtSpotterStep' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtSpotterStep >> bindResultAs: aSymbol [
 	
 	self spotter announcer when: GtSpotterActOn do: [ :anc :ancer |

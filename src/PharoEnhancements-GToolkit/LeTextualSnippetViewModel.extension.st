@@ -1,6 +1,6 @@
-Extension { #name : #LeTextualSnippetViewModel }
+Extension { #name : 'LeTextualSnippetViewModel' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeTextualSnippetViewModel >> promoteToPageGtActionFor: anAction [
 	<gtAction>
 

@@ -1,6 +1,6 @@
-Extension { #name : #MailMessage }
+Extension { #name : 'MailMessage' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MailMessage >> fieldsGtViewFor: aView [
 	<gtView>
 	
@@ -12,7 +12,7 @@ MailMessage >> fieldsGtViewFor: aView [
 		yourself
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MailMessage >> sourceGtViewFor: aView [
 	<gtView>
 	

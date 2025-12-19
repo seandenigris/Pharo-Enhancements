@@ -2,17 +2,19 @@
 Returns the receiver object of all open tools
 "
 Class {
-	#name : #PeGtInspectorSearch,
-	#superclass : #Object,
+	#name : 'PeGtInspectorSearch',
+	#superclass : 'Object',
 	#instVars : [
 		'delegate',
 		'message',
 		'configuration'
 	],
-	#category : #'PharoEnhancements-GToolkit-Spotter'
+	#category : 'PharoEnhancements-GToolkit-Spotter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Spotter'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 PeGtInspectorSearch >> gtSpotterOn: aSearch [
 	<gtSearch>
 	
@@ -23,7 +25,7 @@ PeGtInspectorSearch >> gtSpotterOn: aSearch [
 		filterBySubstring
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 PeGtInspectorSearch >> inspectedObjects [
 
 	^ PeGtToolVariableBinder allSpaces flatCollect: [ :world | 

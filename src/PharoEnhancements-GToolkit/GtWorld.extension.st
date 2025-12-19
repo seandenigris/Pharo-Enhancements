@@ -1,6 +1,6 @@
-Extension { #name : #GtWorld }
+Extension { #name : 'GtWorld' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtWorld class >> allToolsBind: aSymbol to: anObject [
 	| editors coderViewModels |
 	editors := self allInstances flatCollect: [ :w | 
@@ -16,7 +16,7 @@ GtWorld class >> allToolsBind: aSymbol to: anObject [
 	coderViewModels do: [ :cvm | cvm localBindings localAt: aSymbol put: anObject ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtWorld class >> dismissAllNotifications [
 	| badges |
 	badges := GtWorld allInstances collect: [ :w | 
@@ -29,7 +29,7 @@ GtWorld class >> dismissAllNotifications [
 badges do: [ :badge | badge notifications asArray do: #requestRemoval ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtWorld >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 
 	^ self root

@@ -1,36 +1,38 @@
 Class {
-	#name : #PeCsvFile,
-	#superclass : #Object,
+	#name : 'PeCsvFile',
+	#superclass : 'Object',
 	#instVars : [
 		'reference'
 	],
-	#category : #'PharoEnhancements-GToolkit-CSV'
+	#category : 'PharoEnhancements-GToolkit-CSV',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'CSV'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 PeCsvFile class >> on: file [
 	^ self new
 		reference: file;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> file [
 	^ reference
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> file: anObject [
 	reference := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> headers [
 
 	^ self reader readHeader
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 PeCsvFile >> importAs: aClass [
 	
 	| fieldDescriptions reader |
@@ -52,18 +54,18 @@ PeCsvFile >> importAs: aClass [
 	^ reader upToEnd
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> reader [
 
 	^ PeSignalingCsvReader on: self reference readStream.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> reference [
 	^ reference
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCsvFile >> reference: anObject [
 	reference := anObject
 ]

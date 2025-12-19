@@ -1,11 +1,11 @@
-Extension { #name : #RBVariableNode }
+Extension { #name : 'RBVariableNode' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 RBVariableNode >> peGtPharoSourceCoderTreeChildren [
 	^ #()
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 RBVariableNode >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 	(aNodeElement childNamed: #label) text: self name.
 	(aNodeElement childNamed: #bind) visibility: BlVisibility visible

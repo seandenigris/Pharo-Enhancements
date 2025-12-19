@@ -1,36 +1,37 @@
 Class {
-	#name : #ProgressLogger,
-	#superclass : #SignalLogger,
+	#name : 'ProgressLogger',
+	#superclass : 'SignalLogger',
 	#instVars : [
 		'job'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : 'PharoEnhancements-GToolkit',
+	#package : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ProgressLogger >> job [
 	^ job
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ProgressLogger >> job: anObject [
 	job := anObject
 ]
 
-{ #category : #registering }
+{ #category : 'registering' }
 ProgressLogger >> nextPut: anAnnouncement [
 	self job max: anAnnouncement target second.
 	self job increment
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 ProgressLogger >> run [
 	self job
 		max: 16000;
 		run
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 ProgressLogger >> runDuring: aBlock [
 	self job: aBlock asJob.
 	super runDuring: [ self job run ]

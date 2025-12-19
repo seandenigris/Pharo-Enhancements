@@ -1,6 +1,6 @@
-Extension { #name : #LeDatabasesRegistry }
+Extension { #name : 'LeDatabasesRegistry' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeDatabasesRegistry >> handleClassRenameFrom: oldClassName to: newClassName [
 	| page pageRenamer typeMap |
 

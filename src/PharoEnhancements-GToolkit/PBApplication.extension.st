@@ -1,6 +1,6 @@
-Extension { #name : #PBApplication }
+Extension { #name : 'PBApplication' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 PBApplication class >> exampleCommandSourceFactory [
 	<gtExample>
 	
@@ -14,12 +14,12 @@ PBApplication class >> exampleCommandSourceFactory [
 		then: [ :result | result should equal: 3 ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 PBApplication >> newCommandSourceFactory [
 	^ self executionHandler newCommandSourceFactory
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 PBApplication >> sendSource: aString withBindings: convertibleToDictionary [
 	
 	| statements commandFactory |

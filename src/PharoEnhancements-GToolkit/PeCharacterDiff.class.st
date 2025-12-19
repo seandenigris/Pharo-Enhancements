@@ -1,13 +1,15 @@
 Class {
-	#name : #PeCharacterDiff,
-	#superclass : #Object,
+	#name : 'PeCharacterDiff',
+	#superclass : 'Object',
 	#instVars : [
 		'characters'
 	],
-	#category : #'PharoEnhancements-GToolkit-Diffing'
+	#category : 'PharoEnhancements-GToolkit-Diffing',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Diffing'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff class >> comparing: newString to: oldString [
 	| diffString chars |
 	diffString := PBApplication uniqueInstance newCommandStringFactory
@@ -24,14 +26,14 @@ diff = difflib.ndiff(oldString,newString)';
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff class >> example [
 	<gtExample>
 	
 	^ self comparing: 'one' to: 'ore'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff class >> ndiffParser [
 	| char |
 	char := (PP2PredicateObjectNode anyOf: ' -+'), #space asPParser, #any asPParser ==> [ :n |
@@ -42,19 +44,19 @@ PeCharacterDiff class >> ndiffParser [
 	^ char star
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff >> characters [
 
 	^ characters ifNil: [ {} ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff >> characters: anObject [
 
 	characters := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff >> gtViewTextFor: aView [
 	<gtView>
 	^ aView text
@@ -63,7 +65,7 @@ PeCharacterDiff >> gtViewTextFor: aView [
 		text: [ self text ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeCharacterDiff >> text [
 	| string text |
 	string := String streamContents: [ :str |

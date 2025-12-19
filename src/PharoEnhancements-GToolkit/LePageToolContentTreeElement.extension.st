@@ -1,6 +1,6 @@
-Extension { #name : #LePageToolContentTreeElement }
+Extension { #name : 'LePageToolContentTreeElement' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LePageToolContentTreeElement >> onPageViewModelChanged [
 	| pageSnippetsTreeViewModel pageIncomingLinksViewModel |
 	super onPageViewModelChanged.

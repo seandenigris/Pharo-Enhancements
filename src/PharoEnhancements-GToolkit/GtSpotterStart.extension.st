@@ -1,6 +1,6 @@
-Extension { #name : #GtSpotterStart }
+Extension { #name : 'GtSpotterStart' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtSpotterStart >> gtSpotterAddressBookFor: aSearch [
 	<gtSearch>
 	

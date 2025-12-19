@@ -1,6 +1,6 @@
-Extension { #name : #BlSpace }
+Extension { #name : 'BlSpace' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BlSpace >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	^ OrderedCollection streamContents: [ :str | 
 		self root allChildrenBreadthFirstDo: [ :e |
@@ -10,7 +10,7 @@ BlSpace >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 				str nextPut: instance ] ] ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 BlSpace >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 	(aNodeElement childNamed: #label) text: self title.
 	(aNodeElement childNamed: #bind) visibility: BlVisibility hidden

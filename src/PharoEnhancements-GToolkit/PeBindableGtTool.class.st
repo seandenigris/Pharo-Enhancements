@@ -1,15 +1,17 @@
 Class {
-	#name : #PeBindableGtTool,
-	#superclass : #Object,
+	#name : 'PeBindableGtTool',
+	#superclass : 'Object',
 	#instVars : [
 		'tab',
 		'targetValue',
 		'toolElement'
 	],
-	#category : #'PharoEnhancements-GToolkit-Variable-Sharing'
+	#category : 'PharoEnhancements-GToolkit-Variable-Sharing',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Variable-Sharing'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 PeBindableGtTool class >> canModel: anElement [
 
 	anElement class = GtPagerWrapperElement ifTrue: [ ^ false ].
@@ -17,7 +19,7 @@ PeBindableGtTool class >> canModel: anElement [
 	^ anElement id = #tool asBlocElementId
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool class >> on: aToolElement [
 	
 	| cls |
@@ -31,14 +33,14 @@ PeBindableGtTool class >> on: aToolElement [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool class >> on: aToolElement inTab: aTabModel [
 	^ (self on: aToolElement)
 		tab: aTabModel;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> gtViewTargetVariablesOn: aView [
 
 	<gtView>
@@ -49,7 +51,7 @@ PeBindableGtTool >> gtViewTargetVariablesOn: aView [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	| variableNodes sortedVariables |
 	sortedVariables := self variables asSortedCollection: #name ascending.
@@ -58,18 +60,18 @@ PeBindableGtTool >> peGtPharoSourceCoderTreeChildrenForValue: anObject [
 	^ variableNodes "copyWith: PeGtNewVariable new"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> peGtPharoSourceCoderTreeInitializeNode: aNodeElement [
 	(aNodeElement childNamed: #label) text: self toolTitle.
 	(aNodeElement childNamed: #bind) visibility: BlVisibility hidden
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> pharoSnippets [
 	^ self snippets select: [ :e | e isKindOf: LePharoSnippetViewModel ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> printOn: aStream [
 	aStream 
 		nextPutAll: self tabTitle;
@@ -77,28 +79,28 @@ PeBindableGtTool >> printOn: aStream [
 		nextPutAll: self toolTitle
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> receiverObject [
 	^ self snippetCoderViewModelAtRandom evaluationContext receiverObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> sharedBindingAt: aSymbol put: anObject [
 
 	^ (self sharedBindings bindingOf: aSymbol) value: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> sharedBindings [
 	^ self snippetCoderViewModelAtRandom sharedBindings
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> snippetCoderViewModelAtRandom [
 	^ self pharoSnippets atRandom coderViewModel
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> snippets [
 
 	^ OrderedCollection streamContents: [ :str |
@@ -114,34 +116,34 @@ PeBindableGtTool >> snippets [
 					snip allSnippetChildrenBreadthFirstDo: [ :child | str nextPut: child ] ] ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> tab [
 
 	^ tab
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> tab: anObject [
 
 	tab := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> tabTitle [
 	^ self tab model title
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> toolElement [
 	^ toolElement
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> toolElement: anObject [
 	toolElement := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> toolTitle [
 	
 	(self toolElement isKindOf: GtCoderElement)
@@ -150,7 +152,7 @@ PeBindableGtTool >> toolTitle [
 	^ (((self toolElement childNamed: #content) childNamed: #header) childNamed: #label) text asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeBindableGtTool >> variables [
 
 	| result |

@@ -1,27 +1,29 @@
 Class {
-	#name : #PeTomlStandardTableNode,
-	#superclass : #PeTomlParseNode,
+	#name : 'PeTomlStandardTableNode',
+	#superclass : 'PeTomlParseNode',
 	#instVars : [
 		'leftBracketToken',
 		'key',
 		'rightBracketToken'
 	],
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> acceptVisitor: aParseVisitor [
 
 	^ aParseVisitor visitStandardTable: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> key [
 
 	^ key
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> key: anObject [
 
 	self setParent: self key to: nil.
@@ -29,37 +31,37 @@ PeTomlStandardTableNode >> key: anObject [
 	self setParent: self key to: self
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> leftBracketToken [
 
 	^ leftBracketToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> leftBracketToken: aSmaCCToken [
 
 	leftBracketToken := aSmaCCToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> otherVariables [
 
 	^ #( #key )
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> rightBracketToken [
 
 	^ rightBracketToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> rightBracketToken: aSmaCCToken [
 
 	rightBracketToken := aSmaCCToken
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTomlStandardTableNode >> tokenVariables [
 
 	^ #( #leftBracketToken #rightBracketToken )

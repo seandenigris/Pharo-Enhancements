@@ -1,14 +1,16 @@
 Class {
-	#name : #PeCsvRecordClass,
-	#superclass : #Object,
+	#name : 'PeCsvRecordClass',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'category'
 	],
-	#category : #'PharoEnhancements-GToolkit-CSV'
+	#category : 'PharoEnhancements-GToolkit-CSV',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'CSV'
 }
 
-{ #category : #'private-generating' }
+{ #category : 'private-generating' }
 PeCsvRecordClass >> describe: field [
 	| selector source |
 	selector := field uncapitalized.
@@ -23,7 +25,7 @@ PeCsvRecordClass >> describe: field [
 	self recordClass compile: source
 ]
 
-{ #category : #'private-generating' }
+{ #category : 'private-generating' }
 PeCsvRecordClass >> descriptionSourceTemplate [
 	^ '{selector}Description
 	<magritteDescription>
@@ -35,7 +37,7 @@ PeCsvRecordClass >> descriptionSourceTemplate [
 			yourself'
 ]
 
-{ #category : #generating }
+{ #category : 'generating' }
 PeCsvRecordClass >> ensureDescriptionsForFieldsFrom: csvFile [
 	| describedFields newFields |
 	describedFields := self recordClass new magritteDescription children
@@ -44,7 +46,7 @@ PeCsvRecordClass >> ensureDescriptionsForFieldsFrom: csvFile [
 	newFields do: [ :e | self describe: e ]
 ]
 
-{ #category : #generating }
+{ #category : 'generating' }
 PeCsvRecordClass >> ensureFieldsDescribed [
 	| describedFields newFields |
 	describedFields := self recordClass new magritteDescription children
@@ -53,7 +55,7 @@ PeCsvRecordClass >> ensureFieldsDescribed [
 	newFields do: [ :e | self describe: e ]
 ]
 
-{ #category : #'generating record class' }
+{ #category : 'generating record class' }
 PeCsvRecordClass >> generateInstVars [
 	self recordClass new magritteDescription children
 		do: [ :e | 
@@ -67,7 +69,7 @@ PeCsvRecordClass >> generateInstVars [
 			r execute ]
 ]
 
-{ #category : #generating }
+{ #category : 'generating' }
 PeCsvRecordClass >> generateInstVarsFromDescriptions [
 	self recordClass new magritteDescription children
 		do: [ :e | 
@@ -81,7 +83,7 @@ PeCsvRecordClass >> generateInstVarsFromDescriptions [
 			r execute ]
 ]
 
-{ #category : #'private-generating' }
+{ #category : 'private-generating' }
 PeCsvRecordClass >> recordClass [
 	| existingClass |
 	existingClass := Smalltalk classNamed: self name.

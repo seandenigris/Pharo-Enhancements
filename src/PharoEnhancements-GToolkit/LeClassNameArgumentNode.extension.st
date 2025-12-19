@@ -1,6 +1,6 @@
-Extension { #name : #LeClassNameArgumentNode }
+Extension { #name : 'LeClassNameArgumentNode' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 LeClassNameArgumentNode >> isMetaSide [
 	^ self className endsWith: ' class'
 ]

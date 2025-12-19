@@ -1,44 +1,45 @@
 Trait {
-	#name : #PeTPythonWrapper,
+	#name : 'PeTPythonWrapper',
 	#instVars : [
 		'pythonInstance'
 	],
-	#category : #'PharoEnhancements-GToolkit'
+	#category : 'PharoEnhancements-GToolkit',
+	#package : 'PharoEnhancements-GToolkit'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> application [
 	^ PBApplication uniqueInstance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> configureCommandFactory: aCommandFactory [
 	^ aCommandFactory
 		addAllBindings: { #self -> self pythonInstance };
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> newCommandFactory [
 	^ self newCommandSourceFactory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> newCommandSourceFactory [
 	^ self configureCommandFactory: self application newCommandSourceFactory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> newCommandStringFactory [
 	^ self configureCommandFactory: self application newCommandStringFactory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> pythonInstance [
 	^ pythonInstance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeTPythonWrapper >> pythonInstance: anObject [
 	pythonInstance := anObject
 ]

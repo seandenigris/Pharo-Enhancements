@@ -1,13 +1,15 @@
 Class {
-	#name : #PeGtInstancesFilter,
-	#superclass : #Object,
+	#name : 'PeGtInstancesFilter',
+	#superclass : 'Object',
 	#instVars : [
 		'rootClass'
 	],
-	#category : #'PharoEnhancements-GToolkit-Spotter'
+	#category : 'PharoEnhancements-GToolkit-Spotter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Spotter'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 
 	| canHandle newInstances input |
@@ -20,13 +22,13 @@ PeGtInstancesFilter >> applyInScope: aStream context: aSpotterContext [
 	^ newInstances asAsyncStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtInstancesFilter >> rootClass [
 
 	^ rootClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtInstancesFilter >> rootClass: anObject [
 
 	rootClass := anObject

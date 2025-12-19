@@ -1,34 +1,36 @@
 Class {
-	#name : #DebugItDebugAction,
-	#superclass : #DebugAction,
-	#category : 'PharoEnhancements-GToolkit-Actions'
+	#name : 'DebugItDebugAction',
+	#superclass : 'DebugAction',
+	#category : 'PharoEnhancements-GToolkit-Actions',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Actions'
 }
 
-{ #category : #registration }
+{ #category : 'registration' }
 DebugItDebugAction class >> actionType [
 	"<debuggingAction>
 	<contextMenuDebuggingAction>"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DebugItDebugAction >> defaultKeymap [
 
 	^ PharoShortcuts current debugItShortcut
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DebugItDebugAction >> defaultLabel [
 
 	^ 'Debug'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DebugItDebugAction >> defaultOrder [
 
 	^ 9
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 DebugItDebugAction >> executeAction [
 
 	| d interval |
@@ -38,12 +40,12 @@ DebugItDebugAction >> executeAction [
 	"self session restart: self currentContext"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DebugItDebugAction >> help [
 	^ 'Go back the start of the current execution context, resetting all local variables and take debugger control.'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 DebugItDebugAction >> id [
 
 	^ #debugIt

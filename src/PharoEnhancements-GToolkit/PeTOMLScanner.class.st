@@ -1,10 +1,12 @@
 Class {
-	#name : #PeTOMLScanner,
-	#superclass : #SmaCCScanner,
-	#category : #'PharoEnhancements-GToolkit-TOML'
+	#name : 'PeTOMLScanner',
+	#superclass : 'SmaCCScanner',
+	#category : 'PharoEnhancements-GToolkit-TOML',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'TOML'
 }
 
-{ #category : #'generated-initialization' }
+{ #category : 'generated-initialization' }
 PeTOMLScanner class >> initializeKeywordMap [
 
 	keywordMap := Dictionary new.
@@ -15,19 +17,19 @@ PeTOMLScanner class >> initializeKeywordMap [
 	^ keywordMap
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> emptySymbolTokenId [
 
 	^ 66
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> errorTokenId [
 
 	^ 67
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan1 [
 
 	[ 
@@ -38,7 +40,7 @@ PeTOMLScanner >> scan1 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan10 [
 
 	self step.
@@ -47,7 +49,7 @@ PeTOMLScanner >> scan10 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan11 [
 
 	self step.
@@ -55,7 +57,7 @@ PeTOMLScanner >> scan11 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan12 [
 
 	[ 
@@ -66,7 +68,7 @@ PeTOMLScanner >> scan12 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan13 [
 
 	[ 
@@ -82,7 +84,7 @@ PeTOMLScanner >> scan13 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan14 [
 
 	self recordMatch: #( 27 ).
@@ -104,7 +106,7 @@ PeTOMLScanner >> scan14 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan15 [
 
 	self recordMatch: #( 27 ).
@@ -125,7 +127,7 @@ PeTOMLScanner >> scan15 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan16 [
 
 	[ 
@@ -147,7 +149,7 @@ PeTOMLScanner >> scan16 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan17 [
 
 	[ 
@@ -173,7 +175,7 @@ PeTOMLScanner >> scan17 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan18 [
 
 	self recordMatch: #( 27 ).
@@ -194,7 +196,7 @@ PeTOMLScanner >> scan18 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan19 [
 
 	self recordMatch: #( 27 ).
@@ -251,7 +253,7 @@ PeTOMLScanner >> scan19 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan2 [
 
 	self step.
@@ -259,7 +261,7 @@ PeTOMLScanner >> scan2 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan20 [
 
 	self recordMatch: #( 27 ).
@@ -315,7 +317,7 @@ PeTOMLScanner >> scan20 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan21 [
 
 	self recordMatch: #( 27 ).
@@ -336,7 +338,7 @@ PeTOMLScanner >> scan21 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan22 [
 
 	self recordMatch: #( 27 ).
@@ -357,7 +359,7 @@ PeTOMLScanner >> scan22 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan23 [
 
 	self recordMatch: #( 27 ).
@@ -460,7 +462,7 @@ PeTOMLScanner >> scan23 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan24 [
 
 	self step.
@@ -492,7 +494,7 @@ PeTOMLScanner >> scan24 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan25 [
 
 	self step.
@@ -509,7 +511,7 @@ PeTOMLScanner >> scan25 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan26 [
 
 	self step.
@@ -534,7 +536,7 @@ PeTOMLScanner >> scan26 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan27 [
 
 	self recordMatch: #( 27 ).
@@ -574,7 +576,7 @@ PeTOMLScanner >> scan27 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan28 [
 
 	self recordMatch: #( 27 ).
@@ -614,7 +616,7 @@ PeTOMLScanner >> scan28 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan29 [
 
 	self recordMatch: #( 27 ).
@@ -656,7 +658,7 @@ PeTOMLScanner >> scan29 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan3 [
 
 	[ 
@@ -671,7 +673,7 @@ PeTOMLScanner >> scan3 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan4 [
 
 	self step.
@@ -699,7 +701,7 @@ PeTOMLScanner >> scan4 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan5 [
 
 	self step.
@@ -722,7 +724,7 @@ PeTOMLScanner >> scan5 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan6 [
 
 	[ 
@@ -763,7 +765,7 @@ PeTOMLScanner >> scan6 [
 	true ] whileTrue
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan7 [
 
 	self step.
@@ -786,7 +788,7 @@ PeTOMLScanner >> scan7 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan8 [
 
 	[ 
@@ -801,7 +803,7 @@ PeTOMLScanner >> scan8 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scan9 [
 
 	self step.
@@ -815,7 +817,7 @@ PeTOMLScanner >> scan9 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForToken [
 
 	self step.
@@ -823,7 +825,7 @@ PeTOMLScanner >> scanForToken [
 	^ self scanForTokenX11
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX1 [
 
 	self recordMatch: #( 19 27 ).
@@ -833,7 +835,7 @@ PeTOMLScanner >> scanForTokenX1 [
 	^ self scanForTokenX1X3
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX10 [
 
 	currentCharacter == $i ifTrue: [ ^ self scan19 ].
@@ -853,7 +855,7 @@ PeTOMLScanner >> scanForTokenX10 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX11 [
 
 	currentCharacter == Character cr ifTrue: [ ^ self scan2 ].
@@ -871,7 +873,7 @@ PeTOMLScanner >> scanForTokenX11 [
 	^ self scanForTokenX10
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX1X1 [
 
 	self recordMatch: #( 27 ).
@@ -912,7 +914,7 @@ PeTOMLScanner >> scanForTokenX1X1 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX1X2 [
 
 	[ 
@@ -925,7 +927,7 @@ PeTOMLScanner >> scanForTokenX1X2 [
 		whileTrue
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX1X3 [
 
 	currentCharacter == $o ifTrue: [ ^ self scan28 ].
@@ -944,7 +946,7 @@ PeTOMLScanner >> scanForTokenX1X3 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX2 [
 
 	self recordMatch: #( 27 ).
@@ -970,7 +972,7 @@ PeTOMLScanner >> scanForTokenX2 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX2X1 [
 
 	self recordMatch: #( 19 27 ).
@@ -995,7 +997,7 @@ PeTOMLScanner >> scanForTokenX2X1 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX3 [
 
 	self recordMatch: #( 19 27 ).
@@ -1024,7 +1026,7 @@ PeTOMLScanner >> scanForTokenX3 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX3X1 [
 
 	self recordMatch: #( 19 27 ).
@@ -1042,7 +1044,7 @@ PeTOMLScanner >> scanForTokenX3X1 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX3X1X1 [
 
 	[ 
@@ -1055,7 +1057,7 @@ PeTOMLScanner >> scanForTokenX3X1X1 [
 		whileTrue
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX3X2 [
 
 	[ 
@@ -1068,7 +1070,7 @@ PeTOMLScanner >> scanForTokenX3X2 [
 		whileTrue
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX4 [
 
 	self step.
@@ -1090,7 +1092,7 @@ PeTOMLScanner >> scanForTokenX4 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX5 [
 
 	self step.
@@ -1107,7 +1109,7 @@ PeTOMLScanner >> scanForTokenX5 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX6 [
 
 	self step.
@@ -1129,7 +1131,7 @@ PeTOMLScanner >> scanForTokenX6 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX7 [
 
 	[ 
@@ -1142,7 +1144,7 @@ PeTOMLScanner >> scanForTokenX7 [
 		whileTrue
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX8 [
 
 	[ 
@@ -1153,7 +1155,7 @@ PeTOMLScanner >> scanForTokenX8 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> scanForTokenX9 [
 
 	[ 
@@ -1163,7 +1165,7 @@ PeTOMLScanner >> scanForTokenX9 [
 	^ self reportLastMatch
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 PeTOMLScanner >> tokenActions [
 
 	^ #( nil nil nil nil nil nil nil #whitespace )

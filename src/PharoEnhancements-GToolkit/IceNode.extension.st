@@ -1,6 +1,6 @@
-Extension { #name : #IceNode }
+Extension { #name : 'IceNode' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 IceNode >> peGtViewLepiterPageDiffFor: aView [
 
 	<gtView>

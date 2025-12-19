@@ -1,11 +1,11 @@
-Extension { #name : #MAReferenceDescription }
+Extension { #name : 'MAReferenceDescription' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol [
 	self gtSearchDelegateTo: anObjectValuable message: aSymbol do: #yourself
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol do: configBlock [
 	| source |
 	source := PeGtDelegatedSearch 

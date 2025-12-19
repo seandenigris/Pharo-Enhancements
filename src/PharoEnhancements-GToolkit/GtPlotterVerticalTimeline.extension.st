@@ -1,6 +1,6 @@
-Extension { #name : #GtPlotterVerticalTimeline }
+Extension { #name : 'GtPlotterVerticalTimeline' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtPlotterVerticalTimeline >> createProjections: aCollectionOfDomainObjects [
 	<gtExample>
 
@@ -34,7 +34,7 @@ GtPlotterVerticalTimeline >> createProjections: aCollectionOfDomainObjects [
 		values: aCollectionOfDomainObjects
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 GtPlotterVerticalTimeline >> createTimelineDots: aCollectionOfDomainObjects [
 	^ GtPlotterMarkersElement new
 		scaleY: timeScale;

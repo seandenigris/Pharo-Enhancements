@@ -1,13 +1,15 @@
 Class {
-	#name : #PeGtCompletionStrategy,
-	#superclass : #GtStringsCompletionStrategy,
+	#name : 'PeGtCompletionStrategy',
+	#superclass : 'GtStringsCompletionStrategy',
 	#instVars : [
 		'minimumPrefixLength'
 	],
-	#category : #'PharoEnhancements-GToolkit-Completion'
+	#category : 'PharoEnhancements-GToolkit-Completion',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Completion'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionStrategy >> completionPrefixAt: anIndex in: blText [
 	| startIndex |
 	anIndex < self minimumPrefixLength
@@ -24,14 +26,14 @@ PeGtCompletionStrategy >> completionPrefixAt: anIndex in: blText [
 	^ (blText copyFrom: 1 to: anIndex) asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionStrategy >> minimumPrefixLength [
 	"Minimum length of the prefix before the completion popup appears"
 
 	^ minimumPrefixLength ifNil: [ 1 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionStrategy >> minimumPrefixLength: aNumber [
 
 	minimumPrefixLength := aNumber

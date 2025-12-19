@@ -7,15 +7,17 @@ There are three instance side methods subclasses have to implement to handle fou
 Subclasses must also implement class-side `#isClassFor:` which takes `anLePageToolContentElement` and answers whether it is the correct wrapper for it.
 "
 Class {
-	#name : #PeLePageElement,
-	#superclass : #Object,
+	#name : 'PeLePageElement',
+	#superclass : 'Object',
 	#instVars : [
 		'contentElement'
 	],
-	#category : #'PharoEnhancements-GToolkit-Lepiter'
+	#category : 'PharoEnhancements-GToolkit-Lepiter',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Lepiter'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 PeLePageElement class >> on: anLePageToolContentElement [
 
 	| cls |
@@ -27,17 +29,17 @@ PeLePageElement class >> on: anLePageToolContentElement [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> contentElement [
 	^ contentElement
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> contentElement: anLePageToolContentElement [
 	contentElement := anLePageToolContentElement
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> onPageViewModelChanged [
 	
 	| isFromVanillaPageElement isToVanillaPageElement newElementClass newElement |
@@ -67,17 +69,17 @@ PeLePageElement >> onPageViewModelChanged [
 	newElement install
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> pageType [
 	^ self contentElement pageViewModel pageModel type
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> reset [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeLePageElement >> uninstall [
 	self subclassResponsibility
 ]

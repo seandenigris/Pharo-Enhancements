@@ -1,6 +1,6 @@
-Extension { #name : #Class }
+Extension { #name : 'Class' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Class >> gtSpotterClassMethodSourceFor: aSearch [
 	<gtSearch>
 	^ aSearch list
@@ -11,7 +11,7 @@ Class >> gtSpotterClassMethodSourceFor: aSearch [
 		filterBySubstring
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Class >> gtSpotterMethodSourceFor: aSearch [
 	<gtSearch>
 	^ aSearch list
@@ -22,7 +22,7 @@ Class >> gtSpotterMethodSourceFor: aSearch [
 		filterBySubstring
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Class >> peAPIDocumentation [
 	| pragmas doc apiList |
 	pragmas := Pragma allNamed: #apiDocumentation from: self to: Object.
@@ -66,7 +66,7 @@ Class >> peAPIDocumentation [
 			yourself
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Class >> peDocumentationGtButtonFor: anAction [
 	<gtClassAction>
 	
@@ -87,7 +87,7 @@ Class >> peDocumentationGtButtonFor: anAction [
 			aButton phlow spawnTool: aPage asPhlowTool ]
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Class >> peGenerateCommentFromAPI [
 	self comment: (PRPillarWriter write: self peAPIDocumentation)
 ]

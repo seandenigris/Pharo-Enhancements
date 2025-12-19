@@ -1,19 +1,21 @@
 Class {
-	#name : #PeGtToolVariableBinder,
-	#superclass : #Object,
+	#name : 'PeGtToolVariableBinder',
+	#superclass : 'Object',
 	#instVars : [
 		'targetValue'
 	],
-	#category : #'PharoEnhancements-GToolkit-Variable-Sharing'
+	#category : 'PharoEnhancements-GToolkit-Variable-Sharing',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Variable-Sharing'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> allSpaces [
 
 	^ BlParallelUniverse all flatCollect:  #spaces
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> allTabs [
 
 	^ GtWorld allInstances flatCollect: [ :w | 
@@ -23,18 +25,18 @@ PeGtToolVariableBinder class >> allTabs [
    		         tabGroup tabs ] ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> allToolTabs [
 
 	^ self allTabs reject: [ :e | e model isNil ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> forLastSpotterResult [
 	^ self targetValue: PeGtSpotterResult
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> gtViewTargetsOn: aView [
 
 	<gtView>
@@ -44,14 +46,14 @@ PeGtToolVariableBinder class >> gtViewTargetsOn: aView [
 		stencil: [ self forLastSpotterResult treeElement ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder class >> targetValue: anObject [
 	^ self new
 		targetValue: anObject;
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder >> gtViewTargetsOn: aView [
 
 	<gtView>
@@ -62,17 +64,17 @@ PeGtToolVariableBinder >> gtViewTargetsOn: aView [
 		stencil: [ self treeElement ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder >> targetValue [
 	^ targetValue
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder >> targetValue: anObject [
 	targetValue := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtToolVariableBinder >> treeElement [
 	^ BrSimpleTree new
 			nodeStencil: [ 

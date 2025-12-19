@@ -1,11 +1,11 @@
-Extension { #name : #Object }
+Extension { #name : 'Object' }
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Object class >> gtSpotterItemsFromString: aString [
 	^ { self fromString: aString }
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Object >> peGtActionPickUpFor: anAction [
 	<gtAction>
 	^ anAction explicit
@@ -36,7 +36,7 @@ Object >> peGtActionPickUpFor: anAction [
 	"The reason I have this method (vs. declaring an MAAction) is to prevent a dependency to Magritte"
 ]
 
-{ #category : #'*PharoEnhancements-GToolkit' }
+{ #category : '*PharoEnhancements-GToolkit' }
 Object class >> peGtSpotterNewInstanceFor: aSearch [
 	^ aSearch explicit
 		title: 'New ' , self name;

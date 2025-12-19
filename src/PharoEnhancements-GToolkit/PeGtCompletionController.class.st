@@ -1,21 +1,23 @@
 Class {
-	#name : #PeGtCompletionController,
-	#superclass : #GtCompletionController,
-	#category : #'PharoEnhancements-GToolkit-Completion'
+	#name : 'PeGtCompletionController',
+	#superclass : 'GtCompletionController',
+	#category : 'PharoEnhancements-GToolkit-Completion',
+	#package : 'PharoEnhancements-GToolkit',
+	#tag : 'Completion'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionController >> cursorChanged: anEvent [ 
 	self startCompletionAt: anEvent cursors cursors atRandom position
 ]
 
-{ #category : #'event handling' }
+{ #category : 'event handling' }
 PeGtCompletionController >> textDeleted: anEvent [
 	self resetPopup.
 	self startCompletionAt: anEvent fromIndex - 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionController >> textEditorHandlers [
 	
 	| startEditModeHandler |
@@ -29,7 +31,7 @@ PeGtCompletionController >> textEditorHandlers [
 	^ textEditorHandlers := super textEditorHandlers "copyWith: startEditModeHandler"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 PeGtCompletionController >> textElementFilters [
 	
 	textElementFilters ifNotNil: [ ^ textElementFilters ].
