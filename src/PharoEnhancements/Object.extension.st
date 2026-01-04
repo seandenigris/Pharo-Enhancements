@@ -58,7 +58,6 @@ Object class >> peClassForString: aString [
 
 { #category : '*PharoEnhancements' }
 Object >> pePickUp [
-	PeGtSpotterResult := self
 ]
 
 { #category : '*PharoEnhancements' }
