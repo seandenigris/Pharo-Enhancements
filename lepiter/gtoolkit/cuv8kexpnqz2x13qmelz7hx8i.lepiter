@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Views"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -472,13 +480,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Views"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
 	}
 }

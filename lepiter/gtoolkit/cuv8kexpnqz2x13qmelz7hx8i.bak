@@ -1,9 +1,164 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Views"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "pharoSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2026-01-23T11:30:12.446767-05:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2026-01-23T11:34:15.127939-05:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "bc4TtwGkRO62gC4a0ZvQ8w=="
+										},
+										"code" : "#gtAction gtReferences & #dropdown gtReferences"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-01-23T11:32:27.967583-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-01-23T12:00:04.416618-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "SktJEp33Qsy2FPIA55/7BA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "There are plenty of examples in the image. Unfortunately, most are highly complex and customized, and so not ideal for learning (reported [on Discord](https://discord.com/channels/729445214812504107/737255889517543545/1464303444428062856) along with a simple example). Check them out here:"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-01-23T11:33:21.754624-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-01-23T11:38:13.207082-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "EAMb2zcQTLyBA3I01wS8PA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "To get an idea of the range of what's possible, check out {{gtClass:GtPhlowDropdownAction}} . A simple way to populate a dropdown is by sending {{gtMethod:GtPhlowDropdownAction>>items:}} , which takes a block and has a nice comment explaining its arguments."
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-01-23T11:29:59.551593-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-01-23T11:30:02.642145-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "u55pyPFkSKWu8U9BX+X8ig=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Dropdowns"
+			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
@@ -34,7 +189,7 @@
 								"__type" : "time",
 								"time" : {
 									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2021-08-23T17:03:33.468773-04:00"
+									"dateAndTimeString" : "2021-08-23T17:03:39.979407-04:00"
 								}
 							},
 							"uid" : {
@@ -44,7 +199,7 @@
 							"paragraphStyle" : {
 								"__type" : "textStyle"
 							},
-							"string" : "Instead of `column:text:`, send `column:icon:`. The second parameter can be a block taking the item as an argument and returning any element.  {{gtMethod:IceWorkingCopy>>#gtPackagesFor:|label=Here's an example}}:\nThe status column is populated with the result of {{gtMethod:IcePackage>>#gtPackageStatus}}, which returns "
+							"string" : "Instead of `column:text:`, send `column:icon:`. The second parameter can be a block taking the item as an argument and returning any element.  {{gtMethod:IceWorkingCopy>>#gtPackagesFor:|label=Here's an example}}:\nThe status column is populated with the result of {{gtMethod:IcePackage>>#gtPackageStatus}}, which returns either a button or a label."
 						}
 					]
 				},
@@ -472,13 +627,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T13:51:58.721332-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Views"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "82656643-8084-0d00-b966-c9990f742dd9"
 	}
 }
