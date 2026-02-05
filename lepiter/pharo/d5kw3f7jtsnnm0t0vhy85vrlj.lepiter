@@ -1,9 +1,276 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "77423d0f-7d84-0d00-9b36-0e5f0c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "XML"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:31:58.013618-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:31:59.285541-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "W8JPgIYVQCSjqrH5SQEX/A=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "One initial decision you have to make is how much to rely on XML. It may be convenient to keep XML objects hanging around indefinitely inside wrapper classes. At the other extreme, you might do the minimum processing necessary to create domain objects and then throw away the XML."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:07.175105-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:09.632151-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "c/6LrMZnRdSoHwhQYZ4RAQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Custom Node Classes\r- pass {{gtClass:XMLPluggableElementFactory}} to {{gtMethod:XMLDOMParser>>#nodeFactory:}}. \r- For SAX, the work was apparently lost [1], but the `OPAX` project which may be a starting point [1]"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:33:10.896798-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:33:15.646635-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ImtW4CQARni38vJWX8CtdA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Selective (Island) Parsing\r##Built-In\rHernan suggested using SAX like so [1]:\n\r```\r| parser doc |\rparser := XMLPullParser parse: doc.\r[ parser isEndDocument ] whileFalse: [\r    parser \r        if: 'FILM' \r        peek: [ : found | \r            Transcript show: found name , ' -> ' , found attributes asString; cr.\r            parser next.\r            Transcript show: parser tagName ].\r    parser next ]\r```\r\rSee #test01ParsingNodes and BioSmalltalk's BioNCBIBlastSAXParser for more examples. Steph mentioned a \"PullParser chapter\" [1]"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:18.637528-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:33:10.904322-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6ubUEBUoT0abNIyytJKeEw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Sorting Nodes\rThe consensus seems to be that the cleanest approach is to sort the nodes after they are parsed. However, I just couldn't shake the itch to make it part of the model, or at least seemless. This hack seemed like the STTCPW to compromise:\r```\r\tXMLCustomElement>>handleEndTag \r        ^ self nodes sort: [ :a :b | a < b ]. \r```\rAn experiment to allow swapping out `XMLOrderedList` with an `XMLSortedList` \"causes the image to hang and CPU to sweat\". [2]"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:27.544512-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:29.514646-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "11IxNgzbShat8kE/R6gDqw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Validation\rThis awsome feature can sometimes cause trouble, especially if you don't need it. For example, the system may seem to hang while it churns, downloading DTDs that it's never going to use. Luckily it seems like it is no longer enabled by default. Toggle by sending {{gtMethod:SAXHandler>>#resolvesExternalEntities:}}. There also seemed to be a potential problem where #entityURIFromRelative:andBase: interprets relative URLs like 'xhtml-lat1.ent' as file paths, leading to results like \"XMLFileIOException: File @ ~/Squeak/http:/www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent (line 28) (line 3)\".3"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:39.043533-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:32:40.294605-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ULyozjg3SJScnGeGdCg2/g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Visitor Experiment\rSteph Ducasse did an experiment registering for specific tags e.g. `MyFilmVisitor new visitTags: #(FILM ROLE)`. It was pointed out by Vincent Blondeau that, with his approach, he would have to specify all nested tags, so `film` doesn't get you `title` - you have to visit that separately. A point of confusion seemed to by `characters:` (\"What a bad name!\"), which you use \"to get the content on the tag\"; Brice Govin added that \"information inside a marker is consider as an XMLString that is created after a call to XMLDOMParser>>characters:\". Alex Bergel warned that \" a visitor is not the ideal solution to query XML tree. It works well in some case, and it is disastrous in some other\", recommending XPath instead. `Pastell` was mentioned, which Tudor Girba said was superceded by `XPath`1"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:33:25.548169-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:33:26.854555-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "T7Mj/0djQweRF7Sq/z82Bw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Whitespace, Ignoring Extraneous (i.e. empty nodes)\rXMLParser: Send {{gtMethod:XMLNodeWithElements>>#removeAllFormattingNodes}}. See [this ML thread](http://forum.world.st/How-to-get-rid-of-empty-XML-nodes-tt5059684.html) for rationale on why these nodes exist in the first place."
+			},
 			{
 				"__type" : "textSnippet",
 				"children" : {
@@ -29,7 +296,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:07:00.284015-04:00"
+						"dateAndTimeString" : "2026-02-05T13:33:25.554215-05:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +306,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "One initial decision you have to make is how much to rely on XML. It may be convenient to keep XML objects hanging around indefinitely inside wrapper classes. At the other extreme, you might do the minimum processing necessary to create domain objects and then throw away the XML.\r## Custom Node Classes\r- pass {{gtClass:XMLPluggableElementFactory}} to {{gtMethod:XMLDOMParser>>#nodeFactory:}}. \r- For SAX, the work was apparently lost1, but the `OPAX` project which may be a starting point1\r## Selective (Island) Parsing\r### Built-In\rHernan suggested using SAX like so:1\r```\r| parser doc |\rparser := XMLPullParser parse: doc.\r[ parser isEndDocument ] whileFalse: [\r    parser \r        if: 'FILM' \r        peek: [ : found | \r            Transcript show: found name , ' -> ' , found attributes asString; cr.\r            parser next.\r            Transcript show: parser tagName ].\r    parser next ]\r```\r\rSee #test01ParsingNodes and BioSmalltalk's BioNCBIBlastSAXParser for more examples. Steph mentioned a \"PullParser chapter\"1\r## Sorting Nodes\rThe consensus seems to be that the cleanest approach is to sort the nodes after they are parsed. However, I just couldn't shake the itch to make it part of the model, or at least seemless. This hack seemed like the STTCPW to compromise:\r```\r\tXMLCustomElement>>handleEndTag \r        ^ self nodes sort: [ :a :b | a < b ]. \r```\rAn experiment to allow swapping out `XMLOrderedList` with an `XMLSortedList` \"causes the image to hang and CPU to sweat\".2\r## Validation\rThis awsome feature can sometimes cause trouble, especially if you don't need it. For example, the system may seem to hang while it churns, downloading DTDs that it's never going to use. Luckily it seems like it is no longer enabled by default. Toggle by sending {{gtMethod:SAXHandler>>#resolvesExternalEntities:}}. There also seemed to be a potential problem where #entityURIFromRelative:andBase: interprets relative URLs like 'xhtml-lat1.ent' as file paths, leading to results like \"XMLFileIOException: File @ ~/Squeak/http:/www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent (line 28) (line 3)\".3\r## Visitor Experiment\rSteph Ducasse did an experiment registering for specific tags e.g. `MyFilmVisitor new visitTags: #(FILM ROLE)`. It was pointed out by Vincent Blondeau that, with his approach, he would have to specify all nested tags, so `film` doesn't get you `title` - you have to visit that separately. A point of confusion seemed to by `characters:` (\"What a bad name!\"), which you use \"to get the content on the tag\"; Brice Govin added that \"information inside a marker is consider as an XMLString that is created after a call to XMLDOMParser>>characters:\". Alex Bergel warned that \" a visitor is not the ideal solution to query XML tree. It works well in some case, and it is disastrous in some other\", recommending XPath instead. `Pastell` was mentioned, which Tudor Girba said was superceded by `XPath`1\r## Whitespace, Ignoring Extraneous (i.e. empty nodes)\rXMLParser: Send {{gtMethod:XMLNodeWithElements>>#removeAllFormattingNodes}}. See [this ML thread](http://forum.world.st/How-to-get-rid-of-empty-XML-nodes-tt5059684.html) for rationale on why these nodes exist in the first place.\r# References\r1. <http://forum.world.st/How-to-access-XML-tag-name-tt4884065.html>\r2. <http://forum.world.st/Parsing-XML-into-sorted-elements-tt3615867.html>\r3. <http://forum.world.st/XMLDomParser-Changes-in-Pharo-3-0-tt4778401.html#a4778522>\r"
+				"string" : "# References\r1. <http://forum.world.st/How-to-access-XML-tag-name-tt4884065.html>\r2. <http://forum.world.st/Parsing-XML-into-sorted-elements-tt3615867.html>\r3. <http://forum.world.st/XMLDomParser-Changes-in-Pharo-3-0-tt4778401.html#a4778522>\r"
 			}
 		]
 	},
@@ -64,13 +331,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.760106-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "XML"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "77423d0f-7d84-0d00-9b36-0e5f0c3334de"
 	}
 }
