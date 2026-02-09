@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "450a960e-7d84-0d00-9b1f-23c00c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Dynabook"
+	},
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2021-07-27T10:02:38.719773-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T13:55:07.196652-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "H7c9D32EDQCbRby3DDM03g=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Although I have to admit that at heart I am not a programmer, but a Dynabook fanatic and it's been emotionally difficult to see neverending hacking that never seems to lead to a system that touches the dream. Zen and the Art of Motorcycle Maintenance talks about an ideal where static (conservative, traditional, keep things as they are) and dynamic (progress, experimentation, evolution) form a feedback loop where the good parts of the last tevolution become fixed as a static foundation for the next dynamic leap. Unfortunately, in practice we seem to only have the extremes available: the static last century ideas behind Windows and Mac and a steady stream of papers, theories and experiments from the real visionaries (cough, not Steve Jobs, the real ones). I realize that the model of the latter is cathedral building and shortening the hundreds of years from printing press to saddle-sized books, but I can't help but think that leaving a trail of usable artifacts would bring so many more people on board, playing and creating with something real. When I discovered Squeak, I got right to work with my new Dynabook, but the Morphic clean up that never happened quickly crushed my dreams of any Blue Plane ideas and I went back to hibernation waiting for a cleanup, and then Morphic 3 which was never integrated and then Frankenstein which was never publicly available for use and now Bloc which seems frought with political controversy... - 4/24/2020 on {{gtWikiPage:SqueakReunion}}."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.71977-04:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2021-07-27T10:02:38.71977-04:00"
+		}
+	}
+}

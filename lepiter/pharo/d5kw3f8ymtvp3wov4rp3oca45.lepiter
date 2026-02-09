@@ -1,6 +1,14 @@
 {
 	"__schema" : "4.1",
 	"__type" : "page",
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "3512390f-7d84-0d00-9b33-178e0c3334de"
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Todo"
+	},
 	"children" : {
 		"__type" : "snippets",
 		"items" : [
@@ -18,7 +26,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.754799-04:00"
+						"dateAndTimeString" : "2026-02-05T14:08:23.951395-05:00"
 					}
 				},
 				"editEmail" : {
@@ -29,17 +37,315 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T10:02:38.754799-04:00"
+						"dateAndTimeString" : "2026-02-05T14:08:25.229074-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "8T8+D32EDQCbWan5DDM03g=="
+					"uidString" : "bmQDpOclQw25ejh5Z2E85A=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# TODO\r## Communications\r- Something rotten with Pharo's including outside projects in core image; why not GH fork? Isn't best of both worlds\r- Why doesn't Pharo adopt GToolit; maybe refocus core effort on minimal tools?\r- Famix for Smalltalk? Not needed?\r- Publishing. How Feenk blog created? The GT and Pharo post seems to have diverged from what's in latest GT image\r- How would one integrate Examples into CI pipeline?\r- Parameterized examples - `dependsOn:` are arguments? Will they be runnable from e.g. Coder?\r- How to change main window title?\r## Tasks\r- GT Launcher\r  - gt-extras etc go with images, not VM - otherwise doc links broken\r- Classes should show custom views in Coder e.g. Wiki pages\r- Investigate SmaCC\r- Debugger: add do, dive, debug buttons\r- Coder show superclass(es) methods is filter WIP per Tudor\r- Git Tool - browse change\r```\rBrGlamorousWithContextMenuLook\r\t\t\t\t\t\tcontent: [ BrGlamorousSimpleContextMenuContent new\r\t\t\t\t\t\t\t\titems:\r\t\t\t\t\t\t\t\t\t{('Revert changes'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | self workingCopy diffToReferenceCommit revertChanges: anIceNode ]).\r\t\t\t\t\t\t\t\t\t('Browse'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | anIceNode value definition browse ])};\r\t\t\t\t\t\t\t\tyourself ])\r```\r# Dreams\r- Since views are explicitly annotated, could there be documentation connected specifically with <gtView> so that it shows (or shows that it is available) whenever such a method is being worked on? E.g. the slideshow\r- Link to headings inside documenter doc, like GH does with HTML anchors. I know Pillar already has section tags but never used them...\r- Universal undo\r- Documentation organization e.g. tags, hierarchy\r## Complete\r- Exemplifier and explainer are engines\r"
+				"string" : "#Communications\r- Something rotten with Pharo's including outside projects in core image; why not GH fork? Isn't best of both worlds\r- Why doesn't Pharo adopt GToolit; maybe refocus core effort on minimal tools?\r- Famix for Smalltalk? Not needed?\r- Publishing. How Feenk blog created? The GT and Pharo post seems to have diverged from what's in latest GT image\r- How would one integrate Examples into CI pipeline?\r- Parameterized examples - `dependsOn:` are arguments? Will they be runnable from e.g. Coder?\r- How to change main window title?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:08:31.591152-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:08:32.772084-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JSqdhpYqR5awlywUH4QNkg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Tasks\r- GT Launcher\r  - gt-extras etc go with images, not VM - otherwise doc links broken\r- Classes should show custom views in Coder e.g. Wiki pages\r- Investigate SmaCC\r- Debugger: add do, dive, debug buttons\r- Coder show superclass(es) methods is filter WIP per Tudor\r- Git Tool - browse change\r```\rBrGlamorousWithContextMenuLook\r\t\t\t\t\t\tcontent: [ BrGlamorousSimpleContextMenuContent new\r\t\t\t\t\t\t\t\titems:\r\t\t\t\t\t\t\t\t\t{('Revert changes'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | self workingCopy diffToReferenceCommit revertChanges: anIceNode ]).\r\t\t\t\t\t\t\t\t\t('Browse'\r\t\t\t\t\t\t\t\t\t\t->\r\t\t\t\t\t\t\t\t\t\t\t[ :e | anIceNode value definition browse ])};\r\t\t\t\t\t\t\t\tyourself ])\r```"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:05.54408-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:05.54408-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "wyRs+CRVQ5+9m83F9RIv/Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Since views are explicitly annotated, could there be documentation connected specifically with `<gtView>` so that it shows (or shows that it is available) whenever such a method is being worked on? E.g. the slideshow"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:07.791502-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:09.219364-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "C11bTlI7Tiu8YMBbFUp0Nw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Link to headings inside documenter doc, like GH does with HTML anchors. I know Pillar already has section tags but never used them..."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:15.548232-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:15.548232-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "MGH7/QFeQOmFMvT0GkmOVA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Universal undo"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:08:39.524159-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:17.061523-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Uy8ST6NqRpmqnaCgAvUmqA=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Documentation organization e.g. tags, hierarchy"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:09:59.340716-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:09:59.340716-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "91UMsiJYTESLN/fcDfzinQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Dreams"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-27T10:02:38.754799-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-02-05T14:10:22.171001-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "8T8+D32EDQCbWan5DDM03g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Exemplifier and explainer are engines"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:10:20.189066-05:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-02-05T14:10:20.189066-05:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5vqh/00BROyk9t8j1HkxdA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "#Complete"
 			}
 		]
 	},
@@ -64,13 +370,5 @@
 			"__type" : "dateAndTime",
 			"dateAndTimeString" : "2021-07-27T10:02:38.754797-04:00"
 		}
-	},
-	"pageType" : {
-		"__type" : "namedPage",
-		"title" : "Todo"
-	},
-	"uid" : {
-		"__type" : "uuid",
-		"uuid" : "3512390f-7d84-0d00-9b33-178e0c3334de"
 	}
 }
