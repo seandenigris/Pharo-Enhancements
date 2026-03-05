@@ -54,6 +54,21 @@ PeTRawDataHolder >> rawDataAt: aString reader: aValuable [
 { #category : 'accessing' }
 PeTRawDataHolder >> rawDataAt: aString reader: aValuable ifAbsent: absentBlock [
 		
+	^ self 
+		perform: self rawDataAtReaderIfAbsentSelector
+		withArguments: { aString. aValuable. absentBlock }
+]
+
+{ #category : 'accessing' }
+PeTRawDataHolder >> rawDataAtReaderIfAbsentSelector [
+	"Assumes dictionary. Override for other raw data types e.g. XML, Soup"
+		
+	^ #rawDataDictionaryAt:reader:ifAbsent:
+]
+
+{ #category : 'accessing' }
+PeTRawDataHolder >> rawDataDictionaryAt: aString reader: aValuable ifAbsent: absentBlock [
+		
 	^ self rawData 
 		at: aString
 		ifPresent: aValuable
@@ -88,6 +103,14 @@ PeTRawDataHolder >> rawDataGtViewFor: aView context: aContext do: aBlock [
 	aBlock value: result.
 	
 	^ result
+]
+
+{ #category : 'accessing' }
+PeTRawDataHolder >> rawDataSoupAt: anInteger reader: aValuable ifAbsent: absentBlock [
+		
+	^ self rawData children size < anInteger
+		ifTrue: absentBlock
+		ifFalse: [ aValuable value: (self rawData children at: anInteger) ]
 ]
 
 { #category : 'accessing' }
