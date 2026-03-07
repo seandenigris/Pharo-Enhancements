@@ -21,153 +21,6 @@
 							"__type" : "textSnippet",
 							"children" : {
 								"__type" : "snippets",
-								"items" : [
-									{
-										"__type" : "pharoSnippet",
-										"children" : {
-											"__type" : "snippets",
-											"items" : [ ]
-										},
-										"createEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"createTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2026-01-23T11:30:12.446767-05:00"
-											}
-										},
-										"editEmail" : {
-											"__type" : "email",
-											"emailString" : "<unknown>"
-										},
-										"editTime" : {
-											"__type" : "time",
-											"time" : {
-												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2026-01-23T11:34:15.127939-05:00"
-											}
-										},
-										"uid" : {
-											"__type" : "uid",
-											"uidString" : "bc4TtwGkRO62gC4a0ZvQ8w=="
-										},
-										"code" : "#gtAction gtReferences & #dropdown gtReferences"
-									}
-								]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2026-01-23T11:32:27.967583-05:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2026-01-23T12:00:04.416618-05:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "SktJEp33Qsy2FPIA55/7BA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "There are plenty of examples in the image. Unfortunately, most are highly complex and customized, and so not ideal for learning (reported [on Discord](https://discord.com/channels/729445214812504107/737255889517543545/1464303444428062856) along with a simple example). Check them out here:"
-						},
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
-								"items" : [ ]
-							},
-							"createEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"createTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2026-01-23T11:33:21.754624-05:00"
-								}
-							},
-							"editEmail" : {
-								"__type" : "email",
-								"emailString" : "<unknown>"
-							},
-							"editTime" : {
-								"__type" : "time",
-								"time" : {
-									"__type" : "dateAndTime",
-									"dateAndTimeString" : "2026-01-23T11:38:13.207082-05:00"
-								}
-							},
-							"uid" : {
-								"__type" : "uid",
-								"uidString" : "EAMb2zcQTLyBA3I01wS8PA=="
-							},
-							"paragraphStyle" : {
-								"__type" : "textStyle"
-							},
-							"string" : "To get an idea of the range of what's possible, check out {{gtClass:GtPhlowDropdownAction}} . A simple way to populate a dropdown is by sending {{gtMethod:GtPhlowDropdownAction>>items:}} , which takes a block and has a nice comment explaining its arguments."
-						}
-					]
-				},
-				"createEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"createTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2026-01-23T11:29:59.551593-05:00"
-					}
-				},
-				"editEmail" : {
-					"__type" : "email",
-					"emailString" : "<unknown>"
-				},
-				"editTime" : {
-					"__type" : "time",
-					"time" : {
-						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2026-01-23T11:30:02.642145-05:00"
-					}
-				},
-				"uid" : {
-					"__type" : "uid",
-					"uidString" : "u55pyPFkSKWu8U9BX+X8ig=="
-				},
-				"paragraphStyle" : {
-					"__type" : "textStyle"
-				},
-				"string" : "#Dropdowns"
-			},
-			{
-				"__type" : "textSnippet",
-				"children" : {
-					"__type" : "snippets",
-					"items" : [
-						{
-							"__type" : "textSnippet",
-							"children" : {
-								"__type" : "snippets",
 								"items" : [ ]
 							},
 							"createEmail" : {
@@ -571,7 +424,119 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T16:58:30.193162-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "1. `aTab phlow fireViewUpdateWish` as done by the Update buttons (see {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}})."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T16:58:36.159476-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:00:42.193722-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "yn8lvBaNTdK5K4zyKk0ZBQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "2. Here's how the view context menu does it:\n```smalltalk\n| aRequest |\naRequest := BrPopoverAnchorElementWish new.\nanElement fireEvent: aRequest.\naRequest sourceElementDo: [ :aTab | aTab viewContentElement phlow update ]\n```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:00:45.951334-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:06:02.575816-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NAd2daKvQJy4ruPVJ/OJ0g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "3. You can even replace the view with a totally different view (e.g. `#gtPreviewFor:` below) (hat tip to {{olObject:uid=dzdow1b5t8ammopwmrjz3ymvt}} for the [demo](https://discord.com/channels/729445214812504107/735945764597006466/1018205581787533342) on GT's Discord):\n```smalltalk\n[ :aButton :aTab |\n\t[ 500 milliseconds wait ] asAsyncPromise\n\t\tasyncThen: [ (self gtPreviewFor: GtPhlowEmptyView new\n\t\t\tupdateContent: aTab viewContentElement ] ];\n```"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -581,7 +546,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+						"dateAndTimeString" : "2026-03-07T16:57:54.360108-05:00"
 					}
 				},
 				"editEmail" : {
@@ -592,17 +557,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:05:39.607326-04:00"
+						"dateAndTimeString" : "2026-03-07T17:06:56.792399-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+					"uidString" : "7B4KmU9ZQd6L0toJb2pK1A=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Send {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}}."
+				"string" : "There are a few approaches to emulate (asked Feenk for comment on the different approches on Discord on 3/7/2026):"
 			}
 		]
 	},

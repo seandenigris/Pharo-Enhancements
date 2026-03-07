@@ -424,7 +424,119 @@
 				"__type" : "textSnippet",
 				"children" : {
 					"__type" : "snippets",
-					"items" : [ ]
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T16:58:30.193162-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "1. `aTab phlow fireViewUpdateWish` as done by the Update buttons (see {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}})."
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T16:58:36.159476-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:00:42.193722-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "yn8lvBaNTdK5K4zyKk0ZBQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "2. Here's how the view context menu does it:\n```smalltalk\n| aRequest |\naRequest := BrPopoverAnchorElementWish new.\nanElement fireEvent: aRequest.\naRequest sourceElementDo: [ :aTab | aTab viewContentElement phlow update ]\n```"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:00:45.951334-05:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2026-03-07T17:06:02.575816-05:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NAd2daKvQJy4ruPVJ/OJ0g=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "3. You can even replace the view with a totally different view (e.g. `#gtPreviewFor:` below) (hat tip to {{olObject:uid=dzdow1b5t8ammopwmrjz3ymvt}} for the [demo](https://discord.com/channels/729445214812504107/735945764597006466/1018205581787533342) on GT's Discord):\n```smalltalk\n[ :aButton :aTab |\n\t[ 500 milliseconds wait ] asAsyncPromise\n\t\tasyncThen: [ (self gtPreviewFor: GtPhlowEmptyView new\n\t\t\tupdateContent: aTab viewContentElement ] ];\n```"
+						}
+					]
 				},
 				"createEmail" : {
 					"__type" : "email",
@@ -434,7 +546,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-07-27T13:51:58.721334-04:00"
+						"dateAndTimeString" : "2026-03-07T16:57:54.360108-05:00"
 					}
 				},
 				"editEmail" : {
@@ -445,17 +557,17 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:05:39.607326-04:00"
+						"dateAndTimeString" : "2026-03-07T17:07:28.623496-05:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
-					"uidString" : "OK1mQ4CEDQC5b/3KD3Qt2Q=="
+					"uidString" : "7B4KmU9ZQd6L0toJb2pK1A=="
 				},
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Send {{gtMethod:GtPhlowView>>#actionUpdateButtonTooltip:}}."
+				"string" : "There are a few approaches to emulate ([asked Feenk](https://discord.com/channels/729445214812504107/735945764597006466/1479959406761349283) to compare the different approches on Discord on 3/7/2026):"
 			}
 		]
 	},
