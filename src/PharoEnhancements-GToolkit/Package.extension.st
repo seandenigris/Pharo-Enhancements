@@ -1,7 +1,7 @@
-Extension { #name : 'RPackage' }
+Extension { #name : 'Package' }
 
 { #category : '*PharoEnhancements-GToolkit' }
-RPackage >> gtCommentFor: aView [
+Package >> gtCommentFor: aView [
 	<gtView>
 	self packageManifestOrNil ifNil: [ ^ aView empty ].
 	^ aView forward
