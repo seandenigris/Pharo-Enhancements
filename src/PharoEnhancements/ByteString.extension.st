@@ -43,11 +43,6 @@ ByteString >> asTitleCase [
 ]
 
 { #category : '*PharoEnhancements' }
-ByteString >> copyToClipboard [
-	Clipboard clipboardText: self
-]
-
-{ #category : '*PharoEnhancements' }
 ByteString class >> exampleAsTitleCase [
 	<gtExample>
 	| result |
