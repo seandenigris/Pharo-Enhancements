@@ -67,10 +67,30 @@ PeTRawDataHolder >> rawDataAtReaderIfAbsentSelector [
 ]
 
 { #category : 'accessing' }
-PeTRawDataHolder >> rawDataDictionaryAt: aString reader: aValuable ifAbsent: absentBlock [
+PeTRawDataHolder >> rawDataDictionaryAt: aCollection reader: aValuable ifAbsent: absentBlock [
+	"aCollection can be either:
+		- aString key on rawData
+		- aCollection of key strings chained to reach the desired value
+			For example: `{ #one. #two }` ~ `(self rawData at: #one) at: #two` with an important advantage: the absentBlock will be evaluated if any lookup in the chain fails"
+
+	| aDictionary aKey |
+	
+	aDictionary := self rawData.
+	
+	aCollection isString 
+		ifTrue: [ 
+			aKey := aCollection ]
+		ifFalse: [ 
+			aCollection readStreamDo: [ :str |
+				[ 
+					aKey := str next. 
+					str atEnd ] whileFalse: [
+						aDictionary := aDictionary
+							at: aKey
+							ifAbsent: [ ^ absentBlock value ] ] ] ].
 		
-	^ self rawData 
-		at: aString
+	^ aDictionary 
+		at: aKey
 		ifPresent: aValuable
 		ifAbsent: absentBlock
 ]
