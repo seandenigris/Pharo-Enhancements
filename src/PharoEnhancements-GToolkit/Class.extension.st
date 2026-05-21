@@ -12,17 +12,6 @@ Class >> gtSpotterClassMethodSourceFor: aSearch [
 ]
 
 { #category : '*PharoEnhancements-GToolkit' }
-Class >> gtSpotterMethodSourceFor: aSearch [
-	<gtSearch>
-	^ aSearch list
-		priority: 50;
-		title: 'Instance method source';
-		items: [ self methods ];
-		itemName: [ :method | method sourceCode ];
-		filterBySubstring
-]
-
-{ #category : '*PharoEnhancements-GToolkit' }
 Class >> peAPIDocumentation [
 	| pragmas doc apiList |
 	pragmas := Pragma allNamed: #apiDocumentation from: self to: Object.
