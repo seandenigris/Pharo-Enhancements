@@ -58,7 +58,8 @@ ByteString >> htmlDecoded [
 	table := Dictionary newFromPairs: {  
 		'&nbsp;'. ' '.
 		'&quot;'. '"'.
-		'&rsquo;'. ''''
+		'&rsquo;'. ''''.
+		'&amp;'. '&'.
 	}.
 	table keysAndValuesDo: [ :k :v | result := result copyReplaceAll: k with: v ].
 	^ result
