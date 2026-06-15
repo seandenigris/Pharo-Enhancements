@@ -260,7 +260,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2021-08-23T16:05:28.41025-04:00"
+						"dateAndTimeString" : "2026-06-15T17:11:59.540578-04:00"
 					}
 				},
 				"uid" : {
@@ -270,7 +270,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "# Picture in Picture"
+				"string" : "# Picture in Picture (aka sub-views)"
 			},
 			{
 				"__type" : "textSnippet",
@@ -557,7 +557,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2026-03-07T17:06:56.792399-05:00"
+						"dateAndTimeString" : "2026-03-07T17:07:28.623496-05:00"
 					}
 				},
 				"uid" : {
@@ -567,7 +567,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "There are a few approaches to emulate (asked Feenk for comment on the different approches on Discord on 3/7/2026):"
+				"string" : "There are a few approaches to emulate ([asked Feenk](https://discord.com/channels/729445214812504107/735945764597006466/1479959406761349283) to compare the different approches on Discord on 3/7/2026):"
 			}
 		]
 	},
