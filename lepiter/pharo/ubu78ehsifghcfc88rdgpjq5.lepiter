@@ -498,7 +498,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2022-04-07T11:09:58.000767-04:00"
+						"dateAndTimeString" : "2026-06-25T10:03:23.766533-04:00"
 					}
 				},
 				"uid" : {
@@ -508,7 +508,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Naive web scraping is easily foiled by dynamic content i.e. javascript. There are two basic strategies to overcome this ([this Mechanize doc](https://mechanize.readthedocs.io/en/latest/faq.html#javascript-is-messing-up-my-web-scraping-what-do-i-do) goes into greater detail:"
+				"string" : "Naive web scraping is easily foiled by dynamic content i.e. javascript. There are two basic strategies to overcome this ([this Mechanize doc](https://mechanize.readthedocs.io/en/latest/faq.html#javascript-is-messing-up-my-web-scraping-what-do-i-do) goes into greater detail):"
 			}
 		]
 	},

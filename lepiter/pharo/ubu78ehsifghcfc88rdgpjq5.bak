@@ -432,7 +432,7 @@
 											"__type" : "time",
 											"time" : {
 												"__type" : "dateAndTime",
-												"dateAndTimeString" : "2025-07-01T22:56:32.061244-04:00"
+												"dateAndTimeString" : "2025-07-01T22:57:02.018683-04:00"
 											}
 										},
 										"uid" : {
@@ -442,7 +442,7 @@
 										"paragraphStyle" : {
 											"__type" : "textStyle"
 										},
-										"string" : "Here is axperiment to find video play button failed due to apparent impossibility of converting client coordinates to screen coordinates"
+										"string" : "Here is a (failed) experiment to find video play button. Unfortunately, it is apparent impossible to convert client coordinates to screen coordinates"
 									}
 								]
 							},
