@@ -1,17 +1,6 @@
 Extension { #name : 'Class' }
 
 { #category : '*PharoEnhancements-GToolkit' }
-Class >> gtSpotterClassMethodSourceFor: aSearch [
-	<gtSearch>
-	^ aSearch list
-		priority: 51;
-		title: 'Class method source';
-		items: [ self classSide methods ];
-		itemName: [ :method | method sourceCode ];
-		filterBySubstring
-]
-
-{ #category : '*PharoEnhancements-GToolkit' }
 Class >> peAPIDocumentation [
 	| pragmas doc apiList |
 	pragmas := Pragma allNamed: #apiDocumentation from: self to: Object.
