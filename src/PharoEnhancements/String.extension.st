@@ -33,6 +33,21 @@ String >> copyToClipboard [
 ]
 
 { #category : '*PharoEnhancements' }
+String >> htmlDecoded [
+
+	| result table |
+	result := self.
+	table := Dictionary newFromPairs: {  
+		'&nbsp;'. ' '.
+		'&quot;'. '"'.
+		'&rsquo;'. ''''.
+		'&amp;'. '&'.
+	}.
+	table keysAndValuesDo: [ :k :v | result := result copyReplaceAll: k with: v ].
+	^ result
+]
+
+{ #category : '*PharoEnhancements' }
 String >> isValidAbsoluteURL [
 
 	^ [ self asUrl isAbsolute ]
