@@ -12,5 +12,5 @@ MAReferenceDescription >> gtSearchDelegateTo: anObjectValuable message: aSymbol 
 		to: anObjectValuable 
 		message: aSymbol
 		configured: configBlock.
-	self gtSearchSource: source
+	self gtSearchSource: [ source ]
 ]
