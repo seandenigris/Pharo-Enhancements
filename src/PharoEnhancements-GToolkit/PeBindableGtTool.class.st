@@ -146,10 +146,13 @@ PeBindableGtTool >> toolElement: anObject [
 { #category : 'accessing' }
 PeBindableGtTool >> toolTitle [
 	
-	(self toolElement isKindOf: GtCoderElement)
-		ifTrue: [ ^ self toolElement shortTitle asString, ' Class' ].
+	| contentElement |
+	contentElement := self toolElement childNamed: #content.
+	self toolElement withAllChildrenBreadthFirstDo: [ :el |
+		(el isKindOf: GtCoderElement) ifTrue: [ 
+			^ el shortTitle asString, ' Class' ] ].
 		
-	^ (((self toolElement childNamed: #content) childNamed: #header) childNamed: #label) text asString
+	^ ((contentElement childNamed: #header) childNamed: #label) text asString
 ]
 
 { #category : 'accessing' }
