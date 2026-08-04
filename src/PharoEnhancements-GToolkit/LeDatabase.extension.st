@@ -31,6 +31,42 @@ LeDatabase >> pagesByDate [
 ]
 
 { #category : '*PharoEnhancements-GToolkit' }
+LeDatabase >> tocEnsured [
+	"Create a flat TOC page with ONE text snippet per page"
+
+	| tocTitle tocPage pages |
+	
+	tocTitle := 'TOC'.
+	
+	"Find or create the TOC page"
+	tocPage := (self pages
+		detect: [ :p | p title = tocTitle ]
+		ifFound: [ :p | ^ p ]
+		ifNone: [ self pageBuilder title: tocTitle; add ]).
+	
+	"Optional: clear existing snippets on the TOC page
+	(tocPage respondsTo: #snippets) ifTrue: [
+		(tocPage snippets copy) do: [ :snippet |
+			(tocPage respondsTo: #removeSnippet:)
+				ifTrue: [ tocPage removeSnippet: snippet ] ] ]."
+	
+	"Collect pages to link (exclude TOC itself)"
+	pages := (self pages
+		select: [ :p |
+			p title notNil
+			and: [ p title notEmpty
+			and: [ p ~= tocPage ] ] ])
+		asSortedCollection: [ :a :b | a title < b title ].
+	
+	"Add one snippet per page"
+	pages do: [ :page |
+		tocPage addSnippet:
+			(LeTextSnippet string: '[[' , page title , ']]') ].
+
+	^ tocPage
+]
+
+{ #category : '*PharoEnhancements-GToolkit' }
 LeDatabase >> updatePageTypes [
 
 	"Copy-pasted from LeDatabase>>#initialize"
