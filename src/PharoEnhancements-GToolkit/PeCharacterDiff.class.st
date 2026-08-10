@@ -12,7 +12,7 @@ Class {
 { #category : 'accessing' }
 PeCharacterDiff class >> comparing: newString to: oldString [
 	| diffString chars |
-	diffString := PBApplication uniqueInstance newCommandStringFactory
+	diffString := PBApplication start newCommandStringFactory
     	addAllBindings: { 
         	#newString -> newString.
         	#oldString -> oldString } asDictionary;
