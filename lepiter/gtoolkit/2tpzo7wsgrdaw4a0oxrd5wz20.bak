@@ -37,7 +37,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-10-11T20:42:23.658863-04:00"
+						"dateAndTimeString" : "2026-08-24T17:50:01.770011-04:00"
 					}
 				},
 				"uid" : {
@@ -47,7 +47,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "GT supports Javascript via [node.js](https://nodejs.org/). There are various ways to install node, but the most intriguing seems to be via [fnm](https://github.com/Schniz/fnm), a popular version manager that claims to be many times faster than the ubiquitous [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)."
+				"string" : "GT supports Javascript via [node.js](https://nodejs.org/). There are various ways to install node, but the most intriguing seems to be `npm` via [fnm](https://github.com/Schniz/fnm), a popular version manager that claims to be many times faster than the ubiquitous [nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)."
 			},
 			{
 				"__type" : "textSnippet",
@@ -100,6 +100,77 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T17:50:18.017906-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T17:50:37.491375-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GitF2o9XQr6Ww4YMOa97aQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If at any point we need to reset GT's JS Link:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T17:50:39.471274-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T17:56:39.522981-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "WtuISfNISWyNc1iDAVIEUw=="
+				},
+				"code" : "JSLinkApplication stop."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
 						"dateAndTimeString" : "2024-10-11T20:57:06.441919-04:00"
 					}
 				},
@@ -111,7 +182,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-10-11T20:57:32.860466-04:00"
+						"dateAndTimeString" : "2026-08-19T21:05:21.603778-04:00"
 					}
 				},
 				"uid" : {
@@ -121,7 +192,42 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "Per  in the GT Book, we need to configure the location of the node executable:"
+				"string" : "Per the GT Book, we need to configure the location of the node executable:"
+			},
+			{
+				"__type" : "shellCommandSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T17:52:45.499397-04:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2026-08-24T18:49:42.045978-04:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "STTh8l2zT22ojg9eGXczew=="
+				},
+				"code" : "# sleep needed for GT binding to work. See issue https://github.com/feenkcom/gtoolkit/issues/5173\r/opt/homebrew/bin/fnm exec --using=24 node -p process.execPath\nsleep 1",
+				"bindingName" : "nodePath"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -148,7 +254,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-10-11T20:59:33.559022-04:00"
+						"dateAndTimeString" : "2026-08-24T17:32:24.239228-04:00"
 					}
 				},
 				"uid" : {
@@ -219,14 +325,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-10-11T21:15:29.521155-04:00"
+						"dateAndTimeString" : "2026-08-24T17:34:53.819113-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "vsrn7J7gDQCrKbonD/aY6g=="
 				},
-				"code" : "JSLinkPharoNodejsProcess  \r\tnodejsPath: FileLocator home / '.local/state/fnm_multishells/53846_1728694341895/bin/node'"
+				"code" : "JSLinkPharoNodejsProcess  \r\tnodejsPath: nodePath asFileReference"
 			},
 			{
 				"__type" : "textSnippet",
@@ -608,14 +714,14 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2024-10-12T22:27:44.839278-04:00"
+						"dateAndTimeString" : "2024-10-12T22:31:38.707618-04:00"
 					}
 				},
 				"uid" : {
 					"__type" : "uid",
 					"uidString" : "hM/hCbPgDQCTaByEBau3Vw=="
 				},
-				"code" : "CwMacMail new selection collect: [ :msg |\r\t(msg dateReceived printString, ' ', msg subject) asFilename ]"
+				"code" : "CwMacMail new selectedMessagesExport"
 			},
 			{
 				"__type" : "textSnippet",
